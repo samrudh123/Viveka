@@ -374,7 +374,7 @@ if __name__ == '__main__':
     if args.stage in ['svd', 'all']:
         if not args.svd_layers:
             parser.error("--svd_layers is required for 'svd' stage.")
-        activations_dir = os.path.join(output_dir, 'activations', args.model_repo_id.replace('/', '_'))
+        activations_dir = os.path.join(output_dir, 'activations/gemma-2-2b-it')
         perform_global_svd(activations_dir, args.svd_dim, args.svd_layers, args.device)
     
 
