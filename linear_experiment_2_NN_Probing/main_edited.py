@@ -39,6 +39,8 @@ def load_and_project_activations(activations_dir, layer_idx, device):
     for fname in tqdm(glob.glob(file_pattern), desc=f"Loading & Projecting L{layer_idx}", leave=False):
         data = t.load(fname)
         raw_activations = data['activations'].to(device)
+        if raw_activations.dtype != projection_matrix.dtype:
+            raw_activations = raw_activations.to(projection_matrix.dtype)
         projected_activations = (projection_matrix @ raw_activations.T).T
         activations_list.append(projected_activations)
         labels_list.append(data['labels'])
