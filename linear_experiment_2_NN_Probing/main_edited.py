@@ -153,8 +153,8 @@ def train_probing_network(dataset_dir, train_layers, device):
                 train_preds.extend(preds.cpu().numpy())
                 train_labels.extend(y_batch.cpu().numpy())
                 step += 1
-                batch_acc = accuracy_score(preds.cpu().numpy(), y_batch.cpu().numpy())
-                batch_f1 = f1_score(preds.cpu().numpy(), y_batch.cpu().numpy())
+                batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 run.log(
                 {
                     "loss/train":current_loss,
@@ -208,8 +208,8 @@ def train_probing_network(dataset_dir, train_layers, device):
                     val_pbar.set_postfix({
                     "val_loss": f"{loss.item():.4f}"
                                         })
-                    batch_acc = accuracy_score(preds.cpu().numpy(), y_batch.cpu().numpy())
-                    batch_f1 = f1_score(preds.cpu().numpy(), y_batch.cpu().numpy()) 
+                    batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                    batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
                     run.log(
                     {
                         "loss/train":current_loss,
