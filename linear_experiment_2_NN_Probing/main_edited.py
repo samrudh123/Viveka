@@ -382,6 +382,7 @@ if __name__ == '__main__':
     if args.stage in ['train', 'all']:
         if not args.train_layers:
             parser.error("--train_layers is required for 'train' stage.")
-        train_probing_network(args.probe_output_dir, args.train_layers, args.device)
+        acts_output = os.path.join(output_dir, "activations", exist_ok=True)
+        train_probing_network(acts_output, args.train_layers, args.device)
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
