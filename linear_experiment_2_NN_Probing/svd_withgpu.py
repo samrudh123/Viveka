@@ -75,7 +75,7 @@ def perform_global_svd(activations_dir, svd_dim, layer_indices, device):
                 projected_activations = projected_activations.to(orig_dtype)
 
                 stmt_num = fname.split('_stmt_')[1].split('.pt')[0]
-                save_name = f"layer{l_idx}_stmt{stmt_num}_svd_processed.pt"
+                save_name = f"layer_{l_idx}_stmt_{stmt_num}_svd_processed.pt"
                 save_path = os.path.join(projected_dir, save_name)
 
                 t.save({'activations': projected_activations.cpu(), 'labels': data['labels']}, save_path)
