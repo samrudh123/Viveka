@@ -120,9 +120,9 @@ def train_probing_network(dataset_dir, train_layers, device):
 
 
     model_name_safe = hparams.model_name.replace('/', '_')
-    activations_dir = os.path.join(dataset_dir, 'activations', model_name_safe)
-    projected_dir = os.path.join(dataset_dir, 'activations_svd', model_name_safe)
-    probes_dir = os.path.join(dataset_dir, 'trained_probes', model_name_safe)
+    activations_dir = os.path.join(output_dir, 'activations', model_name_safe)
+    projected_dir = os.path.join(output_dir, 'activations_svd', model_name_safe)
+    probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
 
     for l_idx in tqdm(train_layers, desc="Training probe per layer"):
