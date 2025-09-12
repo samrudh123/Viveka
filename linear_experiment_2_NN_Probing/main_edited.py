@@ -15,6 +15,7 @@ from transformers import AutoTokenizer
 import pandas as pd
 import random
 import wandb
+import psutil
 
 #SVD Projection Loader
 
@@ -94,6 +95,29 @@ def train_probing_network(dataset_dir, train_layers, device):
         "epochs": 10,
         },
     )
+    #logging session metrics
+    def get_ram_usage_gb():
+        mem = psutil.virtual_memory()
+        used_gb = mem.used / (1024 ** 3)
+        total_gb = mem.total / (1024 ** 3)
+        return used_gb, total_gb
+
+    def get_vram_usage_gb(device=0):
+        used = t.cuda.memory_allocated(device) / (1024 ** 3)
+        reserved = t.cuda.memory_reserved(device) / (1024 ** 3)
+        total = t.cuda.get_device_properties(device).total_memory / (1024 ** 3)
+        return used, reserved, total
+
+    def log_memory(step=None):
+        used_ram, total_ram = get_ram_usage_gb()
+        used_vram, reserved_vram, total_vram = get_vram_usage_gb()
+
+        run.log({
+            "RAM_used_GB": used_ram,
+            "VRAM_used_GB": used_vram,
+            "VRAM_reserved_GB": reserved_vram,
+        }, step=step)
+
 
     model_name_safe = hparams.model_name.replace('/', '_')
     activations_dir = os.path.join(dataset_dir, 'activations', model_name_safe)
@@ -162,6 +186,7 @@ def train_probing_network(dataset_dir, train_layers, device):
                     "f1/train":batch_f1,
                     "learning-rate": scheduler.get_last_lr()[0]
                 }
+                log_memory()
             )
                 
             
