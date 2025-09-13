@@ -7,84 +7,65 @@ from tqdm import tqdm
 def perform_global_svd(activations_dir, svd_dim, layer_indices, device):
     """
     Performs SVD for each specified layer on its full activation data,
-    saving the projection matrix (V_T) and also saving per-statement
-    activations projected into the top `svd_dim` singular vectors.
+    saving the projection matrix (V_T) and also saving merged activations
+    projected into the top `svd_dim` singular vectors.
     """
     print(f"--- Starting Global SVD stage for layers: {layer_indices} ---")
+
     # Directory for projection matrices
     svd_dir = os.path.join(os.path.dirname(activations_dir), 'svd_components')
     os.makedirs(svd_dir, exist_ok=True)
+
     # Directory for projected activations
     projected_dir = os.path.join(os.path.dirname(activations_dir), 'activations_svd',
                                  os.path.basename(activations_dir))
     os.makedirs(projected_dir, exist_ok=True)
 
-    def load_or_compute_svd(layer_indices, svd_dir, activations_dir, device):
-        for l_idx in tqdm(layer_indices, desc="Performing SVD per layer"):
-            projection_matrix_path = os.path.join(svd_dir, f"projection_matrix_layer_{l_idx}.pt")
+    for l_idx in tqdm(layer_indices, desc="Performing SVD per layer"):
+        projection_matrix_path = os.path.join(svd_dir, f"projection_matrix_layer_{l_idx}.pt")
 
-            if os.path.exists(projection_matrix_path):
-                print(f"SVD projection matrix for layer {l_idx} already exists. Loading it.")
-                projection_matrix = t.load(projection_matrix_path).to(device)
+        # ---- Load merged activations ----
+        merged_path = os.path.join(activations_dir, f"layer_{l_idx}_balanced.pt")
+        if not os.path.exists(merged_path):
+            print(f"⚠️ No merged activation file found for layer {l_idx} at '{merged_path}'. Skipping.")
+            continue
 
-            else:
-                # Load merged activation file for this layer
-                merged_path = os.path.join(activations_dir, f"layer_{l_idx}_balanced.pt")
-                if not os.path.exists(merged_path):
-                    print(f"Warning: No merged activation file found for layer {l_idx} at '{merged_path}'. Skipping.")
-                    continue
+        data = t.load(merged_path, map_location="cpu")
+        full_layer_activations = data["activations"].to(device)
+        labels = data["labels"]
+        orig_dtype = full_layer_activations.dtype
 
-                print(f"Loading merged activations for layer {l_idx}...")
-                data = t.load(merged_path, map_location="cpu")
+        # ---- Ensure float32 for SVD ----
+        if orig_dtype in (t.float16, t.bfloat16):
+            print(f"Converting layer {l_idx} activations from {orig_dtype} to float32 for SVD.")
+            full_layer_activations = full_layer_activations.to(t.float32)
 
-                # Extract activations (already concatenated)
-            full_layer_activations = data["activations"].to(device)
+        # ---- Run SVD ----
+        print(f"Running SVD on {full_layer_activations.shape[0]} activations for layer {l_idx}...")
+        try:
+            _, _, Vh = t.linalg.svd(full_layer_activations, full_matrices=False)
+        except t.cuda.OutOfMemoryError:
+            print(f"CUDA OOM on layer {l_idx}. Falling back to CPU.")
+            _, _, Vh = t.linalg.svd(full_layer_activations.cpu(), full_matrices=False)
+            Vh = Vh.to(device)
 
-                # You can also get labels if needed:
-            labels = data["labels"]
-            # Save original dtype
-            orig_dtype = full_layer_activations.dtype
+        projection_matrix = Vh[:svd_dim, :]
+        t.save(projection_matrix.cpu(), projection_matrix_path)
+        print(f"Saved SVD projection matrix for layer {l_idx} to {projection_matrix_path}")
 
-            # Convert to float32 for SVD if needed
-            if orig_dtype in  (t.float16,t.bfloat16):
-                print(f"Converting layer {l_idx} activations from bfloat16 to float32 for SVD.")
-                full_layer_activations = full_layer_activations.to(t.float32)
+        # ---- Project *all* activations in one go ----
+        if projection_matrix.dtype != t.float32:
+            projection_matrix = projection_matrix.to(t.float32)
 
-            # Run SVD
-            print(f"Running SVD on {full_layer_activations.shape[0]} activations for layer {l_idx}...")
-            try:
-                _, _, Vh = t.linalg.svd(full_layer_activations, full_matrices=False)
-            except t.cuda.OutOfMemoryError:
-                print(f"CUDA OOM on layer {l_idx}. Falling back to CPU.")
-                _, _, Vh = t.linalg.svd(full_layer_activations.cpu(), full_matrices=False)
-                Vh = Vh.to(device)
+        projected_activations = (projection_matrix @ full_layer_activations.T).T
+        projected_activations = projected_activations.to(orig_dtype)
 
-            projection_matrix = Vh[:svd_dim, :]
-            t.save(projection_matrix.cpu(), projection_matrix_path)
-            print(f"Saved SVD projection matrix for layer {l_idx} to {projection_matrix_path}")
+        # ---- Save merged projected file ----
+        save_name = f"layer_{l_idx}_balanced_svd_processed.pt"
+        save_path = os.path.join(projected_dir, save_name)
 
-            # Project individual activations
-            for fname in tqdm(all_files, desc=f"Projecting L{l_idx} activations", leave=False):
-                data = t.load(fname)
-                raw_activations = data['activations'].to(device)
-
-                # Ensure projection is done in float32
-                if raw_activations.dtype != t.float32:
-                    raw_activations = raw_activations.to(t.float32)
-
-                if projection_matrix.dtype != t.float32:
-                    projection_matrix = projection_matrix.to(t.float32)    
-
-                projected_activations = (projection_matrix @ raw_activations.T).T
-
-                # Cast back to original dtype before saving
-                projected_activations = projected_activations.to(orig_dtype)
-
-                stmt_num = fname.split('_stmt_')[1].split('.pt')[0]
-                save_name = f"layer_{l_idx}_stmt_{stmt_num}_svd_processed.pt"
-                save_path = os.path.join(projected_dir, save_name)
-
-                t.save({'activations': projected_activations.cpu(), 'labels': data['labels']}, save_path)
+        t.save({'activations': projected_activations.cpu(), 'labels': labels}, save_path)
+        print(f"Saved projected activations for layer {l_idx} to {save_path}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Perform SVD on saved activations to find principal components.")
