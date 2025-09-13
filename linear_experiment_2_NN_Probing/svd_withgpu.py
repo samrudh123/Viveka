@@ -20,27 +20,27 @@ def perform_global_svd(activations_dir, svd_dim, layer_indices, device):
     os.makedirs(projected_dir, exist_ok=True)
 
     def load_or_compute_svd(layer_indices, svd_dir, activations_dir, device):
-    for l_idx in tqdm(layer_indices, desc="Performing SVD per layer"):
-        projection_matrix_path = os.path.join(svd_dir, f"projection_matrix_layer_{l_idx}.pt")
+        for l_idx in tqdm(layer_indices, desc="Performing SVD per layer"):
+            projection_matrix_path = os.path.join(svd_dir, f"projection_matrix_layer_{l_idx}.pt")
 
-        if os.path.exists(projection_matrix_path):
-            print(f"SVD projection matrix for layer {l_idx} already exists. Loading it.")
-            projection_matrix = t.load(projection_matrix_path).to(device)
+            if os.path.exists(projection_matrix_path):
+                print(f"SVD projection matrix for layer {l_idx} already exists. Loading it.")
+                projection_matrix = t.load(projection_matrix_path).to(device)
 
-        else:
-            # Load merged activation file for this layer
-            merged_path = os.path.join(activations_dir, f"layer_{l_idx}_balanced.pt")
-            if not os.path.exists(merged_path):
-                print(f"Warning: No merged activation file found for layer {l_idx} at '{merged_path}'. Skipping.")
-                continue
+            else:
+                # Load merged activation file for this layer
+                merged_path = os.path.join(activations_dir, f"layer_{l_idx}_balanced.pt")
+                if not os.path.exists(merged_path):
+                    print(f"Warning: No merged activation file found for layer {l_idx} at '{merged_path}'. Skipping.")
+                    continue
 
-            print(f"Loading merged activations for layer {l_idx}...")
-            data = t.load(merged_path, map_location="cpu")
+                print(f"Loading merged activations for layer {l_idx}...")
+                data = t.load(merged_path, map_location="cpu")
 
-            # Extract activations (already concatenated)
+                # Extract activations (already concatenated)
             full_layer_activations = data["activations"].to(device)
 
-            # You can also get labels if needed:
+                # You can also get labels if needed:
             labels = data["labels"]
             # Save original dtype
             orig_dtype = full_layer_activations.dtype
