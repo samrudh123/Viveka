@@ -1,6 +1,6 @@
 from utils import load_model, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
-from classifier import ProbingNetwork, hparams, log_confusion_matrix, lr_lambda
+from classifier import ProbingNetwork, hparams, log_confusion_matrix, 3
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
 import argparse
@@ -234,7 +234,7 @@ if __name__ == '__main__':
     # --- Stage Routing ---
     if args.stage in ['generate', 'activate', 'all']:
         if -1 in args.layers:
-            args.layers = list(range(0,26))
+            args.layers = list(range(0,26)) #this here is hardcoded, need to make this general. 
         tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
         num_layers = len(layer_modules)
         print("Memory after loading model : ")
