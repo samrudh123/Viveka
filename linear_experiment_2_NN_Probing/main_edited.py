@@ -12,10 +12,12 @@ import torch as t
 from torch.utils.data import DataLoader, TensorDataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
-from hook import report_gpu_memory
+import pandas as pd
+import random
+import wandb
+import psutil
 
-
-# === SVD Projection Loader ========================================
+#SVD Projection Loader
 
 def load_and_project_activations(activations_dir, layer_idx, device):
     """
@@ -38,6 +40,8 @@ def load_and_project_activations(activations_dir, layer_idx, device):
     for fname in tqdm(glob.glob(file_pattern), desc=f"Loading & Projecting L{layer_idx}", leave=False):
         data = t.load(fname)
         raw_activations = data['activations'].to(device)
+        if raw_activations.dtype != projection_matrix.dtype:
+            raw_activations = raw_activations.to(projection_matrix.dtype)
         projected_activations = (projection_matrix @ raw_activations.T).T
         activations_list.append(projected_activations)
         labels_list.append(data['labels'])
@@ -50,7 +54,7 @@ def load_and_project_activations(activations_dir, layer_idx, device):
         t.cat(labels_list, dim=0).float().unsqueeze(1)
     )
 
-# === Training Function ============================================
+#Training Functionality
 
 def load_preprojected_dataset(projected_dir, layer_idx):
     """
@@ -80,10 +84,45 @@ def train_probing_network(dataset_dir, train_layers, device):
     - precomputed SVD-projected activations from activations_svd, or
     - raw activations projected on-the-fly using saved projection matrices.
     """
+
+    run = wandb.init(
+    entity='jerrycloud3316-ai-club-iit-madras',
+    project='training network probes for triviaqa on gemma-2-2b-it',
+    config={
+        "learning_rate":0.003,
+        "architecture":"Transformer",
+        "dataset": "TriviaQA_1-20k",
+        "epochs": 10,
+        },
+    )
+    #logging session metrics
+    def get_ram_usage_gb():
+        mem = psutil.virtual_memory()
+        used_gb = mem.used / (1024 ** 3)
+        total_gb = mem.total / (1024 ** 3)
+        return used_gb, total_gb
+
+    def get_vram_usage_gb(device=0):
+        used = t.cuda.memory_allocated(device) / (1024 ** 3)
+        reserved = t.cuda.memory_reserved(device) / (1024 ** 3)
+        total = t.cuda.get_device_properties(device).total_memory / (1024 ** 3)
+        return used, reserved, total
+
+    def log_memory(step=None):
+        used_ram, total_ram = get_ram_usage_gb()
+        used_vram, reserved_vram, total_vram = get_vram_usage_gb()
+
+        run.log({
+            "RAM_used_GB": used_ram,
+            "VRAM_used_GB": used_vram,
+            "VRAM_reserved_GB": reserved_vram,
+        }, step=step)
+
+
     model_name_safe = hparams.model_name.replace('/', '_')
-    activations_dir = os.path.join(dataset_dir, 'activations', model_name_safe)
-    projected_dir = os.path.join(dataset_dir, 'activations_svd', model_name_safe)
-    probes_dir = os.path.join(dataset_dir, 'trained_probes', model_name_safe)
+    activations_dir = os.path.join(output_dir, 'activations', model_name_safe)
+    projected_dir = os.path.join(output_dir, 'activations_svd', model_name_safe)
+    probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
 
     for l_idx in tqdm(train_layers, desc="Training probe per layer"):
@@ -132,11 +171,23 @@ def train_probing_network(dataset_dir, train_layers, device):
                 pbar.set_postfix({'loss': loss.item(), 
                                   "lr": f"{scheduler.get_last_lr()[0]:.6f}"
                                   })
-                epoch_loss += loss.item()
+                current_loss=loss.item()
+                epoch_loss += current_loss
                 preds = (outputs > 0.5).float()
                 train_preds.extend(preds.cpu().numpy())
                 train_labels.extend(y_batch.cpu().numpy())
                 step += 1
+                batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                run.log(
+                    {
+                        "loss/train":current_loss,
+                        "acc/train":batch_acc,
+                        "f1/train":batch_f1,
+                        "learning-rate": scheduler.get_last_lr()[0]
+                    }
+                )
+                log_memory()
             
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
@@ -147,6 +198,14 @@ def train_probing_network(dataset_dir, train_layers, device):
             print(f"\nEpoch {epoch+1} completed in {elapsed:.2f}s | Estimated time remaining: {est_remaining:.2f}s")
             print(f"Train Accuracy: {train_acc:.4f} | F1: {train_f1:.4f}")
 
+            run.log(
+                {
+                    "loss/train":avg_train_loss,
+                    "acc/train":train_acc,
+                    "f1/train":train_f1,
+                    "learning-rate": scheduler.get_last_lr()[0]
+                }
+            )
             writer.add_scalar("Loss/train", avg_train_loss, epoch)
             writer.add_scalar("Accuracy/train", train_acc, epoch)
             writer.add_scalar("F1/train", train_f1, epoch)
@@ -163,7 +222,8 @@ def train_probing_network(dataset_dir, train_layers, device):
                 for X_batch, y_batch in val_pbar:
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     outputs = model(X_batch)
-                    val_loss += criterion(outputs, y_batch).item()
+                    current_loss=criterion(outputs, y_batch).item()
+                    val_loss += current_loss
                     preds = (outputs > 0.5).float()
                     total += y_batch.size(0)
                     correct += (preds == y_batch).sum().item()
@@ -172,28 +232,52 @@ def train_probing_network(dataset_dir, train_layers, device):
                     val_pbar.set_postfix({
                     "val_loss": f"{loss.item():.4f}"
                                         })
+                    batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                    batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
+                    run.log(
+                    {
+                        "loss/train":current_loss,
+                        "acc/train":batch_acc,
+                        "f1/train":batch_f1,
+                        
+                    } 
+                    )  
             val_acc = accuracy_score(val_labels, val_preds)
             val_f1 = f1_score(val_labels, val_preds)
             avg_val_loss = val_loss / len(val_loader)
             print(f"Layer {l_idx} | Epoch {epoch+1} | Val Loss: {val_loss/len(val_loader):.4f} | Val Acc: {correct/total:.4f}")
             print(f"Val Accuracy: {val_acc:.4f} | F1: {val_f1:.4f}")
             print("Classification Report:\n", classification_report(val_labels, val_preds, digits=4))
+            
 
             writer.add_scalar("Loss/val", avg_val_loss, epoch)
             writer.add_scalar("Accuracy/val", val_acc, epoch)
             writer.add_scalar("F1/val", val_f1, epoch)
+            
+            run.log(
+                {
+                    "Loss/val": avg_val_loss,
+                    "accuracy_val": val_acc,
+                    "f1_val": val_f1
+                }
+            )
             log_confusion_matrix(writer, val_labels, val_preds, epoch)
 
         writer.close()
+        run.finish()
         t.save(model.state_dict(), os.path.join(probes_dir, f'probe_model_layer_{l_idx}.pt'))
 
-# === Main Execution Block =========================================
+#Main
 
 if __name__ == '__main__':
-    unique_gen = pd.read_json(r"/kaggle/working/merge/generated_completions_20k.json")
-    len_list = []
-    for i in 
+    # df_unique = pd.read_json(r"merge/merged_generations/unique_generations_20K.json")
+    # df_unique
+    # row = df_unique.loc["generated_answers"]
+    # len_list = row.apply(len).tolist()
+    # avg = sum(len_list)/len(len_list)
+    # print(f"number of questions : {len(len_list)}\navg no. of unique ans per qn: {avg}")
     parser = argparse.ArgumentParser(description="Run a multi-stage pipeline to generate data, extract activations, run SVD, and train a truth probe.")
+    
     # --- Core Arguments ---
     parser.add_argument('--dataset_path', type=str, required=True, help="Path to the dataset CSV file.")
     parser.add_argument('--model_repo_id', type=str, required=True, default='google/gemma-2-2b-it', help="Hugging Face model repository ID.")
@@ -207,6 +291,8 @@ if __name__ == '__main__':
     parser.add_argument('--start_index', type=int, default=0, help="The starting row index of the dataset to process.")
     parser.add_argument('--end_index', type=int, default=None, help="The ending row index of the dataset to process(doesn't include this row). Processes to the end if not specified.")
     parser.add_argument('--gen_batch_size', type=int, default=1, help="Number of statements to process in parallel during generation.")
+    parser.add_argument('--batch_slice_arg', type=int, default=32, help="How many answers(*2) of the each statement you wanna do at once.")
+    
     # --- Generation Arguments ---
     parser.add_argument('--temperature', type=float, default=0.7, help="The temperature with which you want to generate completions, default=0.7")
     parser.add_argument('--top_p', type=float, default=0.9, help="Nucleus sampling threshold, default=0.9")
@@ -214,7 +300,7 @@ if __name__ == '__main__':
     
     # --- Configuration Arguments ---
     parser.add_argument('--layers', nargs='+', type=int, default=[-1], help="List of layer indices to probe. -1 for all layers.")
-    parser.add_argument('--probe_output_dir', type=str, default='/kaggle/working/current_run', help="Directory to save generated data and activations.")
+    parser.add_argument('--probe_output_dir', type=str, default='current_run', help="Directory to save generated data and activations.")
     parser.add_argument('--num_generations', type=int, default=32, help="Number of answers to generate per statement for probing.")
 
     # --- SVD & Training ---
@@ -225,25 +311,26 @@ if __name__ == '__main__':
     args = parser.parse_args()
     hparams.model_name = args.model_repo_id
     print(args.max_new_tokens, "main_edited.py, argsparser")
-    # --- Model Loading ---
+
     print(f"Loading model: {args.model_repo_id}...")
-    #tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
-    #num_layers = len(layer_modules)
-    #print("Memory after loading model : ")
-    #report_gpu_memory()
-    # --- Stage Routing ---
+ 
+    output_dir = args.probe_output_dir
+    print(output_dir, "Output dir")
     if args.stage in ['generate', 'activate', 'all']:
+<<<<<<< HEAD
         if -1 in args.layers:
             args.layers = list(range(0,26)) #this here is hardcoded, need to make this general. 
+=======
+>>>>>>> 4f9bca8cbcd3cd490997bf88ec85dd2b80796ccc
         tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
+        if -1 in args.layers:
+            args.layers = list(range(0,model.cfg.n_layers))
         num_layers = len(layer_modules)
-        print("Memory after loading model : ")
-        report_gpu_memory()
         print(f"Loading dataset from: {args.dataset_path}")
         df, all_statements, all_correct_answers = load_statements(args.dataset_path)
 
         start = args.start_index
-        end = args.end_index if args.end_index is not None else len(all_statements) #process everything if not specified
+        end = args.end_index if args.end_index is not None else len(all_statements) #processes everything if not specified
         statements_to_process = all_statements[start:end]
         answers_to_process = all_correct_answers[start:end]
 
@@ -267,35 +354,40 @@ if __name__ == '__main__':
                     top_p=args.top_p
                 )
 
-
         if args.stage in ['activate', 'all']:
             batch_size = args.gen_batch_size
-            for start_idx in range(0, len(statements_to_process), batch_size):
+            for start_idx in tqdm(range(0, len(statements_to_process), batch_size), 
+                total=len(statements_to_process)//batch_size + 1):
                 end_idx = min(start_idx + batch_size, len(statements_to_process))
                 batch_statements = statements_to_process[start_idx:end_idx]
 
-            get_truth_probe_activations(
-                statements=batch_statements,
-                tokenizer=tokenizer,
-                model=model,
-                layers=layer_modules,
-                layer_indices=args.layers,
-                device=args.device,
-                output_dir=args.probe_output_dir,
-                start_index=start_idx,
-                end_index=end_idx,
-                batch_list = 
-            )
+                get_truth_probe_activations(
+                    statements=batch_statements,
+                    tokenizer=tokenizer,
+                    model=model,
+                    model_name_arg=args.model_repo_id,
+                    batch_size_arg=batch_slice_arg,
+                    layers=layer_modules,
+                    layer_indices=args.layers,
+                    device=args.device,
+                    output_dir=args.probe_output_dir,
+                    start_index=start_idx,
+                    end_index=end_idx,
+                    batch_list=len_list
+                )
 
     if args.stage in ['svd', 'all']:
         if not args.svd_layers:
             parser.error("--svd_layers is required for 'svd' stage.")
-        activations_dir = os.path.join(args.probe_output_dir, 'activations', args.model_repo_id.replace('/', '_'))
+        activations_dir = os.path.join(output_dir, 'activations/gemma-2-2b-it')
         perform_global_svd(activations_dir, args.svd_dim, args.svd_layers, args.device)
+    
+
 
     if args.stage in ['train', 'all']:
         if not args.train_layers:
             parser.error("--train_layers is required for 'train' stage.")
-        train_probing_network(args.probe_output_dir, args.train_layers, args.device)
+        acts_output = os.path.join(output_dir, "activations/gemma-2-2b-it", exist_ok=True)
+        train_probing_network(acts_output, args.train_layers, args.device)
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
