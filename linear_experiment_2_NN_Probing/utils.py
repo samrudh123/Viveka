@@ -175,11 +175,12 @@ def generate_model_answers(
     all_generated_ids = []
 
     batch_size = len(prompts)
-    for i in range(batch_size * num_return_sequences):
+
+    for i, gen in enumerate(generated):
         prompt_idx = i // num_return_sequences
         input_len = inputs['input_ids'][prompt_idx].shape[0]
-
-        generated_ids = generated[i][input_len:]
+    
+        generated_ids = gen[input_len:]
         model_answer_raw = model.to_string(generated_ids)
 
         all_model_answers_raw.append(model_answer_raw)
