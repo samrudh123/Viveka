@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 
-def compute_generation_accuracy(output_dir="current_run", model_name="unknown"):
+def compute_generation_accuracy(output_dir="/home/current_run/", model_name="unknown"):
     """
     Loads the generations cache for the given model and computes:
       - Per-statement accuracy (fraction of correct generations out of 32)
