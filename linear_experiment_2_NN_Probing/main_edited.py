@@ -1,6 +1,6 @@
 from utils import load_model, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
-from classifier import ProbingNetwork, hparams, log_confusion_matrix, lr_lambda
+from classifier import ProbingNetwork, hparams, log_confusion_matrix, 3
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
 import argparse
@@ -120,9 +120,9 @@ def train_probing_network(dataset_dir, train_layers, device):
 
 
     model_name_safe = hparams.model_name.replace('/', '_')
-    activations_dir = os.path.join(dataset_dir, 'activations', model_name_safe)
-    projected_dir = os.path.join(dataset_dir, 'activations_svd', model_name_safe)
-    probes_dir = os.path.join(dataset_dir, 'trained_probes', model_name_safe)
+    activations_dir = os.path.join(output_dir, 'activations', model_name_safe)
+    projected_dir = os.path.join(output_dir, 'activations_svd', model_name_safe)
+    probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
 
     for l_idx in tqdm(train_layers, desc="Training probe per layer"):
@@ -181,14 +181,13 @@ def train_probing_network(dataset_dir, train_layers, device):
                 batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 run.log(
                     {
-                    "loss/train":current_loss,
-                    "acc/train":batch_acc,
-                    "f1/train":batch_f1,
-                    "learning-rate": scheduler.get_last_lr()[0]
+                        "loss/train":current_loss,
+                        "acc/train":batch_acc,
+                        "f1/train":batch_f1,
+                        "learning-rate": scheduler.get_last_lr()[0]
                     }
+                )
                 log_memory()
-            )
-                
             
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
@@ -318,6 +317,11 @@ if __name__ == '__main__':
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
     if args.stage in ['generate', 'activate', 'all']:
+<<<<<<< HEAD
+        if -1 in args.layers:
+            args.layers = list(range(0,26)) #this here is hardcoded, need to make this general. 
+=======
+>>>>>>> 4f9bca8cbcd3cd490997bf88ec85dd2b80796ccc
         tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
         if -1 in args.layers:
             args.layers = list(range(0,model.cfg.n_layers))
@@ -375,7 +379,7 @@ if __name__ == '__main__':
     if args.stage in ['svd', 'all']:
         if not args.svd_layers:
             parser.error("--svd_layers is required for 'svd' stage.")
-        activations_dir = os.path.join(args.probe_output_dir, 'activations', args.model_repo_id.replace('/', '_'))
+        activations_dir = os.path.join(output_dir, 'activations/gemma-2-2b-it')
         perform_global_svd(activations_dir, args.svd_dim, args.svd_layers, args.device)
     
 
@@ -383,6 +387,7 @@ if __name__ == '__main__':
     if args.stage in ['train', 'all']:
         if not args.train_layers:
             parser.error("--train_layers is required for 'train' stage.")
-        train_probing_network(args.probe_output_dir, args.train_layers, args.device)
+        acts_output = os.path.join(output_dir, "activations/gemma-2-2b-it", exist_ok=True)
+        train_probing_network(acts_output, args.train_layers, args.device)
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
