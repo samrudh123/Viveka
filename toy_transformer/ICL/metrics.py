@@ -14,6 +14,8 @@ from transformer_lens.utils import get_act_name
 
 def get_ngram_stats(x: torch.Tensor, n: int) -> Tuple[Dict[str, float], Dict[str, int], int]:
     """
+    This is used to get stats for any test dataset to then get probabilities for n-grams in the next function.
+    example implementation is in model.ipynb
     Compute n-gram frequencies from sequence data.
 
     Args:
@@ -54,44 +56,43 @@ def get_ngram_stats(x: torch.Tensor, n: int) -> Tuple[Dict[str, float], Dict[str
     return ngram_freqs, ngram_counts, total_ngrams
 
 
-def ngram_kl(model, data:torch.Tensor, n: int, T_matrices: Optional[List[np.ndarray]] = None) -> float:
+def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[List[np.ndarray]] = None) -> float:
     """
     Compute KL divergence between true n-gram-based Markov process and model predictions.
+    note that all the probabilites in dist1 are test_data dependent and test_data should represent same processes as train data.
+    check model.ipynb for example implementation.
+    Args:
+        model: The transformer model
+        test_data: Tensor of shape (batch_size, sequence_length) containing integer sequences
+        n: N-gram size (2 for bigram, 3 for trigram, etc.)
+        T_matrices_ngram: List of transition matrices for the n-gram Markov process
+    Returns:
+        Tuple of (true_to_model_kl, model_to_true_kl)
+    Raises:
+        ValueError: If n is less than 1 or greater than 3 (for simplicity)
     """
-    # Default transition matrices if not provided
-    if T_matrices is None:
-        T0 = np.array([
-            [0, 1, 0],
-            [0, 0, 1],
-            [0, 0, 0.5]
-        ])
-        T1 = np.array([
-            [0, 0, 0],
-            [0, 0, 0],
-            [0.5, 0, 0]
-        ])
-        T_matrices = [T0, T1]
 
     # Import MarkovData here to avoid circular imports
-    from toy_model import MarkovData
-
+    from toy_model import MarkovData, MergeMarkovDatasets
+    
     # Generate test data
-    if data is None:
-        test_data = MarkovData(100, 32, 3, 2, T_matrices, seed=42)
+    if test_data is None:
+        print("defaulting")
+        test_data = MarkovData(100,32, 3, 2, T_matrices_ngram, seed=43)
         x = torch.stack(test_data.data)  # shape: (50, 32)
     else:
-        x=data
+        x=torch.stack(test_data.data)
 
     batch_size, seq_len = x.shape
     dist1 = torch.zeros(batch_size, seq_len, 2)  # shape: (50, 32, 2)
 
     if n == 1:  
-        dist1[..., 0] = 0.5  # P(0)
-        dist1[..., 1] = 0.5  # P(1)
+        dist1[..., 0] = 0.625671875 # P(0)
+        dist1[..., 1] = 0.374328125  # P(1)
 
     elif n == 2: 
-        dist1[..., 0] = torch.where(x == 1, 1, 0.5)  # P(0)
-        dist1[..., 1] = torch.where(x == 1, 0, 0.5)   # P(1)
+        dist1[..., 0] = torch.where(x == 1, 0.77625, 0.5331)  # P(0)
+        dist1[..., 1] = torch.where(x == 1, 0.22375, 0.4669)   # P(1)
 
     elif n==3:  
         for i in range(batch_size):
@@ -100,17 +101,17 @@ def ngram_kl(model, data:torch.Tensor, n: int, T_matrices: Optional[List[np.ndar
                 context = ''.join([str(x[i, j-k].item()) for k in range(n-1, 0, -1)])
 
                 if context == "00":
-                    dist1[i, j, 0] = 0.5  # P(0|00)
-                    dist1[i, j, 1] = 0.5  # P(1|00)
+                    dist1[i, j, 0] = 0.37637  # P(0|00)
+                    dist1[i, j, 1] = 0.62363  # P(1|00)
                 elif context == "01":
-                    dist1[i, j, 0] = 1.0  # P(0|01)
-                    dist1[i, j, 1] = 0.0  # P(1|01)
+                    dist1[i, j, 0] = 0.71319  # P(0|01)
+                    dist1[i, j, 1] = 0.28681  # P(1|01)
                 elif context == "10":
-                    dist1[i, j, 0] = 1.0  # P(0|10)
-                    dist1[i, j, 1] = 0.0  # P(1|10)
-                elif context == "11":  # This should never occur in the true process
-                    dist1[i, j, 0] = 0.5  # Fallback
-                    dist1[i, j, 1] = 0.5
+                    dist1[i, j, 0] = 0.71218  # P(0|10)
+                    dist1[i, j, 1] = 0.28782  # P(1|10)
+                elif context == "11":  # put fallback as uniform if it never occurs in the process. for example in zir
+                    dist1[i, j, 0] = 1  
+                    dist1[i, j, 1] = 0
     else:
         # For higher-order n-grams, use uniform distribution as fallback
         dist1[i, j, 0] = 0.5
@@ -153,7 +154,7 @@ def markov_kl_proc(model, markov_data=None, process_id: int = 0) -> Tuple[float,
     """
     # Create default Markov process if none provided
     if markov_data is None:
-        from toy_model import MarkovData
+        from toy_model import MarkovData, MergeMarkovDatasets
         T0 = np.array([
             [0, 1, 0],
             [0, 0, 1],
@@ -165,7 +166,7 @@ def markov_kl_proc(model, markov_data=None, process_id: int = 0) -> Tuple[float,
             [0.5, 0, 0]
         ])
 
-        markov_data = MarkovData(n_gen=50, gen_len=30, n_states=3, d_vocab=2, T_list=[T0, T1], seed=42 + process_id)
+        markov_data = MarkovData(n_gen=50, gen_len=32, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43)
 
     # Get sequences and states
     x = torch.stack(markov_data.data)  # shape: (n_gen, gen_len)
@@ -277,7 +278,7 @@ def compute_previous_token_matching_score(model, data: torch.Tensor) -> Dict[str
     scores = {}
     sequences = []
     if data is None:
-        data = torch.randint(0, model.cfg.d_vocab, (100, 32))
+        data = torch.randint(0, model.cfg.d_vocab, (100,32))
     
     sequences = data[:100].to(device)  # [num_samples, seq_len]
     seq_len = sequences.shape[1]
@@ -323,22 +324,26 @@ def compute_previous_token_matching_score(model, data: torch.Tensor) -> Dict[str
     return scores
 
 
-def compute_in_context_learning_score(model, data:Optional[torch.Tensor], k1: int = 5, k2: int = 32) -> float:
+def compute_in_context_learning_score(model, icl_data:Optional[torch.Tensor], k1: int = 5, k2: int = 32) -> float:
     """
     Compute in-context learning score: ICL_{k1,k2}(w) = ℓ_{n,k1}(w) - ℓ_{n,k2}(w)
     Measures relative performance later in sequence vs earlier.
     """
     device = next(model.parameters()).device
 
-    if data is None:
+    if icl_data is None:
         #max_len=min(model.cfg.n_ctx, 1024)
         #data = torch.randint(0, model.cfg.d_vocab, (100, max_len), device=device)
+        print("defaulting icl data")
         max_len = min(model.cfg.n_ctx, 32)
         T0 = np.array([[0, 1, 0], [0, 0, 1], [0, 0, 0.5]])
         T1 = np.array([[0, 0, 0], [0, 0, 0], [0.5, 0, 0]])
-        from toy_model import MarkovData
+        from toy_model import MarkovData, MergeMarkovDatasets
         markov_data = MarkovData(n_gen=100, gen_len=max_len, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43)
         data = torch.stack(markov_data.data)
+
+    else:
+        data=torch.stack(icl_data.data)
     num_samples=min(100, data.shape[0])
     sequences=data[:num_samples].to(device) 
 
@@ -378,7 +383,7 @@ def compute_in_context_learning_score(model, data:Optional[torch.Tensor], k1: in
 
     return icl_score
 
-def generate_prefix_matching_data(n_samples: int = 100, seq_len: int = 64, 
+def generate_prefix_matching_data(n_samples: int = 100, seq_len: int = 32, 
                                 vocab_size: int = 2, seed: int = 42) -> torch.Tensor:
     """Generate data with repeated tokens for prefix matching analysis."""
     torch.manual_seed(seed)
@@ -417,7 +422,7 @@ def compute_prefix_matching_score(model, data:Optional[torch.Tensor]=None) -> Di
     sequences = []
     if data is None:
         vocab_size = model.cfg.d_vocab
-        data = generate_prefix_matching_data(n_samples=100, seq_len=64, vocab_size=vocab_size)
+        data = generate_prefix_matching_data(n_samples=100, seq_len=32, vocab_size=vocab_size)
 
     sequences=data.to(device)
     num_samples, seq_len=sequences.shape
@@ -463,6 +468,7 @@ class MetricsConfig:
         self,
         # N-gram metrics
         track_ngrams: bool = True,
+        T_matrices_ngram: Optional[List[np.ndarray]] = None,
         ngram_orders: List[int] = [1, 2, 3],
         ngram_data: Optional[torch.Tensor] = None,
 
@@ -491,6 +497,7 @@ class MetricsConfig:
         self.track_ngrams = track_ngrams
         self.ngram_orders = ngram_orders
         self.ngram_data = ngram_data
+        self.T_matrices_ngram = T_matrices_ngram
 
         self.track_markov_kl = track_markov_kl
         self.markov_processes = markov_processes or []
@@ -522,7 +529,7 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
         if config.track_ngrams:
             for n in config.ngram_orders:
                 try:
-                    kl_true_to_model, kl_model_to_true = ngram_kl(model, config.ngram_data, n)
+                    kl_true_to_model, kl_model_to_true = ngram_kl(model, test_data=config.ngram_data,T_matrices_ngram=config.T_matrices_ngram, n=n)
                     metrics_to_log[f'{n}gram_kl_true_to_model'] = kl_true_to_model
                     metrics_to_log[f'{n}gram_kl_model_to_true'] = kl_model_to_true 
                 except Exception as e:
