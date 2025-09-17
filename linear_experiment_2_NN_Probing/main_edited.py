@@ -182,14 +182,14 @@ def train_probing_network(dataset_dir, train_layers, device):
                 batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 run.log(
-                    {
-                        "loss/train":current_loss,
-                        "acc/train":batch_acc,
-                        "f1/train":batch_f1,
-                        "learning-rate": scheduler.get_last_lr()[0]
-                    }
-                )
-                log_memory()
+                {
+                    "loss/train_batchwise":current_loss,
+                    "acc/train_batchwise":batch_acc,
+                    "f1/train_batchwise":batch_f1,
+                    "learning-rate_batchwise": scheduler.get_last_lr()[0]
+                }
+            )
+                
             
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
@@ -238,9 +238,9 @@ def train_probing_network(dataset_dir, train_layers, device):
                     batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
                     run.log(
                     {
-                        "loss/train":current_loss,
-                        "acc/train":batch_acc,
-                        "f1/train":batch_f1,
+                        "loss/train_batch_wise":current_loss,
+                        "acc/train_batch_wise":batch_acc,
+                        "f1/train_batch_wise":batch_f1,
                         
                     } 
                     )  
