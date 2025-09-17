@@ -134,7 +134,7 @@ def get_truth_probe_activations(
     generations_dir = os.path.join(output_dir, "generations")
     activations_dir = os.path.join(output_dir, "activations", model_name)
     os.makedirs(activations_dir, exist_ok=True)
-    generations_cache_path = os.path.join(generations_dir, "generated_completions_20k.json")
+    generations_cache_path = os.path.join(generations_dir, f"{model_name}_generations.json")
 
     if not os.path.exists(generations_cache_path):
         raise FileNotFoundError(f"Generations cache not found at {generations_cache_path}. Please run the 'generate' stage first.")
