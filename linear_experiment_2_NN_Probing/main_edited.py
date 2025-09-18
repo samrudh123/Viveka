@@ -17,6 +17,8 @@ import random
 import wandb
 import psutil
 
+from HML import *
+
 #SVD Projection Loader
 
 def load_and_project_activations(activations_dir, layer_idx, device):
@@ -180,14 +182,14 @@ def train_probing_network(dataset_dir, train_layers, device):
                 batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                 run.log(
-                    {
-                        "loss/train":current_loss,
-                        "acc/train":batch_acc,
-                        "f1/train":batch_f1,
-                        "learning-rate": scheduler.get_last_lr()[0]
-                    }
-                )
-                log_memory()
+                {
+                    "loss/train_batchwise":current_loss,
+                    "acc/train_batchwise":batch_acc,
+                    "f1/train_batchwise":batch_f1,
+                    "learning-rate_batchwise": scheduler.get_last_lr()[0]
+                }
+            )
+                
             
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
@@ -236,9 +238,9 @@ def train_probing_network(dataset_dir, train_layers, device):
                     batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
                     run.log(
                     {
-                        "loss/train":current_loss,
-                        "acc/train":batch_acc,
-                        "f1/train":batch_f1,
+                        "loss/train_batch_wise":current_loss,
+                        "acc/train_batch_wise":batch_acc,
+                        "f1/train_batch_wise":batch_f1,
                         
                     } 
                     )  
@@ -284,7 +286,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', type=str, default='cuda' if t.cuda.is_available() else 'cpu')
 
     # --- Pipeline Stage Control ---
-    parser.add_argument('--stage', type=str, choices=['generate', 'activate', 'svd', 'train', 'all'], default='all',
+    parser.add_argument('--stage', type=str, choices=['generate', 'activate', 'svd', 'train', 'HML','all'], default='all',
                         help="Which stage of the probing pipeline to run.")
 
     # --- Arguments for Parallelization ---
@@ -308,6 +310,10 @@ if __name__ == '__main__':
     parser.add_argument('--train_layers', nargs='+', type=int, help="Layers for 'train' stage.")
     parser.add_argument('--svd_dim', type=int, default=576)
 
+    #-----HML classification ---
+
+    
+
     args = parser.parse_args()
     hparams.model_name = args.model_repo_id
     print(args.max_new_tokens, "main_edited.py, argsparser")
@@ -317,11 +323,6 @@ if __name__ == '__main__':
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
     if args.stage in ['generate', 'activate', 'all']:
-<<<<<<< HEAD
-        if -1 in args.layers:
-            args.layers = list(range(0,26)) #this here is hardcoded, need to make this general. 
-=======
->>>>>>> 4f9bca8cbcd3cd490997bf88ec85dd2b80796ccc
         tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
         if -1 in args.layers:
             args.layers = list(range(0,model.cfg.n_layers))
@@ -389,5 +390,14 @@ if __name__ == '__main__':
             parser.error("--train_layers is required for 'train' stage.")
         acts_output = os.path.join(output_dir, "activations/gemma-2-2b-it", exist_ok=True)
         train_probing_network(acts_output, args.train_layers, args.device)
+
+    if args.stage in ['HML' , 'all']:
+
+        runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers,gen_in_dir)
+        
+
+
+
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
+

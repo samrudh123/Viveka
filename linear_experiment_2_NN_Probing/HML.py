@@ -2,7 +2,15 @@ import os
 import json
 import numpy as np
 
-def compute_generation_accuracy(output_dir="current_run", model_name="unknown"):
+import os
+import glob
+import torch as t
+from torch.utils.data import DataLoader, TensorDataset
+from tqdm import tqdm
+from sklearn.metrics import accuracy_score
+from classifier import ProbingNetwork, hparams
+from collections import defaultdict
+def compute_generation_accuracy(output_dir="validation"):
     """
     Loads the generations cache for the given model and computes:
       - Per-statement accuracy (fraction of correct generations out of 32)
@@ -11,7 +19,7 @@ def compute_generation_accuracy(output_dir="current_run", model_name="unknown"):
     """
     model_name = model_name.replace("/", "_")
     generations_dir = os.path.join(output_dir, "generations")
-    generations_cache_path = os.path.join(generations_dir, f"{model_name}_generations.json")
+    generations_cache_path = os.path.join(generations_dir, "generated_validation_set.json")
 
     if not os.path.exists(generations_cache_path):
         raise FileNotFoundError(f"No generations cache found at {generations_cache_path}")
@@ -22,13 +30,15 @@ def compute_generation_accuracy(output_dir="current_run", model_name="unknown"):
     per_statement_acc = {}
     per_statement_category = {}
     all_labels = []
+    HML=defaultdict(list)
 
     for stmt, data in generations_cache.items():
         labels = data.get("ground_truth_labels", [])
         if not labels:
             continue
         acc = np.mean(labels)
-        per_statement_acc[stmt] = acc
+        HML[stmt].append(acc)
+
 
         # categorize
         if acc > 0.75:
@@ -37,27 +47,16 @@ def compute_generation_accuracy(output_dir="current_run", model_name="unknown"):
             cat = "L"
         else:
             cat = "M"
-        per_statement_category[stmt] = cat
+        HML[stmt].append(cat)
 
         all_labels.extend(labels)
 
     overall_acc = np.mean(all_labels) if all_labels else 0.0
 
-    print(f"\nOverall accuracy: {overall_acc:.4f}")
-    return per_statement_acc, per_statement_category, overall_acc
+    print(f"Evaluation complete.\nOverall accuracy: {overall_acc:.4f}")
+    return HML
 
-
-
-import os
-import glob
-import torch as t
-from torch.utils.data import DataLoader, TensorDataset
-from tqdm import tqdm
-from sklearn.metrics import accuracy_score
-from classifier import ProbingNetwork, hparams
-
-
-def evaluate_probe_per_statement(dataset_dir, eval_layers, device):
+def evaluate_probe_per_statement(home_dir, eval_layers, device='cuda'):
     """
     For each layer:
       - Loads the trained probe
@@ -66,8 +65,8 @@ def evaluate_probe_per_statement(dataset_dir, eval_layers, device):
       results[layer][stmt_id] = accuracy
     """
     model_name_safe = hparams.model_name.replace('/', '_')
-    projected_dir = os.path.join(dataset_dir, 'activations_svd', model_name_safe)
-    probes_dir = os.path.join(dataset_dir, 'trained_probes', model_name_safe)
+    projected_dir = os.path.join(home_dir, 'activations/activations_svd_val', model_name_safe)
+    probes_dir = os.path.join(home_dir, 'trained_probes', model_name_safe)
 
     results = {}
 
@@ -89,7 +88,7 @@ def evaluate_probe_per_statement(dataset_dir, eval_layers, device):
 
         for fname in tqdm(files, desc=f"L{l_idx} per-stmt", leave=False):
             data = t.load(fname, map_location=device)
-            X, y = data['activations'].to(device), data['labels'].float().to(device)
+            X, y = data['activations'].to(device).float(), data['labels'].float().to(device)
 
             with t.no_grad():
                 outputs = model(X)
@@ -105,3 +104,24 @@ def evaluate_probe_per_statement(dataset_dir, eval_layers, device):
         print(f"Layer {l_idx}: evaluated {len(stmt_results)} statements.")
 
     return results
+
+
+def runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],gen_in_dir='current_run'):
+    HML = compute_generation_accuracy(gen_in_dir)
+    with open(f"{HML_out_dir}/HML_gen.json", "w", encoding="utf-8") as f:
+        json.dump(HML, f, indent=4)
+    print(f"Results saved to {HML_out_dir}/HML_gen.json")
+    
+    classifier_acc=evaluate_probe_per_statement(network_in_dir, eval_layers)
+
+    with open(f"{network_out_dir}/net_acc.json", "w", encoding="utf-8") as f:
+        json.dump(classifier_acc, f, indent=4)
+    print(f"Results saved to {network_out_dir}/net_acc.json")
+    
+
+
+
+
+
+
+    
