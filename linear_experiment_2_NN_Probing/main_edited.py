@@ -311,6 +311,14 @@ if __name__ == '__main__':
     parser.add_argument('--svd_dim', type=int, default=576)
 
     #-----HML classification ---
+    parser.add_argument('--HML_out_dir', type=str, required=True, help="The out directory for the HML acitvations for the generated answers")
+    parser.add_argument('--network_in_dir', type=str, required=True, help="The in directory for the trained neural net")
+    parser.add_argument('--network_out_dir', type=str, required=True, help="The out directory for the HML on the classifier")
+    parser.add_argument('--HML_layers', type=list, required=False, help="layers on which the HML is applied")
+    parser.add_argument('--gen_in_dir', type=str, required=False, help="The generated answers in dir")
+
+
+
 
     
 
@@ -392,6 +400,17 @@ if __name__ == '__main__':
         train_probing_network(acts_output, args.train_layers, args.device)
 
     if args.stage in ['HML' , 'all']:
+        HML_out_dir=args.HMl_out_dir
+        network_in_dir=args.network_in_dir
+        network_out_dir=args.network_out_dir
+        if args.eval_layers:
+            eval_layers=args.eval_layers
+        else:
+            eval_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]    
+        if args.gen_in_dir:
+            gen_in_dir=args.gen_in_dir
+        else:
+            gen_in_dir="current_run"        
 
         runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers,gen_in_dir)
         
