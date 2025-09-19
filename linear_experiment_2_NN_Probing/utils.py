@@ -686,7 +686,7 @@ def load_model(model_repo_id: str, device: str):
     tokenizer = model.tokenizer
     layers = model.blocks  # TransformerLens uses blocks instead of model.layers
     return tokenizer, model, layers
-
+def load_model_gn()
 
 def load_statements(dataset_name):
     path = f"{dataset_name}"
