@@ -1,4 +1,4 @@
-from utils import load_model, load_statements
+from utils import load_model,load_model_gn load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
 from classifier import ProbingNetwork, hparams, log_confusion_matrix, 3
 from svd_withgpu import perform_global_svd
@@ -330,8 +330,8 @@ if __name__ == '__main__':
  
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
-    if args.stage in ['generate', 'activate', 'all']:
-        tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
+    if args.stage in ['generate','all']:
+        tokenizer, model, layer_modules = load_model_gn(args.model_repo_id, args.device)
         if -1 in args.layers:
             args.layers = list(range(0,model.cfg.n_layers))
         num_layers = len(layer_modules)
@@ -345,11 +345,12 @@ if __name__ == '__main__':
 
         if args.stage in ['generate', 'all']:
             batch_size = args.gen_batch_size
+            
             for start_idx in range(0, len(statements_to_process), batch_size):
                 end_idx = min(start_idx + batch_size, len(statements_to_process))
                 batch_statements = statements_to_process[start_idx:end_idx]
                 batch_answers = answers_to_process[start_idx:end_idx]
-
+                
                 generate_and_label_answers(
                     statements=batch_statements,
                     correct_answers=batch_answers,
@@ -363,7 +364,18 @@ if __name__ == '__main__':
                     top_p=args.top_p
                 )
 
-        if args.stage in ['activate', 'all']:
+    if args.stage in ['activate', 'all']:
+            tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
+            if -1 in args.layers:
+                args.layers = list(range(0,model.cfg.n_layers))
+            num_layers = len(layer_modules)
+            print(f"Loading dataset from: {args.dataset_path}")
+            df, all_statements, all_correct_answers = load_statements(args.dataset_path)
+
+            start = args.start_index
+            end = args.end_index if args.end_index is not None else len(all_statements) #processes everything if not specified
+            statements_to_process = all_statements[start:end]
+            answers_to_process = all_correct_answers[start:end]
             batch_size = args.gen_batch_size
             for start_idx in tqdm(range(0, len(statements_to_process), batch_size), 
                 total=len(statements_to_process)//batch_size + 1):
