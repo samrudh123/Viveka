@@ -706,7 +706,7 @@ def load_model_gn(model_repo_id: str, device: str):
 
 
 def load_statements(dataset_name):
-    path = f"{dataset_name}"
+    path = f"{dataset_name}"  
     df = pd.read_csv(path, encoding='utf-8')
     question_col = 'statement' if 'statement' in df.columns else 'raw_question'
     label_col = 'label' if 'label' in df.columns else 'correct_answer'
