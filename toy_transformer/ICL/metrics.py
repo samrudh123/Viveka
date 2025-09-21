@@ -87,28 +87,29 @@ def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[L
     dist1 = torch.zeros(batch_size, seq_len, 2)  # shape: (50, 32, 2)
 
     if n == 1:  
-        dist1[..., 0] = 0.625671875 # P(0)
-        dist1[..., 1] = 0.374328125  # P(1)
+        dist1[..., 0] = 0.644046875 # P(0)
+        dist1[..., 1] = 0.355953125  # P(1)
 
     elif n == 2: 
-        dist1[..., 0] = torch.where(x == 1, 0.77625, 0.5331)  # P(0)
-        dist1[..., 1] = torch.where(x == 1, 0.22375, 0.4669)   # P(1)
+        dist1[..., 0] = torch.where(x == 1, 0.19961, 0.5583)  # P(0)
+        dist1[..., 1] = torch.where(x == 1, 0.80039, 0.4417)   # P(1)
 
-    elif n==3:  
+    elif n==3:
+
         for i in range(batch_size):
             for j in range(n-1, seq_len):
                 # Get previous (n-1) tokens as context
                 context = ''.join([str(x[i, j-k].item()) for k in range(n-1, 0, -1)])
 
                 if context == "00":
-                    dist1[i, j, 0] = 0.37637  # P(0|00)
-                    dist1[i, j, 1] = 0.62363  # P(1|00)
+                    dist1[i, j, 0] = 0.50369  # P(0|00)
+                    dist1[i, j, 1] = 0.49631  # P(1|00)
                 elif context == "01":
-                    dist1[i, j, 0] = 0.71319  # P(0|01)
-                    dist1[i, j, 1] = 0.28681  # P(1|01)
+                    dist1[i, j, 0] = 0.74934  # P(0|01)
+                    dist1[i, j, 1] = 0.25066  # P(1|01)
                 elif context == "10":
-                    dist1[i, j, 0] = 0.71218  # P(0|10)
-                    dist1[i, j, 1] = 0.28782  # P(1|10)
+                    dist1[i, j, 0] = 0.62472  # P(0|10)
+                    dist1[i, j, 1] = 0.37528  # P(1|10)
                 elif context == "11":  # put fallback as uniform if it never occurs in the process. for example in zir
                     dist1[i, j, 0] = 1  
                     dist1[i, j, 1] = 0
@@ -139,7 +140,7 @@ def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[L
 
     return kl_div(dist1_clamped, dist2_clamped), kl_div(dist2_clamped, dist1_clamped)
 
-def markov_kl_proc(model, markov_data=None, process_id: int = 0) -> Tuple[float, float]:
+def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0) -> Tuple[float, float]:
     """
     Compute KL divergence between actual Markov process states and model predictions.
     This uses the true Markov state probabilities computed from the process itself.
@@ -175,15 +176,15 @@ def markov_kl_proc(model, markov_data=None, process_id: int = 0) -> Tuple[float,
     dist1 = []
     for etas in markov_data.states:
         sequence_probs = []
-        for eta in etas[1:]:  # Skip first state, start from position 1
+        for eta in etas[pos_start:-1]:  
             token_probs = markov_data.model.token_probabilities(eta)
             sequence_probs.append(token_probs)
         dist1.append(sequence_probs)
 
-    dist1 = torch.tensor(np.array(dist1), dtype=torch.float32)  # shape: (n_gen, gen_len-1, d_vocab)
+    dist1 = torch.tensor(np.array(dist1), dtype=torch.float32)  
 
-    # Get predicted probabilities from model (skip first token for prediction)
-    dist2 = model(x).softmax(dim=-1)[:, :-1, :]  # shape: (n_gen, gen_len-1, d_vocab)
+    # Get predicted probabilities from model
+    dist2 = model(x).softmax(dim=-1)[:,pos_start-1:-1, :]  
 
     # Ensure same shape
     min_len = min(dist1.shape[1], dist2.shape[1])
@@ -475,7 +476,7 @@ class MetricsConfig:
         # Markov KL metrics
         track_markov_kl: bool = True,
         markov_processes: List = None,  # List of MarkovData objects or None for defaults
-
+        pos_start: int = 0,
         # Composition metrics
         track_composition: bool = True,
         composition_layers: List[Tuple[int, int]] = [(0, 1)],
@@ -501,6 +502,7 @@ class MetricsConfig:
 
         self.track_markov_kl = track_markov_kl
         self.markov_processes = markov_processes or []
+        self.pos_start=pos_start
 
         self.track_composition = track_composition
         self.composition_layers = composition_layers
@@ -524,109 +526,103 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
     """
     metrics_to_log = {}
 
-    try:
+    
         # 1. N-gram KL divergence metrics
-        if config.track_ngrams:
-            for n in config.ngram_orders:
-                try:
-                    kl_true_to_model, kl_model_to_true = ngram_kl(model, test_data=config.ngram_data,T_matrices_ngram=config.T_matrices_ngram, n=n)
-                    metrics_to_log[f'{n}gram_kl_true_to_model'] = kl_true_to_model
-                    metrics_to_log[f'{n}gram_kl_model_to_true'] = kl_model_to_true 
-                except Exception as e:
-                    print(f"Error computing {n}-gram KL: {e}")
+    if config.track_ngrams:
+        for n in config.ngram_orders:
+            try:
+                kl_true_to_model, kl_model_to_true = ngram_kl(model, test_data=config.ngram_data,T_matrices_ngram=config.T_matrices_ngram, n=n)
+                metrics_to_log[f'{n}gram_kl_true_to_model'] = kl_true_to_model
+                metrics_to_log[f'{n}gram_kl_model_to_true'] = kl_model_to_true 
+            except Exception as e:
+                print(f"Error computing {n}-gram KL: {e}")
 
         # 2. Composition scores  
-        if config.track_composition:
-            try:
-                for layer1_idx, layer2_idx in config.composition_layers:
-                    comp_scores = compute_composition_scores(model, layer1_idx, layer2_idx)
+    if config.track_composition:
+        try:
+            for layer1_idx, layer2_idx in config.composition_layers:
+                comp_scores = compute_composition_scores(model, layer1_idx, layer2_idx)
 
                     # Log individual composition scores for visualization
-                    for k, v in comp_scores.items():
-                        metrics_to_log[k] = v
+                for k, v in comp_scores.items():
+                    metrics_to_log[k] = v
 
                     # Also log averages
-                    if comp_scores:
-                        q_scores = [v for k, v in comp_scores.items() if k.startswith('q_comp')]
-                        k_scores = [v for k, v in comp_scores.items() if k.startswith('k_comp')]
-                        v_scores = [v for k, v in comp_scores.items() if k.startswith('v_comp')]
+                if comp_scores:
+                    q_scores = [v for k, v in comp_scores.items() if k.startswith('q_comp')]
+                    k_scores = [v for k, v in comp_scores.items() if k.startswith('k_comp')]
+                    v_scores = [v for k, v in comp_scores.items() if k.startswith('v_comp')]
 
-                        if q_scores: metrics_to_log[f'avg_q_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(q_scores)
-                        if k_scores: metrics_to_log[f'avg_k_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(k_scores)
-                        if v_scores: metrics_to_log[f'avg_v_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(v_scores)
+                    if q_scores: metrics_to_log[f'avg_q_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(q_scores)
+                    if k_scores: metrics_to_log[f'avg_k_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(k_scores)
+                    if v_scores: metrics_to_log[f'avg_v_composition_l{layer1_idx}_l{layer2_idx}'] = np.mean(v_scores)
 
-            except Exception as e:
-                print(f"Error computing composition scores: {e}")
+        except Exception as e:
+            print(f"Error computing composition scores: {e}")
 
         # 3. Previous token matching scores
-        if config.track_previous_token:
-            try:
-                prev_scores = compute_previous_token_matching_score(model, config.prev_token_data)
+    if config.track_previous_token:
+        try:
+            prev_scores = compute_previous_token_matching_score(model, config.prev_token_data)
 
                 # Log individual head scores
-                for k, v in prev_scores.items():
-                    metrics_to_log[k] = v
+            for k, v in prev_scores.items():
+                metrics_to_log[k] = v
 
                 # Log averages per layer and overall
-                if prev_scores:
-                    all_scores = list(prev_scores.values())
-                    metrics_to_log['avg_prev_token_matching'] = np.mean(all_scores)
+            if prev_scores:
+                all_scores = list(prev_scores.values())
+                metrics_to_log['avg_prev_token_matching'] = np.mean(all_scores)
 
-                    for layer_idx in range(model.cfg.n_layers):
-                        layer_scores = [v for k, v in prev_scores.items() if f'_l{layer_idx}_' in k]
-                        if layer_scores:
-                            metrics_to_log[f'prev_token_l{layer_idx}'] = np.mean(layer_scores)
+                for layer_idx in range(model.cfg.n_layers):
+                    layer_scores = [v for k, v in prev_scores.items() if f'_l{layer_idx}_' in k]
+                    if layer_scores:
+                        metrics_to_log[f'prev_token_l{layer_idx}'] = np.mean(layer_scores)
 
-            except Exception as e:
-                print(f"Error computing previous token scores: {e}")
+        except Exception as e:
+            print(f"Error computing previous token scores: {e}")
 
         # 4. In-context learning score
-        if config.track_in_context:
-            try:
-                icl_score = compute_in_context_learning_score(
-                    model, config.icl_data, config.icl_k1, config.icl_k2
-                )
-                metrics_to_log['in_context_learning'] = icl_score
-            except Exception as e:
-                print(f"Error computing in-context learning score: {e}")
+    if config.track_in_context:
+        try:
+            icl_score = compute_in_context_learning_score(
+                model, config.icl_data, config.icl_k1, config.icl_k2
+            )
+            metrics_to_log['in_context_learning'] = icl_score
+        except Exception as e:
+            print(f"Error computing in-context learning score: {e}")
 
         # 5. Prefix matching scores
-        if config.track_prefix_matching:
-            try:
-                prefix_scores = compute_prefix_matching_score(model, config.prefix_data)
+    if config.track_prefix_matching:
+        try:
+            prefix_scores = compute_prefix_matching_score(model, config.prefix_data)
 
                 # Log individual scores
-                for k, v in prefix_scores.items():
-                    metrics_to_log[k] = v
+            for k, v in prefix_scores.items():
+                metrics_to_log[k] = v
 
                 # Log averages
-                if prefix_scores:
-                    all_scores = list(prefix_scores.values())
-                    metrics_to_log['avg_prefix_matching'] = np.mean(all_scores)
+            if prefix_scores:
+                all_scores = list(prefix_scores.values())
+                metrics_to_log['avg_prefix_matching'] = np.mean(all_scores)
 
-                    for layer_idx in range(model.cfg.n_layers):
-                        layer_scores = [v for k, v in prefix_scores.items() if f'_l{layer_idx}_' in k]
-                        if layer_scores:
-                            metrics_to_log[f'prefix_match_l{layer_idx}'] = np.mean(layer_scores)
+                for layer_idx in range(model.cfg.n_layers):
+                    layer_scores = [v for k, v in prefix_scores.items() if f'_l{layer_idx}_' in k]
+                    if layer_scores:
+                        metrics_to_log[f'prefix_match_l{layer_idx}'] = np.mean(layer_scores)
 
-            except Exception as e:
-                print(f"Error computing prefix matching scores: {e}")
+        except Exception as e:
+            print(f"Error computing prefix matching scores: {e}")
 
-        if config.track_markov_kl:
-            try:
-                for pid, markov_data in enumerate(config.markov_processes):
-                    markov_to_model, model_to_markov = markov_kl_proc(model, markov_data, process_id=pid)
-                    metrics_to_log[f'markov{pid}_to_model_kl'] = markov_to_model
-                    metrics_to_log[f'model_to_markov{pid}_kl'] = model_to_markov
-            except Exception as e:
-                print(f"Error computing Markov KL metrics: {e}")        
+    if config.track_markov_kl:
+        for pid, markov_data in enumerate(config.markov_processes):
+            markov_to_model, model_to_markov = markov_kl_proc(model, markov_data, process_id=pid, pos_start=config.pos_start)
+            metrics_to_log[f'markov{pid}_to_model_kl'] = markov_to_model
+            metrics_to_log[f'model_to_markov{pid}_kl'] = model_to_markov     
 
         # Log to wandb if available
-        if wandb.run is not None:
-            wandb.log(metrics_to_log, step=step)
-
-    except Exception as e:
-        print(f"Error in metrics computation at step {step}: {e}")
+    if wandb.run is not None:
+        wandb.log(metrics_to_log, step=step)
 
     return metrics_to_log
 

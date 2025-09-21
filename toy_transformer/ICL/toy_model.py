@@ -194,16 +194,16 @@ def train(
                 wandb.log({"train_loss": loss.item(), "samples": samples, "epoch": epoch}, step=global_step)
 
             if metrics_config is not None and global_step % metrics_log_interval == 0:
-                try:
-                    model.eval()
-                    with torch.no_grad():
-                        compute_metrics(model, metrics_config, global_step)
-                    model.train()
+                #try:
+                model.eval()
+                with torch.no_grad():
+                    compute_metrics(model, metrics_config, global_step)
+                model.train()
                     
-                    if global_step % (metrics_log_interval) == 0:
-                        print(f"Metrics logged at step {global_step}")
-                except Exception as e:
-                    print(f"Warning: Error in metrics tracking at step {global_step}: {e}")
+                if global_step % (metrics_log_interval) == 0:
+                    print(f"Metrics logged at step {global_step}")
+                #except Exception as e:
+                 #   print(f"Warning: Error in metrics tracking at step {global_step}: {e}")
             
 
         if config.print_every is not None and epoch % config.print_every == 0:

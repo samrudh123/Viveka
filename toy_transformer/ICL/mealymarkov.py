@@ -113,7 +113,7 @@ class MarkovMealyModel:
         p = p_unnorm # I don't think they should be normalized once again. Well defined T^{i} should lead to normalized p automatically
         # numerical correction
         p = np.clip(p, 0.0, 1.0)
-        #p = p / p.sum()
+        #p = p / p.sum()\
         # sanity assert
         assert np.allclose(p.sum(), 1.0, atol=1e-8), "Token probabilities do not sum to 1"
         return p
