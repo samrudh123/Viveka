@@ -1,5 +1,6 @@
 
 from operator import ge
+from sys import ps1
 import numpy as np
 import torch
 from typing import Dict, List, Tuple, Optional
@@ -87,32 +88,48 @@ def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[L
     dist1 = torch.zeros(batch_size, seq_len, 2)  # shape: (50, 32, 2)
 
     if n == 1:  
-        dist1[..., 0] = 0.644046875 # P(0)
-        dist1[..., 1] = 0.355953125  # P(1)
+        _, counts,total_count=get_ngram_stats(x,n=1)
+        p0 = counts['0'] / (counts['0'] + counts['1'])
+        p1 = counts['1'] / (counts['0'] + counts['1'])
+        dist1[..., 0] = p0 # P(0)
+        dist1[..., 1] = p1  # P(1)
 
     elif n == 2: 
-        dist1[..., 0] = torch.where(x == 1, 0.19961, 0.5583)  # P(0)
-        dist1[..., 1] = torch.where(x == 1, 0.80039, 0.4417)   # P(1)
+        _, counts,total_count=get_ngram_stats(x,n=2)
+        p_00 = counts['00'] / (counts['00'] + counts['01']) if (counts['00'] + counts['01']) > 0 else 0.5
+        p_01 = counts['01'] / (counts['00'] + counts['01']) if (counts['00'] + counts['01']) > 0 else 0.5
+        p_10 = counts['10'] / (counts['10'] + counts['11']) if (counts['10'] + counts['11']) > 0 else 0.5
+        p_11 = counts['11'] / (counts['10'] + counts['11']) if (counts['10'] + counts['11']) > 0 else 0.5
+        dist1[..., 0] = torch.where(x == 1, p_10, p_00)  # P(0)
+        dist1[..., 1] = torch.where(x == 1, p_11, p_01)   # P(1)
 
     elif n==3:
-
+        _, counts,total_count=get_ngram_stats(x,n=3)
+        p_000 = counts['000'] / (counts['000'] + counts['001']) if (counts['000'] + counts['001']) > 0 else 0.5
+        p_001 = counts['001'] / (counts['000'] + counts['001']) if (counts['000'] + counts['001']) > 0 else 0.5
+        p_010 = counts['010'] / (counts['010'] + counts['011']) if (counts['010'] + counts['011']) > 0 else 0.5
+        p_011 = counts['011'] / (counts['010'] + counts['011']) if (counts['010'] + counts['011']) > 0 else 0.5
+        p_100 = counts['100'] / (counts['100'] + counts['101']) if (counts['100'] + counts['101']) > 0 else 0.5
+        p_101 = counts['101'] / (counts['100'] + counts['101']) if (counts['100'] + counts['101']) > 0 else 0.5
+        p_110 = counts['110'] / (counts['110'] + counts['111']) if (counts['110'] + counts['111']) > 0 else 0.5
+        p_111 = counts['111'] / (counts['110'] + counts['111']) if (counts['110'] + counts['111']) > 0 else 0.5
         for i in range(batch_size):
             for j in range(n-1, seq_len):
                 # Get previous (n-1) tokens as context
                 context = ''.join([str(x[i, j-k].item()) for k in range(n-1, 0, -1)])
 
                 if context == "00":
-                    dist1[i, j, 0] = 0.50369  # P(0|00)
-                    dist1[i, j, 1] = 0.49631  # P(1|00)
+                    dist1[i, j, 0] = p_000  # P(0|00)
+                    dist1[i, j, 1] = p_001 # P(1|00)
                 elif context == "01":
-                    dist1[i, j, 0] = 0.74934  # P(0|01)
-                    dist1[i, j, 1] = 0.25066  # P(1|01)
+                    dist1[i, j, 0] =  p_010 # P(0|01)
+                    dist1[i, j, 1] = p_011 # P(1|01)
                 elif context == "10":
-                    dist1[i, j, 0] = 0.62472  # P(0|10)
-                    dist1[i, j, 1] = 0.37528  # P(1|10)
+                    dist1[i, j, 0] =   p_100 # P(0|10)
+                    dist1[i, j, 1] =  p_101 # P(1|10)
                 elif context == "11":  # put fallback as uniform if it never occurs in the process. for example in zir
-                    dist1[i, j, 0] = 1  
-                    dist1[i, j, 1] = 0
+                    dist1[i, j, 0] = p_110 # P(0|11)
+                    dist1[i, j, 1] = p_111 # P(1|11)
     else:
         # For higher-order n-grams, use uniform distribution as fallback
         dist1[i, j, 0] = 0.5
@@ -657,4 +674,4 @@ class CleanMetricsTracker:
         return self.metrics
 
    
- 
+

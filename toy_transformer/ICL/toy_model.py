@@ -237,6 +237,7 @@ def train_model(
     act_fn: Literal["relu", "gelu", "silu", "gelu_new", "solu_ln", "gelu_fast"] = "relu",
     normalization_type: Literal["LN", "LNPre", "RMS", "RMSPre"] | None = None,
     positional_embedding_type: Literal["standard", "rotary", "shortformer"] = "standard",
+    default_prepend_bos: bool = True,
     # Training Hyperparameters
     n_epochs: int = 100,
     batch_size: int = 64,
@@ -339,7 +340,7 @@ def train_model(
         The trained transformer model.
     """
     d_vocab = dataset.d_vocab
-    n_ctx = dataset.gen_len
+    n_ctx = dataset.gen_len +1
 
     cfg = HookedTransformerConfig(
         n_layers=n_layers,
@@ -355,7 +356,7 @@ def train_model(
         device=device,
         positional_embedding_type=positional_embedding_type,
         seed=seed,
-        default_prepend_bos=False,
+        default_prepend_bos=True,
     )
 
     model = HookedTransformer(cfg, move_to_device=True)
