@@ -57,7 +57,7 @@ def get_ngram_stats(x: torch.Tensor, n: int) -> Tuple[Dict[str, float], Dict[str
     return ngram_freqs, ngram_counts, total_ngrams
 
 
-def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[List[np.ndarray]] = None) -> float:
+def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[List[np.ndarray]] = None,device: Optional[str]=None) -> float:
     """
     Compute KL divergence between true n-gram-based Markov process and model predictions.
     note that all the probabilites in dist1 are test_data dependent and test_data should represent same processes as train data.
@@ -72,20 +72,26 @@ def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[L
     Raises:
         ValueError: If n is less than 1 or greater than 3 (for simplicity)
     """
-
+    if device is None:
+        device=next(model.parameters()).device
     # Import MarkovData here to avoid circular imports
-    from toy_model import MarkovData, MergeMarkovDatasets
+    
     
     # Generate test data
     if test_data is None:
         print("defaulting")
-        test_data = MarkovData(100,32, 3, 2, T_matrices_ngram, seed=43)
+        from toy_model import MarkovData, MergeMarkovDatasets
+        test_data = MarkovData(100,32, 3, 2, T_matrices_ngram, seed=43,device=device)
         x = torch.stack(test_data.data)  # shape: (50, 32)
+    elif hasattr(test_data, 'get_stacked_data'):
+        test_data.to(device)
+        x = test_data.get_stacked_data()
     else:
-        x=torch.stack(test_data.data)
+        # Assume it's already a tensor
+        x = test_data.to(device)
 
     batch_size, seq_len = x.shape
-    dist1 = torch.zeros(batch_size, seq_len, 2)  # shape: (50, 32, 2)
+    dist1 = torch.zeros(batch_size, seq_len, 2,device=device)  # shape: (50, 32, 2)
 
     if n == 1:  
         _, counts,total_count=get_ngram_stats(x,n=1)
@@ -157,7 +163,7 @@ def ngram_kl(model, test_data:torch.Tensor, n: int, T_matrices_ngram: Optional[L
 
     return kl_div(dist1_clamped, dist2_clamped), kl_div(dist2_clamped, dist1_clamped)
 
-def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0) -> Tuple[float, float]:
+def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0,device:Optional[str]=None) -> Tuple[float, float]:
     """
     Compute KL divergence between actual Markov process states and model predictions.
     This uses the true Markov state probabilities computed from the process itself.
@@ -170,6 +176,8 @@ def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0) -> 
     Returns:
         Tuple of (markov_to_model_kl, model_to_markov_kl)
     """
+    if device is None:
+        device=next(model.parameters()).device
     # Create default Markov process if none provided
     if markov_data is None:
         from toy_model import MarkovData, MergeMarkovDatasets
@@ -184,10 +192,10 @@ def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0) -> 
             [0.5, 0, 0]
         ])
 
-        markov_data = MarkovData(n_gen=50, gen_len=32, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43)
-
+        markov_data = MarkovData(n_gen=50, gen_len=32, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43,device=device)
+    markov_data.to(device)
     # Get sequences and states
-    x = torch.stack(markov_data.data)  # shape: (n_gen, gen_len)
+    x = markov_data.get_stacked_data()  # shape: (n_gen, gen_len)
 
     # Compute true probabilities from Markov states
     dist1 = []
@@ -198,7 +206,7 @@ def markov_kl_proc(model, markov_data=None,pos_start=0, process_id: int = 0) -> 
             sequence_probs.append(token_probs)
         dist1.append(sequence_probs)
 
-    dist1 = torch.tensor(np.array(dist1), dtype=torch.float32)  
+    dist1 = torch.tensor(np.array(dist1), dtype=torch.float32,device=device)  
 
     # Get predicted probabilities from model
     dist2 = model(x).softmax(dim=-1)[:,pos_start-1:-1, :]  
@@ -287,18 +295,27 @@ def compute_composition_scores(model, layer1_idx: int = 0, layer2_idx: int = 1) 
     return composition_scores
 
 
-def compute_previous_token_matching_score(model, data: torch.Tensor) -> Dict[str, float]:
+def compute_previous_token_matching_score(model, data: torch.Tensor,device:Optional[str]=None) -> Dict[str, float]:
     """
     Compute previous-token matching scores for all attention heads.
     Measures how much each attention head attends to the immediately preceding token.
     """
-    device = next(model.parameters()).device
+    if device is None:
+        device = next(model.parameters()).device
     scores = {}
     sequences = []
-    if data is None:
-        data = torch.randint(0, model.cfg.d_vocab, (100,32))
     
-    sequences = data[:100].to(device)  # [num_samples, seq_len]
+    if data is None:
+        sequences = torch.randint(0, model.cfg.d_vocab, (100, 32), device=device)
+    elif hasattr(data, 'get_stacked_data'):
+        # MarkovData or MergeMarkovDatasets
+        data.to(device)
+        x = data.get_stacked_data()
+        sequences = x[:100] if x.shape[0] > 100 else x
+    else:
+        # Assume it's already a tensor
+        sequences = data.to(device)
+
     seq_len = sequences.shape[1]
 
 
@@ -342,30 +359,36 @@ def compute_previous_token_matching_score(model, data: torch.Tensor) -> Dict[str
     return scores
 
 
-def compute_in_context_learning_score(model, icl_data:Optional[torch.Tensor], k1: int = 5, k2: int = 32) -> float:
+def compute_in_context_learning_score(model, icl_data:Optional[torch.Tensor], k1: int = 5, k2: int = 32,device:Optional[str]=None) -> float:
     """
     Compute in-context learning score: ICL_{k1,k2}(w) = ℓ_{n,k1}(w) - ℓ_{n,k2}(w)
     Measures relative performance later in sequence vs earlier.
     """
+    if device is None:
+        device=next(model.parameters()).device
+
     device = next(model.parameters()).device
 
     if icl_data is None:
-        #max_len=min(model.cfg.n_ctx, 1024)
-        #data = torch.randint(0, model.cfg.d_vocab, (100, max_len), device=device)
         print("defaulting icl data")
         max_len = min(model.cfg.n_ctx, 32)
         T0 = np.array([[0, 1, 0], [0, 0, 1], [0, 0, 0.5]])
         T1 = np.array([[0, 0, 0], [0, 0, 0], [0.5, 0, 0]])
-        from toy_model import MarkovData, MergeMarkovDatasets
-        markov_data = MarkovData(n_gen=100, gen_len=max_len, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43)
-        data = torch.stack(markov_data.data)
-
+        from toy_model import MarkovData
+        markov_data = MarkovData(n_gen=100, gen_len=max_len, n_states=3, d_vocab=2, T_list=[T0, T1], seed=43, device=device)
+        data = markov_data.get_stacked_data()
+    elif hasattr(icl_data, 'get_stacked_data'):
+        # MarkovData or MergeMarkovDatasets
+        icl_data.to(device)
+        data = icl_data.get_stacked_data()
     else:
-        data=torch.stack(icl_data.data)
+        # Assume it's already a tensor
+        data = icl_data.to(device)
+
     num_samples=min(100, data.shape[0])
     sequences=data[:num_samples].to(device) 
-
     seq_len=sequences.shape[1]
+
     k1 = min(k1, seq_len - 2)  # Ensure k1 is within bounds
     k2 = min(k2, seq_len - 2)  # Ensure k2 is within bounds
     if k1 >= k2:
@@ -511,6 +534,8 @@ class MetricsConfig:
         # Prefix matching
         track_prefix_matching: bool = False,
         prefix_data: Optional[torch.Tensor] = None,
+
+        device: str ="cpu"
     ):
         self.track_ngrams = track_ngrams
         self.ngram_orders = ngram_orders
@@ -534,6 +559,7 @@ class MetricsConfig:
 
         self.track_prefix_matching = track_prefix_matching
         self.prefix_data = prefix_data
+        self.device=device
 
 
 def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]:
@@ -542,13 +568,13 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
     Each metric uses its own optimal data if not provided.
     """
     metrics_to_log = {}
-
+    device = getattr(config,'device',next(model.parameters()).device)
     
         # 1. N-gram KL divergence metrics
     if config.track_ngrams:
         for n in config.ngram_orders:
             try:
-                kl_true_to_model, kl_model_to_true = ngram_kl(model, test_data=config.ngram_data,T_matrices_ngram=config.T_matrices_ngram, n=n)
+                kl_true_to_model, kl_model_to_true = ngram_kl(model, test_data=config.ngram_data,T_matrices_ngram=config.T_matrices_ngram, n=n,device=device)
                 metrics_to_log[f'{n}gram_kl_true_to_model'] = kl_true_to_model
                 metrics_to_log[f'{n}gram_kl_model_to_true'] = kl_model_to_true 
             except Exception as e:
@@ -580,7 +606,7 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
         # 3. Previous token matching scores
     if config.track_previous_token:
         try:
-            prev_scores = compute_previous_token_matching_score(model, config.prev_token_data)
+            prev_scores = compute_previous_token_matching_score(model, config.prev_token_data,device)
 
                 # Log individual head scores
             for k, v in prev_scores.items():
@@ -601,18 +627,16 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
 
         # 4. In-context learning score
     if config.track_in_context:
-        try:
-            icl_score = compute_in_context_learning_score(
-                model, config.icl_data, config.icl_k1, config.icl_k2
-            )
-            metrics_to_log['in_context_learning'] = icl_score
-        except Exception as e:
-            print(f"Error computing in-context learning score: {e}")
+        icl_score = compute_in_context_learning_score(
+            model, config.icl_data, config.icl_k1, config.icl_k2,device
+        )
+        metrics_to_log['in_context_learning'] = icl_score
+
 
         # 5. Prefix matching scores
     if config.track_prefix_matching:
         try:
-            prefix_scores = compute_prefix_matching_score(model, config.prefix_data)
+            prefix_scores = compute_prefix_matching_score(model, config.prefix_data,device)
 
                 # Log individual scores
             for k, v in prefix_scores.items():
@@ -633,7 +657,7 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
 
     if config.track_markov_kl:
         for pid, markov_data in enumerate(config.markov_processes):
-            markov_to_model, model_to_markov = markov_kl_proc(model, markov_data, process_id=pid, pos_start=config.pos_start)
+            markov_to_model, model_to_markov = markov_kl_proc(model, markov_data, process_id=pid, pos_start=config.pos_start,device=device)
             metrics_to_log[f'markov{pid}_to_model_kl'] = markov_to_model
             metrics_to_log[f'model_to_markov{pid}_kl'] = model_to_markov     
 
@@ -643,35 +667,6 @@ def compute_metrics(model, config: MetricsConfig, step: int) -> Dict[str, float]
 
     return metrics_to_log
 
-class CleanMetricsTracker:
- #backward compatibility wrapper
-    def __init__(self, ngram_orders=[1, 2, 3], track_composition=True, 
-                 track_previous_token=True, track_in_context=True, 
-                 track_prefix_matching=False):
-        self.config = MetricsConfig(
-            track_ngrams=True,
-            ngram_orders=ngram_orders,
-            track_composition=track_composition,
-            track_previous_token=track_previous_token,
-            track_in_context=track_in_context,
-            track_prefix_matching=track_prefix_matching
-        )
-        self.metrics = {}
-
-    def compute_all_metrics(self, model, data: torch.Tensor, step: int):
-        """Backward compatibility method."""
-        # Use the provided data for all metrics (old behavior)
-        self.config.ngram_data = data
-        self.config.prev_token_data = data
-        self.config.icl_data = data
-        self.config.prefix_data = data
-
-        metrics = compute_metrics(model, self.config, step)
-        self.metrics[step] = metrics
-        return metrics
-
-    def get_metrics_history(self):
-        return self.metrics
 
    
 
