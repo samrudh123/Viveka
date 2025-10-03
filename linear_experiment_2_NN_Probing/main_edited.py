@@ -1,6 +1,6 @@
-from utils import load_model, load_statements
+from utils import load_model,load_model_gn, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
-from classifier import ProbingNetwork, hparams, log_confusion_matrix, 3
+from classifier import ProbingNetwork, hparams, log_confusion_matrix
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
 import argparse
@@ -311,6 +311,14 @@ if __name__ == '__main__':
     parser.add_argument('--svd_dim', type=int, default=576)
 
     #-----HML classification ---
+    parser.add_argument('--HML_out_dir', type=str, required=True, help="The out directory for the HML acitvations for the generated answers")
+    parser.add_argument('--network_in_dir', type=str, required=True, help="The in directory for the trained neural net")
+    parser.add_argument('--network_out_dir', type=str, required=True, help="The out directory for the HML on the classifier")
+    parser.add_argument('--HML_layers', type=list, required=False, help="layers on which the HML is applied")
+    parser.add_argument('--gen_in_dir', type=str, required=False, help="The generated answers in dir")
+
+
+
 
     
 
@@ -322,8 +330,8 @@ if __name__ == '__main__':
  
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
-    if args.stage in ['generate', 'activate', 'all']:
-        tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
+    if args.stage in ['generate','all']:
+        tokenizer, model, layer_modules = load_model_gn(args.model_repo_id, args.device)
         if -1 in args.layers:
             args.layers = list(range(0,model.cfg.n_layers))
         num_layers = len(layer_modules)
@@ -337,11 +345,12 @@ if __name__ == '__main__':
 
         if args.stage in ['generate', 'all']:
             batch_size = args.gen_batch_size
+            
             for start_idx in range(0, len(statements_to_process), batch_size):
                 end_idx = min(start_idx + batch_size, len(statements_to_process))
                 batch_statements = statements_to_process[start_idx:end_idx]
                 batch_answers = answers_to_process[start_idx:end_idx]
-
+                
                 generate_and_label_answers(
                     statements=batch_statements,
                     correct_answers=batch_answers,
@@ -355,7 +364,18 @@ if __name__ == '__main__':
                     top_p=args.top_p
                 )
 
-        if args.stage in ['activate', 'all']:
+    if args.stage in ['activate', 'all']:
+            tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
+            if -1 in args.layers:
+                args.layers = list(range(0,model.cfg.n_layers))
+            num_layers = len(layer_modules)
+            print(f"Loading dataset from: {args.dataset_path}")
+            df, all_statements, all_correct_answers = load_statements(args.dataset_path)
+
+            start = args.start_index
+            end = args.end_index if args.end_index is not None else len(all_statements) #processes everything if not specified
+            statements_to_process = all_statements[start:end]
+            answers_to_process = all_correct_answers[start:end]
             batch_size = args.gen_batch_size
             for start_idx in tqdm(range(0, len(statements_to_process), batch_size), 
                 total=len(statements_to_process)//batch_size + 1):
@@ -392,6 +412,17 @@ if __name__ == '__main__':
         train_probing_network(acts_output, args.train_layers, args.device)
 
     if args.stage in ['HML' , 'all']:
+        HML_out_dir=args.HMl_out_dir
+        network_in_dir=args.network_in_dir
+        network_out_dir=args.network_out_dir
+        if args.eval_layers:
+            eval_layers=args.eval_layers
+        else:
+            eval_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]    
+        if args.gen_in_dir:
+            gen_in_dir=args.gen_in_dir
+        else:
+            gen_in_dir="current_run"        
 
         runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers,gen_in_dir)
         
