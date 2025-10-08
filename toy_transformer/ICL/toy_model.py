@@ -26,11 +26,13 @@ class MarkovData(Dataset):
         T_list: list[np.ndarray],
         eta0: Optional[np.ndarray] = None,
         rng: Optional[np.random.Generator] = None,
-        seed: int = 42
+        seed: int = 42,
+        device:str="cpu"
     ):
         self.model = MarkovMealyModel(n_states, d_vocab, T_list, eta0, rng)
         self.d_vocab = self.model.V
         self.gen_len = gen_len
+        self.device = device
         self.data = []
         self.states = []
         rng = rng or np.random.default_rng(seed)
@@ -41,7 +43,7 @@ class MarkovData(Dataset):
                 seed=rng.integers(2**32)
             )
 
-            self.data.append(torch.tensor(tokens, dtype=torch.int64))
+            self.data.append(torch.tensor(tokens, dtype=torch.int64,device=device))
             self.states.append(states)
 
     def __len__(self):
@@ -49,6 +51,14 @@ class MarkovData(Dataset):
 
     def __getitem__(self, idx):
         return {"tokens": self.data[idx]}
+    def to(self, device):
+        if device!=self.device:
+            self.data = [tensor.to(device) for tensor in self.data]
+            self.device = device
+        return self        
+
+    def get_stacked_data(self):
+        return torch.stack(self.data)
 
 
 class MergeMarkovDatasets(Dataset):
@@ -78,6 +88,10 @@ class MergeMarkovDatasets(Dataset):
         assert dataset1.gen_len == dataset2.gen_len, "Generation lengths for the datasets do not match"
         self.gen_len = dataset1.gen_len
 
+        if dataset1.device != dataset2.device:
+            dataset2.to(dataset1.device)
+        self.device = dataset1.device
+
         data1 = list(zip(dataset1.data, dataset1.states))
         data2 = list(zip(dataset2.data, dataset2.states))
 
@@ -101,6 +115,15 @@ class MergeMarkovDatasets(Dataset):
 
     def __getitem__(self, idx):
         return {"tokens": self.data[idx]}
+
+    def to(self,device):
+        if device!=self.device:
+            self.data = [tensor.to(device) for tensor in self.data]
+            self.device=device
+        return self
+
+    def get_stacked_data(self):
+        return torch.stack(self.data)    
 
 
 def train(
@@ -167,6 +190,8 @@ def train(
     val_dataloader = DataLoader(val_data, batch_size=len(val_data)) if val_data else None
 
     model = model.to(config.device)
+    if metrics_config is not None:
+        metrics_config.device=config.device
 
     global_step = 0
 
@@ -393,6 +418,7 @@ def train_model(
             track_previous_token=track_previous_token,
             track_in_context=track_in_context,
             track_prefix_matching=track_prefix_matching,
+            device=device
         )
         print("Created metrics config from individual parameters")
 
