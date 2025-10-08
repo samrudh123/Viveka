@@ -1,5 +1,13 @@
-# Viveka: Neural Network Probing for Truthfulness
+# Viveka: Mitigating Hallucinations using Mechanistic Interpretability
 
+The code base supports the following experiments:
+- Probing Large Language Models
+- Toy Transformers
+- Recreating the paper 'LLMs know more than they Show'
+- Reimplementing 'Tuned Lens'
+- Basic utilities for circuit identification and activation visualization
+
+## Probing Large Language Models
 ### Overview
 This repository investigates whether large language models (LLMs) internally represent factual truth in a way that can be decoded by simple probes. The core, production-ready pipeline lives in `linear_experiment_2_NN_Probing/` and implements a modular workflow to:
 - generate model completions
