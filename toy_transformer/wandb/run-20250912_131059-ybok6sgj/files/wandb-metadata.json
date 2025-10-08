@@ -1,0 +1,28 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.7",
+  "startedAt":  "2025-09-12T07:40:59.832746Z",
+  "program":  "c:\\Users\\jerry\\IITM\\CFI\\Ai Club\\2025-26\\Project Viveka\\Viveka\\toy_transformer\\examples.ipynb",
+  "codePath":  "toy_transformer\\examples.ipynb",
+  "codePathLocal":  "examples.ipynb",
+  "git":  {
+    "remote":  "https://github.com/Jayden3316/Viveka",
+    "commit":  "b39d0e94197fdf7104eacc12064314382c5260bc"
+  },
+  "email":  "jerrycloud3316@gmail.com",
+  "root":  "c:\\Users\\jerry\\IITM\\CFI\\Ai Club\\2025-26\\Project Viveka\\Viveka\\toy_transformer",
+  "host":  "MorningSunshine",
+  "executable":  "c:\\Users\\jerry\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "cpu_count":  10,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "509722226688",
+      "used":  "421529559040"
+    }
+  },
+  "memory":  {
+    "total":  "16890978304"
+  },
+  "writerId":  "23txoemvd23t9mlgrt68jneealnccj2l"
+}
