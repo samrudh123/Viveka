@@ -1,0 +1,89 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            8vjyihegl4vw3rt4mu9ludn57t3ho73d:
+                codePath: toy_transformer\examples.ipynb
+                codePathLocal: examples.ipynb
+                cpu_count: 10
+                cpu_count_logical: 12
+                disk:
+                    /:
+                        total: "509722226688"
+                        used: "421476847616"
+                email: jerrycloud3316@gmail.com
+                executable: c:\Users\jerry\AppData\Local\Programs\Python\Python312\python.exe
+                git:
+                    commit: b39d0e94197fdf7104eacc12064314382c5260bc
+                    remote: https://github.com/Jayden3316/Viveka
+                host: MorningSunshine
+                memory:
+                    total: "16890978304"
+                os: Windows-11-10.0.26100-SP0
+                program: c:\Users\jerry\IITM\CFI\Ai Club\2025-26\Project Viveka\Viveka\toy_transformer\examples.ipynb
+                python: CPython 3.12.7
+                root: c:\Users\jerry\IITM\CFI\Ai Club\2025-26\Project Viveka\Viveka\toy_transformer
+                startedAt: "2025-09-12T07:18:47.113468Z"
+                writerId: 8vjyihegl4vw3rt4mu9ludn57t3ho73d
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 51
+                - 53
+                - 71
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 51
+                - 53
+                - 71
+            "3":
+                - 2
+                - 16
+            "4": 3.12.7
+            "5": 0.21.1
+            "6": 4.55.2
+            "8":
+                - 1
+                - 3
+            "12": 0.21.1
+            "13": windows-amd64
+batch_size:
+    value: 256
+device:
+    value: cpu
+lr:
+    value: 0.01
+max_grad_norm:
+    value: null
+max_steps:
+    value: null
+momentum:
+    value: 0
+num_epochs:
+    value: 50
+optimizer_name:
+    value: SGD
+print_every:
+    value: 1
+save_dir:
+    value: ./checkpoints/
+save_every:
+    value: 1
+seed:
+    value: 42
+wandb:
+    value: true
+wandb_project_name:
+    value: transformer-markov-model
+warmup_steps:
+    value: 0
+weight_decay:
+    value: null

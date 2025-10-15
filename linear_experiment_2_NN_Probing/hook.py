@@ -134,7 +134,7 @@ def get_truth_probe_activations(
     generations_dir = os.path.join(output_dir, "generations")
     activations_dir = os.path.join(output_dir, "activations", model_name)
     os.makedirs(activations_dir, exist_ok=True)
-    generations_cache_path = os.path.join(generations_dir, "generated_completions_20k.json")
+    generations_cache_path = os.path.join(generations_dir, f"{model_name}_generations.json")
 
     if not os.path.exists(generations_cache_path):
         raise FileNotFoundError(f"Generations cache not found at {generations_cache_path}. Please run the 'generate' stage first.")
@@ -150,7 +150,7 @@ def get_truth_probe_activations(
         total=len(statements)
     )):
         global_stmt_idx = start_index + local_idx
-
+        
         if stmt not in generations_cache:
             print(f"Warning: Statement (Index {global_stmt_idx}) '{stmt[:50]}...' not found in cache. Skipping.")
             continue
@@ -164,30 +164,43 @@ def get_truth_probe_activations(
         final_labels = []
         base_prompt = generation_data["prompt"]
         for answer_text, ground_truth in zip(generation_data["generated_answers"], generation_data["ground_truth_labels"]):
-            prompt_true = f"{base_prompt} {answer_text} True"
-            prompt_false = f"{base_prompt} {answer_text} False"
-            appended_prompts.extend([prompt_true, prompt_false])
-            final_labels.extend([ground_truth, 1 - ground_truth])
-
+            #prompt_true = f"{base_prompt} {answer_text} True"
+            #prompt_false = f"{base_prompt} {answer_text} False"
+            eos=tokenizer.special_tokens_map["eos_token"]
+            eos_token_id = tokenizer.convert_tokens_to_ids(eos)
+            
+            prompt=f"{base_prompt} {answer_text}"
+            appended_prompts.extend([prompt])
+            final_labels.extend([ground_truth])
+            len_batch_prompt=6+len(model.tokenizer(base_prompt)['input_ids'])
+            
         batch_size = batch_size_arg # how many answers of the same statement you wanna process at once 
         all_last_token_resid = [[] for _ in range(model.cfg.n_layers)]  # list per layer
-
+        
         for i in range(0, len(appended_prompts), batch_size):
             batch = appended_prompts[i:i+batch_size]
 
             tokens = tokenizer(batch, padding=True, truncation=True, return_tensors="pt")
-            input_ids = tokens["input_ids"].to(device)
+            last_ids = torch.tensor([[eos_token_id]], device=tokens["input_ids"].device).expand(tokens["input_ids"].size(0), 1)
+            full_ids = torch.cat([tokens["input_ids"], last_ids], dim=1)
+            input_ids = full_ids.to(device)
 
             with torch.no_grad():
                 _, cache = model.run_with_cache(input_ids)
                 torch.cuda.empty_cache()
             # Extract last-token activations for each layer and move to CPU immediately
             for l_idx in range(model.cfg.n_layers):
-                layer_last_token = cache[f"blocks.{l_idx}.hook_resid_post"][:, -1, :].cpu()
+                eos_token = cache[f"blocks.{l_idx}.hook_resid_post"][:, -1, :].cpu()
+                eot_token=  cache[f"blocks.{l_idx}.hook_resid_post"][:, len_batch_prompt, :].cpu()
+                last_question_token=cache[f"blocks.{l_idx}.hook_resid_post"][:, len_batch_prompt-1, :].cpu()
+                last_answer_token=cache[f"blocks.{l_idx}.hook_resid_post"][:, -2, :].cpu()
+                all_tokens = torch.stack([eos_token, eot_token, last_question_token, last_answer_token], dim=1)
                 torch.cuda.empty_cache()
-                all_last_token_resid[l_idx].append(layer_last_token)
+                all_last_token_resid[l_idx].append(all_tokens)
+
             del cache
-            del tokens, layer_last_token
+            del eos_token, eot_token, last_question_token, last_answer_token, all_tokens
+
             torch.cuda.empty_cache()
 
         last_token_resid = [torch.cat(all_last_token_resid[l_idx], dim=0) for l_idx in range(model.cfg.n_layers)]
