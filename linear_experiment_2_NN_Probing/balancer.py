@@ -5,6 +5,7 @@ from collections import defaultdict
 from typing import Dict, List, Tuple, Any
 import torch
 from tqdm import tqdm
+import argparse
 
 
 def balance_layers_aligned(
@@ -103,46 +104,67 @@ def balance_layers_aligned(
 
     if verbose:
         print(f"🔍 Found {len(layers)} layers with statements.")
-
-    # Step 1: sample pairs from layer 0
-    if verbose:
-        print("\n📌 Sampling reference pairs from layer 0")
-    correct_pairs, wrong_pairs = _scan_layer(layers[0])
-    m = min(len(correct_pairs), len(wrong_pairs))
-    sampled_correct = random.sample(correct_pairs, m)
-    sampled_wrong   = random.sample(wrong_pairs, m)
-    reference_pairs = sampled_correct + sampled_wrong
-    random.shuffle(reference_pairs)
-    if verbose:
-        print(f"   ✅ Found {len(correct_pairs)} correct, {len(wrong_pairs)} wrong pairs in layer 0")
-        print(f"   🎯 Chose {m} correct and {m} wrong pairs (total={2*m})")
-
-    # ---- NEW: build dictionary of chosen stmts & indices ----
-  # Save JSON of chosen pairs with original + final indices
-    chosen_map = {}
-    layer0_files = layers[0]
-    final_idx_counter = 0
-    for fi, local in reference_pairs:
-        fname = os.path.basename(layer0_files[fi])
-        if fname not in chosen_map:
-            chosen_map[fname] = {"original_indices": [], "final_indices": []}
-        chosen_map[fname]["original_indices"].append(local)
-        # Each pair contributes 2 rows in final balanced tensor (even & odd)
-        chosen_map[fname]["final_indices"].append(final_idx_counter)
-        chosen_map[fname]["final_indices"].append(final_idx_counter + 1)
-        final_idx_counter += 2
-    
     chosen_json_path = os.path.join(output_dir, "chosen_pairs.json")
-    with open(chosen_json_path, "w") as f:
-        json.dump(chosen_map, f, indent=2)
-    if verbose:
-        print(f"   💾 Saved chosen pairs map with final indices -> {chosen_json_path}")
+    if os.path.exists(chosen_json_path):
+        if verbose:
+            print(f"✅ Found existing chosen_pairs.json -> using it")
+        with open(chosen_json_path, "r") as f:
+            chosen_map = json.load(f)
+    
+        # Build reference_pairs from JSON for requested layer
+        layer_files = layers.get(0, [])
+        fname_to_idx = {os.path.basename(f): i for i, f in enumerate(layer_files)}
+        reference_pairs = []
+        for fname, idx_dict in chosen_map.items():
+            if fname not in fname_to_idx:
+                continue
+            f_i = fname_to_idx[fname]
+            for orig_idx in idx_dict["original_indices"]:
+                reference_pairs.append((f_i, orig_idx))
+        m = len(reference_pairs) // 2
+                
+    else:            
+    # Step 1: sample pairs from layer 0
+        if verbose:
+            print("\n Sampling reference pairs from layer 0")
+        correct_pairs, wrong_pairs = _scan_layer(layers[0])
+        m = min(len(correct_pairs), len(wrong_pairs))
+        sampled_correct = random.sample(correct_pairs, m)
+        sampled_wrong   = random.sample(wrong_pairs, m)
+        reference_pairs = sampled_correct + sampled_wrong
+        random.shuffle(reference_pairs)
+        if verbose:
+            print(f"  Found {len(correct_pairs)} correct, {len(wrong_pairs)} wrong pairs in layer 0")
+            print(f"  Chose {m} correct and {m} wrong pairs (total={2*m})")
+    
+        # ---- NEW: build dictionary of chosen stmts & indices ----
+      # Save JSON of chosen pairs with original + final indices
+        chosen_map = {}
+        layer0_files = layers[0]
+        final_idx_counter = 0
+        for fi, local in reference_pairs:
+            fname = os.path.basename(layer0_files[fi])
+            if fname not in chosen_map:
+                chosen_map[fname] = {"original_indices": [], "final_indices": []}
+            chosen_map[fname]["original_indices"].append(local)
+            # Each pair contributes 2 rows in final balanced tensor (even & odd)
+            chosen_map[fname]["final_indices"].append(final_idx_counter)
+            chosen_map[fname]["final_indices"].append(final_idx_counter + 1)
+            final_idx_counter += 2
+        
+        chosen_json_path = os.path.join(output_dir, "chosen_pairs.json")
+        with open(chosen_json_path, "w") as f:
+            json.dump(chosen_map, f, indent=2)
+        if verbose:
+            print(f"  Saved chosen pairs map with final indices -> {chosen_json_path}")
 
     summary = {}
     # Step 2: apply to all layers
-    for layer_idx, files in tqdm(layers.items(), desc="Processing layers", unit="layer"):
+    for layer_idx, files in tqdm(((l,f) for l,f in layers.items() if l >= args.layer), desc="Processing layers", unit="layer"):
         if verbose:
-            print(f"\n📂 Layer {layer_idx}: {len(files)} stmt files")
+            print(f"\nLayer {layer_idx}: {len(files)} stmt files")
+        
+            
 
         sel_ev_acts, sel_od_acts, sel_ev_lbls, sel_od_lbls = _collect_pairs(files, reference_pairs)
         
@@ -168,7 +190,7 @@ def balance_layers_aligned(
         ct_wrong_FALSE   = int((sel_od_lbls == 1).sum().item())
 
         if verbose:
-            print("   📊 Per-combo counts (before shuffle):")
+            print("   ->Per-combo counts (before shuffle):")
             print(f"      correct+TRUE : {ct_correct_TRUE}")
             print(f"      correct+FALSE: {ct_correct_FALSE}")
             print(f"      wrong+TRUE   : {ct_wrong_TRUE}")
@@ -185,9 +207,32 @@ def balance_layers_aligned(
             "out_path": out_path,
         }
         if verbose:
-            print(f"   💾 Saved -> {out_path}")
+            print(f"   Saved -> {out_path}")
 
     if verbose:
-        print("\n🎯 Done. All layers aligned to reference pairs from layer 0.")
+        print("\n   Done. All layers aligned to reference pairs from layer 0.")
 
     return summary
+#parser.add_argument('--layers', type=int, default=-1, help="Which layers to balance") may want to add this in future
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Run the balancing script on the generated layer_*_stmt_*.pt files in a single dir and give one balanced .pt file per layer that contains all 4 classes balanced activations, retaining the True/False scheme and one .json file which gives the pairs taken from each .pt file in each layer.")
+    parser.add_argument('--verbose', type=str, default=True, help="Add 'True' to show logs when balancing.")
+    parser.add_argument('--input_dir', type=str, required=True, help="Path to folder which contains the activation files of format layer_{l_idx}_stmt_{stmt_idx}.pt")
+    parser.add_argument('--output_dir',type=str, required=True, help="Path to the folder where you want to store balanced files(one per layer) and the json of selected pairs")
+    parser.add_argument('--layer', type=int, default=0, help="Reference layer for sampling pairs (default 0)")
+    args = parser.parse_args()
+    print('Starting balance')
+    if os.path.exists(args.input_dir) and os.path.exists(args.output_dir):
+        print(f'Balancing from {args.input_dir}')
+        print('Balancing running')
+        balance_layers_aligned(input_dir=args.input_dir, output_dir=args.output_dir, verbose=args.verbose)
+    elif os.path.exists(args.input_dir) and not(os.path.exists(args.output_dir)):
+        print(f'Balancing from {args.input_dir}')
+        print(f'Output directory {args.output_dir} doesnt exist, creating')
+        print(f"Created output dir at {args.output_dir}")
+        print('Balancing running')
+        balance_layers_aligned(input_dir=args.input_dir, output_dir=args.output_dir, verbose=args.verbose)
+    else:
+        print('Input dir is inalid, give absolute path')
+    
+    

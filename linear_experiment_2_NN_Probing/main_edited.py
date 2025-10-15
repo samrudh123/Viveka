@@ -1,8 +1,9 @@
-from utils import load_model,load_model_gn, load_statements
+from utils import load_model, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
-from classifier import ProbingNetwork, hparams, log_confusion_matrix
+from classifier import ProbingNetwork, hparams, log_confusion_matrix, lr_lambda
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
+import torch.nn.functional as F
 import argparse
 import glob
 from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score, classification_report)
@@ -16,8 +17,7 @@ import pandas as pd
 import random
 import wandb
 import psutil
-
-from HML import *
+from sklearn.model_selection import train_test_split
 
 #SVD Projection Loader
 
@@ -64,10 +64,11 @@ def load_preprojected_dataset(projected_dir, layer_idx):
     from the activations_svd directory.
     """
     activations_list, labels_list = [], []
-    file_pattern = os.path.join(projected_dir, f'layer{layer_idx}_stmt*_svd_processed.pt')
-
+    #file_pattern = os.path.join(projected_dir, f'layer_{layer_idx}_balanced_svd_processed.pt')
+    file_pattern = os.path.join(projected_dir, f'layer_{layer_idx}_balanced.pt')
+    
     for fname in tqdm(glob.glob(file_pattern), desc=f"Loading pre-projected L{layer_idx}", leave=False):
-        data = t.load(fname)
+        data = t.load(fname, weights_only=False)
         activations_list.append(data['activations'])
         labels_list.append(data['labels'])
 
@@ -80,23 +81,13 @@ def load_preprojected_dataset(projected_dir, layer_idx):
     )
 
 
-def train_probing_network(dataset_dir, train_layers, device):
+def train_probing_network(output_dir, train_layers, device):
     """
     Trains a probing network for each specified layer on either:
     - precomputed SVD-projected activations from activations_svd, or
     - raw activations projected on-the-fly using saved projection matrices.
     """
-
-    run = wandb.init(
-    entity='jerrycloud3316-ai-club-iit-madras',
-    project='training network probes for triviaqa on gemma-2-2b-it',
-    config={
-        "learning_rate":0.003,
-        "architecture":"Transformer",
-        "dataset": "TriviaQA_1-20k",
-        "epochs": 10,
-        },
-    )
+    
     #logging session metrics
     def get_ram_usage_gb():
         mem = psutil.virtual_memory()
@@ -120,17 +111,49 @@ def train_probing_network(dataset_dir, train_layers, device):
             "VRAM_reserved_GB": reserved_vram,
         }, step=step)
 
+    class EarlyStopping:
+        global l_idx
+        def __init__(self, patience=5, save_path = "checkpoint.pt", delta=0.0):
+            """patience : be patient with violaiton for this many epochs
+            save_path : where the model is stored if stopped
+            delta : what threshold should be counted as a decrease in loss"""
+            self.patience = patience
+            self.save_path = save_path
+            self.delta = delta
+            self.counter=0
+            self.best_score = None
+            self.early_stop = False
+        def __call__(self, val_loss, model, optimizer, epoch, hparams=None):
+            score = -val_loss
+            if self.best_score is None or score>self.best_score + self.delta:
+                self.best_score = score
+                self.counter=0
+                t.save({
+                    "epoch": epoch,
+                    "model_state_dict": model.state_dict(),
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "hparams": hparams
+                }, self.save_path)
+            else:
+                self.counter+=1
+                if self.counter>=self.patience:
+                    self.early_stop=True
 
     model_name_safe = hparams.model_name.replace('/', '_')
-    activations_dir = os.path.join(output_dir, 'activations', model_name_safe)
-    projected_dir = os.path.join(output_dir, 'activations_svd', model_name_safe)
+    activations_dir = os.path.join(output_dir, 'activations', model_name_safe) ##
+    #projected_dir = os.path.join(output_dir, 'activations/activations_svd_2304/activations_balanced')
+    projected_dir = os.path.join(output_dir, 'activations/activations_balanced')
     probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
-
-    for l_idx in tqdm(train_layers, desc="Training probe per layer"):
+    print(projected_dir, "Activations are being used from here")
+    for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
+        early_stopper = EarlyStopping(patience=5, save_path = f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt") ###
+        
         # Prefer precomputed projected activations if available
-        if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer{l_idx}_stmt*_svd_processed.pt')):
+        #if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced_svd_processed.pt')):
+        if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')):
             dataset = load_preprojected_dataset(projected_dir, l_idx)
+            print(f"Found existing projections in {os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')}")
         else:
             dataset = load_and_project_activations(activations_dir, l_idx, device)
 
@@ -138,59 +161,109 @@ def train_probing_network(dataset_dir, train_layers, device):
             print(f"No data for layer {l_idx}. Skipping.")
             continue
 
-        train_size = int(0.8 * len(dataset))
-        val_size = len(dataset) - train_size
-        train_ds, val_ds = t.utils.data.random_split(dataset, [train_size, val_size])
-
+        #train_size = int(0.8 * len(dataset))
+        #val_size = len(dataset) - train_size
+        x_data, y_data = dataset.tensors
+        y_numpy = y_data.squeeze(1).cpu().numpy()
+        X_train, X_test, y_train, y_test = train_test_split(x_data.cpu().numpy(), y_numpy, test_size=0.2, random_state=42, stratify=y_numpy)
+        x_train_t = t.tensor(X_train, dtype=x_data.dtype)
+        x_test_t  = t.tensor(X_test, dtype=x_data.dtype)
+        y_train_t = t.tensor(y_train, dtype=y_data.dtype).unsqueeze(1)
+        y_test_t  = t.tensor(y_test, dtype=y_data.dtype).unsqueeze(1)
+        train_ds = TensorDataset(x_train_t, y_train_t)
+        val_ds  = TensorDataset(x_test_t, y_test_t)
         train_loader = DataLoader(train_ds, batch_size=hparams.batch_size, shuffle=True)
-        val_loader = DataLoader(val_ds, batch_size=hparams.batch_size)
+        val_loader = DataLoader(val_ds, batch_size=hparams.batch_size, shuffle=True)
         hparams.total_steps = len(train_loader) * hparams.num_epochs
-        
-        model = ProbingNetwork(hparams.model_name).to(device)
-        optimizer = t.optim.Adam(model.parameters(), lr=hparams.lr)
-        criterion = t.nn.BCELoss()
-        scheduler = t.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
-        writer = SummaryWriter(log_dir=hparams.logdir)
+        if os.path.exists(os.path.join(probes_dir, 'google_gemma-2-2b-it', f"2304_probe_model_layer_{l_idx}.pt")): ###
+            checkpoint = t.load(f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt", map_location="cpu") ###
+            model.load_state_dict(checkpoint["model_state_dict"])
+            optimizer = torch.optim.Adam(model.parameters(), lr=hparams["lr"])
+            optimizer.load_state_dict(checkpoint["optimizer_state_dict"]),
+            start_epochs = checkpoint["epoch"]
+            print(f"\n--- Training probe for Layer {l_idx} from epoch {start_epochs}. Existing train files found ---")
+            step=0
+            
+        else:
+            model = ProbingNetwork(hparams.model_name).to(device)
+            optimizer = t.optim.Adam(model.parameters(), lr=hparams.lr)
+            criterion = t.nn.BCELoss()
+            scheduler = t.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+            writer = SummaryWriter(log_dir=hparams.logdir)
+            start_epochs = 0
 
-        print(f"\n--- Training probe for Layer {l_idx} ---")
-        step = 0
-        for epoch in range(hparams.num_epochs):
+            print(f"\n--- Training probe for Layer {l_idx} from start. No existing train files found ---")
+            step = 0
+        for epoch in range(hparams.num_epochs-start_epochs):
+            config = {
+            "layer":l_idx,
+            "learning_rate": hparams.lr,
+            "epochs": hparams.num_epochs,
+            "probe_type": "trained-nn",
+            "batch_size": hparams.batch_size
+            }
+            run_name = f"2304_layer_{config['layer']}_full_probes_{config['probe_type']}_lr{config['learning_rate']}_batchsize{config['batch_size']}"
+            run = wandb.init(
+                entity='jerrycloud3316-ai-club-iit-madras',
+                project='nn on 2304 dim - probes for triviaqa on gemma-2-2b-it',
+                name=run_name,
+                group=f"epochs_{config['epochs']}",
+                config=config,
+            )
             epoch_loss = 0.0
             train_labels = []
             train_preds = []
             model.train()
             start_time = time.time()
-            pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{hparams.num_epochs} [Training]", leave=False)
+            pbar = tqdm(train_loader, desc=f"Epoch {epoch+start_epochs+1}/{hparams.num_epochs} [Training]", leave=False)
             for X_batch, y_batch in pbar:
-                X_batch, y_batch = X_batch.to(device), y_batch.to(device)
-                optimizer.zero_grad()
-                outputs = model(X_batch)
-                loss = criterion(outputs, y_batch)
-                loss.backward()
-                optimizer.step()
-                if scheduler.get_last_lr()[0] < hparams.lr:
-                    scheduler.step()
-                pbar.set_postfix({'loss': loss.item(), 
-                                  "lr": f"{scheduler.get_last_lr()[0]:.6f}"
-                                  })
-                current_loss=loss.item()
-                epoch_loss += current_loss
-                preds = (outputs > 0.5).float()
-                train_preds.extend(preds.cpu().numpy())
-                train_labels.extend(y_batch.cpu().numpy())
-                step += 1
-                batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
-                batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
-                run.log(
-                {
-                    "loss/train_batchwise":current_loss,
-                    "acc/train_batchwise":batch_acc,
-                    "f1/train_batchwise":batch_f1,
-                    "learning-rate_batchwise": scheduler.get_last_lr()[0]
-                }
-            )
-                
-            
+                try:
+                    progress = pbar.n/pbar.total
+                    if progress*100//10==0:
+                        t.save({
+                            "model_state_dict" : model.state_dict(),
+                            "hparams" : hparams,
+                            "optimizer_state_dict" : optimizer.state_dict(),
+                            "epoch" : epoch
+                        }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+                        print(f"model saved for this epoch at {progress*100}% progress")
+                    X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.float32)
+                    X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+                    optimizer.zero_grad()
+                    outputs = model(X_batch)
+                    loss = criterion(outputs, y_batch)
+                    loss.backward()
+                    optimizer.step()
+                    if scheduler.get_last_lr()[0] < hparams.lr:
+                        scheduler.step()
+                    pbar.set_postfix({'loss': loss.item(), 
+                                      "lr": f"{scheduler.get_last_lr()[0]:.6f}"
+                                      })
+                    current_loss=loss.item()
+                    epoch_loss += current_loss
+                    preds = (outputs > 0.5).float()
+                    train_preds.extend(preds.cpu().numpy())
+                    train_labels.extend(y_batch.cpu().numpy())
+                    step += 1
+                    batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                    batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
+                    run.log(
+                        {
+                            "loss/train":current_loss,
+                            "acc/train":batch_acc,
+                            "f1/train":batch_f1,
+                            "learning-rate": scheduler.get_last_lr()[0]
+                        }
+                    )
+                    log_memory()
+                except KeyboardInterrupt:
+                    t.save({
+                        "model_state_dict" : model.state_dict(),
+                        "hparams" : hparams,
+                        "optimizer_state_dict" : optimizer.state_dict(),
+                        "epoch" : epoch
+                    }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+                    print("Keyboard Interrupt, model saved")
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
             avg_train_loss = epoch_loss / len(train_loader)
@@ -212,7 +285,12 @@ def train_probing_network(dataset_dir, train_layers, device):
             writer.add_scalar("Accuracy/train", train_acc, epoch)
             writer.add_scalar("F1/train", train_f1, epoch)
             writer.add_scalar("LR", scheduler.get_last_lr()[0], epoch)
-
+            t.save({
+                        "model_state_dict" : model.state_dict(),
+                        "hparams" : hparams,
+                        "optimizer_state_dict" : optimizer.state_dict(),
+                        "epoch" : epoch
+                    }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
 
             # Validation
             model.eval()
@@ -222,6 +300,7 @@ def train_probing_network(dataset_dir, train_layers, device):
             with t.no_grad():
                 val_pbar = tqdm(val_loader, desc=f"Epoch {epoch+1}/{hparams.num_epochs} [Validation]", leave=False)
                 for X_batch, y_batch in val_pbar:
+                    X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.float32)
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     outputs = model(X_batch)
                     current_loss=criterion(outputs, y_batch).item()
@@ -238,15 +317,19 @@ def train_probing_network(dataset_dir, train_layers, device):
                     batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
                     run.log(
                     {
-                        "loss/train_batch_wise":current_loss,
-                        "acc/train_batch_wise":batch_acc,
-                        "f1/train_batch_wise":batch_f1,
+                        "loss/train":current_loss,
+                        "acc/train":batch_acc,
+                        "f1/train":batch_f1,
                         
                     } 
                     )  
             val_acc = accuracy_score(val_labels, val_preds)
             val_f1 = f1_score(val_labels, val_preds)
             avg_val_loss = val_loss / len(val_loader)
+            early_stopper(avg_val_loss, model, optimizer, epoch, hparams)
+            if early_stopper.early_stop:
+                print(f"Early stopping at epoch {epoch}")
+                break
             print(f"Layer {l_idx} | Epoch {epoch+1} | Val Loss: {val_loss/len(val_loader):.4f} | Val Acc: {correct/total:.4f}")
             print(f"Val Accuracy: {val_acc:.4f} | F1: {val_f1:.4f}")
             print("Classification Report:\n", classification_report(val_labels, val_preds, digits=4))
@@ -267,17 +350,17 @@ def train_probing_network(dataset_dir, train_layers, device):
 
         writer.close()
         run.finish()
-        t.save(model.state_dict(), os.path.join(probes_dir, f'probe_model_layer_{l_idx}.pt'))
+        t.save(model.state_dict(), os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
 
 #Main
 
 if __name__ == '__main__':
-    # df_unique = pd.read_json(r"merge/merged_generations/unique_generations_20K.json")
-    # df_unique
-    # row = df_unique.loc["generated_answers"]
-    # len_list = row.apply(len).tolist()
-    # avg = sum(len_list)/len(len_list)
-    # print(f"number of questions : {len(len_list)}\navg no. of unique ans per qn: {avg}")
+    df_unique = pd.read_json(r"merge/merged_generations/unique_generations_20K.json")
+    #df_unique
+    row = df_unique.loc["generated_answers"]
+    len_list = row.apply(len).tolist()
+    avg = sum(len_list)/len(len_list)
+    print(f"number of questions : {len(len_list)}\navg no. of unique ans per qn: {avg}")
     parser = argparse.ArgumentParser(description="Run a multi-stage pipeline to generate data, extract activations, run SVD, and train a truth probe.")
     
     # --- Core Arguments ---
@@ -286,14 +369,14 @@ if __name__ == '__main__':
     parser.add_argument('--device', type=str, default='cuda' if t.cuda.is_available() else 'cpu')
 
     # --- Pipeline Stage Control ---
-    parser.add_argument('--stage', type=str, choices=['generate', 'activate', 'svd', 'train', 'HML','all'], default='all',
+    parser.add_argument('--stage', type=str, choices=['generate', 'activate', 'svd', 'train', 'all'], default='all',
                         help="Which stage of the probing pipeline to run.")
 
     # --- Arguments for Parallelization ---
     parser.add_argument('--start_index', type=int, default=0, help="The starting row index of the dataset to process.")
     parser.add_argument('--end_index', type=int, default=None, help="The ending row index of the dataset to process(doesn't include this row). Processes to the end if not specified.")
     parser.add_argument('--gen_batch_size', type=int, default=1, help="Number of statements to process in parallel during generation.")
-    parser.add_argument('--batch_slice_arg', type=int, default=32, help="How many answers(*2) of the each statement you wanna do at once.")
+    #parser.add_argument('--batch_slice_arg', type=int, default=32, help="How many answers(*2) of each statement you wanna do at once.")
     
     # --- Generation Arguments ---
     parser.add_argument('--temperature', type=float, default=0.7, help="The temperature with which you want to generate completions, default=0.7")
@@ -310,18 +393,6 @@ if __name__ == '__main__':
     parser.add_argument('--train_layers', nargs='+', type=int, help="Layers for 'train' stage.")
     parser.add_argument('--svd_dim', type=int, default=576)
 
-    #-----HML classification ---
-    parser.add_argument('--HML_out_dir', type=str, required=True, help="The out directory for the HML acitvations for the generated answers")
-    parser.add_argument('--network_in_dir', type=str, required=True, help="The in directory for the trained neural net")
-    parser.add_argument('--network_out_dir', type=str, required=True, help="The out directory for the HML on the classifier")
-    parser.add_argument('--HML_layers', type=list, required=False, help="layers on which the HML is applied")
-    parser.add_argument('--gen_in_dir', type=str, required=False, help="The generated answers in dir")
-
-
-
-
-    
-
     args = parser.parse_args()
     hparams.model_name = args.model_repo_id
     print(args.max_new_tokens, "main_edited.py, argsparser")
@@ -330,8 +401,8 @@ if __name__ == '__main__':
  
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
-    if args.stage in ['generate','all']:
-        tokenizer, model, layer_modules = load_model_gn(args.model_repo_id, args.device)
+    if args.stage in ['generate', 'activate', 'all']:
+        tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
         if -1 in args.layers:
             args.layers = list(range(0,model.cfg.n_layers))
         num_layers = len(layer_modules)
@@ -345,12 +416,11 @@ if __name__ == '__main__':
 
         if args.stage in ['generate', 'all']:
             batch_size = args.gen_batch_size
-            
             for start_idx in range(0, len(statements_to_process), batch_size):
                 end_idx = min(start_idx + batch_size, len(statements_to_process))
                 batch_statements = statements_to_process[start_idx:end_idx]
                 batch_answers = answers_to_process[start_idx:end_idx]
-                
+
                 generate_and_label_answers(
                     statements=batch_statements,
                     correct_answers=batch_answers,
@@ -364,18 +434,7 @@ if __name__ == '__main__':
                     top_p=args.top_p
                 )
 
-    if args.stage in ['activate', 'all']:
-            tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
-            if -1 in args.layers:
-                args.layers = list(range(0,model.cfg.n_layers))
-            num_layers = len(layer_modules)
-            print(f"Loading dataset from: {args.dataset_path}")
-            df, all_statements, all_correct_answers = load_statements(args.dataset_path)
-
-            start = args.start_index
-            end = args.end_index if args.end_index is not None else len(all_statements) #processes everything if not specified
-            statements_to_process = all_statements[start:end]
-            answers_to_process = all_correct_answers[start:end]
+        if args.stage in ['activate', 'all']:
             batch_size = args.gen_batch_size
             for start_idx in tqdm(range(0, len(statements_to_process), batch_size), 
                 total=len(statements_to_process)//batch_size + 1):
@@ -386,8 +445,8 @@ if __name__ == '__main__':
                     statements=batch_statements,
                     tokenizer=tokenizer,
                     model=model,
-                    model_name_arg=args.model_repo_id,
-                    batch_size_arg=batch_slice_arg,
+                    model_name_arg=args.model_repo_id.split('/')[-1],
+                    #batch_size_arg=32,
                     layers=layer_modules,
                     layer_indices=args.layers,
                     device=args.device,
@@ -400,7 +459,7 @@ if __name__ == '__main__':
     if args.stage in ['svd', 'all']:
         if not args.svd_layers:
             parser.error("--svd_layers is required for 'svd' stage.")
-        activations_dir = os.path.join(output_dir, 'activations/gemma-2-2b-it')
+        activations_dir = os.path.join(output_dir, 'activations/activations_balanced')
         perform_global_svd(activations_dir, args.svd_dim, args.svd_layers, args.device)
     
 
@@ -408,27 +467,7 @@ if __name__ == '__main__':
     if args.stage in ['train', 'all']:
         if not args.train_layers:
             parser.error("--train_layers is required for 'train' stage.")
-        acts_output = os.path.join(output_dir, "activations/gemma-2-2b-it", exist_ok=True)
-        train_probing_network(acts_output, args.train_layers, args.device)
-
-    if args.stage in ['HML' , 'all']:
-        HML_out_dir=args.HMl_out_dir
-        network_in_dir=args.network_in_dir
-        network_out_dir=args.network_out_dir
-        if args.eval_layers:
-            eval_layers=args.eval_layers
-        else:
-            eval_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]    
-        if args.gen_in_dir:
-            gen_in_dir=args.gen_in_dir
-        else:
-            gen_in_dir="current_run"        
-
-        runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers,gen_in_dir)
-        
-
-
-
+        #acts_output = os.path.join(output_dir, "activations")
+        train_probing_network(args.probe_output_dir, args.train_layers, args.device)
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
-
