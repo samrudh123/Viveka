@@ -396,7 +396,23 @@ if __name__ == '__main__':
 
     print(f"Loading model: {args.model_repo_id}...")
 
-    df_unique = pd.read_json(r"./args.generations_dir/arg.generations_file")
+    import os
+
+# Assume 'args' is your object from argparse
+# For example:
+# args.generations_dir = './datasets/eval data/'
+# args.generations_file = 'halueval.json'
+
+# --- CORRECTED CODE ---
+# Use os.path.join to handle file separators correctly
+    file_path = os.path.join(args.generations_dir, args.generations_file)
+
+# You can print the path to make sure it's correct before reading
+    # print(f"Attempting to read JSON from: {file_path}")
+
+    df_unique = pd.read_json(file_path)
+
+    # df_unique = pd.read_json(r"./args.generations_dir/arg.generations_file")
     #df_unique
     row = df_unique.loc["generated_answers"]
     len_list = row.apply(len).tolist()
