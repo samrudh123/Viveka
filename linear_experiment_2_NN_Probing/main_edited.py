@@ -473,7 +473,9 @@ if __name__ == '__main__':
                     output_dir=args.probe_output_dir,
                     start_index=start_idx,
                     end_index=end_idx,
-                    batch_list=len_list
+                    batch_list=len_list,
+                    generations_filename=f'{args.generations_file}',
+                    generations_dir=f'{args.generations_dir}'
                 )
 
     if args.stage in ['svd', 'all']:
