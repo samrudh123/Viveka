@@ -387,6 +387,8 @@ if __name__ == '__main__':
     parser.add_argument('--layers', nargs='+', type=int, default=[-1], help="List of layer indices to probe. -1 for all layers.")
     parser.add_argument('--probe_output_dir', type=str, default='current_run', help="Directory to save generated data and activations.")
     parser.add_argument('--num_generations', type=int, default=32, help="Number of answers to generate per statement for probing.")
+    parser.add_argument('--generations_file', type=str, default='generated_completions_20k.json', help="Name of the JSON file with generated answers.")
+    parser.add_argument('--generations_dir', type=str, default='generations', help="directory where the .json files are")
 
     # --- SVD & Training ---
     parser.add_argument('--svd_layers', nargs='+', type=int, help="Layers for 'svd' stage.")
