@@ -242,7 +242,7 @@ def get_truth_probe_activations(
     and save the captured activations using the correct global index.
     """
     model_name = model_name_arg
-    generations_dir = os.path.join(output_dir, "generations")
+    # generations_dir = os.path.join(output_dir, "generations")
     activations_dir = os.path.join(output_dir, "activations", model_name)
     os.makedirs(activations_dir, exist_ok=True)
     generations_cache_path = os.path.join(generations_dir, generations_filename)
