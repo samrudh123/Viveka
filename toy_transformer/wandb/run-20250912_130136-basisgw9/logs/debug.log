@@ -1,0 +1,6 @@
+2025-09-12 13:01:37,010 INFO    MainThread:23396 [wandb_init.py:setup_run_log_directory():703] Logging user logs to c:\Users\jerry\IITM\CFI\Ai Club\2025-26\Project Viveka\Viveka\toy_transformer\wandb\run-20250912_130136-basisgw9\logs\debug.log
+2025-09-12 13:01:37,011 INFO    MainThread:23396 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to c:\Users\jerry\IITM\CFI\Ai Club\2025-26\Project Viveka\Viveka\toy_transformer\wandb\run-20250912_130136-basisgw9\logs\debug-internal.log
+2025-09-12 13:01:37,011 INFO    MainThread:23396 [wandb_init.py:monkeypatch_ipython():622] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001DA3C1BD100>
+2025-09-12 13:01:37,011 INFO    MainThread:23396 [wandb_init.py:init():830] calling init triggers
+2025-09-12 13:01:37,012 INFO    MainThread:23396 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'num_epochs': 500, 'batch_size': 256, 'lr': 0.05, 'seed': 42, 'momentum': 0.0, 'max_grad_norm': None, 'weight_decay': None, 'optimizer_name': 'SGD', 'device': 'cpu', 'warmup_steps': 0, 'save_every': 1, 'save_dir': './checkpoints/', 'wandb': True, 'wandb_project_name': 'transformer-markov-model', 'print_every': 1, 'max_steps': None, '_wandb': {}}

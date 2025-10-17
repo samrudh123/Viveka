@@ -117,11 +117,3 @@ def runHML(HML_out_dir,network_in_dir,network_out_dir,eval_layers=[0,1,2,3,4,5,6
     with open(f"{network_out_dir}/net_acc.json", "w", encoding="utf-8") as f:
         json.dump(classifier_acc, f, indent=4)
     print(f"Results saved to {network_out_dir}/net_acc.json")
-    
-
-
-
-
-
-
-    

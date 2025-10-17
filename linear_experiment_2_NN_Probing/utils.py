@@ -6,7 +6,7 @@ import torch
 import torch as t
 import transformers
 from baukit import TraceDict
-from datasets import load_dataset
+#from datasets import load_dataset
 from sklearn import metrics
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, precision_score, recall_score
@@ -175,12 +175,11 @@ def generate_model_answers(
     all_generated_ids = []
 
     batch_size = len(prompts)
-
-    for i, gen in enumerate(generated):
+    for i in range(batch_size * num_return_sequences):
         prompt_idx = i // num_return_sequences
         input_len = inputs['input_ids'][prompt_idx].shape[0]
-    
-        generated_ids = gen[input_len:]
+
+        generated_ids = generated[i][input_len:]
         model_answer_raw = model.to_string(generated_ids)
 
         all_model_answers_raw.append(model_answer_raw)
@@ -686,27 +685,10 @@ def load_model(model_repo_id: str, device: str):
     tokenizer = model.tokenizer
     layers = model.blocks  # TransformerLens uses blocks instead of model.layers
     return tokenizer, model, layers
-def load_model_gn(model_repo_id: str, device: str):
-    
-    print(f"Loading from Hugging Face Hub: {model_repo_id}")
-    tokenizer = AutoTokenizer.from_pretrained(model_repo_id)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_repo_id,
-        device_map='auto',
-        torch_dtype=t.bfloat16 if t.cuda.is_available() and t.cuda.is_bf16_supported() else t.float16
-    )
-    print(f"Using dtype:{torch.dtype}")
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-        model.config.pad_token_id = model.config.eos_token_id
-    layers = getattr(getattr(model, 'model', None), 'layers', None)
-    if layers is None:
-        raise AttributeError(f"Could not find layers for model {model_repo_id}. Please check the model architecture.")
-    return tokenizer, model, layers
 
 
 def load_statements(dataset_name):
-    path = f"{dataset_name}"  
+    path = f"{dataset_name}"
     df = pd.read_csv(path, encoding='utf-8')
     question_col = 'statement' if 'statement' in df.columns else 'raw_question'
     label_col = 'label' if 'label' in df.columns else 'correct_answer'
