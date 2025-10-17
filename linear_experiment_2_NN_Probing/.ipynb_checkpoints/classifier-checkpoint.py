@@ -32,7 +32,7 @@ class HParams:
     hidden_extra = 576
     hidden1 = 144
     hidden2 = 12
-    output_dim = 1
+    output_dim = 4
     batch_size = 256
     lr = 3e-4
     num_epochs = 50
@@ -55,8 +55,8 @@ class ProbingNetwork(nn.Module):
             nn.ReLU(),
             nn.Linear(hparams.hidden1, hparams.hidden2),
             nn.ReLU(),
-            nn.Linear(hparams.hidden2, hparams.output_dim),
-            nn.Sigmoid()
+            nn.Linear(hparams.hidden2, hparams.output_dim)#,
+            #nn.Sigmoid()
         )
 
     def forward(self, x):

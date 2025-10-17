@@ -21,7 +21,7 @@ from sklearn.model_selection import train_test_split
 
 #SVD Projection Loader
 
-def load_and_project_activations(activations_dir, layer_idx, device):
+'''def load_and_project_activations(activations_dir, layer_idx, device):
     """
     Loads raw activation files and the SVD projection matrix for a specific layer,
     then returns the projected data and labels.
@@ -55,7 +55,7 @@ def load_and_project_activations(activations_dir, layer_idx, device):
         t.cat(activations_list, dim=0),
         t.cat(labels_list, dim=0).float().unsqueeze(1)
     )
-
+'''
 #Training Functionality
 
 def load_preprojected_dataset(projected_dir, layer_idx):
@@ -142,12 +142,12 @@ def train_probing_network(output_dir, train_layers, device):
     model_name_safe = hparams.model_name.replace('/', '_')
     activations_dir = os.path.join(output_dir, 'activations', model_name_safe) ##
     #projected_dir = os.path.join(output_dir, 'activations/activations_svd_2304/activations_balanced')
-    projected_dir = os.path.join(output_dir, 'activations/activations_balanced')
+    projected_dir = os.path.join(output_dir, 'activations/multiclass_activations_balanced')
     probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
     print(projected_dir, "Activations are being used from here")
     for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
-        early_stopper = EarlyStopping(patience=5, save_path = f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt") ###
+        early_stopper = EarlyStopping(patience=5, save_path = f"/home/current_run/trained_probes/google_gemma-2-2b-it/multiclass_2304_probe_model_layer_{l_idx}.pt") ###
         
         # Prefer precomputed projected activations if available
         #if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced_svd_processed.pt')):
@@ -160,7 +160,6 @@ def train_probing_network(output_dir, train_layers, device):
         if dataset is None:
             print(f"No data for layer {l_idx}. Skipping.")
             continue
-
         #train_size = int(0.8 * len(dataset))
         #val_size = len(dataset) - train_size
         x_data, y_data = dataset.tensors
@@ -168,15 +167,15 @@ def train_probing_network(output_dir, train_layers, device):
         X_train, X_test, y_train, y_test = train_test_split(x_data.cpu().numpy(), y_numpy, test_size=0.2, random_state=42, stratify=y_numpy)
         x_train_t = t.tensor(X_train, dtype=x_data.dtype)
         x_test_t  = t.tensor(X_test, dtype=x_data.dtype)
-        y_train_t = t.tensor(y_train, dtype=y_data.dtype).unsqueeze(1)
-        y_test_t  = t.tensor(y_test, dtype=y_data.dtype).unsqueeze(1)
+        y_train_t = t.tensor(y_train, dtype=t.long)   # no unsqueeze, long dtype
+        y_test_t  = t.tensor(y_test, dtype=t.long)
         train_ds = TensorDataset(x_train_t, y_train_t)
-        val_ds  = TensorDataset(x_test_t, y_test_t)
+        val_ds   = TensorDataset(x_test_t, y_test_t)
         train_loader = DataLoader(train_ds, batch_size=hparams.batch_size, shuffle=True)
         val_loader = DataLoader(val_ds, batch_size=hparams.batch_size, shuffle=True)
         hparams.total_steps = len(train_loader) * hparams.num_epochs
-        if os.path.exists(os.path.join(probes_dir, 'google_gemma-2-2b-it', f"2304_probe_model_layer_{l_idx}.pt")): ###
-            checkpoint = t.load(f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt", map_location="cpu") ###
+        if os.path.exists(os.path.join(probes_dir, 'google_gemma-2-2b-it', f"multiclass-2304_probe_model_layer_{l_idx}.pt")): ###
+            checkpoint = t.load(f"/home/current_run/trained_probes/google_gemma-2-2b-it/multiclass-2304_probe_model_layer_{l_idx}.pt", map_location="cpu") ###
             model.load_state_dict(checkpoint["model_state_dict"])
             optimizer = torch.optim.Adam(model.parameters(), lr=hparams["lr"])
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"]),
@@ -187,7 +186,7 @@ def train_probing_network(output_dir, train_layers, device):
         else:
             model = ProbingNetwork(hparams.model_name).to(device)
             optimizer = t.optim.Adam(model.parameters(), lr=hparams.lr)
-            criterion = t.nn.BCELoss()
+            criterion = t.nn.CrossEntropyLoss()
             scheduler = t.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
             writer = SummaryWriter(log_dir=hparams.logdir)
             start_epochs = 0
@@ -205,7 +204,7 @@ def train_probing_network(output_dir, train_layers, device):
             run_name = f"2304_layer_{config['layer']}_full_probes_{config['probe_type']}_lr{config['learning_rate']}_batchsize{config['batch_size']}"
             run = wandb.init(
                 entity='jerrycloud3316-ai-club-iit-madras',
-                project='nn on 2304 dim - probes for triviaqa on gemma-2-2b-it',
+                project='multiclass nn on 2304dim - probes for triviaqa on gemma-2-2b-it',
                 name=run_name,
                 group=f"epochs_{config['epochs']}",
                 config=config,
@@ -225,13 +224,13 @@ def train_probing_network(output_dir, train_layers, device):
                             "hparams" : hparams,
                             "optimizer_state_dict" : optimizer.state_dict(),
                             "epoch" : epoch
-                        }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+                        }, os.path.join(probes_dir, f'multiclass-2304_probe_model_layer_{l_idx}.pt')) ###
                         print(f"model saved for this epoch at {progress*100}% progress")
-                    X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.float32)
+                    X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.long)
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     optimizer.zero_grad()
-                    outputs = model(X_batch)
-                    loss = criterion(outputs, y_batch)
+                    logits = model(X_batch)
+                    loss = criterion(logits, y_batch)
                     loss.backward()
                     optimizer.step()
                     if scheduler.get_last_lr()[0] < hparams.lr:
@@ -241,7 +240,8 @@ def train_probing_network(output_dir, train_layers, device):
                                       })
                     current_loss=loss.item()
                     epoch_loss += current_loss
-                    preds = (outputs > 0.5).float()
+                    preds = logits.argmax(dim=1)
+                    #preds = (outputs > 0.5).float()
                     train_preds.extend(preds.cpu().numpy())
                     train_labels.extend(y_batch.cpu().numpy())
                     step += 1
@@ -262,7 +262,7 @@ def train_probing_network(output_dir, train_layers, device):
                         "hparams" : hparams,
                         "optimizer_state_dict" : optimizer.state_dict(),
                         "epoch" : epoch
-                    }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+                    }, os.path.join(probes_dir, f'multiclass-2304_probe_model_layer_{l_idx}.pt')) ###
                     print("Keyboard Interrupt, model saved")
             train_acc = accuracy_score(train_labels, train_preds)
             train_f1 = f1_score(train_labels, train_preds)
@@ -290,7 +290,7 @@ def train_probing_network(output_dir, train_layers, device):
                         "hparams" : hparams,
                         "optimizer_state_dict" : optimizer.state_dict(),
                         "epoch" : epoch
-                    }, os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+                    }, os.path.join(probes_dir, f'multiclass-2304_probe_model_layer_{l_idx}.pt')) ###
 
             # Validation
             model.eval()
@@ -303,9 +303,11 @@ def train_probing_network(output_dir, train_layers, device):
                     X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.float32)
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     outputs = model(X_batch)
+                    probs = F.softmax(outputs, dim=1)
+                    preds = probs.argmax(dim=1)
                     current_loss=criterion(outputs, y_batch).item()
                     val_loss += current_loss
-                    preds = (outputs > 0.5).float()
+                    #preds = (outputs > 0.5).float()
                     total += y_batch.size(0)
                     correct += (preds == y_batch).sum().item()
                     val_preds.extend(preds.cpu().numpy())
@@ -313,8 +315,8 @@ def train_probing_network(output_dir, train_layers, device):
                     val_pbar.set_postfix({
                     "val_loss": f"{loss.item():.4f}"
                                         })
-                    batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy())
-                    batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy()) 
+                    batch_acc = accuracy_score(y_batch.cpu().numpy(), preds.cpu().numpy(), average=None)
+                    batch_f1 = f1_score(y_batch.cpu().numpy(), preds.cpu().numpy())
                     run.log(
                     {
                         "loss/train":current_loss,
@@ -322,7 +324,7 @@ def train_probing_network(output_dir, train_layers, device):
                         "f1/train":batch_f1,
                         
                     } 
-                    )  
+                    )
             val_acc = accuracy_score(val_labels, val_preds)
             val_f1 = f1_score(val_labels, val_preds)
             avg_val_loss = val_loss / len(val_loader)
@@ -350,7 +352,7 @@ def train_probing_network(output_dir, train_layers, device):
 
         writer.close()
         run.finish()
-        t.save(model.state_dict(), os.path.join(probes_dir, f'2304_probe_model_layer_{l_idx}.pt')) ###
+        t.save(model.state_dict(), os.path.join(probes_dir, f'multiclass-2304_probe_model_layer_{l_idx}.pt')) ###
 
 #Main
 
@@ -459,7 +461,7 @@ if __name__ == '__main__':
     if args.stage in ['svd', 'all']:
         if not args.svd_layers:
             parser.error("--svd_layers is required for 'svd' stage.")
-        activations_dir = os.path.join(output_dir, 'activations/activations_balanced')
+        activations_dir = os.path.join(output_dir, 'activations/multiclass_activations_balanced')
         perform_global_svd(activations_dir, args.svd_dim, args.svd_layers, args.device)
     
 
