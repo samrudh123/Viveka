@@ -141,21 +141,27 @@ def train_probing_network(output_dir, train_layers, device):
 
     model_name_safe = hparams.model_name.replace('/', '_')
     activations_dir = os.path.join(output_dir, 'activations', model_name_safe) ##
+    val_activations_dir = os.path.join(output_dir, 'val_acts_2k', model_name_safe) ###
+
     #projected_dir = os.path.join(output_dir, 'activations/activations_svd_2304/activations_balanced')
     projected_dir = os.path.join(output_dir, 'activations/activations_balanced')
+    val_projected_dir = os.path.join(output_dir, 'val_acts_2k', model_name_safe) ###
     probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
     os.makedirs(probes_dir, exist_ok=True)
-    print(projected_dir, "Activations are being used from here")
+    print(projected_dir, "Train activations are being used from here")
+    print(val_projected_dir, "Train activations are being used from here")
     for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
         early_stopper = EarlyStopping(patience=5, save_path = f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt") ###
         
         # Prefer precomputed projected activations if available
         #if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced_svd_processed.pt')):
-        if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')):
-            dataset = load_preprojected_dataset(projected_dir, l_idx)
+        if os.path.exists(projected_dir) and os.path.exists(val_projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')) and glob.glob(os.path.join(val_projected_dir, f'layer_{l_idx}_val.pt')):
+            dataset_train = load_preprojected_dataset(projected_dir, l_idx)
+            dataset_test = load_preprojected_dataset(val_projected_dir, l_idx)
             print(f"Found existing projections in {os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')}")
         else:
-            dataset = load_and_project_activations(activations_dir, l_idx, device)
+            dataset_train = load_and_project_activations(activations_dir, l_idx, device)
+            dataset_val = load_and_project_activations(val_activations_dir, l_idx, device)
 
         if dataset is None:
             print(f"No data for layer {l_idx}. Skipping.")
@@ -163,13 +169,14 @@ def train_probing_network(output_dir, train_layers, device):
 
         #train_size = int(0.8 * len(dataset))
         #val_size = len(dataset) - train_size
-        x_data, y_data = dataset.tensors
-        y_numpy = y_data.squeeze(1).cpu().numpy()
-        X_train, X_test, y_train, y_test = train_test_split(x_data.cpu().numpy(), y_numpy, test_size=0.2, random_state=42, stratify=y_numpy)
-        x_train_t = t.tensor(X_train, dtype=x_data.dtype)
-        x_test_t  = t.tensor(X_test, dtype=x_data.dtype)
-        y_train_t = t.tensor(y_train, dtype=y_data.dtype).unsqueeze(1)
-        y_test_t  = t.tensor(y_test, dtype=y_data.dtype).unsqueeze(1)
+        x_data, y_data = dataset_train.tensors
+        x_val, y_val = dataset_test.tensors
+        #y_numpy = y_data.squeeze(1).cpu().numpy()
+        #X_train, X_test, y_train, y_test = train_test_split(x_data.cpu().numpy(), y_numpy, test_size=0.2, random_state=42, stratify=y_numpy)
+        x_train_t = t.tensor(x_data, dtype=x_data.dtype)
+        x_test_t  = t.tensor(x_val, dtype=x_data.dtype)
+        y_train_t = t.tensor(y_data, dtype=y_data.dtype).unsqueeze(1)
+        y_test_t  = t.tensor(y_val, dtype=y_data.dtype).unsqueeze(1)
         train_ds = TensorDataset(x_train_t, y_train_t)
         val_ds  = TensorDataset(x_test_t, y_test_t)
         train_loader = DataLoader(train_ds, batch_size=hparams.batch_size, shuffle=True)
