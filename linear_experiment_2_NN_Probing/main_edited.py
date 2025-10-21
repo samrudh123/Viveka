@@ -21,6 +21,54 @@ from sklearn.model_selection import train_test_split
 
 #SVD Projection Loader
 
+def load_activations(activations_dir, layer_idx, device, project = False):
+    print('loading activations')
+    """
+    Note: ensure that your .pt files are tensors of the form (num_samples, d_model)
+    
+    Loads raw activation files and the SVD projection matrix for a specific layer,
+    then returns the projected data and labels if project = True, else simply loads 
+    the raw activations. 
+
+    Note: the default is to not project.
+    """
+    activations_list, labels_list = [], []
+    file_pattern = os.path.join(activations_dir, f'layer_{layer_idx}_*.pt')
+    
+    if project:
+        svd_dir = os.path.join(os.path.dirname(activations_dir), 'svd_components')
+        projection_matrix_path = os.path.join(svd_dir, f"projection_matrix_layer_{layer_idx}.pt")
+    
+        if not os.path.exists(projection_matrix_path):
+            raise FileNotFoundError(
+                f"SVD projection matrix not found for layer {layer_idx}. Please run the 'svd' stage first."
+            )
+    
+        projection_matrix = t.load(projection_matrix_path).to(device)
+
+    for fname in tqdm(glob.glob(file_pattern), desc=f"Loading & Projecting L{layer_idx}", leave=False):
+        data = t.load(fname)
+        raw_activations = data['activations'].to(device)
+        if project:
+            if raw_activations.dtype != projection_matrix.dtype:
+                raw_activations = raw_activations.to(projection_matrix.dtype)
+            activations = (projection_matrix @ raw_activations.T).T
+        else:
+            activations = raw_activations
+        activations_list.append(activations)
+        labels_list.append(data['labels'])
+
+    if not activations_list:
+        return None
+    print('dimension of each activation: ', activations.shape)
+    print('length of activations list: ', len(activations_list))
+    return TensorDataset(
+        t.cat(activations_list, dim=0),
+        t.cat(labels_list, dim=0).float().unsqueeze(1)
+    )
+
+# -------------------------------- Discard the below function in next version -------------------------------
+
 def load_and_project_activations(activations_dir, layer_idx, device):
     """
     Loads raw activation files and the SVD projection matrix for a specific layer,
@@ -56,7 +104,10 @@ def load_and_project_activations(activations_dir, layer_idx, device):
         t.cat(labels_list, dim=0).float().unsqueeze(1)
     )
 
-#Training Functionality
+# ----------------------------------- discard upto this line ------------------------------------------------
+
+
+# --------------------------------- Training Functionality -------------------------------------------
 
 def load_preprojected_dataset(projected_dir, layer_idx):
     """
@@ -81,9 +132,12 @@ def load_preprojected_dataset(projected_dir, layer_idx):
     )
 
 
-def train_probing_network(output_dir, train_layers, device):
+def train_probing_network(output_dir, train_layers, device, project = False):
     """
-    Trains a probing network for each specified layer on either:
+    Trains a probing network for each specified layer.
+    Default: project = False, neural net is trained in the transformer's neuron basis
+    
+    If project = True: the neural net is trained in an SVD basis, which could be:
     - precomputed SVD-projected activations from activations_svd, or
     - raw activations projected on-the-fly using saved projection matrices.
     """
@@ -140,37 +194,47 @@ def train_probing_network(output_dir, train_layers, device):
                     self.early_stop=True
 
     model_name_safe = hparams.model_name.replace('/', '_')
-    activations_dir = os.path.join(output_dir, 'activations', model_name_safe) ##
-    val_activations_dir = os.path.join(output_dir, 'val_acts_2k', model_name_safe) ###
+    activations_dir = os.path.join(output_dir, 'activations_balanced/') ##
+    val_activations_dir = os.path.join(output_dir, 'validation_activations/') ###
 
     #projected_dir = os.path.join(output_dir, 'activations/activations_svd_2304/activations_balanced')
-    projected_dir = os.path.join(output_dir, 'activations/activations_balanced')
-    val_projected_dir = os.path.join(output_dir, 'val_acts_2k', model_name_safe) ###
-    probes_dir = os.path.join(output_dir, 'trained_probes', model_name_safe)
+
+# ------------------------- this line was changed, please undo as required! -----------------------------------------------
+    
+    projected_dir = os.path.join(output_dir, 'activations_balanced/')
+    val_projected_dir = os.path.join(output_dir, 'validation_activations/') ###
+
+# --------------------------------------------------------------------------------------------------------------------------
+    probes_dir = os.path.join(output_dir, 'trained_probes')
     os.makedirs(probes_dir, exist_ok=True)
-    print(projected_dir, "Train activations are being used from here")
-    print(val_projected_dir, "Train activations are being used from here")
+    
+    print( "Train activations are being used from here: ", projected_dir)
+    print("Train activations are being used from here: ", val_projected_dir)
+    
     for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
-        early_stopper = EarlyStopping(patience=5, save_path = f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt") ###
+        
+        early_stopper = EarlyStopping(patience=5, save_path = os.path.join(probes_dir, f"2304_probe_model_layer_{l_idx}.pt")) ###
         
         # Prefer precomputed projected activations if available
         #if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced_svd_processed.pt')):
         if os.path.exists(projected_dir) and os.path.exists(val_projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')) and glob.glob(os.path.join(val_projected_dir, f'layer_{l_idx}_val.pt')):
+            print("Loading pre-projected acts")
             dataset_train = load_preprojected_dataset(projected_dir, l_idx)
             dataset_test = load_preprojected_dataset(val_projected_dir, l_idx)
             print(f"Found existing projections in {os.path.join(projected_dir, f'layer_{l_idx}_balanced.pt')}")
         else:
-            dataset_train = load_and_project_activations(activations_dir, l_idx, device)
-            dataset_val = load_and_project_activations(val_activations_dir, l_idx, device)
+            
+            dataset_train = load_activations(activations_dir, l_idx, device, project)
+            dataset_val = load_activations(val_activations_dir, l_idx, device, project)
 
-        if dataset is None:
+        if (dataset_train or dataset_val) is None:
             print(f"No data for layer {l_idx}. Skipping.")
             continue
 
         #train_size = int(0.8 * len(dataset))
         #val_size = len(dataset) - train_size
         x_data, y_data = dataset_train.tensors
-        x_val, y_val = dataset_test.tensors
+        x_val, y_val = dataset_val.tensors
         #y_numpy = y_data.squeeze(1).cpu().numpy()
         #X_train, X_test, y_train, y_test = train_test_split(x_data.cpu().numpy(), y_numpy, test_size=0.2, random_state=42, stratify=y_numpy)
         x_train_t = t.tensor(x_data, dtype=x_data.dtype)
@@ -182,16 +246,18 @@ def train_probing_network(output_dir, train_layers, device):
         train_loader = DataLoader(train_ds, batch_size=hparams.batch_size, shuffle=True)
         val_loader = DataLoader(val_ds, batch_size=hparams.batch_size, shuffle=True)
         hparams.total_steps = len(train_loader) * hparams.num_epochs
-        if os.path.exists(os.path.join(probes_dir, 'google_gemma-2-2b-it', f"2304_probe_model_layer_{l_idx}.pt")): ###
-            checkpoint = t.load(f"/home/current_run/trained_probes/google_gemma-2-2b-it/2304_probe_model_layer_{l_idx}.pt", map_location="cpu") ###
+
+# -------------------------------------- replaced with try and except --------------------------------------------
+        try:
+            print('probe file path: ', os.path.join(probes_dir, f"/2304_probe_model_layer_{l_idx}.pt"))
+            checkpoint = t.load(os.path.join(probes_dir, f"/2304_probe_model_layer_{l_idx}.pt"), map_location="cpu") ###
             model.load_state_dict(checkpoint["model_state_dict"])
             optimizer = torch.optim.Adam(model.parameters(), lr=hparams["lr"])
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"]),
             start_epochs = checkpoint["epoch"]
             print(f"\n--- Training probe for Layer {l_idx} from epoch {start_epochs}. Existing train files found ---")
             step=0
-            
-        else:
+        except:
             model = ProbingNetwork(hparams.model_name).to(device)
             optimizer = t.optim.Adam(model.parameters(), lr=hparams.lr)
             criterion = t.nn.BCELoss()
@@ -201,6 +267,8 @@ def train_probing_network(output_dir, train_layers, device):
 
             print(f"\n--- Training probe for Layer {l_idx} from start. No existing train files found ---")
             step = 0
+
+# ------------------------------------- replaced with try and except ---------------------------------------
         for epoch in range(hparams.num_epochs-start_epochs):
             config = {
             "layer":l_idx,
@@ -238,6 +306,14 @@ def train_probing_network(output_dir, train_layers, device):
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     optimizer.zero_grad()
                     outputs = model(X_batch)
+                    
+    # ----------------------------- hacky ----------------------------------------------------------
+                    if outputs.shape != y_batch.shape:
+                        #print('found shape mismatch')
+                        y_batch = y_batch.reshape(outputs.shape)
+    # --------------------------------hacky ------------------------------------------------------
+
+                    
                     loss = criterion(outputs, y_batch)
                     loss.backward()
                     optimizer.step()
@@ -310,6 +386,11 @@ def train_probing_network(output_dir, train_layers, device):
                     X_batch, y_batch = X_batch.to(t.float32), y_batch.to(t.float32)
                     X_batch, y_batch = X_batch.to(device), y_batch.to(device)
                     outputs = model(X_batch)
+    # ----------------------------- hacky ----------------------------------------------------------
+                    if outputs.shape != y_batch.shape:
+                        #print('found shape mismatch')
+                        y_batch = y_batch.reshape(outputs.shape)
+    # --------------------------------hacky ------------------------------------------------------
                     current_loss=criterion(outputs, y_batch).item()
                     val_loss += current_loss
                     preds = (outputs > 0.5).float()
@@ -393,6 +474,7 @@ if __name__ == '__main__':
     parser.add_argument('--generations_dir', type=str, default='generations', help="directory where the .json files are")
 
     # --- SVD & Training ---
+    parser.add_argument('--project', type=bool, default=False, help="Toggle between training probes in transformer neuron basis or SVD basis")
     parser.add_argument('--svd_layers', nargs='+', type=int, help="Layers for 'svd' stage.")
     parser.add_argument('--train_layers', nargs='+', type=int, help="Layers for 'train' stage.")
     parser.add_argument('--svd_dim', type=int, default=576)
@@ -497,6 +579,6 @@ if __name__ == '__main__':
         if not args.train_layers:
             parser.error("--train_layers is required for 'train' stage.")
         #acts_output = os.path.join(output_dir, "activations")
-        train_probing_network(args.probe_output_dir, args.train_layers, args.device)
+        train_probing_network(args.probe_output_dir, args.train_layers, args.device, args.project)
     if args.stage not in ['generate', 'activate', 'svd', 'train', 'all']:
         print("Invalid --stage arg")
