@@ -494,22 +494,20 @@ if __name__ == '__main__':
 
 # --- CORRECTED CODE ---
 # Use os.path.join to handle file separators correctly
-    file_path = os.path.join(args.generations_dir, args.generations_file)
+    if args.generations_dir and args.generations_file:
+        file_path = os.path.join(args.generations_dir, args.generations_file)
+        df_unique = pd.read_json(file_path)
 
-# You can print the path to make sure it's correct before reading
-    # print(f"Attempting to read JSON from: {file_path}")
+        row = df_unique.loc["generated_answers"]
+        len_list = row.apply(len).tolist()
+        avg = sum(len_list) / len(len_list)
 
-    df_unique = pd.read_json(file_path)
+        print(f"number of questions : {len(len_list)}")
+        print(f"avg no. of unique ans per qn: {avg}")
 
-    # df_unique = pd.read_json(r"./args.generations_dir/arg.generations_file")
-    #df_unique
-    row = df_unique.loc["generated_answers"]
-    len_list = row.apply(len).tolist()
-    avg = sum(len_list)/len(len_list)
-    print(f"number of questions : {len(len_list)}\navg no. of unique ans per qn: {avg}")
- 
     output_dir = args.probe_output_dir
     print(output_dir, "Output dir")
+    
     if args.stage in ['generate', 'activate', 'all']:
         tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
         if -1 in args.layers:
