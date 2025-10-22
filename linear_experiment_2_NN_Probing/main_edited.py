@@ -57,13 +57,13 @@ def load_activations(activations_dir, layer_idx, device, project = False):
 
 
         # If it's not already a tensor, convert it
-        if not isinstance(activations, torch.Tensor):
+        if not isinstance(activations, t.Tensor):
             try:
                 # Try to stack if it's a list of tensors
-                activations = torch.stack(activations)
+                activations = t.stack(activations)
             except:
                 # Otherwise, convert list of numbers/nested lists to tensor
-                activations = torch.tensor(activations)
+                activations = t.tensor(activations)
 
         # Move to device
         raw_activations = activations.to(device)
