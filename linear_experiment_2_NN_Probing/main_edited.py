@@ -234,7 +234,7 @@ def train_probing_network(output_dir, train_layers, device, project = False):
     
     for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
         
-        early_stopper = EarlyStopping(patience=5, save_path = os.path.join(probes_dir, f"2304_probe_model_layer_{l_idx}.pt")) ###
+        early_stopper = EarlyStopping(patience=10, save_path = os.path.join(probes_dir, f"2304_probe_model_layer_{l_idx}.pt")) ###
         
         # Prefer precomputed projected activations if available
         #if os.path.exists(projected_dir) and glob.glob(os.path.join(projected_dir, f'layer_{l_idx}_balanced_svd_processed.pt')):
@@ -273,7 +273,7 @@ def train_probing_network(output_dir, train_layers, device, project = False):
             print('probe file path: ', os.path.join(probes_dir, f"/2304_probe_model_layer_{l_idx}.pt"))
             checkpoint = t.load(os.path.join(probes_dir, f"/2304_probe_model_layer_{l_idx}.pt"), map_location="cpu") ###
             model.load_state_dict(checkpoint["model_state_dict"])
-            optimizer = torch.optim.Adam(model.parameters(), lr=hparams["lr"])
+            optimizer = t.optim.Adam(model.parameters(), lr=hparams["lr"])
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"]),
             start_epochs = checkpoint["epoch"]
             print(f"\n--- Training probe for Layer {l_idx} from epoch {start_epochs}. Existing train files found ---")
