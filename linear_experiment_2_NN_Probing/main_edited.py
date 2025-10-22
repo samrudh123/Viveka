@@ -48,7 +48,28 @@ def load_activations(activations_dir, layer_idx, device, project = False):
 
     for fname in tqdm(glob.glob(file_pattern), desc=f"Loading & Projecting L{layer_idx}", leave=False):
         data = t.load(fname)
-        raw_activations = data['activations'].to(device)
+
+
+
+        activations = data['activations']
+
+#-----------------------replace here if all shit breaks----------------------------
+
+
+        # If it's not already a tensor, convert it
+        if not isinstance(activations, torch.Tensor):
+            try:
+                # Try to stack if it's a list of tensors
+                activations = torch.stack(activations)
+            except:
+                # Otherwise, convert list of numbers/nested lists to tensor
+                activations = torch.tensor(activations)
+
+        # Move to device
+        raw_activations = activations.to(device)
+
+#-----------------------------------------------------------------------------------
+
         if project:
             if raw_activations.dtype != projection_matrix.dtype:
                 raw_activations = raw_activations.to(projection_matrix.dtype)
@@ -209,7 +230,7 @@ def train_probing_network(output_dir, train_layers, device, project = False):
     os.makedirs(probes_dir, exist_ok=True)
     
     print( "Train activations are being used from here: ", projected_dir)
-    print("Train activations are being used from here: ", val_projected_dir)
+    print("Validation activations are being used from here: ", val_projected_dir)
     
     for l_idx in tqdm(train_layers, desc=f"Training probe per layer at {probes_dir}"):
         
