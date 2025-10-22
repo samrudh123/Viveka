@@ -29,12 +29,12 @@ print("Using device:", device)
 
 class HParams:
     input_dim = 2304
-    hidden_extra = 576
-    hidden1 = 144
+    hidden_extra = 288
+    hidden1 = 48
     hidden2 = 12
     output_dim = 1
     batch_size = 256
-    lr = 3e-4
+    lr = 5e-4
     num_epochs = 50
     warmup_steps = 100
     model_name = 'gemma-2-2b-it'
@@ -49,6 +49,7 @@ class ProbingNetwork(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(hparams.input_dim, hparams.hidden_extra),
             nn.ReLU(),
+            nn.Dropout(p=0.5),
             nn.Linear(hparams.hidden_extra, hparams.hidden1),
             nn.ReLU(),
             nn.Linear(hparams.hidden1, hparams.hidden2),
