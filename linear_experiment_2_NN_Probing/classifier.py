@@ -40,9 +40,7 @@ class HParams:
     model_name = 'gemma-2-2b-it'
     logdir = 'runs/synth'
 
-
 hparams = HParams()
-
 
 class ProbingNetwork(nn.Module):
     def __init__(self, model_name: str):
