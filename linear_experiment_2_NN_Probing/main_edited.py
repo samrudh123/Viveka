@@ -77,7 +77,7 @@ def load_activations(activations_dir, layer_idx, device, project = False):
         else:
             activations = raw_activations
         activations_list.append(activations)
-        labels_list.append(data['labels'])
+        labels_list.append(t.tensor(data['labels']))
 
     if not activations_list:
         return None
