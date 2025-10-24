@@ -1,7 +1,7 @@
 from utils import load_model, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
-from classifier import ProbingNetwork, hparams_1, log_confusion_matrix, lr_lambda
-from autoencoder import hparams_1_1, Autoencoder, log_confusion_matrix, lr_lambda
+from classifier import ProbingNetwork, hparams, log_confusion_matrix, lr_lambda
+from autoencoder import hparams_1, Autoencoder, log_confusion_matrix, lr_lambda
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
 import torch.nn.functional as F
@@ -456,7 +456,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run a multi-stage pipeline to generate data, extract activations, run SVD, and train a truth probe.")
     
     # --- Core Arguments ---
-    parser.add_argument('--dataset_path', type=str, required=True, help="Path to the dataset CSV file.")
+    parser.add_argument('--dataset_path', type=str, required=False, help="Path to the dataset CSV file.")
     parser.add_argument('--model_repo_id', type=str, required=True, default='google/gemma-2-2b-it', help="Hugging Face model repository ID.")
     parser.add_argument('--device', type=str, default='cuda' if t.cuda.is_available() else 'cpu')
 
