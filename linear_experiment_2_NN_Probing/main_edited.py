@@ -1,6 +1,7 @@
 from utils import load_model, load_statements
 from hook import generate_and_label_answers, get_truth_probe_activations
 from classifier import ProbingNetwork, hparams, log_confusion_matrix, lr_lambda
+from autoencoder import hparams, Autoencoder, log_confusion_matrix, lr_lambda
 from svd_withgpu import perform_global_svd
 from torch.utils.tensorboard import SummaryWriter
 import torch.nn.functional as F
