@@ -531,10 +531,17 @@ if __name__ == '__main__':
     print(output_dir, "Output dir")
     
     if args.stage in ['generate', 'activate', 'all']:
-        tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device)
-        if -1 in args.layers:
-            args.layers = list(range(0,model.cfg.n_layers))
-        num_layers = len(layer_modules)
+        if args.stage == 'generate':
+            tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device, use_transformer_lens=False)
+        elif args.stage == 'activate':
+            tokenizer, model, layer_modules = load_model(args.model_repo_id, args.device, use_transformer_lens=True)
+            if -1 in args.layers:
+                args.layers = list(range(0,model.cfg.n_layers))
+                num_layers = len(layer_modules)
+                
+        elif args.stage == 'all':
+            raise NotImplementedError
+            
         print(f"Loading dataset from: {args.dataset_path}")
         df, all_statements, all_correct_answers = load_statements(args.dataset_path)
 

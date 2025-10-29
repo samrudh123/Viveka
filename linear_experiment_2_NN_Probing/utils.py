@@ -121,10 +121,13 @@ def generate(model_input, model, model_name, do_sample=False, output_scores=Fals
 
 def create_prompts(statements, model_name):
     """Applies the correct prompt format based on the model type."""
-    mn_lower = model_name.lower()
-    
-    if 'instruct' in mn_lower or 'it' in mn_lower:
+    model_name = model_name.lower()
+    if 'gemma' in model_name:
         return [f"<start_of_turn>user\nQ: {s}<end_of_turn>\n<start_of_turn>model\nA:" for s in statements]
+    elif 'llama' in model_name:
+        return [f"<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n Q: {s}<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\n A:" for s in statements]
+    elif 'qwen' in model_name:
+        return [f"<|im_start|>user \n Q: {s} <|im_end|>\n<|im_start|>assistant\n A:" for s in statements]
     else:
         return statements
 
@@ -140,7 +143,8 @@ def generate_model_answers(
     temperature = 0.7,
     top_p = 0.9,
     do_sample = True,
-    additional_kwargs = None
+    additional_kwargs = None,
+    use_transformer_lens = False
     ):
     if tokenizer.pad_token is None:
         if tokenizer.eos_token is not None:
@@ -150,25 +154,32 @@ def generate_model_answers(
             model.resize_token_embeddings(len(tokenizer))
 
     # Tokenize all prompts at once
-    inputs = tokenizer(
-        prompts,
-        return_tensors="pt",
-        padding=True,
-        truncation=True,
-        add_special_tokens=True
-    ).to(device)
-    tokens = tokenizer(prompts, return_tensors="pt", padding=True, truncation=True)["input_ids"].to(device)
+    inputs = tokenizer(prompts, return_tensors="pt", padding=True, truncation=True).to(device)
+    tokens = inputs["input_ids"].to(device)
+
     # Generate in batch
     print(max_tokens, " : Max tokens at utils.py, generate_model_answers")
-    with t.no_grad():
-        generated = model.generate(
-        tokens,
-        max_new_tokens=max_tokens,
-        temperature=temperature,
-        top_k=None,   # TransformerLens doesn't support top_k, you can leave it None
-        top_p=top_p,
-        do_sample=do_sample
-)
+    if use_transformer_lens:
+        with t.no_grad():
+            generated = model.generate(
+            tokens,
+            max_new_tokens=max_tokens,
+            temperature=temperature,
+            top_k=None,   # TransformerLens doesn't support top_k, you can leave it None
+            top_p=top_p,
+            do_sample=do_sample
+    )
+    else: 
+        with t.no_grad():
+            generated = model.generate(
+                tokens,
+                max_new_tokens = max_tokens,
+                temperature=temperature,
+                num_return_sequences = num_return_sequences,
+                top_k = None,
+                top_p = top_p,
+                do_sample=do_sample
+            )
 
     # Decode outputs
     all_model_answers_raw = []
@@ -178,14 +189,16 @@ def generate_model_answers(
     for i in range(batch_size * num_return_sequences):
         prompt_idx = i // num_return_sequences
         input_len = inputs['input_ids'][prompt_idx].shape[0]
-
         generated_ids = generated[i][input_len:]
-        model_answer_raw = model.to_string(generated_ids)
-
+        if use_transformer_lens:
+            model_answer_raw = model.to_string(generated_ids)
+        else:
+            model_answer_raw = tokenizer.decode(generated_ids, skip_special_tokens=True)
         all_model_answers_raw.append(model_answer_raw)
         all_generated_ids.append(generated_ids.cpu())
 
     return all_model_answers_raw, all_generated_ids
+
 
 
 def check_correctness(model_answer, correct_answers_list):
@@ -679,11 +692,27 @@ def _cleanup_extracted_answer(decoded_output):
 
 from transformer_lens import HookedTransformer
 
-def load_model(model_repo_id: str, device: str):
-    print(f"Loading TransformerLens model: {model_repo_id}")
-    model = HookedTransformer.from_pretrained(model_repo_id, device=device,dtype=t.float16)
-    tokenizer = model.tokenizer
-    layers = model.blocks  # TransformerLens uses blocks instead of model.layers
+def load_model(model_repo_id: str, device: str, use_transformer_lens = False):
+    if use_transformer_lens:
+        print(f"Loading TransformerLens model: {model_repo_id}")
+        model = HookedTransformer.from_pretrained(model_repo_id, device=device,dtype=t.float16)
+        tokenizer = model.tokenizer
+        layers = model.blocks  # TransformerLens uses blocks instead of model.layers
+
+    else:
+        print(f'Loading HuggingFace model: {model_repo_id}')
+        model = AutoModelForCausalLM.from_pretrained(
+            model_repo_id,
+            device_map = 'auto',
+            torch_dtype=t.bfloat16 if (t.cuda.is_available() and t.cuda.is_bf16_supported()) else t.float16)
+        print(f'Using dtype: {torch.dtype}')
+        tokenizer = AutoTokenizer.from_pretrained(model_repo_id)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+            model.config.pad_token_id = model.config.eos_token_id
+        layers = getattr(getattr(model, 'model', None), 'layers', None)
+        if layers is None:
+            raise AttributeError(f"Could not find layers for model {model_repo_id}. Please check the model architecture.")
     return tokenizer, model, layers
 
 

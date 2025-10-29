@@ -87,7 +87,8 @@ The pipeline is designed to scale to large datasets with batching and caching, a
 Use a recent Python (3.10+) with CUDA if available.
 
 ```bash
-pip install torch transformers thefuzz python-levenshtein scikit-learn pandas tqdm tensorboard
+pip install torch transformers thefuzz python-levenshtein scikit-learn pandas tqdm tensorboard transformer_lens matplotlib seaborn
+pip install git+https://github.com/davidbau/baukit
 ```
 
 Note: The code sets `pad_token` for chat models if missing and uses BF16/FP16 when available.
@@ -144,12 +145,7 @@ python linear_experiment_2_NN_Probing/main_edited.py \
 
 ### 3) Train probes
 ```bash
-python linear_experiment_2_NN_Probing/main_edited.py \
-  --dataset_path path/to/dataset.csv \
-  --model_repo_id google/gemma-2-2b-it \
-  --stage train \
-  --probe_output_dir current_run \
-  --train_layers -1
+python /home/Viveka/linear_experiment_2_NN_Probing/main_edited.py --stage train --dataset_path /home/Viveka/linear_experiment_2_NN_Probing/datasets/triviaqa-subsampled.csv --model_repo_id google/gemma-2-2b-it --layers 1 2 3 4 5 6 7 8 9 12 13 14 15 20 21 22 --probe_output_dir jl_fs/gemma_2_2b_it/activations --train_layers 1 2 3 4 5 6 7 8 9 12 13 14 15 20 21 22 --generations_dir jl_fs/gemma_2_2b_it/generations
 ```
 
 ### 4) End-to-end

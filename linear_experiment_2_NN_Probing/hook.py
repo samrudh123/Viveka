@@ -80,7 +80,8 @@ def generate_and_label_answers(
         num_return_sequences=num_generations,
         do_sample=True,
         top_p=0.9,
-        temperature=0.7
+        temperature=0.7,
+        use_transformer_lens = False
     )
 
     for i, stmt in enumerate(batch_statements):
@@ -110,6 +111,7 @@ def generate_and_label_answers(
         json.dump(generations_cache, f, indent=2, ensure_ascii=False)
 
     print(f"\nGeneration and labeling complete for this slice. Cache updated at '{generations_cache_path}'.")
+
 
 
 # def get_truth_probe_activations(
