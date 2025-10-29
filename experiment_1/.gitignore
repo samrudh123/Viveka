@@ -1,0 +1,40 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+env/
+venv/
+
+# VS Code settings
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Models or data
+*.pt
+*.ckpt
+*.h5
+*.npz
+*.pkl
+*.tar.gz
+
+# Secrets
+kaggle.json
+.env
+
+data/triviaqa-unfiltered/
+output/
+code/wandb/
+checkpoints/
+wnbshi/

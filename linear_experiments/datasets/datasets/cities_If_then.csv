@@ -1,0 +1,1497 @@
+statement,label,city,country,correct_country
+If the city is Krasnodar then the country is Russia.,1,Krasnodar,Russia,Russia
+If the city is Krasnodar then the country is South Africa.,0,Krasnodar,South Africa,Russia
+If the city is Lodz then the country is Poland.,1,Lodz,Poland,Poland
+If the city is Lodz then the country is the Dominican Republic.,0,Lodz,the Dominican Republic,Poland
+If the city is Maracay then the country is Venezuela.,1,Maracay,Venezuela,Venezuela
+If the city is Maracay then the country is China.,0,Maracay,China,Venezuela
+If the city is Baku then the country is Azerbaijan.,1,Baku,Azerbaijan,Azerbaijan
+If the city is Baku then the country is Ukraine.,0,Baku,Ukraine,Azerbaijan
+If the city is Baoji then the country is China.,1,Baoji,China,China
+If the city is Baoji then the country is Guatemala.,0,Baoji,Guatemala,China
+If the city is Addis Ababa then the country is Ethiopia.,1,Addis Ababa,Ethiopia,Ethiopia
+If the city is Addis Ababa then the country is Indonesia.,0,Addis Ababa,Indonesia,Ethiopia
+If the city is Abidjan then the country is Côte d'Ivoire.,1,Abidjan,Côte d'Ivoire,Côte d'Ivoire
+If the city is Abidjan then the country is China.,0,Abidjan,China,Côte d'Ivoire
+If the city is Yongzhou then the country is China.,1,Yongzhou,China,China
+If the city is Yongzhou then the country is Ukraine.,0,Yongzhou,Ukraine,China
+If the city is Nanchong then the country is China.,1,Nanchong,China,China
+If the city is Nanchong then the country is Nigeria.,0,Nanchong,Nigeria,China
+If the city is Lu'an then the country is China.,1,Lu'an,China,China
+If the city is Lu'an then the country is Turkey.,0,Lu'an,Turkey,China
+If the city is Jiaxing then the country is China.,1,Jiaxing,China,China
+If the city is Jiaxing then the country is Ukraine.,0,Jiaxing,Ukraine,China
+If the city is Huaihua then the country is China.,1,Huaihua,China,China
+If the city is Huaihua then the country is South Africa.,0,Huaihua,South Africa,China
+If the city is Anqing then the country is China.,1,Anqing,China,China
+If the city is Anqing then the country is Brazil.,0,Anqing,Brazil,China
+If the city is Yingkou then the country is China.,1,Yingkou,China,China
+If the city is Yingkou then the country is the Philippines.,0,Yingkou,the Philippines,China
+If the city is Panshan then the country is China.,1,Panshan,China,China
+If the city is Panshan then the country is Japan.,0,Panshan,Japan,China
+If the city is Guatemala City then the country is Guatemala.,1,Guatemala City,Guatemala,Guatemala
+If the city is Guatemala City then the country is Croatia.,0,Guatemala City,Croatia,Guatemala
+If the city is Bauchi then the country is Nigeria.,1,Bauchi,Nigeria,Nigeria
+If the city is Bauchi then the country is Iran.,0,Bauchi,Iran,Nigeria
+If the city is Tokyo then the country is Japan.,1,Tokyo,Japan,Japan
+If the city is Tokyo then the country is Pakistan.,0,Tokyo,Pakistan,Japan
+If the city is Mombasa then the country is Kenya.,1,Mombasa,Kenya,Kenya
+If the city is Mombasa then the country is India.,0,Mombasa,India,Kenya
+If the city is Ulsan then the country is South Korea.,1,Ulsan,South Korea,South Korea
+If the city is Ulsan then the country is South Africa.,0,Ulsan,South Africa,South Korea
+If the city is Warangal then the country is India.,1,Warangal,India,India
+If the city is Warangal then the country is Yemen.,0,Warangal,Yemen,India
+If the city is Tiruchirappalli then the country is India.,1,Tiruchirappalli,India,India
+If the city is Tiruchirappalli then the country is Iraq.,0,Tiruchirappalli,Iraq,India
+If the city is Nowrangapur then the country is India.,1,Nowrangapur,India,India
+If the city is Nowrangapur then the country is Vietnam.,0,Nowrangapur,Vietnam,India
+If the city is Sambhaji Nagar then the country is India.,1,Sambhaji Nagar,India,India
+If the city is Sambhaji Nagar then the country is China.,0,Sambhaji Nagar,China,India
+If the city is Ajmer then the country is India.,1,Ajmer,India,India
+If the city is Ajmer then the country is Russia.,0,Ajmer,Russia,India
+If the city is Rohini then the country is India.,1,Rohini,India,India
+If the city is Rohini then the country is Russia.,0,Rohini,Russia,India
+If the city is Serang then the country is Indonesia.,1,Serang,Indonesia,Indonesia
+If the city is Serang then the country is Poland.,0,Serang,Poland,Indonesia
+If the city is Niigata then the country is Japan.,1,Niigata,Japan,Japan
+If the city is Niigata then the country is Yemen.,0,Niigata,Yemen,Japan
+If the city is Marrakesh then the country is Morocco.,1,Marrakesh,Morocco,Morocco
+If the city is Marrakesh then the country is Malaysia.,0,Marrakesh,Malaysia,Morocco
+If the city is Makati City then the country is the Philippines.,1,Makati City,the Philippines,the Philippines
+If the city is Makati City then the country is India.,0,Makati City,India,the Philippines
+If the city is Tirunelveli then the country is India.,1,Tirunelveli,India,India
+If the city is Tirunelveli then the country is China.,0,Tirunelveli,China,India
+If the city is Thane then the country is India.,1,Thane,India,India
+If the city is Thane then the country is China.,0,Thane,China,India
+If the city is Solapur then the country is India.,1,Solapur,India,India
+If the city is Solapur then the country is the United States.,0,Solapur,the United States,India
+If the city is Najafgarh then the country is India.,1,Najafgarh,India,India
+If the city is Najafgarh then the country is Brazil.,0,Najafgarh,Brazil,India
+If the city is Borivli then the country is India.,1,Borivli,India,India
+If the city is Borivli then the country is Ukraine.,0,Borivli,Ukraine,India
+If the city is Zhabei then the country is China.,1,Zhabei,China,China
+If the city is Zhabei then the country is Afghanistan.,0,Zhabei,Afghanistan,China
+If the city is Liaocheng then the country is China.,1,Liaocheng,China,China
+If the city is Liaocheng then the country is South Korea.,0,Liaocheng,South Korea,China
+If the city is Jiaozhou then the country is China.,1,Jiaozhou,China,China
+If the city is Jiaozhou then the country is Latvia.,0,Jiaozhou,Latvia,China
+If the city is Guilin then the country is China.,1,Guilin,China,China
+If the city is Guilin then the country is the Dominican Republic.,0,Guilin,the Dominican Republic,China
+If the city is Chaozhou then the country is China.,1,Chaozhou,China,China
+If the city is Chaozhou then the country is South Korea.,0,Chaozhou,South Korea,China
+If the city is Panzhihua then the country is China.,1,Panzhihua,China,China
+If the city is Panzhihua then the country is Iran.,0,Panzhihua,Iran,China
+If the city is Bucaramanga then the country is Colombia.,1,Bucaramanga,Colombia,Colombia
+If the city is Bucaramanga then the country is Brazil.,0,Bucaramanga,Brazil,Colombia
+If the city is Niamey then the country is Niger.,1,Niamey,Niger,Niger
+If the city is Niamey then the country is China.,0,Niamey,China,Niger
+If the city is Sokoto then the country is Nigeria.,1,Sokoto,Nigeria,Nigeria
+If the city is Sokoto then the country is South Korea.,0,Sokoto,South Korea,Nigeria
+If the city is Abuja then the country is Nigeria.,1,Abuja,Nigeria,Nigeria
+If the city is Abuja then the country is China.,0,Abuja,China,Nigeria
+If the city is South Tangerang then the country is Indonesia.,1,South Tangerang,Indonesia,Indonesia
+If the city is South Tangerang then the country is India.,0,South Tangerang,India,Indonesia
+If the city is Odesa then the country is Ukraine.,1,Odesa,Ukraine,Ukraine
+If the city is Odesa then the country is China.,0,Odesa,China,Ukraine
+If the city is Fort Worth then the country is the United States.,1,Fort Worth,the United States,the United States
+If the city is Fort Worth then the country is Russia.,0,Fort Worth,Russia,the United States
+If the city is Boumerdes then the country is Algeria.,1,Boumerdes,Algeria,Algeria
+If the city is Boumerdes then the country is Iran.,0,Boumerdes,Iran,Algeria
+If the city is Asmara then the country is Eritrea.,1,Asmara,Eritrea,Eritrea
+If the city is Asmara then the country is Indonesia.,0,Asmara,Indonesia,Eritrea
+If the city is Santiago de Queretaro then the country is Mexico.,1,Santiago de Queretaro,Mexico,Mexico
+If the city is Santiago de Queretaro then the country is Ecuador.,0,Santiago de Queretaro,Ecuador,Mexico
+If the city is Perm then the country is Russia.,1,Perm,Russia,Russia
+If the city is Perm then the country is China.,0,Perm,China,Russia
+If the city is Jeddah then the country is Saudi Arabia.,1,Jeddah,Saudi Arabia,Saudi Arabia
+If the city is Jeddah then the country is Myanmar.,0,Jeddah,Myanmar,Saudi Arabia
+If the city is Konya then the country is Turkey.,1,Konya,Turkey,Turkey
+If the city is Konya then the country is Russia.,0,Konya,Russia,Turkey
+If the city is Macapa then the country is Brazil.,1,Macapa,Brazil,Brazil
+If the city is Macapa then the country is China.,0,Macapa,China,Brazil
+If the city is Belo Horizonte then the country is Brazil.,1,Belo Horizonte,Brazil,Brazil
+If the city is Belo Horizonte then the country is North Korea.,0,Belo Horizonte,North Korea,Brazil
+If the city is Poznan then the country is Poland.,1,Poznan,Poland,Poland
+If the city is Poznan then the country is Mexico.,0,Poznan,Mexico,Poland
+If the city is Linyi then the country is China.,1,Linyi,China,China
+If the city is Linyi then the country is Iraq.,0,Linyi,Iraq,China
+If the city is Hohhot then the country is China.,1,Hohhot,China,China
+If the city is Hohhot then the country is Indonesia.,0,Hohhot,Indonesia,China
+If the city is Malacca then the country is Malaysia.,1,Malacca,Malaysia,Malaysia
+If the city is Malacca then the country is China.,0,Malacca,China,Malaysia
+If the city is Busan then the country is South Korea.,1,Busan,South Korea,South Korea
+If the city is Busan then the country is Brazil.,0,Busan,Brazil,South Korea
+If the city is Seongnam-si then the country is South Korea.,1,Seongnam-si,South Korea,South Korea
+If the city is Seongnam-si then the country is Russia.,0,Seongnam-si,Russia,South Korea
+If the city is Matsuyama then the country is Japan.,1,Matsuyama,Japan,Japan
+If the city is Matsuyama then the country is Burkina Faso.,0,Matsuyama,Burkina Faso,Japan
+If the city is Suwon then the country is South Korea.,1,Suwon,South Korea,South Korea
+If the city is Suwon then the country is Russia.,0,Suwon,Russia,South Korea
+If the city is Incheon then the country is South Korea.,1,Incheon,South Korea,South Korea
+If the city is Incheon then the country is India.,0,Incheon,India,South Korea
+If the city is Hwaseong-si then the country is South Korea.,1,Hwaseong-si,South Korea,South Korea
+If the city is Hwaseong-si then the country is Brazil.,0,Hwaseong-si,Brazil,South Korea
+If the city is Changwon then the country is South Korea.,1,Changwon,South Korea,South Korea
+If the city is Changwon then the country is Indonesia.,0,Changwon,Indonesia,South Korea
+If the city is Bamako then the country is Mali.,1,Bamako,Mali,Mali
+If the city is Bamako then the country is India.,0,Bamako,India,Mali
+If the city is Acapulco de Juarez then the country is Mexico.,1,Acapulco de Juarez,Mexico,Mexico
+If the city is Acapulco de Juarez then the country is Morocco.,0,Acapulco de Juarez,Morocco,Mexico
+If the city is Mosul then the country is Iraq.,1,Mosul,Iraq,Iraq
+If the city is Mosul then the country is China.,0,Mosul,China,Iraq
+If the city is Basrah then the country is Iraq.,1,Basrah,Iraq,Iraq
+If the city is Basrah then the country is China.,0,Basrah,China,Iraq
+If the city is Qom then the country is Iran.,1,Qom,Iran,Iran
+If the city is Qom then the country is Vietnam.,0,Qom,Vietnam,Iran
+If the city is Torreon then the country is Mexico.,1,Torreon,Mexico,Mexico
+If the city is Torreon then the country is India.,0,Torreon,India,Mexico
+If the city is Beira then the country is Mozambique.,1,Beira,Mozambique,Mozambique
+If the city is Beira then the country is India.,0,Beira,India,Mozambique
+If the city is Naucalpan de Juarez then the country is Mexico.,1,Naucalpan de Juarez,Mexico,Mexico
+If the city is Naucalpan de Juarez then the country is Honduras.,0,Naucalpan de Juarez,Honduras,Mexico
+If the city is Dehra Dun then the country is India.,1,Dehra Dun,India,India
+If the city is Dehra Dun then the country is China.,0,Dehra Dun,China,India
+If the city is Bhubaneswar then the country is India.,1,Bhubaneswar,India,India
+If the city is Bhubaneswar then the country is China.,0,Bhubaneswar,China,India
+If the city is Ahvaz then the country is Iran.,1,Ahvaz,Iran,Iran
+If the city is Ahvaz then the country is China.,0,Ahvaz,China,Iran
+If the city is Kumasi then the country is Ghana.,1,Kumasi,Ghana,Ghana
+If the city is Kumasi then the country is India.,0,Kumasi,India,Ghana
+If the city is Palembang then the country is Indonesia.,1,Palembang,Indonesia,Indonesia
+If the city is Palembang then the country is Brazil.,0,Palembang,Brazil,Indonesia
+If the city is Novokuznetsk then the country is Russia.,1,Novokuznetsk,Russia,Russia
+If the city is Novokuznetsk then the country is China.,0,Novokuznetsk,China,Russia
+If the city is Izmir then the country is Turkey.,1,Izmir,Turkey,Turkey
+If the city is Izmir then the country is Iran.,0,Izmir,Iran,Turkey
+If the city is Lahore then the country is Pakistan.,1,Lahore,Pakistan,Pakistan
+If the city is Lahore then the country is China.,0,Lahore,China,Pakistan
+If the city is Zhenjiang then the country is China.,1,Zhenjiang,China,China
+If the city is Zhenjiang then the country is Germany.,0,Zhenjiang,Germany,China
+If the city is Zhaotong then the country is China.,1,Zhaotong,China,China
+If the city is Zhaotong then the country is Iraq.,0,Zhaotong,Iraq,China
+If the city is Weifang then the country is China.,1,Weifang,China,China
+If the city is Weifang then the country is Indonesia.,0,Weifang,Indonesia,China
+If the city is Tianjin then the country is China.,1,Tianjin,China,China
+If the city is Tianjin then the country is Bangladesh.,0,Tianjin,Bangladesh,China
+If the city is Shaoxing then the country is China.,1,Shaoxing,China,China
+If the city is Shaoxing then the country is the Philippines.,0,Shaoxing,the Philippines,China
+If the city is Hangzhou then the country is China.,1,Hangzhou,China,China
+If the city is Hangzhou then the country is Russia.,0,Hangzhou,Russia,China
+If the city is Mudanjiang then the country is China.,1,Mudanjiang,China,China
+If the city is Mudanjiang then the country is Turkey.,0,Mudanjiang,Turkey,China
+If the city is Anshan then the country is China.,1,Anshan,China,China
+If the city is Anshan then the country is Cameroon.,0,Anshan,Cameroon,China
+If the city is Porto Velho then the country is Brazil.,1,Porto Velho,Brazil,Brazil
+If the city is Porto Velho then the country is Algeria.,0,Porto Velho,Algeria,Brazil
+If the city is N'Djamena then the country is Chad.,1,N'Djamena,Chad,Chad
+If the city is N'Djamena then the country is China.,0,N'Djamena,China,Chad
+If the city is Kayseri then the country is Turkey.,1,Kayseri,Turkey,Turkey
+If the city is Kayseri then the country is Iraq.,0,Kayseri,Iraq,Turkey
+If the city is Marseille then the country is France.,1,Marseille,France,France
+If the city is Marseille then the country is Russia.,0,Marseille,Russia,France
+If the city is Lyon then the country is France.,1,Lyon,France,France
+If the city is Lyon then the country is Canada.,0,Lyon,Canada,France
+If the city is Suez then the country is Egypt.,1,Suez,Egypt,Egypt
+If the city is Suez then the country is Brazil.,0,Suez,Brazil,Egypt
+If the city is Giza then the country is Egypt.,1,Giza,Egypt,Egypt
+If the city is Giza then the country is India.,0,Giza,India,Egypt
+If the city is Naberezhnyye Chelny then the country is Russia.,1,Naberezhnyye Chelny,Russia,Russia
+If the city is Naberezhnyye Chelny then the country is Brazil.,0,Naberezhnyye Chelny,Brazil,Russia
+If the city is Mukalla then the country is Yemen.,1,Mukalla,Yemen,Yemen
+If the city is Mukalla then the country is Iran.,0,Mukalla,Iran,Yemen
+If the city is Harare then the country is Zimbabwe.,1,Harare,Zimbabwe,Zimbabwe
+If the city is Harare then the country is Turkey.,0,Harare,Turkey,Zimbabwe
+If the city is Sevastopol then the country is Ukraine.,1,Sevastopol,Ukraine,Ukraine
+If the city is Sevastopol then the country is Pakistan.,0,Sevastopol,Pakistan,Ukraine
+If the city is Lipetsk then the country is Russia.,1,Lipetsk,Russia,Russia
+If the city is Lipetsk then the country is China.,0,Lipetsk,China,Russia
+If the city is Istanbul then the country is Turkey.,1,Istanbul,Turkey,Turkey
+If the city is Istanbul then the country is Ghana.,0,Istanbul,Ghana,Turkey
+If the city is Callao then the country is Peru.,1,Callao,Peru,Peru
+If the city is Callao then the country is Myanmar.,0,Callao,Myanmar,Peru
+If the city is Cebu City then the country is the Philippines.,1,Cebu City,the Philippines,the Philippines
+If the city is Cebu City then the country is China.,0,Cebu City,China,the Philippines
+If the city is Tashkent then the country is Uzbekistan.,1,Tashkent,Uzbekistan,Uzbekistan
+If the city is Tashkent then the country is Mexico.,0,Tashkent,Mexico,Uzbekistan
+If the city is Maturin then the country is Venezuela.,1,Maturin,Venezuela,Venezuela
+If the city is Maturin then the country is Saudi Arabia.,0,Maturin,Saudi Arabia,Venezuela
+If the city is Hanoi then the country is Vietnam.,1,Hanoi,Vietnam,Vietnam
+If the city is Hanoi then the country is Poland.,0,Hanoi,Poland,Vietnam
+If the city is Xuzhou then the country is China.,1,Xuzhou,China,China
+If the city is Xuzhou then the country is Mexico.,0,Xuzhou,Mexico,China
+If the city is Cucuta then the country is Colombia.,1,Cucuta,Colombia,Colombia
+If the city is Cucuta then the country is India.,0,Cucuta,India,Colombia
+If the city is Santo Domingo Oeste then the country is the Dominican Republic.,1,Santo Domingo Oeste,the Dominican Republic,the Dominican Republic
+If the city is Santo Domingo Oeste then the country is Zambia.,0,Santo Domingo Oeste,Zambia,the Dominican Republic
+If the city is Tangshan then the country is China.,1,Tangshan,China,China
+If the city is Tangshan then the country is India.,0,Tangshan,India,China
+If the city is Neijiang then the country is China.,1,Neijiang,China,China
+If the city is Neijiang then the country is Ghana.,0,Neijiang,Ghana,China
+If the city is Linfen then the country is China.,1,Linfen,China,China
+If the city is Linfen then the country is India.,0,Linfen,India,China
+If the city is Yiwu then the country is China.,1,Yiwu,China,China
+If the city is Yiwu then the country is India.,0,Yiwu,India,China
+If the city is Qiqihar then the country is China.,1,Qiqihar,China,China
+If the city is Qiqihar then the country is India.,0,Qiqihar,India,China
+If the city is Baotou then the country is China.,1,Baotou,China,China
+If the city is Baotou then the country is Japan.,0,Baotou,Japan,China
+If the city is Aparecida de Goiania then the country is Brazil.,1,Aparecida de Goiania,Brazil,Brazil
+If the city is Aparecida de Goiania then the country is China.,0,Aparecida de Goiania,China,Brazil
+If the city is Kinshasa then the country is the Democratic Republic of the Congo.,1,Kinshasa,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Kinshasa then the country is Brazil.,0,Kinshasa,Brazil,the Democratic Republic of the Congo
+If the city is Ciudad Nezahualcoyotl then the country is Mexico.,1,Ciudad Nezahualcoyotl,Mexico,Mexico
+If the city is Ciudad Nezahualcoyotl then the country is Senegal.,0,Ciudad Nezahualcoyotl,Senegal,Mexico
+If the city is Mexicali then the country is Mexico.,1,Mexicali,Mexico,Mexico
+If the city is Mexicali then the country is South Africa.,0,Mexicali,South Africa,Mexico
+If the city is Ciudad Juarez then the country is Mexico.,1,Ciudad Juarez,Mexico,Mexico
+If the city is Ciudad Juarez then the country is India.,0,Ciudad Juarez,India,Mexico
+If the city is Kampung Baru Subang then the country is Malaysia.,1,Kampung Baru Subang,Malaysia,Malaysia
+If the city is Kampung Baru Subang then the country is the Philippines.,0,Kampung Baru Subang,the Philippines,Malaysia
+If the city is Subang Jaya then the country is Malaysia.,1,Subang Jaya,Malaysia,Malaysia
+If the city is Subang Jaya then the country is Germany.,0,Subang Jaya,Germany,Malaysia
+If the city is Maputo then the country is Mozambique.,1,Maputo,Mozambique,Mozambique
+If the city is Maputo then the country is Japan.,0,Maputo,Japan,Mozambique
+If the city is Kumamoto then the country is Japan.,1,Kumamoto,Japan,Japan
+If the city is Kumamoto then the country is China.,0,Kumamoto,China,Japan
+If the city is Daegu then the country is South Korea.,1,Daegu,South Korea,South Korea
+If the city is Daegu then the country is the United States.,0,Daegu,the United States,South Korea
+If the city is Vilnius then the country is Lithuania.,1,Vilnius,Lithuania,Lithuania
+If the city is Vilnius then the country is China.,0,Vilnius,China,Lithuania
+If the city is Ranchi then the country is India.,1,Ranchi,India,India
+If the city is Ranchi then the country is Venezuela.,0,Ranchi,Venezuela,India
+If the city is Jalandhar then the country is India.,1,Jalandhar,India,India
+If the city is Jalandhar then the country is Iraq.,0,Jalandhar,Iraq,India
+If the city is Bhayandar then the country is India.,1,Bhayandar,India,India
+If the city is Bhayandar then the country is China.,0,Bhayandar,China,India
+If the city is Bareilly then the country is India.,1,Bareilly,India,India
+If the city is Bareilly then the country is Mozambique.,0,Bareilly,Mozambique,India
+If the city is Santo Domingo Este then the country is the Dominican Republic.,1,Santo Domingo Este,the Dominican Republic,the Dominican Republic
+If the city is Santo Domingo Este then the country is India.,0,Santo Domingo Este,India,the Dominican Republic
+If the city is Al Fayyum then the country is Egypt.,1,Al Fayyum,Egypt,Egypt
+If the city is Al Fayyum then the country is Chile.,0,Al Fayyum,Chile,Egypt
+If the city is Rizhao then the country is China.,1,Rizhao,China,China
+If the city is Rizhao then the country is Iraq.,0,Rizhao,Iraq,China
+"If the city is Mianzhu, Deyang, Sichuan then the country is China.",1,"Mianzhu, Deyang, Sichuan",China,China
+"If the city is Mianzhu, Deyang, Sichuan then the country is India.",0,"Mianzhu, Deyang, Sichuan",India,China
+If the city is Jabalpur then the country is India.,1,Jabalpur,India,India
+If the city is Jabalpur then the country is Ukraine.,0,Jabalpur,Ukraine,India
+If the city is Bilimora then the country is India.,1,Bilimora,India,India
+If the city is Bilimora then the country is Uzbekistan.,0,Bilimora,Uzbekistan,India
+If the city is Accra then the country is Ghana.,1,Accra,Ghana,Ghana
+If the city is Accra then the country is China.,0,Accra,China,Ghana
+If the city is Bogor then the country is Indonesia.,1,Bogor,Indonesia,Indonesia
+If the city is Bogor then the country is South Korea.,0,Bogor,South Korea,Indonesia
+If the city is Nyala then the country is Sudan.,1,Nyala,Sudan,Sudan
+If the city is Nyala then the country is Mozambique.,0,Nyala,Mozambique,Sudan
+If the city is Eskisehir then the country is Turkey.,1,Eskisehir,Turkey,Turkey
+If the city is Eskisehir then the country is China.,0,Eskisehir,China,Turkey
+If the city is Antalya then the country is Turkey.,1,Antalya,Turkey,Turkey
+If the city is Antalya then the country is Germany.,0,Antalya,Germany,Turkey
+If the city is Dnipro then the country is Ukraine.,1,Dnipro,Ukraine,Ukraine
+If the city is Dnipro then the country is Russia.,0,Dnipro,Russia,Ukraine
+If the city is Khabarovsk then the country is Russia.,1,Khabarovsk,Russia,Russia
+If the city is Khabarovsk then the country is Saudi Arabia.,0,Khabarovsk,Saudi Arabia,Russia
+If the city is Irkutsk then the country is Russia.,1,Irkutsk,Russia,Russia
+If the city is Irkutsk then the country is Morocco.,0,Irkutsk,Morocco,Russia
+If the city is Libreville then the country is Gabon.,1,Libreville,Gabon,Gabon
+If the city is Libreville then the country is the United States.,0,Libreville,the United States,Gabon
+If the city is Santiago de los Caballeros then the country is the Dominican Republic.,1,Santiago de los Caballeros,the Dominican Republic,the Dominican Republic
+If the city is Santiago de los Caballeros then the country is India.,0,Santiago de los Caballeros,India,the Dominican Republic
+If the city is Algiers then the country is Algeria.,1,Algiers,Algeria,Algeria
+If the city is Algiers then the country is China.,0,Algiers,China,Algeria
+If the city is Nashik then the country is India.,1,Nashik,India,India
+If the city is Nashik then the country is China.,0,Nashik,China,India
+If the city is Karol Bagh then the country is India.,1,Karol Bagh,India,India
+If the city is Karol Bagh then the country is Syria.,0,Karol Bagh,Syria,India
+If the city is Orumiyeh then the country is Iran.,1,Orumiyeh,Iran,Iran
+If the city is Orumiyeh then the country is Saudi Arabia.,0,Orumiyeh,Saudi Arabia,Iran
+If the city is Zahedan then the country is Iran.,1,Zahedan,Iran,Iran
+If the city is Zahedan then the country is Nicaragua.,0,Zahedan,Nicaragua,Iran
+If the city is Xuchang then the country is China.,1,Xuchang,China,China
+If the city is Xuchang then the country is Japan.,0,Xuchang,Japan,China
+If the city is Changde then the country is China.,1,Changde,China,China
+If the city is Changde then the country is Mexico.,0,Changde,Mexico,China
+If the city is Shaoguan then the country is China.,1,Shaoguan,China,China
+If the city is Shaoguan then the country is Pakistan.,0,Shaoguan,Pakistan,China
+If the city is Jilin then the country is China.,1,Jilin,China,China
+If the city is Jilin then the country is the United States.,0,Jilin,the United States,China
+If the city is Manaus then the country is Brazil.,1,Manaus,Brazil,Brazil
+If the city is Manaus then the country is Turkey.,0,Manaus,Turkey,Brazil
+If the city is Jaboatao dos Guararapes then the country is Brazil.,1,Jaboatao dos Guararapes,Brazil,Brazil
+If the city is Jaboatao dos Guararapes then the country is Myanmar.,0,Jaboatao dos Guararapes,Myanmar,Brazil
+If the city is Kakamega then the country is Kenya.,1,Kakamega,Kenya,Kenya
+If the city is Kakamega then the country is Russia.,0,Kakamega,Russia,Kenya
+If the city is Agadir then the country is Morocco.,1,Agadir,Morocco,Morocco
+If the city is Agadir then the country is Bangladesh.,0,Agadir,Bangladesh,Morocco
+If the city is Ulan Bator then the country is Mongolia.,1,Ulan Bator,Mongolia,Mongolia
+If the city is Ulan Bator then the country is Ukraine.,0,Ulan Bator,Ukraine,Mongolia
+If the city is Muscat then the country is Oman.,1,Muscat,Oman,Oman
+If the city is Muscat then the country is Bangladesh.,0,Muscat,Bangladesh,Oman
+If the city is Paranaque City then the country is the Philippines.,1,Paranaque City,the Philippines,the Philippines
+If the city is Paranaque City then the country is India.,0,Paranaque City,India,the Philippines
+If the city is Rahim Yar Khan then the country is Pakistan.,1,Rahim Yar Khan,Pakistan,Pakistan
+If the city is Rahim Yar Khan then the country is Lithuania.,0,Rahim Yar Khan,Lithuania,Pakistan
+If the city is Balikpapan then the country is Indonesia.,1,Balikpapan,Indonesia,Indonesia
+If the city is Balikpapan then the country is Japan.,0,Balikpapan,Japan,Indonesia
+If the city is Guarulhos then the country is Brazil.,1,Guarulhos,Brazil,Brazil
+If the city is Guarulhos then the country is China.,0,Guarulhos,China,Brazil
+If the city is Volgograd then the country is Russia.,1,Volgograd,Russia,Russia
+If the city is Volgograd then the country is Nigeria.,0,Volgograd,Nigeria,Russia
+If the city is Ulyanovsk then the country is Russia.,1,Ulyanovsk,Russia,Russia
+If the city is Ulyanovsk then the country is Ukraine.,0,Ulyanovsk,Ukraine,Russia
+If the city is Kota Bharu then the country is Malaysia.,1,Kota Bharu,Malaysia,Malaysia
+If the city is Kota Bharu then the country is Norway.,0,Kota Bharu,Norway,Malaysia
+If the city is Sarajevo then the country is Bosnia and Herzegovina.,1,Sarajevo,Bosnia and Herzegovina,Bosnia and Herzegovina
+If the city is Sarajevo then the country is South Africa.,0,Sarajevo,South Africa,Bosnia and Herzegovina
+If the city is Maceio then the country is Brazil.,1,Maceio,Brazil,Brazil
+If the city is Maceio then the country is China.,0,Maceio,China,Brazil
+If the city is Joao Pessoa then the country is Brazil.,1,Joao Pessoa,Brazil,Brazil
+If the city is Joao Pessoa then the country is South Africa.,0,Joao Pessoa,South Africa,Brazil
+If the city is Shangqiu then the country is China.,1,Shangqiu,China,China
+If the city is Shangqiu then the country is South Korea.,0,Shangqiu,South Korea,China
+If the city is Zhangye then the country is China.,1,Zhangye,China,China
+If the city is Zhangye then the country is Venezuela.,0,Zhangye,Venezuela,China
+If the city is Xuanzhou then the country is China.,1,Xuanzhou,China,China
+If the city is Xuanzhou then the country is Tanzania.,0,Xuanzhou,Tanzania,China
+If the city is Wuhan then the country is China.,1,Wuhan,China,China
+If the city is Wuhan then the country is Egypt.,0,Wuhan,Egypt,China
+If the city is Nanchang then the country is China.,1,Nanchang,China,China
+If the city is Nanchang then the country is Malaysia.,0,Nanchang,Malaysia,China
+If the city is Luancheng then the country is China.,1,Luancheng,China,China
+If the city is Luancheng then the country is Brazil.,0,Luancheng,Brazil,China
+If the city is Liuzhou then the country is China.,1,Liuzhou,China,China
+If the city is Liuzhou then the country is Russia.,0,Liuzhou,Russia,China
+If the city is Guangyuan then the country is China.,1,Guangyuan,China,China
+If the city is Guangyuan then the country is Mexico.,0,Guangyuan,Mexico,China
+If the city is Bijie then the country is China.,1,Bijie,China,China
+If the city is Bijie then the country is Indonesia.,0,Bijie,Indonesia,China
+If the city is Zhoushan then the country is China.,1,Zhoushan,China,China
+If the city is Zhoushan then the country is the Philippines.,0,Zhoushan,the Philippines,China
+If the city is Hegang then the country is China.,1,Hegang,China,China
+If the city is Hegang then the country is Russia.,0,Hegang,Russia,China
+If the city is E'zhou then the country is China.,1,E'zhou,China,China
+If the city is E'zhou then the country is Malaysia.,0,E'zhou,Malaysia,China
+If the city is Campos dos Goytacazes then the country is Brazil.,1,Campos dos Goytacazes,Brazil,Brazil
+If the city is Campos dos Goytacazes then the country is Vietnam.,0,Campos dos Goytacazes,Vietnam,Brazil
+If the city is Bucharest then the country is Romania.,1,Bucharest,Romania,Romania
+If the city is Bucharest then the country is Italy.,0,Bucharest,Italy,Romania
+If the city is Ansan-si then the country is South Korea.,1,Ansan-si,South Korea,South Korea
+If the city is Ansan-si then the country is Canada.,0,Ansan-si,Canada,South Korea
+If the city is Casablanca then the country is Morocco.,1,Casablanca,Morocco,Morocco
+If the city is Casablanca then the country is Russia.,0,Casablanca,Russia,Morocco
+If the city is Coyoacan then the country is Mexico.,1,Coyoacan,Mexico,Mexico
+If the city is Coyoacan then the country is Kenya.,0,Coyoacan,Kenya,Mexico
+If the city is Oyo then the country is Nigeria.,1,Oyo,Nigeria,Nigeria
+If the city is Oyo then the country is China.,0,Oyo,China,Nigeria
+If the city is Pasig City then the country is the Philippines.,1,Pasig City,the Philippines,the Philippines
+If the city is Pasig City then the country is Morocco.,0,Pasig City,Morocco,the Philippines
+If the city is Kano then the country is Nigeria.,1,Kano,Nigeria,Nigeria
+If the city is Kano then the country is China.,0,Kano,China,Nigeria
+If the city is Bahawalpur then the country is Pakistan.,1,Bahawalpur,Pakistan,Pakistan
+If the city is Bahawalpur then the country is China.,0,Bahawalpur,China,Pakistan
+If the city is New Kingston then the country is Jamaica.,1,New Kingston,Jamaica,Jamaica
+If the city is New Kingston then the country is South Africa.,0,New Kingston,South Africa,Jamaica
+If the city is Pyongyang then the country is North Korea.,1,Pyongyang,North Korea,North Korea
+If the city is Pyongyang then the country is Argentina.,0,Pyongyang,Argentina,North Korea
+If the city is Shymkent then the country is Kazakhstan.,1,Shymkent,Kazakhstan,Kazakhstan
+If the city is Shymkent then the country is China.,0,Shymkent,China,Kazakhstan
+If the city is Tlalpan then the country is Mexico.,1,Tlalpan,Mexico,Mexico
+If the city is Tlalpan then the country is Egypt.,0,Tlalpan,Egypt,Mexico
+If the city is Kemerovo then the country is Russia.,1,Kemerovo,Russia,Russia
+If the city is Kemerovo then the country is India.,0,Kemerovo,India,Russia
+If the city is Zaporizhzhya then the country is Ukraine.,1,Zaporizhzhya,Ukraine,Ukraine
+If the city is Zaporizhzhya then the country is South Korea.,0,Zaporizhzhya,South Korea,Ukraine
+If the city is Iztapalapa then the country is Mexico.,1,Iztapalapa,Mexico,Mexico
+If the city is Iztapalapa then the country is Yemen.,0,Iztapalapa,Yemen,Mexico
+If the city is Aguascalientes then the country is Mexico.,1,Aguascalientes,Mexico,Mexico
+If the city is Aguascalientes then the country is China.,0,Aguascalientes,China,Mexico
+If the city is Kuala Lumpur then the country is Malaysia.,1,Kuala Lumpur,Malaysia,Malaysia
+If the city is Kuala Lumpur then the country is Oman.,0,Kuala Lumpur,Oman,Malaysia
+If the city is Warri then the country is Nigeria.,1,Warri,Nigeria,Nigeria
+If the city is Warri then the country is China.,0,Warri,China,Nigeria
+If the city is Peshawar then the country is Pakistan.,1,Peshawar,Pakistan,Pakistan
+If the city is Peshawar then the country is Tanzania.,0,Peshawar,Tanzania,Pakistan
+If the city is Kagoshima then the country is Japan.,1,Kagoshima,Japan,Japan
+If the city is Kagoshima then the country is India.,0,Kagoshima,India,Japan
+If the city is Hamamatsu then the country is Japan.,1,Hamamatsu,Japan,Japan
+If the city is Hamamatsu then the country is Russia.,0,Hamamatsu,Russia,Japan
+If the city is Cheongju-si then the country is South Korea.,1,Cheongju-si,South Korea,South Korea
+If the city is Cheongju-si then the country is India.,0,Cheongju-si,India,South Korea
+If the city is Ghaziabad then the country is India.,1,Ghaziabad,India,India
+If the city is Ghaziabad then the country is South Korea.,0,Ghaziabad,South Korea,India
+If the city is Cochin then the country is India.,1,Cochin,India,India
+If the city is Cochin then the country is China.,0,Cochin,China,India
+If the city is Ahmedabad then the country is India.,1,Ahmedabad,India,India
+If the city is Ahmedabad then the country is China.,0,Ahmedabad,China,India
+If the city is Sulaymaniyah then the country is Iraq.,1,Sulaymaniyah,Iraq,Iraq
+If the city is Sulaymaniyah then the country is Turkey.,0,Sulaymaniyah,Turkey,Iraq
+If the city is Hamadan then the country is Iran.,1,Hamadan,Iran,Iran
+If the city is Hamadan then the country is Pakistan.,0,Hamadan,Pakistan,Iran
+If the city is Omsk then the country is Russia.,1,Omsk,Russia,Russia
+If the city is Omsk then the country is China.,0,Omsk,China,Russia
+If the city is Ta'if then the country is Saudi Arabia.,1,Ta'if,Saudi Arabia,Saudi Arabia
+If the city is Ta'if then the country is Venezuela.,0,Ta'if,Venezuela,Saudi Arabia
+If the city is Stockholm then the country is Sweden.,1,Stockholm,Sweden,Sweden
+If the city is Stockholm then the country is Russia.,0,Stockholm,Russia,Sweden
+If the city is Siliguri then the country is India.,1,Siliguri,India,India
+If the city is Siliguri then the country is China.,0,Siliguri,China,India
+If the city is Baghdad then the country is Iraq.,1,Baghdad,Iraq,Iraq
+If the city is Baghdad then the country is China.,0,Baghdad,China,Iraq
+If the city is Al Basrah al Qadimah then the country is Iraq.,1,Al Basrah al Qadimah,Iraq,Iraq
+If the city is Al Basrah al Qadimah then the country is China.,0,Al Basrah al Qadimah,China,Iraq
+If the city is Krakow then the country is Poland.,1,Krakow,Poland,Poland
+If the city is Krakow then the country is South Korea.,0,Krakow,South Korea,Poland
+If the city is Tolyatti then the country is Russia.,1,Tolyatti,Russia,Russia
+If the city is Tolyatti then the country is Ghana.,0,Tolyatti,Ghana,Russia
+If the city is Bandar Lampung then the country is Indonesia.,1,Bandar Lampung,Indonesia,Indonesia
+If the city is Bandar Lampung then the country is South Africa.,0,Bandar Lampung,South Africa,Indonesia
+If the city is Tucson then the country is the United States.,1,Tucson,the United States,the United States
+If the city is Tucson then the country is Canada.,0,Tucson,Canada,the United States
+If the city is Can Tho then the country is Vietnam.,1,Can Tho,Vietnam,Vietnam
+If the city is Can Tho then the country is Venezuela.,0,Can Tho,Venezuela,Vietnam
+If the city is Bouake then the country is Côte d'Ivoire.,1,Bouake,Côte d'Ivoire,Côte d'Ivoire
+If the city is Bouake then the country is China.,0,Bouake,China,Côte d'Ivoire
+If the city is Abobo then the country is Côte d'Ivoire.,1,Abobo,Côte d'Ivoire,Côte d'Ivoire
+If the city is Abobo then the country is India.,0,Abobo,India,Côte d'Ivoire
+If the city is Shihezi then the country is China.,1,Shihezi,China,China
+If the city is Shihezi then the country is Russia.,0,Shihezi,Russia,China
+If the city is Yunfu then the country is China.,1,Yunfu,China,China
+If the city is Yunfu then the country is Honduras.,0,Yunfu,Honduras,China
+If the city is Xiangtan then the country is China.,1,Xiangtan,China,China
+If the city is Xiangtan then the country is Brazil.,0,Xiangtan,Brazil,China
+If the city is Qionghai then the country is China.,1,Qionghai,China,China
+If the city is Qionghai then the country is Ecuador.,0,Qionghai,Ecuador,China
+If the city is Chuzhou then the country is China.,1,Chuzhou,China,China
+If the city is Chuzhou then the country is India.,0,Chuzhou,India,China
+If the city is Taiz then the country is Yemen.,1,Taiz,Yemen,Yemen
+If the city is Taiz then the country is Burkina Faso.,0,Taiz,Burkina Faso,Yemen
+If the city is Tembisa then the country is South Africa.,1,Tembisa,South Africa,South Africa
+If the city is Tembisa then the country is the Philippines.,0,Tembisa,the Philippines,South Africa
+If the city is Puente Alto then the country is Chile.,1,Puente Alto,Chile,Chile
+If the city is Puente Alto then the country is China.,0,Puente Alto,China,Chile
+If the city is Zhumadian then the country is China.,1,Zhumadian,China,China
+If the city is Zhumadian then the country is Brazil.,0,Zhumadian,Brazil,China
+If the city is Zhengzhou then the country is China.,1,Zhengzhou,China,China
+If the city is Zhengzhou then the country is Brazil.,0,Zhengzhou,Brazil,China
+If the city is Ya'an then the country is China.,1,Ya'an,China,China
+If the city is Ya'an then the country is Morocco.,0,Ya'an,Morocco,China
+If the city is Xianyang then the country is China.,1,Xianyang,China,China
+If the city is Xianyang then the country is Russia.,0,Xianyang,Russia,China
+If the city is Weihai then the country is China.,1,Weihai,China,China
+If the city is Weihai then the country is Russia.,0,Weihai,Russia,China
+If the city is Pingdingshan then the country is China.,1,Pingdingshan,China,China
+If the city is Pingdingshan then the country is South Africa.,0,Pingdingshan,South Africa,China
+If the city is Bengbu then the country is China.,1,Bengbu,China,China
+If the city is Bengbu then the country is India.,0,Bengbu,India,China
+If the city is Zhangjiakou then the country is China.,1,Zhangjiakou,China,China
+If the city is Zhangjiakou then the country is India.,0,Zhangjiakou,India,China
+If the city is Mississauga then the country is Canada.,1,Mississauga,Canada,Canada
+If the city is Mississauga then the country is India.,0,Mississauga,India,Canada
+If the city is Yerevan then the country is Armenia.,1,Yerevan,Armenia,Armenia
+If the city is Yerevan then the country is Bangladesh.,0,Yerevan,Bangladesh,Armenia
+If the city is Albuquerque then the country is the United States.,1,Albuquerque,the United States,the United States
+If the city is Albuquerque then the country is Egypt.,0,Albuquerque,Egypt,the United States
+If the city is New South Memphis then the country is the United States.,1,New South Memphis,the United States,the United States
+If the city is New South Memphis then the country is China.,0,New South Memphis,China,the United States
+If the city is Calgary then the country is Canada.,1,Calgary,Canada,Canada
+If the city is Calgary then the country is India.,0,Calgary,India,Canada
+If the city is Kisangani then the country is the Democratic Republic of the Congo.,1,Kisangani,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Kisangani then the country is China.,0,Kisangani,China,the Democratic Republic of the Congo
+If the city is Bobo-Dioulasso then the country is Burkina Faso.,1,Bobo-Dioulasso,Burkina Faso,Burkina Faso
+If the city is Bobo-Dioulasso then the country is China.,0,Bobo-Dioulasso,China,Burkina Faso
+If the city is Sao Jose dos Campos then the country is Brazil.,1,Sao Jose dos Campos,Brazil,Brazil
+If the city is Sao Jose dos Campos then the country is Iran.,0,Sao Jose dos Campos,Iran,Brazil
+If the city is Florianopolis then the country is Brazil.,1,Florianopolis,Brazil,Brazil
+If the city is Florianopolis then the country is Ecuador.,0,Florianopolis,Ecuador,Brazil
+If the city is Cuiaba then the country is Brazil.,1,Cuiaba,Brazil,Brazil
+If the city is Cuiaba then the country is Latvia.,0,Cuiaba,Latvia,Brazil
+If the city is Chattogram then the country is Bangladesh.,1,Chattogram,Bangladesh,Bangladesh
+If the city is Chattogram then the country is China.,0,Chattogram,China,Bangladesh
+If the city is Nanjing then the country is China.,1,Nanjing,China,China
+If the city is Nanjing then the country is Germany.,0,Nanjing,Germany,China
+If the city is Kaifeng then the country is China.,1,Kaifeng,China,China
+If the city is Kaifeng then the country is Mexico.,0,Kaifeng,Mexico,China
+If the city is Heze then the country is China.,1,Heze,China,China
+If the city is Heze then the country is Yemen.,0,Heze,Yemen,China
+If the city is Sendai then the country is Japan.,1,Sendai,Japan,Japan
+If the city is Sendai then the country is Brazil.,0,Sendai,Brazil,Japan
+If the city is Jeonju then the country is South Korea.,1,Jeonju,South Korea,South Korea
+If the city is Jeonju then the country is the United States.,0,Jeonju,the United States,South Korea
+If the city is Almaty then the country is Kazakhstan.,1,Almaty,Kazakhstan,Kazakhstan
+If the city is Almaty then the country is Iraq.,0,Almaty,Iraq,Kazakhstan
+If the city is Pimpri then the country is India.,1,Pimpri,India,India
+If the city is Pimpri then the country is China.,0,Pimpri,China,India
+If the city is Navi Mumbai then the country is India.,1,Navi Mumbai,India,India
+If the city is Navi Mumbai then the country is China.,0,Navi Mumbai,China,India
+If the city is Novosibirsk then the country is Russia.,1,Novosibirsk,Russia,Russia
+If the city is Novosibirsk then the country is the Philippines.,0,Novosibirsk,the Philippines,Russia
+If the city is Goeteborg then the country is Sweden.,1,Goeteborg,Sweden,Sweden
+If the city is Goeteborg then the country is South Korea.,0,Goeteborg,South Korea,Sweden
+If the city is Bursa then the country is Turkey.,1,Bursa,Turkey,Turkey
+If the city is Bursa then the country is Bosnia and Herzegovina.,0,Bursa,Bosnia and Herzegovina,Turkey
+If the city is Dar es Salaam then the country is Tanzania.,1,Dar es Salaam,Tanzania,Tanzania
+If the city is Dar es Salaam then the country is Italy.,0,Dar es Salaam,Italy,Tanzania
+If the city is Mbuji-Mayi then the country is the Democratic Republic of the Congo.,1,Mbuji-Mayi,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Mbuji-Mayi then the country is Pakistan.,0,Mbuji-Mayi,Pakistan,the Democratic Republic of the Congo
+If the city is Goiania then the country is Brazil.,1,Goiania,Brazil,Brazil
+If the city is Goiania then the country is China.,0,Goiania,China,Brazil
+If the city is Yaroslavl then the country is Russia.,1,Yaroslavl,Russia,Russia
+If the city is Yaroslavl then the country is India.,0,Yaroslavl,India,Russia
+If the city is Kigali then the country is Rwanda.,1,Kigali,Rwanda,Rwanda
+If the city is Kigali then the country is Indonesia.,0,Kigali,Indonesia,Rwanda
+If the city is Diyarbakir then the country is Turkey.,1,Diyarbakir,Turkey,Turkey
+If the city is Diyarbakir then the country is Colombia.,0,Diyarbakir,Colombia,Turkey
+If the city is Tyumen then the country is Russia.,1,Tyumen,Russia,Russia
+If the city is Tyumen then the country is Mexico.,0,Tyumen,Mexico,Russia
+If the city is Orenburg then the country is Russia.,1,Orenburg,Russia,Russia
+If the city is Orenburg then the country is Malaysia.,0,Orenburg,Malaysia,Russia
+If the city is Osaka then the country is Japan.,1,Osaka,Japan,Japan
+If the city is Osaka then the country is India.,0,Osaka,India,Japan
+If the city is Sapporo then the country is Japan.,1,Sapporo,Japan,Japan
+If the city is Sapporo then the country is Mexico.,0,Sapporo,Mexico,Japan
+If the city is Kimhae then the country is South Korea.,1,Kimhae,South Korea,South Korea
+If the city is Kimhae then the country is Senegal.,0,Kimhae,Senegal,South Korea
+If the city is Cheonan then the country is South Korea.,1,Cheonan,South Korea,South Korea
+If the city is Cheonan then the country is Myanmar.,0,Cheonan,Myanmar,South Korea
+If the city is San Luis Potosi then the country is Mexico.,1,San Luis Potosi,Mexico,Mexico
+If the city is San Luis Potosi then the country is the Democratic Republic of the Congo.,0,San Luis Potosi,the Democratic Republic of the Congo,Mexico
+If the city is Culiacan then the country is Mexico.,1,Culiacan,Mexico,Mexico
+If the city is Culiacan then the country is China.,0,Culiacan,China,Mexico
+If the city is Kaduna then the country is Nigeria.,1,Kaduna,Nigeria,Nigeria
+If the city is Kaduna then the country is Turkey.,0,Kaduna,Turkey,Nigeria
+If the city is General Santos then the country is the Philippines.,1,General Santos,the Philippines,the Philippines
+If the city is General Santos then the country is China.,0,General Santos,China,the Philippines
+If the city is Ebute Ikorodu then the country is Nigeria.,1,Ebute Ikorodu,Nigeria,Nigeria
+If the city is Ebute Ikorodu then the country is China.,0,Ebute Ikorodu,China,Nigeria
+If the city is Benin City then the country is Nigeria.,1,Benin City,Nigeria,Nigeria
+If the city is Benin City then the country is China.,0,Benin City,China,Nigeria
+If the city is Kanpur then the country is India.,1,Kanpur,India,India
+If the city is Kanpur then the country is Brazil.,0,Kanpur,Brazil,India
+If the city is Indore then the country is India.,1,Indore,India,India
+If the city is Indore then the country is Turkey.,0,Indore,Turkey,India
+If the city is Zunyi then the country is China.,1,Zunyi,China,China
+If the city is Zunyi then the country is Senegal.,0,Zunyi,Senegal,China
+If the city is Zhanjiang then the country is China.,1,Zhanjiang,China,China
+If the city is Zhanjiang then the country is India.,0,Zhanjiang,India,China
+If the city is Wenzhou then the country is China.,1,Wenzhou,China,China
+If the city is Wenzhou then the country is Moldova.,0,Wenzhou,Moldova,China
+If the city is Luohe then the country is China.,1,Luohe,China,China
+If the city is Luohe then the country is Brazil.,0,Luohe,Brazil,China
+If the city is Kunming then the country is China.,1,Kunming,China,China
+If the city is Kunming then the country is Mexico.,0,Kunming,Mexico,China
+If the city is Cixi then the country is China.,1,Cixi,China,China
+If the city is Cixi then the country is Indonesia.,0,Cixi,Indonesia,China
+If the city is Hanzhong then the country is China.,1,Hanzhong,China,China
+If the city is Hanzhong then the country is Iran.,0,Hanzhong,Iran,China
+If the city is Guangzhou then the country is China.,1,Guangzhou,China,China
+If the city is Guangzhou then the country is India.,0,Guangzhou,India,China
+If the city is Munich then the country is Germany.,1,Munich,Germany,Germany
+If the city is Munich then the country is China.,0,Munich,China,Germany
+If the city is Pekanbaru then the country is Indonesia.,1,Pekanbaru,Indonesia,Indonesia
+If the city is Pekanbaru then the country is India.,0,Pekanbaru,India,Indonesia
+If the city is Malang then the country is Indonesia.,1,Malang,Indonesia,Indonesia
+If the city is Malang then the country is Morocco.,0,Malang,Morocco,Indonesia
+If the city is Douala then the country is Cameroon.,1,Douala,Cameroon,Cameroon
+If the city is Douala then the country is Russia.,0,Douala,Russia,Cameroon
+If the city is Kashgar then the country is China.,1,Kashgar,China,China
+If the city is Kashgar then the country is Turkey.,0,Kashgar,Turkey,China
+If the city is Zibo then the country is China.,1,Zibo,China,China
+If the city is Zibo then the country is India.,0,Zibo,India,China
+If the city is Tianshui then the country is China.,1,Tianshui,China,China
+If the city is Tianshui then the country is Canada.,0,Tianshui,Canada,China
+If the city is Laibin then the country is China.,1,Laibin,China,China
+If the city is Laibin then the country is Ethiopia.,0,Laibin,Ethiopia,China
+If the city is Deyang then the country is China.,1,Deyang,China,China
+If the city is Deyang then the country is Japan.,0,Deyang,Japan,China
+If the city is Teresina then the country is Brazil.,1,Teresina,Brazil,Brazil
+If the city is Teresina then the country is Vietnam.,0,Teresina,Vietnam,Brazil
+If the city is Leipzig then the country is Germany.,1,Leipzig,Germany,Germany
+If the city is Leipzig then the country is Russia.,0,Leipzig,Russia,Germany
+If the city is Duesseldorf then the country is Germany.,1,Duesseldorf,Germany,Germany
+If the city is Duesseldorf then the country is Mexico.,0,Duesseldorf,Mexico,Germany
+If the city is Zagreb then the country is Croatia.,1,Zagreb,Croatia,Croatia
+If the city is Zagreb then the country is Japan.,0,Zagreb,Japan,Croatia
+If the city is Hannover then the country is Germany.,1,Hannover,Germany,Germany
+If the city is Hannover then the country is China.,0,Hannover,China,Germany
+If the city is Penza then the country is Russia.,1,Penza,Russia,Russia
+If the city is Penza then the country is China.,0,Penza,China,Russia
+If the city is Matola then the country is Mozambique.,1,Matola,Mozambique,Mozambique
+If the city is Matola then the country is India.,0,Matola,India,Mozambique
+If the city is Enugu then the country is Nigeria.,1,Enugu,Nigeria,Nigeria
+If the city is Enugu then the country is South Korea.,0,Enugu,South Korea,Nigeria
+If the city is Shizuoka then the country is Japan.,1,Shizuoka,Japan,Japan
+If the city is Shizuoka then the country is China.,0,Shizuoka,China,Japan
+If the city is Himeji then the country is Japan.,1,Himeji,Japan,Japan
+If the city is Himeji then the country is the Democratic Republic of the Congo.,0,Himeji,the Democratic Republic of the Congo,Japan
+If the city is Hamhung then the country is North Korea.,1,Hamhung,North Korea,North Korea
+If the city is Hamhung then the country is China.,0,Hamhung,China,North Korea
+If the city is Seoul then the country is South Korea.,1,Seoul,South Korea,South Korea
+If the city is Seoul then the country is Nicaragua.,0,Seoul,Nicaragua,South Korea
+If the city is Meerut then the country is India.,1,Meerut,India,India
+If the city is Meerut then the country is Nigeria.,0,Meerut,Nigeria,India
+If the city is Hubli then the country is India.,1,Hubli,India,India
+If the city is Hubli then the country is Indonesia.,0,Hubli,Indonesia,India
+If the city is Dubai then the country is the United Arab Emirates.,1,Dubai,the United Arab Emirates,the United Arab Emirates
+If the city is Dubai then the country is the United States.,0,Dubai,the United States,the United Arab Emirates
+If the city is Astrakhan then the country is Russia.,1,Astrakhan,Russia,Russia
+If the city is Astrakhan then the country is India.,0,Astrakhan,India,Russia
+If the city is Aleppo then the country is Syria.,1,Aleppo,Syria,Syria
+If the city is Aleppo then the country is China.,0,Aleppo,China,Syria
+If the city is Ar Raqqah then the country is Syria.,1,Ar Raqqah,Syria,Syria
+If the city is Ar Raqqah then the country is Iraq.,0,Ar Raqqah,Iraq,Syria
+If the city is Saint Petersburg then the country is Russia.,1,Saint Petersburg,Russia,Russia
+If the city is Saint Petersburg then the country is Canada.,0,Saint Petersburg,Canada,Russia
+If the city is Johannesburg then the country is South Africa.,1,Johannesburg,South Africa,South Africa
+If the city is Johannesburg then the country is China.,0,Johannesburg,China,South Africa
+If the city is Wanzhou then the country is China.,1,Wanzhou,China,China
+If the city is Wanzhou then the country is India.,0,Wanzhou,India,China
+If the city is Anyang then the country is China.,1,Anyang,China,China
+If the city is Anyang then the country is Kuwait.,0,Anyang,Kuwait,China
+If the city is Qinhuangdao then the country is China.,1,Qinhuangdao,China,China
+If the city is Qinhuangdao then the country is Eritrea.,0,Qinhuangdao,Eritrea,China
+If the city is Meizhou then the country is China.,1,Meizhou,China,China
+If the city is Meizhou then the country is Russia.,0,Meizhou,Russia,China
+If the city is Yangjiang then the country is China.,1,Yangjiang,China,China
+If the city is Yangjiang then the country is Indonesia.,0,Yangjiang,Indonesia,China
+If the city is Beijing then the country is China.,1,Beijing,China,China
+If the city is Beijing then the country is Ghana.,0,Beijing,Ghana,China
+If the city is Shah Alam then the country is Malaysia.,1,Shah Alam,Malaysia,Malaysia
+If the city is Shah Alam then the country is China.,0,Shah Alam,China,Malaysia
+If the city is Vadodara then the country is India.,1,Vadodara,India,India
+If the city is Vadodara then the country is Russia.,0,Vadodara,Russia,India
+If the city is Sangli then the country is India.,1,Sangli,India,India
+If the city is Sangli then the country is Japan.,0,Sangli,Japan,India
+If the city is Guwahati then the country is India.,1,Guwahati,India,India
+If the city is Guwahati then the country is China.,0,Guwahati,China,India
+If the city is Prayagraj then the country is India.,1,Prayagraj,India,India
+If the city is Prayagraj then the country is Kenya.,0,Prayagraj,Kenya,India
+If the city is Aligarh then the country is India.,1,Aligarh,India,India
+If the city is Aligarh then the country is China.,0,Aligarh,China,India
+If the city is Kermanshah then the country is Iran.,1,Kermanshah,Iran,Iran
+If the city is Kermanshah then the country is China.,0,Kermanshah,China,Iran
+If the city is Semarang then the country is Indonesia.,1,Semarang,Indonesia,Indonesia
+If the city is Semarang then the country is Saudi Arabia.,0,Semarang,Saudi Arabia,Indonesia
+If the city is Khulna then the country is Bangladesh.,1,Khulna,Bangladesh,Bangladesh
+If the city is Khulna then the country is Japan.,0,Khulna,Japan,Bangladesh
+If the city is Korla then the country is China.,1,Korla,China,China
+If the city is Korla then the country is Azerbaijan.,0,Korla,Azerbaijan,China
+If the city is Zaozhuang then the country is China.,1,Zaozhuang,China,China
+If the city is Zaozhuang then the country is Belarus.,0,Zaozhuang,Belarus,China
+If the city is Xiamen then the country is China.,1,Xiamen,China,China
+If the city is Xiamen then the country is Pakistan.,0,Xiamen,Pakistan,China
+If the city is Shenzhen then the country is China.,1,Shenzhen,China,China
+If the city is Shenzhen then the country is Mexico.,0,Shenzhen,Mexico,China
+If the city is Maoming then the country is China.,1,Maoming,China,China
+If the city is Maoming then the country is Brazil.,0,Maoming,Brazil,China
+If the city is Anshun then the country is China.,1,Anshun,China,China
+If the city is Anshun then the country is Brazil.,0,Anshun,Brazil,China
+If the city is Siping then the country is China.,1,Siping,China,China
+If the city is Siping then the country is Iraq.,0,Siping,Iraq,China
+If the city is Shuangyashan then the country is China.,1,Shuangyashan,China,China
+If the city is Shuangyashan then the country is India.,0,Shuangyashan,India,China
+If the city is Jiamusi then the country is China.,1,Jiamusi,China,China
+If the city is Jiamusi then the country is Germany.,0,Jiamusi,Germany,China
+If the city is Minsk then the country is Belarus.,1,Minsk,Belarus,Belarus
+If the city is Minsk then the country is South Korea.,0,Minsk,South Korea,Belarus
+If the city is Lubumbashi then the country is the Democratic Republic of the Congo.,1,Lubumbashi,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Lubumbashi then the country is India.,0,Lubumbashi,India,the Democratic Republic of the Congo
+If the city is San Miguel de Tucuman then the country is Argentina.,1,San Miguel de Tucuman,Argentina,Argentina
+If the city is San Miguel de Tucuman then the country is China.,0,San Miguel de Tucuman,China,Argentina
+If the city is Cotonou then the country is Benin.,1,Cotonou,Benin,Benin
+If the city is Cotonou then the country is China.,0,Cotonou,China,Benin
+If the city is Comilla then the country is Bangladesh.,1,Comilla,Bangladesh,Bangladesh
+If the city is Comilla then the country is China.,0,Comilla,China,Bangladesh
+If the city is Sao Bernardo do Campo then the country is Brazil.,1,Sao Bernardo do Campo,Brazil,Brazil
+If the city is Sao Bernardo do Campo then the country is Zambia.,0,Sao Bernardo do Campo,Zambia,Brazil
+If the city is Feira de Santana then the country is Brazil.,1,Feira de Santana,Brazil,Brazil
+If the city is Feira de Santana then the country is China.,0,Feira de Santana,China,Brazil
+If the city is Porto Alegre then the country is Brazil.,1,Porto Alegre,Brazil,Brazil
+If the city is Porto Alegre then the country is Belarus.,0,Porto Alegre,Belarus,Brazil
+If the city is Juiz de Fora then the country is Brazil.,1,Juiz de Fora,Brazil,Brazil
+If the city is Juiz de Fora then the country is India.,0,Juiz de Fora,India,Brazil
+If the city is Nagoya then the country is Japan.,1,Nagoya,Japan,Japan
+If the city is Nagoya then the country is China.,0,Nagoya,China,Japan
+If the city is Al Ahmadi then the country is Kuwait.,1,Al Ahmadi,Kuwait,Kuwait
+If the city is Al Ahmadi then the country is Japan.,0,Al Ahmadi,Japan,Kuwait
+If the city is Beirut then the country is Lebanon.,1,Beirut,Lebanon,Lebanon
+If the city is Beirut then the country is Algeria.,0,Beirut,Algeria,Lebanon
+If the city is Lilongwe then the country is Malawi.,1,Lilongwe,Malawi,Malawi
+If the city is Lilongwe then the country is Turkey.,0,Lilongwe,Turkey,Malawi
+If the city is Ecatepec de Morelos then the country is Mexico.,1,Ecatepec de Morelos,Mexico,Mexico
+If the city is Ecatepec de Morelos then the country is India.,0,Ecatepec de Morelos,India,Mexico
+If the city is Cancun then the country is Mexico.,1,Cancun,Mexico,Mexico
+If the city is Cancun then the country is Myanmar.,0,Cancun,Myanmar,Mexico
+If the city is Isfahan then the country is Iran.,1,Isfahan,Iran,Iran
+If the city is Isfahan then the country is China.,0,Isfahan,China,Iran
+If the city is Conakry then the country is Guinea.,1,Conakry,Guinea,Guinea
+If the city is Conakry then the country is Belarus.,0,Conakry,Belarus,Guinea
+If the city is Petaling Jaya then the country is Malaysia.,1,Petaling Jaya,Malaysia,Malaysia
+If the city is Petaling Jaya then the country is Bosnia and Herzegovina.,0,Petaling Jaya,Bosnia and Herzegovina,Malaysia
+If the city is Zaria then the country is Nigeria.,1,Zaria,Nigeria,Nigeria
+If the city is Zaria then the country is India.,0,Zaria,India,Nigeria
+If the city is Cimahi then the country is Indonesia.,1,Cimahi,Indonesia,Indonesia
+If the city is Cimahi then the country is Germany.,0,Cimahi,Germany,Indonesia
+If the city is Arequipa then the country is Peru.,1,Arequipa,Peru,Peru
+If the city is Arequipa then the country is India.,0,Arequipa,India,Peru
+If the city is Multan then the country is Pakistan.,1,Multan,Pakistan,Pakistan
+If the city is Multan then the country is Ecuador.,0,Multan,Ecuador,Pakistan
+If the city is Bahcelievler then the country is Turkey.,1,Bahcelievler,Turkey,Turkey
+If the city is Bahcelievler then the country is Germany.,0,Bahcelievler,Germany,Turkey
+If the city is Saratov then the country is Russia.,1,Saratov,Russia,Russia
+If the city is Saratov then the country is Indonesia.,0,Saratov,Indonesia,Russia
+If the city is Kharkiv then the country is Ukraine.,1,Kharkiv,Ukraine,Ukraine
+If the city is Kharkiv then the country is Moldova.,0,Kharkiv,Moldova,Ukraine
+If the city is Malatya then the country is Turkey.,1,Malatya,Turkey,Turkey
+If the city is Malatya then the country is Russia.,0,Malatya,Russia,Turkey
+If the city is Lviv then the country is Ukraine.,1,Lviv,Ukraine,Ukraine
+If the city is Lviv then the country is China.,0,Lviv,China,Ukraine
+If the city is Kyiv then the country is Ukraine.,1,Kyiv,Ukraine,Ukraine
+If the city is Kyiv then the country is Russia.,0,Kyiv,Russia,Ukraine
+If the city is Kitakyushu then the country is Japan.,1,Kitakyushu,Japan,Japan
+If the city is Kitakyushu then the country is Yemen.,0,Kitakyushu,Yemen,Japan
+If the city is Onitsha then the country is Nigeria.,1,Onitsha,Nigeria,Nigeria
+If the city is Onitsha then the country is China.,0,Onitsha,China,Nigeria
+If the city is Anyang-si then the country is South Korea.,1,Anyang-si,South Korea,South Korea
+If the city is Anyang-si then the country is Iraq.,0,Anyang-si,Iraq,South Korea
+If the city is Kobe then the country is Japan.,1,Kobe,Japan,Japan
+If the city is Kobe then the country is China.,0,Kobe,China,Japan
+If the city is Chiclayo then the country is Peru.,1,Chiclayo,Peru,Peru
+If the city is Chiclayo then the country is Venezuela.,0,Chiclayo,Venezuela,Peru
+If the city is Phnom Penh then the country is Cambodia.,1,Phnom Penh,Cambodia,Cambodia
+If the city is Phnom Penh then the country is Senegal.,0,Phnom Penh,Senegal,Cambodia
+If the city is Nouakchott then the country is Mauritania.,1,Nouakchott,Mauritania,Mauritania
+If the city is Nouakchott then the country is China.,0,Nouakchott,China,Mauritania
+If the city is Vijayawada then the country is India.,1,Vijayawada,India,India
+If the city is Vijayawada then the country is Nigeria.,0,Vijayawada,Nigeria,India
+If the city is Theni then the country is India.,1,Theni,India,India
+If the city is Theni then the country is Nigeria.,0,Theni,Nigeria,India
+If the city is Narela then the country is India.,1,Narela,India,India
+If the city is Narela then the country is Turkey.,0,Narela,Turkey,India
+If the city is Quetta then the country is Pakistan.,1,Quetta,Pakistan,Pakistan
+If the city is Quetta then the country is Kenya.,0,Quetta,Kenya,Pakistan
+If the city is Chennai then the country is India.,1,Chennai,India,India
+If the city is Chennai then the country is China.,0,Chennai,China,India
+If the city is Changshu then the country is China.,1,Changshu,China,China
+If the city is Changshu then the country is the Philippines.,0,Changshu,the Philippines,China
+If the city is Tehran then the country is Iran.,1,Tehran,Iran,Iran
+If the city is Tehran then the country is Niger.,0,Tehran,Niger,Iran
+If the city is Bayannur then the country is China.,1,Bayannur,China,China
+If the city is Bayannur then the country is Russia.,0,Bayannur,Russia,China
+If the city is Barranquilla then the country is Colombia.,1,Barranquilla,Colombia,Colombia
+If the city is Barranquilla then the country is Pakistan.,0,Barranquilla,Pakistan,Colombia
+If the city is Budapest then the country is Hungary.,1,Budapest,Hungary,Hungary
+If the city is Budapest then the country is Iraq.,0,Budapest,Iraq,Hungary
+If the city is Pontianak then the country is Indonesia.,1,Pontianak,Indonesia,Indonesia
+If the city is Pontianak then the country is India.,0,Pontianak,India,Indonesia
+If the city is Recife then the country is Brazil.,1,Recife,Brazil,Brazil
+If the city is Recife then the country is North Korea.,0,Recife,North Korea,Brazil
+If the city is Contagem then the country is Brazil.,1,Contagem,Brazil,Brazil
+If the city is Contagem then the country is Indonesia.,0,Contagem,Indonesia,Brazil
+If the city is Port Said then the country is Egypt.,1,Port Said,Egypt,Egypt
+If the city is Port Said then the country is China.,0,Port Said,China,Egypt
+If the city is Asyut then the country is Egypt.,1,Asyut,Egypt,Egypt
+If the city is Asyut then the country is Japan.,0,Asyut,Japan,Egypt
+If the city is Ziyang then the country is China.,1,Ziyang,China,China
+If the city is Ziyang then the country is Belgium.,0,Ziyang,Belgium,China
+If the city is Yinchuan then the country is China.,1,Yinchuan,China,China
+If the city is Yinchuan then the country is Bangladesh.,0,Yinchuan,Bangladesh,China
+If the city is Zhangjiagang then the country is China.,1,Zhangjiagang,China,China
+If the city is Zhangjiagang then the country is Brazil.,0,Zhangjiagang,Brazil,China
+If the city is Shanghai then the country is China.,1,Shanghai,China,China
+If the city is Shanghai then the country is Mexico.,0,Shanghai,Mexico,China
+If the city is Jieyang then the country is China.,1,Jieyang,China,China
+If the city is Jieyang then the country is the Philippines.,0,Jieyang,the Philippines,China
+If the city is Longyan then the country is China.,1,Longyan,China,China
+If the city is Longyan then the country is Benin.,0,Longyan,Benin,China
+If the city is Dandong then the country is China.,1,Dandong,China,China
+If the city is Dandong then the country is Niger.,0,Dandong,Niger,China
+If the city is Frankfurt am Main then the country is Germany.,1,Frankfurt am Main,Germany,Germany
+If the city is Frankfurt am Main then the country is Vietnam.,0,Frankfurt am Main,Vietnam,Germany
+If the city is Lusaka then the country is Zambia.,1,Lusaka,Zambia,Zambia
+If the city is Lusaka then the country is Poland.,0,Lusaka,Poland,Zambia
+If the city is Aden then the country is Yemen.,1,Aden,Yemen,Yemen
+If the city is Aden then the country is Japan.,0,Aden,Japan,Yemen
+If the city is Jaboatao then the country is Brazil.,1,Jaboatao,Brazil,Brazil
+If the city is Jaboatao then the country is Syria.,0,Jaboatao,Syria,Brazil
+If the city is Aracaju then the country is Brazil.,1,Aracaju,Brazil,Brazil
+If the city is Aracaju then the country is Russia.,0,Aracaju,Russia,Brazil
+If the city is Londrina then the country is Brazil.,1,Londrina,Brazil,Brazil
+If the city is Londrina then the country is India.,0,Londrina,India,Brazil
+If the city is Zigong then the country is China.,1,Zigong,China,China
+If the city is Zigong then the country is Turkey.,0,Zigong,Turkey,China
+If the city is Kunshan then the country is China.,1,Kunshan,China,China
+If the city is Kunshan then the country is Russia.,0,Kunshan,Russia,China
+If the city is Yichang then the country is China.,1,Yichang,China,China
+If the city is Yichang then the country is Japan.,0,Yichang,Japan,China
+If the city is Sanming then the country is China.,1,Sanming,China,China
+If the city is Sanming then the country is Bulgaria.,0,Sanming,Bulgaria,China
+If the city is Guang'an then the country is China.,1,Guang'an,China,China
+If the city is Guang'an then the country is Germany.,0,Guang'an,Germany,China
+If the city is Ma'anshan then the country is China.,1,Ma'anshan,China,China
+If the city is Ma'anshan then the country is India.,0,Ma'anshan,India,China
+If the city is Dongying then the country is China.,1,Dongying,China,China
+If the city is Dongying then the country is India.,0,Dongying,India,China
+If the city is Fushun then the country is China.,1,Fushun,China,China
+If the city is Fushun then the country is Mexico.,0,Fushun,Mexico,China
+If the city is Rajshahi then the country is Bangladesh.,1,Rajshahi,Bangladesh,Bangladesh
+If the city is Rajshahi then the country is Russia.,0,Rajshahi,Russia,Bangladesh
+If the city is Rangpur then the country is Bangladesh.,1,Rangpur,Bangladesh,Bangladesh
+If the city is Rangpur then the country is Russia.,0,Rangpur,Russia,Bangladesh
+If the city is Dortmund then the country is Germany.,1,Dortmund,Germany,Germany
+If the city is Dortmund then the country is India.,0,Dortmund,India,Germany
+If the city is Detroit then the country is the United States.,1,Detroit,the United States,the United States
+If the city is Detroit then the country is China.,0,Detroit,China,the United States
+If the city is Latakia then the country is Syria.,1,Latakia,Syria,Syria
+If the city is Latakia then the country is Somalia.,0,Latakia,Somalia,Syria
+If the city is Ashgabat then the country is Turkmenistan.,1,Ashgabat,Turkmenistan,Turkmenistan
+If the city is Ashgabat then the country is Bangladesh.,0,Ashgabat,Bangladesh,Turkmenistan
+If the city is Maracaibo then the country is Venezuela.,1,Maracaibo,Venezuela,Venezuela
+If the city is Maracaibo then the country is Russia.,0,Maracaibo,Russia,Venezuela
+If the city is Erode then the country is India.,1,Erode,India,India
+If the city is Erode then the country is China.,0,Erode,China,India
+If the city is Mumbai then the country is India.,1,Mumbai,India,India
+If the city is Mumbai then the country is China.,0,Mumbai,China,India
+If the city is Nasiriyah then the country is Iraq.,1,Nasiriyah,Iraq,Iraq
+If the city is Nasiriyah then the country is Rwanda.,0,Nasiriyah,Rwanda,Iraq
+If the city is Kahriz then the country is Iran.,1,Kahriz,Iran,Iran
+If the city is Kahriz then the country is Uzbekistan.,0,Kahriz,Uzbekistan,Iran
+If the city is Surakarta then the country is Indonesia.,1,Surakarta,Indonesia,Indonesia
+If the city is Surakarta then the country is India.,0,Surakarta,India,Indonesia
+If the city is Banjarmasin then the country is Indonesia.,1,Banjarmasin,Indonesia,Indonesia
+If the city is Banjarmasin then the country is South Korea.,0,Banjarmasin,South Korea,Indonesia
+If the city is Vladivostok then the country is Russia.,1,Vladivostok,Russia,Russia
+If the city is Vladivostok then the country is Romania.,0,Vladivostok,Romania,Russia
+If the city is Adana then the country is Turkey.,1,Adana,Turkey,Turkey
+If the city is Adana then the country is Togo.,0,Adana,Togo,Turkey
+If the city is Voronezh then the country is Russia.,1,Voronezh,Russia,Russia
+If the city is Voronezh then the country is Romania.,0,Voronezh,Romania,Russia
+If the city is Namangan then the country is Uzbekistan.,1,Namangan,Uzbekistan,Uzbekistan
+If the city is Namangan then the country is India.,0,Namangan,India,Uzbekistan
+If the city is Ordos then the country is China.,1,Ordos,China,China
+If the city is Ordos then the country is Brazil.,0,Ordos,Brazil,China
+If the city is Moradabad then the country is India.,1,Moradabad,India,India
+If the city is Moradabad then the country is China.,0,Moradabad,China,India
+If the city is Bengaluru then the country is India.,1,Bengaluru,India,India
+If the city is Bengaluru then the country is China.,0,Bengaluru,China,India
+If the city is Shivaji Nagar then the country is India.,1,Shivaji Nagar,India,India
+If the city is Shivaji Nagar then the country is China.,0,Shivaji Nagar,China,India
+If the city is Turin then the country is Italy.,1,Turin,Italy,Italy
+If the city is Turin then the country is China.,0,Turin,China,Italy
+If the city is Okayama then the country is Japan.,1,Okayama,Japan,Japan
+If the city is Okayama then the country is Russia.,0,Okayama,Russia,Japan
+If the city is Daejeon then the country is South Korea.,1,Daejeon,South Korea,South Korea
+If the city is Daejeon then the country is India.,0,Daejeon,India,South Korea
+If the city is Battagram then the country is Pakistan.,1,Battagram,Pakistan,Pakistan
+If the city is Battagram then the country is Tanzania.,0,Battagram,Tanzania,Pakistan
+If the city is Yaounde then the country is Cameroon.,1,Yaounde,Cameroon,Cameroon
+If the city is Yaounde then the country is China.,0,Yaounde,China,Cameroon
+If the city is Zhangzhou then the country is China.,1,Zhangzhou,China,China
+If the city is Zhangzhou then the country is Nicaragua.,0,Zhangzhou,Nicaragua,China
+If the city is Yangquan then the country is China.,1,Yangquan,China,China
+If the city is Yangquan then the country is Hungary.,0,Yangquan,Hungary,China
+If the city is Sanya then the country is China.,1,Sanya,China,China
+If the city is Sanya then the country is India.,0,Sanya,India,China
+If the city is Foshan then the country is China.,1,Foshan,China,China
+If the city is Foshan then the country is Mozambique.,0,Foshan,Mozambique,China
+If the city is Sharjah then the country is the United Arab Emirates.,1,Sharjah,the United Arab Emirates,the United Arab Emirates
+If the city is Sharjah then the country is China.,0,Sharjah,China,the United Arab Emirates
+If the city is Al Ain City then the country is the United Arab Emirates.,1,Al Ain City,the United Arab Emirates,the United Arab Emirates
+If the city is Al Ain City then the country is India.,0,Al Ain City,India,the United Arab Emirates
+If the city is Kalininskiy then the country is Russia.,1,Kalininskiy,Russia,Russia
+If the city is Kalininskiy then the country is Japan.,0,Kalininskiy,Japan,Russia
+If the city is Mersin then the country is Turkey.,1,Mersin,Turkey,Turkey
+If the city is Mersin then the country is the United States.,0,Mersin,the United States,Turkey
+If the city is Guayaquil then the country is Ecuador.,1,Guayaquil,Ecuador,Ecuador
+If the city is Guayaquil then the country is China.,0,Guayaquil,China,Ecuador
+If the city is Tegucigalpa then the country is Honduras.,1,Tegucigalpa,Honduras,Honduras
+If the city is Tegucigalpa then the country is China.,0,Tegucigalpa,China,Honduras
+If the city is Koeln then the country is Germany.,1,Koeln,Germany,Germany
+If the city is Koeln then the country is Nigeria.,0,Koeln,Nigeria,Germany
+If the city is Nuernberg then the country is Germany.,1,Nuernberg,Germany,Germany
+If the city is Nuernberg then the country is China.,0,Nuernberg,China,Germany
+If the city is Zarqa then the country is Jordan.,1,Zarqa,Jordan,Jordan
+If the city is Zarqa then the country is India.,0,Zarqa,India,Jordan
+If the city is Riga then the country is Latvia.,1,Riga,Latvia,Latvia
+If the city is Riga then the country is Japan.,0,Riga,Japan,Latvia
+If the city is Nanded then the country is India.,1,Nanded,India,India
+If the city is Nanded then the country is China.,0,Nanded,China,India
+If the city is Gwalior then the country is India.,1,Gwalior,India,India
+If the city is Gwalior then the country is China.,0,Gwalior,China,India
+If the city is Dombivli then the country is India.,1,Dombivli,India,India
+If the city is Dombivli then the country is Mali.,0,Dombivli,Mali,India
+If the city is Kallakurichi then the country is India.,1,Kallakurichi,India,India
+If the city is Kallakurichi then the country is Iraq.,0,Kallakurichi,Iraq,India
+If the city is Bekasi then the country is Indonesia.,1,Bekasi,Indonesia,Indonesia
+If the city is Bekasi then the country is China.,0,Bekasi,China,Indonesia
+If the city is Johor Bahru then the country is Malaysia.,1,Johor Bahru,Malaysia,Malaysia
+If the city is Johor Bahru then the country is Cuba.,0,Johor Bahru,Cuba,Malaysia
+If the city is Santa Maria Chimalhuacan then the country is Mexico.,1,Santa Maria Chimalhuacan,Mexico,Mexico
+If the city is Santa Maria Chimalhuacan then the country is Saudi Arabia.,0,Santa Maria Chimalhuacan,Saudi Arabia,Mexico
+If the city is Urumqi then the country is China.,1,Urumqi,China,China
+If the city is Urumqi then the country is Vietnam.,0,Urumqi,Vietnam,China
+If the city is Qingdao then the country is China.,1,Qingdao,China,China
+If the city is Qingdao then the country is India.,0,Qingdao,India,China
+If the city is Sofia then the country is Bulgaria.,1,Sofia,Bulgaria,Bulgaria
+If the city is Sofia then the country is South Korea.,0,Sofia,South Korea,Bulgaria
+If the city is Nova Iguacu then the country is Brazil.,1,Nova Iguacu,Brazil,Brazil
+If the city is Nova Iguacu then the country is India.,0,Nova Iguacu,India,Brazil
+If the city is Abeokuta then the country is Nigeria.,1,Abeokuta,Nigeria,Nigeria
+If the city is Abeokuta then the country is Mozambique.,0,Abeokuta,Mozambique,Nigeria
+If the city is Amman then the country is Jordan.,1,Amman,Jordan,Jordan
+If the city is Amman then the country is Malaysia.,0,Amman,Malaysia,Jordan
+If the city is Hachioji then the country is Japan.,1,Hachioji,Japan,Japan
+If the city is Hachioji then the country is Mexico.,0,Hachioji,Mexico,Japan
+If the city is Fukuoka then the country is Japan.,1,Fukuoka,Japan,Japan
+If the city is Fukuoka then the country is Senegal.,0,Fukuoka,Senegal,Japan
+If the city is Goyang-si then the country is South Korea.,1,Goyang-si,South Korea,South Korea
+If the city is Goyang-si then the country is Russia.,0,Goyang-si,Russia,South Korea
+If the city is Meknes then the country is Morocco.,1,Meknes,Morocco,Morocco
+If the city is Meknes then the country is China.,0,Meknes,China,Morocco
+If the city is Antananarivo then the country is Madagascar.,1,Antananarivo,Madagascar,Madagascar
+If the city is Antananarivo then the country is Germany.,0,Antananarivo,Germany,Madagascar
+If the city is Kalyan then the country is India.,1,Kalyan,India,India
+If the city is Kalyan then the country is South Korea.,0,Kalyan,South Korea,India
+If the city is Jaipur then the country is India.,1,Jaipur,India,India
+If the city is Jaipur then the country is China.,0,Jaipur,China,India
+If the city is Guntur then the country is India.,1,Guntur,India,India
+If the city is Guntur then the country is China.,0,Guntur,China,India
+If the city is Bhilai then the country is India.,1,Bhilai,India,India
+If the city is Bhilai then the country is Venezuela.,0,Bhilai,Venezuela,India
+If the city is Bhavnagar then the country is India.,1,Bhavnagar,India,India
+If the city is Bhavnagar then the country is Japan.,0,Bhavnagar,Japan,India
+If the city is Amravati then the country is India.,1,Amravati,India,India
+If the city is Amravati then the country is China.,0,Amravati,China,India
+If the city is Shiraz then the country is Iran.,1,Shiraz,Iran,Iran
+If the city is Shiraz then the country is China.,0,Shiraz,China,Iran
+If the city is Lome then the country is Togo.,1,Lome,Togo,Togo
+If the city is Lome then the country is Yemen.,0,Lome,Yemen,Togo
+If the city is Erzurum then the country is Turkey.,1,Erzurum,Turkey,Turkey
+If the city is Erzurum then the country is the Democratic Republic of the Congo.,0,Erzurum,the Democratic Republic of the Congo,Turkey
+If the city is Seattle then the country is the United States.,1,Seattle,the United States,the United States
+If the city is Seattle then the country is Yemen.,0,Seattle,Yemen,the United States
+If the city is Barquisimeto then the country is Venezuela.,1,Barquisimeto,Venezuela,Venezuela
+If the city is Barquisimeto then the country is Poland.,0,Barquisimeto,Poland,Venezuela
+If the city is Kryvyy Rih then the country is Ukraine.,1,Kryvyy Rih,Ukraine,Ukraine
+If the city is Kryvyy Rih then the country is China.,0,Kryvyy Rih,China,Ukraine
+If the city is Krasnoyarsk then the country is Russia.,1,Krasnoyarsk,Russia,Russia
+If the city is Krasnoyarsk then the country is India.,0,Krasnoyarsk,India,Russia
+If the city is Quzhou then the country is China.,1,Quzhou,China,China
+If the city is Quzhou then the country is Vietnam.,0,Quzhou,Vietnam,China
+If the city is Pingliang then the country is China.,1,Pingliang,China,China
+If the city is Pingliang then the country is Tanzania.,0,Pingliang,Tanzania,China
+If the city is Puning then the country is China.,1,Puning,China,China
+If the city is Puning then the country is India.,0,Puning,India,China
+If the city is Huzhou then the country is China.,1,Huzhou,China,China
+If the city is Huzhou then the country is Germany.,0,Huzhou,Germany,China
+If the city is Chizhou then the country is China.,1,Chizhou,China,China
+If the city is Chizhou then the country is the Republic of the Congo.,0,Chizhou,the Republic of the Congo,China
+If the city is Chengdu then the country is China.,1,Chengdu,China,China
+If the city is Chengdu then the country is South Korea.,0,Chengdu,South Korea,China
+If the city is Cangzhou then the country is China.,1,Cangzhou,China,China
+If the city is Cangzhou then the country is Germany.,0,Cangzhou,Germany,China
+If the city is Samarinda then the country is Indonesia.,1,Samarinda,Indonesia,Indonesia
+If the city is Samarinda then the country is Iraq.,0,Samarinda,Iraq,Indonesia
+If the city is Helsinki then the country is Finland.,1,Helsinki,Finland,Finland
+If the city is Helsinki then the country is Pakistan.,0,Helsinki,Pakistan,Finland
+If the city is Khabarovsk Vtoroy then the country is Russia.,1,Khabarovsk Vtoroy,Russia,Russia
+If the city is Khabarovsk Vtoroy then the country is China.,0,Khabarovsk Vtoroy,China,Russia
+If the city is Wroclaw then the country is Poland.,1,Wroclaw,Poland,Poland
+If the city is Wroclaw then the country is Mexico.,0,Wroclaw,Mexico,Poland
+If the city is Oslo then the country is Norway.,1,Oslo,Norway,Norway
+If the city is Oslo then the country is Venezuela.,0,Oslo,Venezuela,Norway
+If the city is Caloocan City then the country is the Philippines.,1,Caloocan City,the Philippines,the Philippines
+If the city is Caloocan City then the country is China.,0,Caloocan City,China,the Philippines
+If the city is Ryazan' then the country is Russia.,1,Ryazan',Russia,Russia
+If the city is Ryazan' then the country is South Korea.,0,Ryazan',South Korea,Russia
+If the city is Ciudad Guayana then the country is Venezuela.,1,Ciudad Guayana,Venezuela,Venezuela
+If the city is Ciudad Guayana then the country is South Africa.,0,Ciudad Guayana,South Africa,Venezuela
+If the city is Ho Chi Minh City then the country is Vietnam.,1,Ho Chi Minh City,Vietnam,Vietnam
+If the city is Ho Chi Minh City then the country is Gabon.,0,Ho Chi Minh City,Gabon,Vietnam
+If the city is Al Hudaydah then the country is Yemen.,1,Al Hudaydah,Yemen,Yemen
+If the city is Al Hudaydah then the country is South Korea.,0,Al Hudaydah,South Korea,Yemen
+If the city is Soweto then the country is South Africa.,1,Soweto,South Africa,South Africa
+If the city is Soweto then the country is Gabon.,0,Soweto,Gabon,South Africa
+If the city is Benoni then the country is South Africa.,1,Benoni,South Africa,South Africa
+If the city is Benoni then the country is the Philippines.,0,Benoni,the Philippines,South Africa
+If the city is Wuzhou then the country is China.,1,Wuzhou,China,China
+If the city is Wuzhou then the country is Syria.,0,Wuzhou,Syria,China
+If the city is Wanxian then the country is China.,1,Wanxian,China,China
+If the city is Wanxian then the country is Algeria.,0,Wanxian,Algeria,China
+If the city is Qinzhou then the country is China.,1,Qinzhou,China,China
+If the city is Qinzhou then the country is India.,0,Qinzhou,India,China
+If the city is Wuwei then the country is China.,1,Wuwei,China,China
+If the city is Wuwei then the country is India.,0,Wuwei,India,China
+If the city is Hefei then the country is China.,1,Hefei,China,China
+If the city is Hefei then the country is Germany.,0,Hefei,Germany,China
+If the city is Handan then the country is China.,1,Handan,China,China
+If the city is Handan then the country is Russia.,0,Handan,Russia,China
+If the city is Jiangyin then the country is China.,1,Jiangyin,China,China
+If the city is Jiangyin then the country is Bulgaria.,0,Jiangyin,Bulgaria,China
+If the city is Brazzaville then the country is the Republic of the Congo.,1,Brazzaville,the Republic of the Congo,the Republic of the Congo
+If the city is Brazzaville then the country is Nigeria.,0,Brazzaville,Nigeria,the Republic of the Congo
+If the city is Sorocaba then the country is Brazil.,1,Sorocaba,Brazil,Brazil
+If the city is Sorocaba then the country is Mexico.,0,Sorocaba,Mexico,Brazil
+If the city is Aktobe then the country is Kazakhstan.,1,Aktobe,Kazakhstan,Kazakhstan
+If the city is Aktobe then the country is Afghanistan.,0,Aktobe,Afghanistan,Kazakhstan
+If the city is Chisinau then the country is Moldova.,1,Chisinau,Moldova,Moldova
+If the city is Chisinau then the country is Germany.,0,Chisinau,Germany,Moldova
+If the city is Tiruppur then the country is India.,1,Tiruppur,India,India
+If the city is Tiruppur then the country is Japan.,0,Tiruppur,Japan,India
+If the city is Kozhikode then the country is India.,1,Kozhikode,India,India
+If the city is Kozhikode then the country is the United States.,0,Kozhikode,the United States,India
+If the city is Asansol then the country is India.,1,Asansol,India,India
+If the city is Asansol then the country is China.,0,Asansol,China,India
+If the city is Suizhou then the country is China.,1,Suizhou,China,China
+If the city is Suizhou then the country is Japan.,0,Suizhou,Japan,China
+If the city is Jingmen then the country is China.,1,Jingmen,China,China
+If the city is Jingmen then the country is Japan.,0,Jingmen,Japan,China
+If the city is Huangshi then the country is China.,1,Huangshi,China,China
+If the city is Huangshi then the country is India.,0,Huangshi,India,China
+If the city is Huaibei then the country is China.,1,Huaibei,China,China
+If the city is Huaibei then the country is Brazil.,0,Huaibei,Brazil,China
+If the city is Hebi then the country is China.,1,Hebi,China,China
+If the city is Hebi then the country is Nigeria.,0,Hebi,Nigeria,China
+If the city is Benxi then the country is China.,1,Benxi,China,China
+If the city is Benxi then the country is Brazil.,0,Benxi,Brazil,China
+If the city is Fortaleza then the country is Brazil.,1,Fortaleza,Brazil,Brazil
+If the city is Fortaleza then the country is Honduras.,0,Fortaleza,Honduras,Brazil
+If the city is Antwerpen then the country is Belgium.,1,Antwerpen,Belgium,Belgium
+If the city is Antwerpen then the country is Japan.,0,Antwerpen,Japan,Belgium
+If the city is Pikine then the country is Senegal.,1,Pikine,Senegal,Senegal
+If the city is Pikine then the country is Pakistan.,0,Pikine,Pakistan,Senegal
+If the city is Dakar then the country is Senegal.,1,Dakar,Senegal,Senegal
+If the city is Dakar then the country is India.,0,Dakar,India,Senegal
+If the city is Faisalabad then the country is Pakistan.,1,Faisalabad,Pakistan,Pakistan
+If the city is Faisalabad then the country is India.,0,Faisalabad,India,Pakistan
+If the city is Kyoto then the country is Japan.,1,Kyoto,Japan,Japan
+If the city is Kyoto then the country is China.,0,Kyoto,China,Japan
+If the city is Port Harcourt then the country is Nigeria.,1,Port Harcourt,Nigeria,Nigeria
+If the city is Port Harcourt then the country is Eritrea.,0,Port Harcourt,Eritrea,Nigeria
+If the city is Makhachkala then the country is Russia.,1,Makhachkala,Russia,Russia
+If the city is Makhachkala then the country is Indonesia.,0,Makhachkala,Indonesia,Russia
+If the city is Thiruvananthapuram then the country is India.,1,Thiruvananthapuram,India,India
+If the city is Thiruvananthapuram then the country is Japan.,0,Thiruvananthapuram,Japan,India
+If the city is Madurai then the country is India.,1,Madurai,India,India
+If the city is Madurai then the country is Burundi.,0,Madurai,Burundi,India
+If the city is Abu Ghurayb then the country is Iraq.,1,Abu Ghurayb,Iraq,Iraq
+If the city is Abu Ghurayb then the country is Indonesia.,0,Abu Ghurayb,Indonesia,Iraq
+If the city is Karaj then the country is Iran.,1,Karaj,Iran,Iran
+If the city is Karaj then the country is India.,0,Karaj,India,Iran
+If the city is Kampala then the country is Uganda.,1,Kampala,Uganda,Uganda
+If the city is Kampala then the country is Turkey.,0,Kampala,Turkey,Uganda
+If the city is Chicago then the country is the United States.,1,Chicago,the United States,the United States
+If the city is Chicago then the country is Madagascar.,0,Chicago,Madagascar,the United States
+If the city is Milwaukee then the country is the United States.,1,Milwaukee,the United States,the United States
+If the city is Milwaukee then the country is China.,0,Milwaukee,China,the United States
+If the city is Bloemfontein then the country is South Africa.,1,Bloemfontein,South Africa,South Africa
+If the city is Bloemfontein then the country is China.,0,Bloemfontein,China,South Africa
+If the city is Uberlandia then the country is Brazil.,1,Uberlandia,Brazil,Brazil
+If the city is Uberlandia then the country is India.,0,Uberlandia,India,Brazil
+If the city is Curitiba then the country is Brazil.,1,Curitiba,Brazil,Brazil
+If the city is Curitiba then the country is India.,0,Curitiba,India,Brazil
+If the city is Rio de Janeiro then the country is Brazil.,1,Rio de Janeiro,Brazil,Brazil
+If the city is Rio de Janeiro then the country is Japan.,0,Rio de Janeiro,Japan,Brazil
+If the city is Ribeirao Preto then the country is Brazil.,1,Ribeirao Preto,Brazil,Brazil
+If the city is Ribeirao Preto then the country is China.,0,Ribeirao Preto,China,Brazil
+If the city is The Bronx then the country is the United States.,1,The Bronx,the United States,the United States
+If the city is The Bronx then the country is South Korea.,0,The Bronx,South Korea,the United States
+If the city is Samarkand then the country is Uzbekistan.,1,Samarkand,Uzbekistan,Uzbekistan
+If the city is Samarkand then the country is China.,0,Samarkand,China,Uzbekistan
+If the city is Da Nang then the country is Vietnam.,1,Da Nang,Vietnam,Vietnam
+If the city is Da Nang then the country is China.,0,Da Nang,China,Vietnam
+If the city is Tomsk then the country is Russia.,1,Tomsk,Russia,Russia
+If the city is Tomsk then the country is Ghana.,0,Tomsk,Ghana,Russia
+If the city is Najran then the country is Saudi Arabia.,1,Najran,Saudi Arabia,Saudi Arabia
+If the city is Najran then the country is India.,0,Najran,India,Saudi Arabia
+If the city is Bangkok then the country is Thailand.,1,Bangkok,Thailand,Thailand
+If the city is Bangkok then the country is China.,0,Bangkok,China,Thailand
+If the city is Oklahoma City then the country is the United States.,1,Oklahoma City,the United States,the United States
+If the city is Oklahoma City then the country is China.,0,Oklahoma City,China,the United States
+If the city is Izhevsk then the country is Russia.,1,Izhevsk,Russia,Russia
+If the city is Izhevsk then the country is Nigeria.,0,Izhevsk,Nigeria,Russia
+If the city is Madinat an Nasr then the country is Egypt.,1,Madinat an Nasr,Egypt,Egypt
+If the city is Madinat an Nasr then the country is India.,0,Madinat an Nasr,India,Egypt
+If the city is Yibin then the country is China.,1,Yibin,China,China
+If the city is Yibin then the country is Brazil.,0,Yibin,Brazil,China
+If the city is Sanmenxia then the country is China.,1,Sanmenxia,China,China
+If the city is Sanmenxia then the country is Brazil.,0,Sanmenxia,Brazil,China
+If the city is Rui'an then the country is China.,1,Rui'an,China,China
+If the city is Rui'an then the country is Indonesia.,0,Rui'an,Indonesia,China
+If the city is Ningbo then the country is China.,1,Ningbo,China,China
+If the city is Ningbo then the country is South Korea.,0,Ningbo,South Korea,China
+If the city is Jiujiang then the country is China.,1,Jiujiang,China,China
+If the city is Jiujiang then the country is Indonesia.,0,Jiujiang,Indonesia,China
+If the city is Jiaozuo then the country is China.,1,Jiaozuo,China,China
+If the city is Jiaozuo then the country is Bangladesh.,0,Jiaozuo,Bangladesh,China
+If the city is Jiangmen then the country is China.,1,Jiangmen,China,China
+If the city is Jiangmen then the country is South Korea.,0,Jiangmen,South Korea,China
+If the city is Huizhou then the country is China.,1,Huizhou,China,China
+If the city is Huizhou then the country is the United States.,0,Huizhou,the United States,China
+If the city is Harbin then the country is China.,1,Harbin,China,China
+If the city is Harbin then the country is Russia.,0,Harbin,Russia,China
+If the city is Herat then the country is Afghanistan.,1,Herat,Afghanistan,Afghanistan
+If the city is Herat then the country is China.,0,Herat,China,Afghanistan
+If the city is Kleinzschocher then the country is Germany.,1,Kleinzschocher,Germany,Germany
+If the city is Kleinzschocher then the country is Brazil.,0,Kleinzschocher,Brazil,Germany
+If the city is Davao then the country is the Philippines.,1,Davao,the Philippines,the Philippines
+If the city is Davao then the country is Brazil.,0,Davao,Brazil,the Philippines
+If the city is Sargodha then the country is Pakistan.,1,Sargodha,Pakistan,Pakistan
+If the city is Sargodha then the country is India.,0,Sargodha,India,Pakistan
+If the city is Islamabad then the country is Pakistan.,1,Islamabad,Pakistan,Pakistan
+If the city is Islamabad then the country is Japan.,0,Islamabad,Japan,Pakistan
+If the city is Zapopan then the country is Mexico.,1,Zapopan,Mexico,Mexico
+If the city is Zapopan then the country is China.,0,Zapopan,China,Mexico
+If the city is Visakhapatnam then the country is India.,1,Visakhapatnam,India,India
+If the city is Visakhapatnam then the country is Indonesia.,0,Visakhapatnam,Indonesia,India
+If the city is Rourkela then the country is India.,1,Rourkela,India,India
+If the city is Rourkela then the country is Brazil.,0,Rourkela,Brazil,India
+If the city is Dhanbad then the country is India.,1,Dhanbad,India,India
+If the city is Dhanbad then the country is Kenya.,0,Dhanbad,Kenya,India
+If the city is Bokaro then the country is India.,1,Bokaro,India,India
+If the city is Bokaro then the country is China.,0,Bokaro,China,India
+If the city is Tabriz then the country is Iran.,1,Tabriz,Iran,Iran
+If the city is Tabriz then the country is India.,0,Tabriz,India,Iran
+If the city is Tlaquepaque then the country is Mexico.,1,Tlaquepaque,Mexico,Mexico
+If the city is Tlaquepaque then the country is Japan.,0,Tlaquepaque,Japan,Mexico
+If the city is Victoria de Durango then the country is Mexico.,1,Victoria de Durango,Mexico,Mexico
+If the city is Victoria de Durango then the country is Ghana.,0,Victoria de Durango,Ghana,Mexico
+If the city is Kota Kinabalu then the country is Malaysia.,1,Kota Kinabalu,Malaysia,Malaysia
+If the city is Kota Kinabalu then the country is the United States.,0,Kota Kinabalu,the United States,Malaysia
+If the city is Nairobi then the country is Kenya.,1,Nairobi,Kenya,Kenya
+If the city is Nairobi then the country is Mexico.,0,Nairobi,Mexico,Kenya
+If the city is Taguig then the country is the Philippines.,1,Taguig,the Philippines,the Philippines
+If the city is Taguig then the country is India.,0,Taguig,India,the Philippines
+If the city is Rajkot then the country is India.,1,Rajkot,India,India
+If the city is Rajkot then the country is Russia.,0,Rajkot,Russia,India
+If the city is Pune then the country is India.,1,Pune,India,India
+If the city is Pune then the country is South Korea.,0,Pune,South Korea,India
+If the city is Ludhiana then the country is India.,1,Ludhiana,India,India
+If the city is Ludhiana then the country is Togo.,0,Ludhiana,Togo,India
+If the city is Jamshedpur then the country is India.,1,Jamshedpur,India,India
+If the city is Jamshedpur then the country is China.,0,Jamshedpur,China,India
+If the city is Bhiwandi then the country is India.,1,Bhiwandi,India,India
+If the city is Bhiwandi then the country is China.,0,Bhiwandi,China,India
+If the city is Erbil then the country is Iraq.,1,Erbil,Iraq,Iraq
+If the city is Erbil then the country is Cuba.,0,Erbil,Cuba,Iraq
+If the city is Chelyabinsk then the country is Russia.,1,Chelyabinsk,Russia,Russia
+If the city is Chelyabinsk then the country is China.,0,Chelyabinsk,China,Russia
+If the city is Uskudar then the country is Turkey.,1,Uskudar,Turkey,Turkey
+If the city is Uskudar then the country is Bulgaria.,0,Uskudar,Bulgaria,Turkey
+If the city is Bagcilar then the country is Turkey.,1,Bagcilar,Turkey,Turkey
+If the city is Bagcilar then the country is Iran.,0,Bagcilar,Iran,Turkey
+If the city is Quezon City then the country is the Philippines.,1,Quezon City,the Philippines,the Philippines
+If the city is Quezon City then the country is China.,0,Quezon City,China,the Philippines
+If the city is Mexico City then the country is Mexico.,1,Mexico City,Mexico,Mexico
+If the city is Mexico City then the country is China.,0,Mexico City,China,Mexico
+If the city is Leon de los Aldama then the country is Mexico.,1,Leon de los Aldama,Mexico,Mexico
+If the city is Leon de los Aldama then the country is China.,0,Leon de los Aldama,China,Mexico
+If the city is Fes then the country is Morocco.,1,Fes,Morocco,Morocco
+If the city is Fes then the country is Mali.,0,Fes,Mali,Morocco
+If the city is Surat then the country is India.,1,Surat,India,India
+If the city is Surat then the country is Burkina Faso.,0,Surat,Burkina Faso,India
+If the city is Barnaul then the country is Russia.,1,Barnaul,Russia,Russia
+If the city is Barnaul then the country is South Africa.,0,Barnaul,South Africa,Russia
+If the city is Buraydah then the country is Saudi Arabia.,1,Buraydah,Saudi Arabia,Saudi Arabia
+If the city is Buraydah then the country is Rwanda.,0,Buraydah,Rwanda,Saudi Arabia
+If the city is Bikaner then the country is India.,1,Bikaner,India,India
+If the city is Bikaner then the country is South Korea.,0,Bikaner,South Korea,India
+If the city is Mogadishu then the country is Somalia.,1,Mogadishu,Somalia,Somalia
+If the city is Mogadishu then the country is Iran.,0,Mogadishu,Iran,Somalia
+If the city is Homs then the country is Syria.,1,Homs,Syria,Syria
+If the city is Homs then the country is Indonesia.,0,Homs,Indonesia,Syria
+If the city is Port-au-Prince then the country is Haiti.,1,Port-au-Prince,Haiti,Haiti
+If the city is Port-au-Prince then the country is South Korea.,0,Port-au-Prince,South Korea,Haiti
+If the city is Thuan An then the country is Vietnam.,1,Thuan An,Vietnam,Vietnam
+If the city is Thuan An then the country is Mozambique.,0,Thuan An,Mozambique,Vietnam
+If the city is Sanaa then the country is Yemen.,1,Sanaa,Yemen,Yemen
+If the city is Sanaa then the country is China.,0,Sanaa,China,Yemen
+If the city is Pretoria then the country is South Africa.,1,Pretoria,South Africa,South Africa
+If the city is Pretoria then the country is India.,0,Pretoria,India,South Africa
+If the city is Pietermaritzburg then the country is South Africa.,1,Pietermaritzburg,South Africa,South Africa
+If the city is Pietermaritzburg then the country is China.,0,Pietermaritzburg,China,South Africa
+If the city is Abu Dhabi then the country is the United Arab Emirates.,1,Abu Dhabi,the United Arab Emirates,the United Arab Emirates
+If the city is Abu Dhabi then the country is Oman.,0,Abu Dhabi,Oman,the United Arab Emirates
+If the city is Sao Paulo then the country is Brazil.,1,Sao Paulo,Brazil,Brazil
+If the city is Sao Paulo then the country is China.,0,Sao Paulo,China,Brazil
+If the city is Lianyungang then the country is China.,1,Lianyungang,China,China
+If the city is Lianyungang then the country is the Philippines.,0,Lianyungang,the Philippines,China
+If the city is Xiaogan then the country is China.,1,Xiaogan,China,China
+If the city is Xiaogan then the country is Ukraine.,0,Xiaogan,Ukraine,China
+If the city is Taicang then the country is China.,1,Taicang,China,China
+If the city is Taicang then the country is Madagascar.,0,Taicang,Madagascar,China
+If the city is Guiyang then the country is China.,1,Guiyang,China,China
+If the city is Guiyang then the country is South Korea.,0,Guiyang,South Korea,China
+If the city is Ganzhou then the country is China.,1,Ganzhou,China,China
+If the city is Ganzhou then the country is South Korea.,0,Ganzhou,South Korea,China
+If the city is Shangyu then the country is China.,1,Shangyu,China,China
+If the city is Shangyu then the country is the United Arab Emirates.,0,Shangyu,the United Arab Emirates,China
+If the city is Jambi City then the country is Indonesia.,1,Jambi City,Indonesia,Indonesia
+If the city is Jambi City then the country is China.,0,Jambi City,China,Indonesia
+If the city is Indianapolis then the country is the United States.,1,Indianapolis,the United States,the United States
+If the city is Indianapolis then the country is Côte d'Ivoire.,0,Indianapolis,Côte d'Ivoire,the United States
+If the city is New York City then the country is the United States.,1,New York City,the United States,the United States
+If the city is New York City then the country is India.,0,New York City,India,the United States
+If the city is Bulawayo then the country is Zimbabwe.,1,Bulawayo,Zimbabwe,Zimbabwe
+If the city is Bulawayo then the country is China.,0,Bulawayo,China,Zimbabwe
+If the city is Santiago de Cuba then the country is Cuba.,1,Santiago de Cuba,Cuba,Cuba
+If the city is Santiago de Cuba then the country is India.,0,Santiago de Cuba,India,Cuba
+If the city is Quito then the country is Ecuador.,1,Quito,Ecuador,Ecuador
+If the city is Quito then the country is China.,0,Quito,China,Ecuador
+If the city is Shubra al Khaymah then the country is Egypt.,1,Shubra al Khaymah,Egypt,Egypt
+If the city is Shubra al Khaymah then the country is Nigeria.,0,Shubra al Khaymah,Nigeria,Egypt
+If the city is Al Mahallah al Kubra then the country is Egypt.,1,Al Mahallah al Kubra,Egypt,Egypt
+If the city is Al Mahallah al Kubra then the country is Afghanistan.,0,Al Mahallah al Kubra,Afghanistan,Egypt
+If the city is Suining then the country is China.,1,Suining,China,China
+If the city is Suining then the country is Algeria.,0,Suining,Algeria,China
+If the city is Guankou then the country is China.,1,Guankou,China,China
+If the city is Guankou then the country is Pakistan.,0,Guankou,Pakistan,China
+If the city is Langfang then the country is China.,1,Langfang,China,China
+If the city is Langfang then the country is India.,0,Langfang,India,China
+If the city is Jinan then the country is China.,1,Jinan,China,China
+If the city is Jinan then the country is Rwanda.,0,Jinan,Rwanda,China
+If the city is Guigang then the country is China.,1,Guigang,China,China
+If the city is Guigang then the country is Japan.,0,Guigang,Japan,China
+If the city is Dalian then the country is China.,1,Dalian,China,China
+If the city is Dalian then the country is Saudi Arabia.,0,Dalian,Saudi Arabia,China
+If the city is Chongqing then the country is China.,1,Chongqing,China,China
+If the city is Chongqing then the country is Sweden.,0,Chongqing,Sweden,China
+If the city is Homyel' then the country is Belarus.,1,Homyel',Belarus,Belarus
+If the city is Homyel' then the country is Iran.,0,Homyel',Iran,Belarus
+If the city is Winnipeg then the country is Canada.,1,Winnipeg,Canada,Canada
+If the city is Winnipeg then the country is Mexico.,0,Winnipeg,Mexico,Canada
+If the city is Klang then the country is Malaysia.,1,Klang,Malaysia,Malaysia
+If the city is Klang then the country is China.,0,Klang,China,Malaysia
+If the city is Irbid then the country is Jordan.,1,Irbid,Jordan,Jordan
+If the city is Irbid then the country is India.,0,Irbid,India,Jordan
+If the city is Bishkek then the country is Kyrgyzstan.,1,Bishkek,Kyrgyzstan,Kyrgyzstan
+If the city is Bishkek then the country is Germany.,0,Bishkek,Germany,Kyrgyzstan
+If the city is Muzaffarabad then the country is Pakistan.,1,Muzaffarabad,Pakistan,Pakistan
+If the city is Muzaffarabad then the country is China.,0,Muzaffarabad,China,Pakistan
+If the city is Kotli then the country is Pakistan.,1,Kotli,Pakistan,Pakistan
+If the city is Kotli then the country is the United States.,0,Kotli,the United States,Pakistan
+If the city is Nagpur then the country is India.,1,Nagpur,India,India
+If the city is Nagpur then the country is Denmark.,0,Nagpur,Denmark,India
+If the city is Kolhapur then the country is India.,1,Kolhapur,India,India
+If the city is Kolhapur then the country is Mozambique.,0,Kolhapur,Mozambique,India
+If the city is Cuttack then the country is India.,1,Cuttack,India,India
+If the city is Cuttack then the country is Pakistan.,0,Cuttack,Pakistan,India
+If the city is Makassar then the country is Indonesia.,1,Makassar,Indonesia,Indonesia
+If the city is Makassar then the country is China.,0,Makassar,China,Indonesia
+If the city is Yekaterinburg then the country is Russia.,1,Yekaterinburg,Russia,Russia
+If the city is Yekaterinburg then the country is Lithuania.,0,Yekaterinburg,Lithuania,Russia
+If the city is Dammam then the country is Saudi Arabia.,1,Dammam,Saudi Arabia,Saudi Arabia
+If the city is Dammam then the country is Russia.,0,Dammam,Russia,Saudi Arabia
+If the city is Dushanbe then the country is Tajikistan.,1,Dushanbe,Tajikistan,Tajikistan
+If the city is Dushanbe then the country is Nigeria.,0,Dushanbe,Nigeria,Tajikistan
+If the city is Gaziantep then the country is Turkey.,1,Gaziantep,Turkey,Turkey
+If the city is Gaziantep then the country is Mexico.,0,Gaziantep,Mexico,Turkey
+If the city is Asuncion then the country is Paraguay.,1,Asuncion,Paraguay,Paraguay
+If the city is Asuncion then the country is Nigeria.,0,Asuncion,Nigeria,Paraguay
+If the city is Tebessa then the country is Algeria.,1,Tebessa,Algeria,Algeria
+If the city is Tebessa then the country is India.,0,Tebessa,India,Algeria
+If the city is Zhuzhou then the country is China.,1,Zhuzhou,China,China
+If the city is Zhuzhou then the country is France.,0,Zhuzhou,France,China
+If the city is Xining then the country is China.,1,Xining,China,China
+If the city is Xining then the country is the United Arab Emirates.,0,Xining,the United Arab Emirates,China
+If the city is Tanggu then the country is China.,1,Tanggu,China,China
+If the city is Tanggu then the country is South Korea.,0,Tanggu,South Korea,China
+If the city is Shantou then the country is China.,1,Shantou,China,China
+If the city is Shantou then the country is Pakistan.,0,Shantou,Pakistan,China
+If the city is Shangluo then the country is China.,1,Shangluo,China,China
+If the city is Shangluo then the country is Honduras.,0,Shangluo,Honduras,China
+If the city is Putian then the country is China.,1,Putian,China,China
+If the city is Putian then the country is Vietnam.,0,Putian,Vietnam,China
+If the city is Luzhou then the country is China.,1,Luzhou,China,China
+If the city is Luzhou then the country is Peru.,0,Luzhou,Peru,China
+If the city is Lanzhou then the country is China.,1,Lanzhou,China,China
+If the city is Lanzhou then the country is Mexico.,0,Lanzhou,Mexico,China
+If the city is Chenzhou then the country is China.,1,Chenzhou,China,China
+If the city is Chenzhou then the country is Brazil.,0,Chenzhou,Brazil,China
+If the city is Baise then the country is China.,1,Baise,China,China
+If the city is Baise then the country is Japan.,0,Baise,Japan,China
+If the city is Shenyang then the country is China.,1,Shenyang,China,China
+If the city is Shenyang then the country is Somalia.,0,Shenyang,Somalia,China
+If the city is Daqing then the country is China.,1,Daqing,China,China
+If the city is Daqing then the country is Brazil.,0,Daqing,Brazil,China
+If the city is Brasilia then the country is Brazil.,1,Brasilia,Brazil,Brazil
+If the city is Brasilia then the country is South Korea.,0,Brasilia,South Korea,Brazil
+If the city is Kandahar then the country is Afghanistan.,1,Kandahar,Afghanistan,Afghanistan
+If the city is Kandahar then the country is China.,0,Kandahar,China,Afghanistan
+If the city is Gold Coast then the country is Australia.,1,Gold Coast,Australia,Australia
+If the city is Gold Coast then the country is China.,0,Gold Coast,China,Australia
+If the city is Ouagadougou then the country is Burkina Faso.,1,Ouagadougou,Burkina Faso,Burkina Faso
+If the city is Ouagadougou then the country is China.,0,Ouagadougou,China,Burkina Faso
+If the city is Duque de Caxias then the country is Brazil.,1,Duque de Caxias,Brazil,Brazil
+If the city is Duque de Caxias then the country is Côte d'Ivoire.,0,Duque de Caxias,Côte d'Ivoire,Brazil
+If the city is Hiroshima then the country is Japan.,1,Hiroshima,Japan,Japan
+If the city is Hiroshima then the country is Malaysia.,0,Hiroshima,Malaysia,Japan
+If the city is Saitama then the country is Japan.,1,Saitama,Japan,Japan
+If the city is Saitama then the country is India.,0,Saitama,India,Japan
+If the city is Mandalay then the country is Myanmar.,1,Mandalay,Myanmar,Myanmar
+If the city is Mandalay then the country is Algeria.,0,Mandalay,Algeria,Myanmar
+If the city is Nampula then the country is Mozambique.,1,Nampula,Mozambique,Mozambique
+If the city is Nampula then the country is India.,0,Nampula,India,Mozambique
+If the city is Mysore then the country is India.,1,Mysore,India,India
+If the city is Mysore then the country is Mexico.,0,Mysore,Mexico,India
+If the city is Coimbatore then the country is India.,1,Coimbatore,India,India
+If the city is Coimbatore then the country is Malaysia.,0,Coimbatore,Malaysia,India
+If the city is Chandigarh then the country is India.,1,Chandigarh,India,India
+If the city is Chandigarh then the country is China.,0,Chandigarh,China,India
+If the city is Amritsar then the country is India.,1,Amritsar,India,India
+If the city is Amritsar then the country is Moldova.,0,Amritsar,Moldova,India
+If the city is Arak then the country is Iran.,1,Arak,Iran,Iran
+If the city is Arak then the country is India.,0,Arak,India,Iran
+If the city is Ilorin then the country is Nigeria.,1,Ilorin,Nigeria,Nigeria
+If the city is Ilorin then the country is Ukraine.,0,Ilorin,Ukraine,Nigeria
+If the city is Omdurman then the country is Sudan.,1,Omdurman,Sudan,Sudan
+If the city is Omdurman then the country is South Korea.,0,Omdurman,South Korea,Sudan
+If the city is Khartoum then the country is Sudan.,1,Khartoum,Sudan,Sudan
+If the city is Khartoum then the country is China.,0,Khartoum,China,Sudan
+If the city is Gujranwala then the country is Pakistan.,1,Gujranwala,Pakistan,Pakistan
+If the city is Gujranwala then the country is China.,0,Gujranwala,China,Pakistan
+If the city is Nizhniy Novgorod then the country is Russia.,1,Nizhniy Novgorod,Russia,Russia
+If the city is Nizhniy Novgorod then the country is China.,0,Nizhniy Novgorod,China,Russia
+If the city is Zhaoqing then the country is China.,1,Zhaoqing,China,China
+If the city is Zhaoqing then the country is Brazil.,0,Zhaoqing,Brazil,China
+If the city is Xianning then the country is China.,1,Xianning,China,China
+If the city is Xianning then the country is Lebanon.,0,Xianning,Lebanon,China
+If the city is Suqian then the country is China.,1,Suqian,China,China
+If the city is Suqian then the country is Mexico.,0,Suqian,Mexico,China
+If the city is Tonghua then the country is China.,1,Tonghua,China,China
+If the city is Tonghua then the country is Venezuela.,0,Tonghua,Venezuela,China
+If the city is Hezhou then the country is China.,1,Hezhou,China,China
+If the city is Hezhou then the country is India.,0,Hezhou,India,China
+If the city is Grosszschocher then the country is Germany.,1,Grosszschocher,Germany,Germany
+If the city is Grosszschocher then the country is China.,0,Grosszschocher,China,Germany
+If the city is San Pedro Sula then the country is Honduras.,1,San Pedro Sula,Honduras,Honduras
+If the city is San Pedro Sula then the country is India.,0,San Pedro Sula,India,Honduras
+If the city is Queens then the country is the United States.,1,Queens,the United States,the United States
+If the city is Queens then the country is India.,0,Queens,India,the United States
+If the city is Caracas then the country is Venezuela.,1,Caracas,Venezuela,Venezuela
+If the city is Caracas then the country is Sudan.,0,Caracas,Sudan,Venezuela
+If the city is Bien Hoa then the country is Vietnam.,1,Bien Hoa,Vietnam,Vietnam
+If the city is Bien Hoa then the country is South Korea.,0,Bien Hoa,South Korea,Vietnam
+If the city is Durban then the country is South Africa.,1,Durban,South Africa,South Africa
+If the city is Durban then the country is Ukraine.,0,Durban,Ukraine,South Africa
+If the city is Kawaguchi then the country is Japan.,1,Kawaguchi,Japan,Japan
+If the city is Kawaguchi then the country is Indonesia.,0,Kawaguchi,Indonesia,Japan
+If the city is Bucheon-si then the country is South Korea.,1,Bucheon-si,South Korea,South Korea
+If the city is Bucheon-si then the country is Romania.,0,Bucheon-si,Romania,South Korea
+If the city is Tangier then the country is Morocco.,1,Tangier,Morocco,Morocco
+If the city is Tangier then the country is Ecuador.,0,Tangier,Ecuador,Morocco
+If the city is Nay Pyi Taw then the country is Myanmar.,1,Nay Pyi Taw,Myanmar,Myanmar
+If the city is Nay Pyi Taw then the country is Mozambique.,0,Nay Pyi Taw,Mozambique,Myanmar
+If the city is Ulhasnagar then the country is India.,1,Ulhasnagar,India,India
+If the city is Ulhasnagar then the country is Senegal.,0,Ulhasnagar,Senegal,India
+If the city is Faridabad then the country is India.,1,Faridabad,India,India
+If the city is Faridabad then the country is the United States.,0,Faridabad,the United States,India
+If the city is Kolkata then the country is India.,1,Kolkata,India,India
+If the city is Kolkata then the country is Japan.,0,Kolkata,Japan,India
+If the city is Karbala then the country is Iraq.,1,Karbala,Iraq,Iraq
+If the city is Karbala then the country is Turkey.,0,Karbala,Turkey,Iraq
+If the city is Jakarta then the country is Indonesia.,1,Jakarta,Indonesia,Indonesia
+If the city is Jakarta then the country is Colombia.,0,Jakarta,Colombia,Indonesia
+If the city is Denpasar then the country is Indonesia.,1,Denpasar,Indonesia,Indonesia
+If the city is Denpasar then the country is Brazil.,0,Denpasar,Brazil,Indonesia
+If the city is Batam then the country is Indonesia.,1,Batam,Indonesia,Indonesia
+If the city is Batam then the country is Turkey.,0,Batam,Turkey,Indonesia
+If the city is Liupanshui then the country is China.,1,Liupanshui,China,China
+If the city is Liupanshui then the country is the Philippines.,0,Liupanshui,the Philippines,China
+If the city is Shangrao then the country is China.,1,Shangrao,China,China
+If the city is Shangrao then the country is Russia.,0,Shangrao,Russia,China
+If the city is Xingtai then the country is China.,1,Xingtai,China,China
+If the city is Xingtai then the country is Russia.,0,Xingtai,Russia,China
+If the city is Qujing then the country is China.,1,Qujing,China,China
+If the city is Qujing then the country is India.,0,Qujing,India,China
+If the city is Nanning then the country is China.,1,Nanning,China,China
+If the city is Nanning then the country is Japan.,0,Nanning,Japan,China
+If the city is Huainan then the country is China.,1,Huainan,China,China
+If the city is Huainan then the country is Egypt.,0,Huainan,Egypt,China
+If the city is Binzhou then the country is China.,1,Binzhou,China,China
+If the city is Binzhou then the country is Brazil.,0,Binzhou,Brazil,China
+If the city is Fuxin then the country is China.,1,Fuxin,China,China
+If the city is Fuxin then the country is Pakistan.,0,Fuxin,Pakistan,China
+If the city is Quebec then the country is Canada.,1,Quebec,Canada,Canada
+If the city is Quebec then the country is Zimbabwe.,0,Quebec,Zimbabwe,Canada
+If the city is Mazar-e Sharif then the country is Afghanistan.,1,Mazar-e Sharif,Afghanistan,Afghanistan
+If the city is Mazar-e Sharif then the country is India.,0,Mazar-e Sharif,India,Afghanistan
+If the city is Mar del Plata then the country is Argentina.,1,Mar del Plata,Argentina,Argentina
+If the city is Mar del Plata then the country is Nigeria.,0,Mar del Plata,Nigeria,Argentina
+If the city is Salta then the country is Argentina.,1,Salta,Argentina,Argentina
+If the city is Salta then the country is India.,0,Salta,India,Argentina
+If the city is Bujumbura then the country is Burundi.,1,Bujumbura,Burundi,Burundi
+If the city is Bujumbura then the country is Nigeria.,0,Bujumbura,Nigeria,Burundi
+If the city is Ankara then the country is Turkey.,1,Ankara,Turkey,Turkey
+If the city is Ankara then the country is Japan.,0,Ankara,Japan,Turkey
+If the city is Esenler then the country is Turkey.,1,Esenler,Turkey,Turkey
+If the city is Esenler then the country is India.,0,Esenler,India,Turkey
+If the city is Cankaya then the country is Turkey.,1,Cankaya,Turkey,Turkey
+If the city is Cankaya then the country is the United States.,0,Cankaya,the United States,Turkey
+If the city is Ufa then the country is Russia.,1,Ufa,Russia,Russia
+If the city is Ufa then the country is South Korea.,0,Ufa,South Korea,Russia
+If the city is Rawalpindi then the country is Pakistan.,1,Rawalpindi,Pakistan,Pakistan
+If the city is Rawalpindi then the country is Brazil.,0,Rawalpindi,Brazil,Pakistan
+If the city is Karachi then the country is Pakistan.,1,Karachi,Pakistan,Pakistan
+If the city is Karachi then the country is India.,0,Karachi,India,Pakistan
+If the city is Tijuana then the country is Mexico.,1,Tijuana,Mexico,Mexico
+If the city is Tijuana then the country is the United Arab Emirates.,0,Tijuana,the United Arab Emirates,Mexico
+If the city is Jos then the country is Nigeria.,1,Jos,Nigeria,Nigeria
+If the city is Jos then the country is India.,0,Jos,India,Nigeria
+If the city is Ibadan then the country is Nigeria.,1,Ibadan,Nigeria,Nigeria
+If the city is Ibadan then the country is Malaysia.,0,Ibadan,Malaysia,Nigeria
+If the city is Managua then the country is Nicaragua.,1,Managua,Nicaragua,Nicaragua
+If the city is Managua then the country is Turkey.,0,Managua,Turkey,Nicaragua
+If the city is Ha'il then the country is Saudi Arabia.,1,Ha'il,Saudi Arabia,Saudi Arabia
+If the city is Ha'il then the country is China.,0,Ha'il,China,Saudi Arabia
+If the city is Haiphong then the country is Vietnam.,1,Haiphong,Vietnam,Vietnam
+If the city is Haiphong then the country is the Dominican Republic.,0,Haiphong,the Dominican Republic,Vietnam
+If the city is Cape Town then the country is South Africa.,1,Cape Town,South Africa,South Africa
+If the city is Cape Town then the country is China.,0,Cape Town,China,South Africa
+If the city is Ipoh then the country is Malaysia.,1,Ipoh,Malaysia,Malaysia
+If the city is Ipoh then the country is Brazil.,0,Ipoh,Brazil,Malaysia
+If the city is Kuantan then the country is Malaysia.,1,Kuantan,Malaysia,Malaysia
+If the city is Kuantan then the country is India.,0,Kuantan,India,Malaysia
+If the city is Maiduguri then the country is Nigeria.,1,Maiduguri,Nigeria,Nigeria
+If the city is Maiduguri then the country is China.,0,Maiduguri,China,Nigeria
+If the city is Yangon then the country is Myanmar.,1,Yangon,Myanmar,Myanmar
+If the city is Yangon then the country is Kenya.,0,Yangon,Kenya,Myanmar
+If the city is Kathmandu then the country is Nepal.,1,Kathmandu,Nepal,Nepal
+If the city is Kathmandu then the country is China.,0,Kathmandu,China,Nepal
+If the city is Las Pinas then the country is the Philippines.,1,Las Pinas,the Philippines,the Philippines
+If the city is Las Pinas then the country is Yemen.,0,Las Pinas,Yemen,the Philippines
+If the city is Reynosa then the country is Mexico.,1,Reynosa,Mexico,Mexico
+If the city is Reynosa then the country is China.,0,Reynosa,China,Mexico
+If the city is Rostov-na-Donu then the country is Russia.,1,Rostov-na-Donu,Russia,Russia
+If the city is Rostov-na-Donu then the country is the United Arab Emirates.,0,Rostov-na-Donu,the United Arab Emirates,Russia
+If the city is Ibague then the country is Colombia.,1,Ibague,Colombia,Colombia
+If the city is Ibague then the country is Finland.,0,Ibague,Finland,Colombia
+If the city is Copenhagen then the country is Denmark.,1,Copenhagen,Denmark,Denmark
+If the city is Copenhagen then the country is China.,0,Copenhagen,China,Denmark
+If the city is Xinyang then the country is China.,1,Xinyang,China,China
+If the city is Xinyang then the country is Japan.,0,Xinyang,Japan,China
+If the city is Weinan then the country is China.,1,Weinan,China,China
+If the city is Weinan then the country is Colombia.,0,Weinan,Colombia,China
+If the city is Wanning then the country is China.,1,Wanning,China,China
+If the city is Wanning then the country is the United States.,0,Wanning,the United States,China
+If the city is Shijiazhuang then the country is China.,1,Shijiazhuang,China,China
+If the city is Shijiazhuang then the country is Uzbekistan.,0,Shijiazhuang,Uzbekistan,China
+If the city is Laiwu then the country is China.,1,Laiwu,China,China
+If the city is Laiwu then the country is the United States.,0,Laiwu,the United States,China
+If the city is Hengyang then the country is China.,1,Hengyang,China,China
+If the city is Hengyang then the country is Turkey.,0,Hengyang,Turkey,China
+If the city is Changchun then the country is China.,1,Changchun,China,China
+If the city is Changchun then the country is Germany.,0,Changchun,Germany,China
+If the city is Varanasi then the country is India.,1,Varanasi,India,India
+If the city is Varanasi then the country is Turkey.,0,Varanasi,Turkey,India
+If the city is Puducherry then the country is India.,1,Puducherry,India,India
+If the city is Puducherry then the country is Brazil.,0,Puducherry,Brazil,India
+If the city is Bhopal then the country is India.,1,Bhopal,India,India
+If the city is Bhopal then the country is Russia.,0,Bhopal,Russia,India
+If the city is Kanayannur then the country is India.,1,Kanayannur,India,India
+If the city is Kanayannur then the country is Saudi Arabia.,0,Kanayannur,Saudi Arabia,India
+If the city is Kirkuk then the country is Iraq.,1,Kirkuk,Iraq,Iraq
+If the city is Kirkuk then the country is China.,0,Kirkuk,China,Iraq
+If the city is Al Mawsil al Jadidah then the country is Iraq.,1,Al Mawsil al Jadidah,Iraq,Iraq
+If the city is Al Mawsil al Jadidah then the country is India.,0,Al Mawsil al Jadidah,India,Iraq
+If the city is Tangerang then the country is Indonesia.,1,Tangerang,Indonesia,Indonesia
+If the city is Tangerang then the country is China.,0,Tangerang,China,Indonesia

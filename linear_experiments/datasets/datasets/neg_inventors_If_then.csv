@@ -1,0 +1,407 @@
+statement,label
+"If a person is Edwin Herbert Hall, then they did not live in the U.",0
+"If a person is Emile Berliner, then they did not live in Russia.",1
+"If a person is Frederick Walton, then they did not live in the U.",1
+"If a person is William Congreve, then they did not live in Canada.",1
+"If a person is Gustaf Dalén, then they did not live in Sweden.",0
+"If a person is Evangelista Torricelli, then they did not live in the U.",1
+"If a person is George Pullman, then they did not live in the U.",1
+"If a person is Marvin Camras, then they did not live in France.",1
+"If a person is William Sturgeon, then they did not live in the U.",0
+"If a person is Frederick Walton, then they did not live in the U.",0
+"If a person is Clarence Birdseye, then they did not live in the U.",0
+"If a person is Gideon Sundback, then they did not live in Sweden/the U.",0
+"If a person is John Shepherd-Barron, then they did not live in Scotland.",0
+"If a person is Edwin Link, then they did not live in the U.",1
+"If a person is Chester Carlson, then they did not live in the U.",1
+"If a person is Whitcomb Judson, then they did not live in the U.",0
+"If a person is Joseph Glidden, then they did not live in the U.",0
+"If a person is Rudolf Diesel, then they did not live in the U.",1
+"If a person is Charles Wheatstone, then they did not live in France.",1
+"If a person is John Callcott Horsley, then they did not live in Germany.",1
+"If a person is Charles Goodyear, then they did not live in the U.",0
+"If a person is Lloyd Groff Copeman, then they did not live in the U.",0
+"If a person is Herbert Akroyd Stuart, then they did not live in England.",0
+"If a person is Herbert Saffir, then they did not live in the U.",1
+"If a person is August Horch, then they did not live in Russia.",1
+"If a person is Joseph Marie Jacquard, then they did not live in the Netherlands.",1
+"If a person is David Edward Hughes, then they did not live in the U.",0
+"If a person is Yoshua Bengio, then they did not live in Canada.",0
+"If a person is Ferdinand Carré, then they did not live in the U.",1
+"If a person is Rudolf Kálmán, then they did not live in Hungary.",0
+"If a person is Charles Fritts, then they did not live in the U.",0
+"If a person is Narinder Singh Kapany, then they did not live in India.",0
+"If a person is Archimedes, then they did not live in Ancient Greece.",0
+"If a person is Gottlieb Daimler, then they did not live in France.",1
+"If a person is Fritz Pfleumer, then they did not live in Germany.",0
+"If a person is Arthur Fry, then they did not live in the U.",0
+"If a person is Fridtjof Nansen, then they did not live in the U.",1
+"If a person is Semyon Kirlian, then they did not live in Russia.",0
+"If a person is Ignazio Porro, then they did not live in Italy.",0
+"If a person is Paul Gottlieb Nipkow, then they did not live in Denmark.",1
+"If a person is Edwin H. Land, then they did not live in Sweden.",1
+"If a person is Lester Wire, then they did not live in the U.",0
+"If a person is László Bíró, then they did not live in Hungary.",0
+"If a person is George Eastman, then they did not live in the U.",1
+"If a person is Galileo Galilei, then they did not live in Italy.",0
+"If a person is John Atanasoff, then they did not live in the U.",0
+"If a person is Benjamin Franklin, then they did not live in the U.",0
+"If a person is Sir Sandford Fleming, then they did not live in Canada.",0
+"If a person is Robert Moog, then they did not live in the U.",0
+"If a person is George Washington Carver, then they did not live in the U.",0
+"If a person is James Clerk Maxwell, then they did not live in the U.",1
+"If a person is Hans Lippershey, then they did not live in the U.",1
+"If a person is Fridtjof Nansen, then they did not live in Norway.",0
+"If a person is Sir Sandford Fleming, then they did not live in the U.",1
+"If a person is Willis Carrier, then they did not live in the U.",0
+"If a person is Joseph-Armand Bombardier, then they did not live in Canada.",0
+"If a person is Earle Dickson, then they did not live in the U.",0
+"If a person is Luther George Simjian, then they did not live in Turkey/the U.",0
+"If a person is Herbert Saffir, then they did not live in the U.",0
+"If a person is Ignazio Porro, then they did not live in the U.",1
+"If a person is Wallace Carothers, then they did not live in the U.",0
+"If a person is John Wesley Hyatt, then they did not live in the U.",0
+"If a person is James Dyson, then they did not live in the U.",0
+"If a person is Candace Pert, then they did not live in the U.",0
+"If a person is David Schwarz, then they did not live in France.",1
+"If a person is Walter Hunt, then they did not live in the U.",0
+"If a person is Samuel Morse, then they did not live in Germany.",1
+"If a person is Yvonne Brill, then they did not live in Canada.",0
+"If a person is Guglielmo Marconi, then they did not live in the U.",1
+"If a person is Shinya Yamanaka, then they did not live in Germany.",1
+"If a person is Carl Sontheimer, then they did not live in Switzerland.",1
+"If a person is Sergey Brin and Larry Page, then they did not live in the U.",1
+"If a person is Percy Spencer, then they did not live in the U.",0
+"If a person is Henry Bessemer, then they did not live in the U.",0
+"If a person is Ruth Handler, then they did not live in the Netherlands.",1
+"If a person is Richard Leach Maddox, then they did not live in the U.",0
+"If a person is Alfred Nobel, then they did not live in the U.",1
+"If a person is Thomas Wedgwood, then they did not live in the U.",0
+"If a person is Frank Bunker Gilbreth, then they did not live in the U.",0
+"If a person is Benjamin Holt, then they did not live in the U.",0
+"If a person is Josephine Cochrane, then they did not live in Germany.",1
+"If a person is Godfrey Hounsfield, then they did not live in Denmark.",1
+"If a person is Antoine Lavoisier, then they did not live in France.",0
+"If a person is Carlos Glidden, then they did not live in Scotland.",1
+"If a person is Maria Telkes, then they did not live in Hungary/the U.",0
+"If a person is Robert Adler, then they did not live in Austria/the U.",0
+"If a person is James Watt, then they did not live in the U.",1
+"If a person is Edwin Link, then they did not live in the U.",0
+"If a person is Igor Sikorsky, then they did not live in the U.",1
+"If a person is Sir Humphry Davy, then they did not live in the U.",0
+"If a person is Nikolai Basov, then they did not live in the U.",1
+"If a person is Edwin H. Land, then they did not live in the U.",0
+"If a person is Cai Lun, then they did not live in Italy.",1
+"If a person is Mary Walton, then they did not live in France.",1
+"If a person is Joseph Aspdin, then they did not live in Switzerland.",1
+"If a person is James Watt, then they did not live in Scotland.",0
+"If a person is Ernest Swinton, then they did not live in the U.",0
+"If a person is Jean-Bernard-Léon Foucault, then they did not live in France.",0
+"If a person is Gordon Gould, then they did not live in the U.",0
+"If a person is Leonardo da Vinci, then they did not live in Poland/France.",1
+"If a person is Ernesto Blanco, then they did not live in the U.",0
+"If a person is George Cayley, then they did not live in Canada.",1
+"If a person is John von Neumann, then they did not live in Hungary/the U.",0
+"If a person is Gideon Sundback, then they did not live in the U.",1
+"If a person is Ruth Benerito, then they did not live in the U.",0
+"If a person is Robert Moog, then they did not live in Austria/the U.",1
+"If a person is Luther George Simjian, then they did not live in Norway.",1
+"If a person is Ralph H. Baer, then they did not live in the U.",0
+"If a person is John Gorrie, then they did not live in Italy.",1
+"If a person is Michael Faraday, then they did not live in the U.",0
+"If a person is Lloyd Groff Copeman, then they did not live in Germany.",1
+"If a person is Philo Farnsworth, then they did not live in Germany.",1
+"If a person is Alan Turing, then they did not live in the U.",0
+"If a person is Elisha Gray, then they did not live in the U.",0
+"If a person is Édouard-Léon Scott de Martinville, then they did not live in France.",0
+"If a person is Zhores Alferov, then they did not live in the U.",1
+"If a person is Leon Theremin, then they did not live in Russia.",0
+"If a person is Rudolf Diesel, then they did not live in Germany.",0
+"If a person is Elisha Otis, then they did not live in the U.",0
+"If a person is László Bíró, then they did not live in the U.",1
+"If a person is Valdemar Poulsen, then they did not live in Denmark.",0
+"If a person is James Murray Spangler, then they did not live in the U.",1
+"If a person is Joseph Aspdin, then they did not live in the U.",0
+"If a person is Hans Berger, then they did not live in the U.",1
+"If a person is Philo Farnsworth, then they did not live in the U.",0
+"If a person is Ralph Benjamin, then they did not live in Italy.",1
+"If a person is Florence Parpart, then they did not live in the U.",1
+"If a person is Marvin Camras, then they did not live in the U.",0
+"If a person is Charles Babbage, then they did not live in the U.",0
+"If a person is Charles Francis Richter, then they did not live in France.",1
+"If a person is Ami Argand, then they did not live in Switzerland.",0
+"If a person is Kwolek, then they did not live in the U.",1
+"If a person is Richard Gatling, then they did not live in the U.",1
+"If a person is Luther Simjian, then they did not live in Turkey/the U.",0
+"If a person is Joseph Bramah, then they did not live in the U.",0
+"If a person is Hans Geiger, then they did not live in Austria/the U.",1
+"If a person is Alexander Graham Bell, then they did not live in Scotland/Canada/the U.",0
+"If a person is Blaise Pascal, then they did not live in Poland/France.",1
+"If a person is Charles Macintosh, then they did not live in the U.",0
+"If a person is Narinder Singh Kapany, then they did not live in the U.",1
+"If a person is Bette Nesmith Graham, then they did not live in the U.",0
+"If a person is Édouard-Léon Scott de Martinville, then they did not live in the U.",1
+"If a person is Orville and Wilbur Wright, then they did not live in the U.",0
+"If a person is Richard Leach Maddox, then they did not live in Austria.",1
+"If a person is Hans Oersted, then they did not live in the U.",1
+"If a person is Charles Cros, then they did not live in the U.",1
+"If a person is R. Buckminster Fuller, then they did not live in Scotland.",1
+"If a person is Willis Carrier, then they did not live in Italy.",1
+"If a person is Charles Cros, then they did not live in France.",0
+"If a person is Thomas Savery, then they did not live in the U.",0
+"If a person is Bartolomeo Cristofori, then they did not live in Italy.",0
+"If a person is Louis Pasteur, then they did not live in France.",0
+"If a person is Frederick G. Creed, then they did not live in Sweden.",1
+"If a person is Alexander Fleming, then they did not live in France.",1
+"If a person is Florence Parpart, then they did not live in the U.",0
+"If a person is Henri Giffard, then they did not live in the U.",1
+"If a person is Paul Gottlieb Nipkow, then they did not live in Germany.",0
+"If a person is Hippolyte Mège-Mouriès, then they did not live in the U.",1
+"If a person is Josephine Cochrane, then they did not live in the U.",0
+"If a person is Mary Anderson, then they did not live in the U.",0
+"If a person is Otis Boykin, then they did not live in France.",1
+"If a person is John Callcott Horsley, then they did not live in the U.",0
+"If a person is Jack Kilby, then they did not live in the U.",0
+"If a person is Samuel Fox, then they did not live in the U.",0
+"If a person is Hans Berger, then they did not live in Germany.",0
+"If a person is Ernest Swinton, then they did not live in the U.",1
+"If a person is André-Jacques Garnerin, then they did not live in France.",0
+"If a person is Alexander Fleming, then they did not live in the U.",0
+"If a person is Hans Goldschmidt, then they did not live in the Netherlands.",1
+"If a person is Willem Einthoven, then they did not live in France.",1
+"If a person is Garrett Morgan, then they did not live in the U.",0
+"If a person is Richard Trevithick, then they did not live in the U.",1
+"If a person is Georges Claude, then they did not live in Italy.",1
+"If a person is Sir Isaac Newton, then they did not live in the U.",0
+"If a person is William Kelly, then they did not live in the U.",0
+"If a person is Thomas Wedgwood, then they did not live in Finland.",1
+"If a person is Nils Bohlin, then they did not live in Germany.",1
+"If a person is Albert Ghiorso, then they did not live in the U.",0
+"If a person is George de Mestral, then they did not live in Switzerland.",0
+"If a person is Carlos Glidden, then they did not live in the U.",0
+"If a person is William Congreve, then they did not live in the U.",0
+"If a person is John Logie Baird, then they did not live in Japan.",1
+"If a person is Edouard Benedictus, then they did not live in the U.",1
+"If a person is Alec Jeffreys, then they did not live in France.",1
+"If a person is Arthur Pitney, then they did not live in the U.",0
+"If a person is Giovanni Caselli, then they did not live in the U.",1
+"If a person is John Gorrie, then they did not live in the U.",0
+"If a person is Robert Chesebrough, then they did not live in the U.",0
+"If a person is Johannes Gutenberg, then they did not live in the U.",1
+"If a person is Maria Telkes, then they did not live in Hungary.",1
+"If a person is Yoshiro Nakamatsu, then they did not live in the U.",1
+"If a person is Chester Carlson, then they did not live in the U.",0
+"If a person is George Pullman, then they did not live in the U.",0
+"If a person is George Cayley, then they did not live in the U.",0
+"If a person is John Bardeen, then they did not live in the U.",0
+"If a person is Orville and Wilbur Wright, then they did not live in France.",1
+"If a person is Archimedes, then they did not live in the U.",1
+"If a person is Johannes Gutenberg, then they did not live in Germany.",0
+"If a person is George Eastman, then they did not live in the U.",0
+"If a person is Hans Lippershey, then they did not live in the Netherlands.",0
+"If a person is Carl Elsener, then they did not live in the U.",1
+"If a person is John Boyd Dunlop, then they did not live in France.",1
+"If a person is Heinrich Hertz, then they did not live in Germany.",0
+"If a person is Leonardo da Vinci, then they did not live in Italy.",0
+"If a person is Nikolai Basov, then they did not live in the Soviet Union.",0
+"If a person is Wilhelm Conrad Röntgen, then they did not live in the U.",1
+"If a person is Guglielmo Marconi, then they did not live in Italy.",0
+"If a person is Christian Huygens, then they did not live in the Netherlands.",0
+"If a person is Robert Adler, then they did not live in the U.",1
+"If a person is John Walker, then they did not live in the U.",1
+"If a person is Grace Hopper, then they did not live in the U.",1
+"If a person is James West, then they did not live in the U.",0
+"If a person is Charles Townes, then they did not live in Russia.",1
+"If a person is Sir Frank Whittle, then they did not live in the U.",0
+"If a person is John Ambrose Fleming, then they did not live in the U.",0
+"If a person is Gottlieb Daimler, then they did not live in Germany.",0
+"If a person is Frederick McKinley Jones, then they did not live in Japan.",1
+"If a person is William Sturgeon, then they did not live in Germany.",1
+"If a person is Igor Tamm, then they did not live in the U.",1
+"If a person is Frank Julian Sprague, then they did not live in the U.",0
+"If a person is George Antheil, then they did not live in the U.",0
+"If a person is William Kelly, then they did not live in France.",1
+"If a person is Alva J. Fisher, then they did not live in the U.",0
+"If a person is Louis Pasteur, then they did not live in the U.",1
+"If a person is Thomas Edison, then they did not live in the U.",0
+"If a person is Joseph Glidden, then they did not live in Germany.",1
+"If a person is Tim Berners-Lee, then they did not live in Germany.",1
+"If a person is Carl Wilhelm Siemens, then they did not live in Germany.",0
+"If a person is Ralph Benjamin, then they did not live in the U.",0
+"If a person is George Devol, then they did not live in the U.",0
+"If a person is Igor Tamm, then they did not live in Russia.",0
+"If a person is Philipp Reis, then they did not live in Germany.",0
+"If a person is Edmund Cartwright, then they did not live in the U.",0
+"If a person is Heinrich Göbel, then they did not live in the U.",1
+"If a person is Yoshua Bengio, then they did not live in the U.",1
+"If a person is John Kay, then they did not live in the U.",1
+"If a person is Marie Curie, then they did not live in Poland/France.",0
+"If a person is Mary Phelps Jacob, then they did not live in the U.",0
+"If a person is Valdemar Poulsen, then they did not live in Scotland.",1
+"If a person is John Harrison, then they did not live in the U.",0
+"If a person is John Ericsson, then they did not live in the U.",1
+"If a person is James Starley, then they did not live in Sweden/the U.",1
+"If a person is Charles Tellier, then they did not live in the U.",1
+"If a person is Fritz Pfleumer, then they did not live in Canada/the U.",1
+"If a person is Clyde Tombaugh, then they did not live in the U.",0
+"If a person is Nicolas Appert, then they did not live in Russia.",1
+"If a person is Felix Hoffmann, then they did not live in the U.",1
+"If a person is Joseph Henry, then they did not live in the U.",0
+"If a person is Alexander Graham Bell, then they did not live in Germany.",1
+"If a person is Robert Noyce, then they did not live in the U.",0
+"If a person is Charles Francis Richter, then they did not live in the U.",0
+"If a person is Hans Oersted, then they did not live in Denmark.",0
+"If a person is Nils Bohlin, then they did not live in Sweden.",0
+"If a person is Alec Jeffreys, then they did not live in the U.",0
+"If a person is John T. Parsons, then they did not live in the U.",0
+"If a person is Otis Boykin, then they did not live in the U.",0
+"If a person is Charles Strite, then they did not live in the U.",0
+"If a person is Alessandro Volta, then they did not live in Italy.",0
+"If a person is Ruth Handler, then they did not live in the U.",0
+"If a person is Georges Claude, then they did not live in France.",0
+"If a person is Hedy Lamarr, then they did not live in the U.",1
+"If a person is Alfred Nobel, then they did not live in Sweden.",0
+"If a person is John Ambrose Fleming, then they did not live in the U.",1
+"If a person is Charles Strite, then they did not live in Italy.",1
+"If a person is John Ericsson, then they did not live in Sweden.",0
+"If a person is Elisha Otis, then they did not live in the U.",1
+"If a person is Gordon Gould, then they did not live in Canada.",1
+"If a person is Christopher Cockerell, then they did not live in the U.",0
+"If a person is Sir Charles Parsons, then they did not live in the U.",0
+"If a person is Henry Ford, then they did not live in the U.",0
+"If a person is Rudolf Kálmán, then they did not live in the U.",1
+"If a person is Joseph Swan, then they did not live in the U.",0
+"If a person is Richard Gatling, then they did not live in the U.",0
+"If a person is Ferdinand von Zeppelin, then they did not live in Germany.",0
+"If a person is Karl Benz, then they did not live in Germany.",0
+"If a person is James Starley, then they did not live in the U.",0
+"If a person is August Horch, then they did not live in Germany.",0
+"If a person is Charles Macintosh, then they did not live in the U.",1
+"If a person is Heinrich Göbel, then they did not live in Germany.",0
+"If a person is Marie Curie, then they did not live in Hungary.",1
+"If a person is Igor Sikorsky, then they did not live in Ukraine/the U.",0
+"If a person is Gustaf Dalén, then they did not live in Germany.",1
+"If a person is Eli Whitney, then they did not live in the U.",0
+"If a person is Hippolyte Mège-Mouriès, then they did not live in France.",0
+"If a person is Ada Lovelace, then they did not live in the U.",1
+"If a person is Spencer Silver, then they did not live in the U.",0
+"If a person is Leon Theremin, then they did not live in Germany.",1
+"If a person is Emile Berliner, then they did not live in Germany/the U.",0
+"If a person is Charles Wheatstone, then they did not live in the U.",0
+"If a person is Biruté Galdikas, then they did not live in France.",1
+"If a person is Samuel Fox, then they did not live in France.",1
+"If a person is Grace Hopper, then they did not live in the U.",0
+"If a person is Biruté Galdikas, then they did not live in Canada.",0
+"If a person is Daisuke Inoue, then they did not live in Japan.",0
+"If a person is Albert Ghiorso, then they did not live in the U.",1
+"If a person is Karl Landsteiner, then they did not live in Austria.",0
+"If a person is Joseph Henry, then they did not live in the U.",1
+"If a person is Galileo Galilei, then they did not live in the U.",1
+"If a person is Linus Torvalds, then they did not live in Finland.",0
+"If a person is Ami Argand, then they did not live in the U.",1
+"If a person is André-Jacques Garnerin, then they did not live in the Netherlands.",1
+"If a person is Levi Strauss, then they did not live in the U.",0
+"If a person is Alessandro Volta, then they did not live in the U.",1
+"If a person is Edouard Benedictus, then they did not live in France.",0
+"If a person is Arthur Fry, then they did not live in France.",1
+"If a person is Charles Townes, then they did not live in the U.",0
+"If a person is Ralph H. Baer, then they did not live in France.",1
+"If a person is Reginald Fessenden, then they did not live in Canada/the U.",0
+"If a person is Antoine Lavoisier, then they did not live in Austria.",1
+"If a person is Joseph Engelberger, then they did not live in the U.",0
+"If a person is Karl Landsteiner, then they did not live in the U.",1
+"If a person is Reginald Fessenden, then they did not live in the U.",1
+"If a person is John Shepherd-Barron, then they did not live in the U.",1
+"If a person is Frank Bunker Gilbreth, then they did not live in Russia.",1
+"If a person is Daisuke Inoue, then they did not live in the U.",1
+"If a person is John Kay, then they did not live in the U.",0
+"If a person is Tim Berners-Lee, then they did not live in the U.",0
+"If a person is Charles Francis Jenkins, then they did not live in the U.",0
+"If a person is Jean-Bernard-Léon Foucault, then they did not live in the U.",1
+"If a person is Wilhelm Conrad Röntgen, then they did not live in Germany.",0
+"If a person is Christian Huygens, then they did not live in Scotland.",1
+"If a person is Ada Lovelace, then they did not live in the U.",0
+"If a person is Philo Taylor Farnsworth, then they did not live in the U.",0
+"If a person is Sergey Brin and Larry Page, then they did not live in the U.",0
+"If a person is Hans Geiger, then they did not live in Germany.",0
+"If a person is Evangelista Torricelli, then they did not live in Italy.",0
+"If a person is Herbert Akroyd Stuart, then they did not live in Russia.",1
+"If a person is Daniel Fahrenheit, then they did not live in the U.",1
+"If a person is Shinya Yamanaka, then they did not live in Japan.",0
+"If a person is Giovanni Caselli, then they did not live in Italy.",0
+"If a person is Charles Francis Jenkins, then they did not live in Germany.",1
+"If a person is Hedy Lamarr, then they did not live in Austria/the U.",0
+"If a person is Frederick McKinley Jones, then they did not live in the U.",0
+"If a person is James Hargreaves, then they did not live in the U.",0
+"If a person is David Schwarz, then they did not live in Croatia.",0
+"If a person is Konrad Zuse, then they did not live in Germany.",0
+"If a person is Jacob Perkins, then they did not live in the U.",0
+"If a person is Arthur Pitney, then they did not live in the U.",1
+"If a person is John Boyd Dunlop, then they did not live in Scotland.",0
+"If a person is Charles Babbage, then they did not live in Hungary/the U.",1
+"If a person is Hans von Ohain, then they did not live in Germany.",0
+"If a person is John von Neumann, then they did not live in the U.",1
+"If a person is Christopher Cockerell, then they did not live in France.",1
+"If a person is R. Buckminster Fuller, then they did not live in the U.",0
+"If a person is Thomas Tompion, then they did not live in the U.",0
+"If a person is Vint Cerf, then they did not live in Italy.",1
+"If a person is Nicolas Appert, then they did not live in France.",0
+"If a person is Wallace Carothers, then they did not live in Denmark.",1
+"If a person is Carl Sontheimer, then they did not live in the U.",0
+"If a person is Karl Benz, then they did not live in the U.",1
+"If a person is Konrad Zuse, then they did not live in Poland/France.",1
+"If a person is James Clerk Maxwell, then they did not live in the U.",0
+"If a person is Nikola Tesla, then they did not live in Germany.",1
+"If a person is James Murray Spangler, then they did not live in the U.",0
+"If a person is John Wesley Hyatt, then they did not live in the U.",1
+"If a person is Hans Goldschmidt, then they did not live in Germany.",0
+"If a person is Carl Elsener, then they did not live in Switzerland.",0
+"If a person is Vint Cerf, then they did not live in the U.",0
+"If a person is Charles Tellier, then they did not live in France.",0
+"If a person is Elisha Gray, then they did not live in Austria/the U.",1
+"If a person is George de Mestral, then they did not live in Canada.",1
+"If a person is Sir Charles Parsons, then they did not live in the U.",1
+"If a person is Henry Bessemer, then they did not live in the U.",1
+"If a person is James Dyson, then they did not live in Canada.",1
+"If a person is Jack Kilby, then they did not live in the U.",1
+"If a person is Joseph Marie Jacquard, then they did not live in France.",0
+"If a person is Carl Wilhelm Siemens, then they did not live in the U.",1
+"If a person is Sir Humphry Davy, then they did not live in the U.",1
+"If a person is Philipp Reis, then they did not live in Finland.",1
+"If a person is Samuel Colt, then they did not live in the U.",0
+"If a person is Bartolomeo Cristofori, then they did not live in the U.",1
+"If a person is Mary Walton, then they did not live in the U.",0
+"If a person is Felix Hoffmann, then they did not live in Germany.",0
+"If a person is Lester Wire, then they did not live in the U.",1
+"If a person is Frederick G. Creed, then they did not live in Canada.",0
+"If a person is Hans von Ohain, then they did not live in Canada.",1
+"If a person is Elihu Thomson, then they did not live in the U.",0
+"If a person is Yvonne Brill, then they did not live in the U.",1
+"If a person is Pierre Curie, then they did not live in France.",0
+"If a person is James Hargreaves, then they did not live in Sweden.",1
+"If a person is Nikolay Slavyanov, then they did not live in Russia.",0
+"If a person is Dr. Robert Gallo, then they did not live in the U.",0
+"If a person is Charles Goodyear, then they did not live in the U.",1
+"If a person is Samuel Morse, then they did not live in the U.",0
+"If a person is Daniel Fahrenheit, then they did not live in Poland/Germany.",0
+"If a person is John Logie Baird, then they did not live in Scotland.",0
+"If a person is Henri Giffard, then they did not live in France.",0
+"If a person is Eugene Polley, then they did not live in the U.",0
+"If a person is Zhores Alferov, then they did not live in Russia.",0
+"If a person is Ferdinand Carré, then they did not live in France.",0
+"If a person is Richard Trevithick, then they did not live in the U.",0
+"If a person is Edmund Cartwright, then they did not live in the U.",1
+"If a person is John Walker, then they did not live in the U.",0
+"If a person is Semyon Kirlian, then they did not live in the U.",1
+"If a person is Blaise Pascal, then they did not live in France.",0
+"If a person is Mary Phelps Jacob, then they did not live in Ukraine/the U.",1
+"If a person is Luther Simjian, then they did not live in the U.",1
+"If a person is Benjamin Rubin, then they did not live in the U.",0
+"If a person is Willem Einthoven, then they did not live in the Netherlands.",0
+"If a person is Godfrey Hounsfield, then they did not live in the U.",0
+"If a person is Yoshiro Nakamatsu, then they did not live in Japan.",0
+"If a person is Sir Isaac Newton, then they did not live in the U.",1
+"If a person is Ferdinand von Zeppelin, then they did not live in France.",1
+"If a person is Auguste and Louis Lumière, then they did not live in France.",0
+"If a person is Thomas Edison, then they did not live in the U.",1
+"If a person is Cai Lun, then they did not live in China.",0

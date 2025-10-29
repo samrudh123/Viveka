@@ -1,0 +1,1497 @@
+statement,label,city,country,correct_country
+If the city is Krasnodar then the country is not Russia.,0,Krasnodar,Russia,Russia
+If the city is Krasnodar then the country is not South Africa.,1,Krasnodar,South Africa,Russia
+If the city is Lodz then the country is not Poland.,0,Lodz,Poland,Poland
+If the city is Lodz then the country is not the Dominican Republic.,1,Lodz,the Dominican Republic,Poland
+If the city is Maracay then the country is not Venezuela.,0,Maracay,Venezuela,Venezuela
+If the city is Maracay then the country is not China.,1,Maracay,China,Venezuela
+If the city is Baku then the country is not Azerbaijan.,0,Baku,Azerbaijan,Azerbaijan
+If the city is Baku then the country is not Ukraine.,1,Baku,Ukraine,Azerbaijan
+If the city is Baoji then the country is not China.,0,Baoji,China,China
+If the city is Baoji then the country is not Guatemala.,1,Baoji,Guatemala,China
+If the city is Addis Ababa then the country is not Ethiopia.,0,Addis Ababa,Ethiopia,Ethiopia
+If the city is Addis Ababa then the country is not Indonesia.,1,Addis Ababa,Indonesia,Ethiopia
+If the city is Abidjan then the country is not Côte d'Ivoire.,0,Abidjan,Côte d'Ivoire,Côte d'Ivoire
+If the city is Abidjan then the country is not China.,1,Abidjan,China,Côte d'Ivoire
+If the city is Yongzhou then the country is not China.,0,Yongzhou,China,China
+If the city is Yongzhou then the country is not Ukraine.,1,Yongzhou,Ukraine,China
+If the city is Nanchong then the country is not China.,0,Nanchong,China,China
+If the city is Nanchong then the country is not Nigeria.,1,Nanchong,Nigeria,China
+If the city is Lu'an then the country is not China.,0,Lu'an,China,China
+If the city is Lu'an then the country is not Turkey.,1,Lu'an,Turkey,China
+If the city is Jiaxing then the country is not China.,0,Jiaxing,China,China
+If the city is Jiaxing then the country is not Ukraine.,1,Jiaxing,Ukraine,China
+If the city is Huaihua then the country is not China.,0,Huaihua,China,China
+If the city is Huaihua then the country is not South Africa.,1,Huaihua,South Africa,China
+If the city is Anqing then the country is not China.,0,Anqing,China,China
+If the city is Anqing then the country is not Brazil.,1,Anqing,Brazil,China
+If the city is Yingkou then the country is not China.,0,Yingkou,China,China
+If the city is Yingkou then the country is not the Philippines.,1,Yingkou,the Philippines,China
+If the city is Panshan then the country is not China.,0,Panshan,China,China
+If the city is Panshan then the country is not Japan.,1,Panshan,Japan,China
+If the city is Guatemala City then the country is not Guatemala.,0,Guatemala City,Guatemala,Guatemala
+If the city is Guatemala City then the country is not Croatia.,1,Guatemala City,Croatia,Guatemala
+If the city is Bauchi then the country is not Nigeria.,0,Bauchi,Nigeria,Nigeria
+If the city is Bauchi then the country is not Iran.,1,Bauchi,Iran,Nigeria
+If the city is Tokyo then the country is not Japan.,0,Tokyo,Japan,Japan
+If the city is Tokyo then the country is not Pakistan.,1,Tokyo,Pakistan,Japan
+If the city is Mombasa then the country is not Kenya.,0,Mombasa,Kenya,Kenya
+If the city is Mombasa then the country is not India.,1,Mombasa,India,Kenya
+If the city is Ulsan then the country is not South Korea.,0,Ulsan,South Korea,South Korea
+If the city is Ulsan then the country is not South Africa.,1,Ulsan,South Africa,South Korea
+If the city is Warangal then the country is not India.,0,Warangal,India,India
+If the city is Warangal then the country is not Yemen.,1,Warangal,Yemen,India
+If the city is Tiruchirappalli then the country is not India.,0,Tiruchirappalli,India,India
+If the city is Tiruchirappalli then the country is not Iraq.,1,Tiruchirappalli,Iraq,India
+If the city is Nowrangapur then the country is not India.,0,Nowrangapur,India,India
+If the city is Nowrangapur then the country is not Vietnam.,1,Nowrangapur,Vietnam,India
+If the city is Sambhaji Nagar then the country is not India.,0,Sambhaji Nagar,India,India
+If the city is Sambhaji Nagar then the country is not China.,1,Sambhaji Nagar,China,India
+If the city is Ajmer then the country is not India.,0,Ajmer,India,India
+If the city is Ajmer then the country is not Russia.,1,Ajmer,Russia,India
+If the city is Rohini then the country is not India.,0,Rohini,India,India
+If the city is Rohini then the country is not Russia.,1,Rohini,Russia,India
+If the city is Serang then the country is not Indonesia.,0,Serang,Indonesia,Indonesia
+If the city is Serang then the country is not Poland.,1,Serang,Poland,Indonesia
+If the city is Niigata then the country is not Japan.,0,Niigata,Japan,Japan
+If the city is Niigata then the country is not Yemen.,1,Niigata,Yemen,Japan
+If the city is Marrakesh then the country is not Morocco.,0,Marrakesh,Morocco,Morocco
+If the city is Marrakesh then the country is not Malaysia.,1,Marrakesh,Malaysia,Morocco
+If the city is Makati City then the country is not the Philippines.,0,Makati City,the Philippines,the Philippines
+If the city is Makati City then the country is not India.,1,Makati City,India,the Philippines
+If the city is Tirunelveli then the country is not India.,0,Tirunelveli,India,India
+If the city is Tirunelveli then the country is not China.,1,Tirunelveli,China,India
+If the city is Thane then the country is not India.,0,Thane,India,India
+If the city is Thane then the country is not China.,1,Thane,China,India
+If the city is Solapur then the country is not India.,0,Solapur,India,India
+If the city is Solapur then the country is not the United States.,1,Solapur,the United States,India
+If the city is Najafgarh then the country is not India.,0,Najafgarh,India,India
+If the city is Najafgarh then the country is not Brazil.,1,Najafgarh,Brazil,India
+If the city is Borivli then the country is not India.,0,Borivli,India,India
+If the city is Borivli then the country is not Ukraine.,1,Borivli,Ukraine,India
+If the city is Zhabei then the country is not China.,0,Zhabei,China,China
+If the city is Zhabei then the country is not Afghanistan.,1,Zhabei,Afghanistan,China
+If the city is Liaocheng then the country is not China.,0,Liaocheng,China,China
+If the city is Liaocheng then the country is not South Korea.,1,Liaocheng,South Korea,China
+If the city is Jiaozhou then the country is not China.,0,Jiaozhou,China,China
+If the city is Jiaozhou then the country is not Latvia.,1,Jiaozhou,Latvia,China
+If the city is Guilin then the country is not China.,0,Guilin,China,China
+If the city is Guilin then the country is not the Dominican Republic.,1,Guilin,the Dominican Republic,China
+If the city is Chaozhou then the country is not China.,0,Chaozhou,China,China
+If the city is Chaozhou then the country is not South Korea.,1,Chaozhou,South Korea,China
+If the city is Panzhihua then the country is not China.,0,Panzhihua,China,China
+If the city is Panzhihua then the country is not Iran.,1,Panzhihua,Iran,China
+If the city is Bucaramanga then the country is not Colombia.,0,Bucaramanga,Colombia,Colombia
+If the city is Bucaramanga then the country is not Brazil.,1,Bucaramanga,Brazil,Colombia
+If the city is Niamey then the country is not Niger.,0,Niamey,Niger,Niger
+If the city is Niamey then the country is not China.,1,Niamey,China,Niger
+If the city is Sokoto then the country is not Nigeria.,0,Sokoto,Nigeria,Nigeria
+If the city is Sokoto then the country is not South Korea.,1,Sokoto,South Korea,Nigeria
+If the city is Abuja then the country is not Nigeria.,0,Abuja,Nigeria,Nigeria
+If the city is Abuja then the country is not China.,1,Abuja,China,Nigeria
+If the city is South Tangerang then the country is not Indonesia.,0,South Tangerang,Indonesia,Indonesia
+If the city is South Tangerang then the country is not India.,1,South Tangerang,India,Indonesia
+If the city is Odesa then the country is not Ukraine.,0,Odesa,Ukraine,Ukraine
+If the city is Odesa then the country is not China.,1,Odesa,China,Ukraine
+If the city is Fort Worth then the country is not the United States.,0,Fort Worth,the United States,the United States
+If the city is Fort Worth then the country is not Russia.,1,Fort Worth,Russia,the United States
+If the city is Boumerdes then the country is not Algeria.,0,Boumerdes,Algeria,Algeria
+If the city is Boumerdes then the country is not Iran.,1,Boumerdes,Iran,Algeria
+If the city is Asmara then the country is not Eritrea.,0,Asmara,Eritrea,Eritrea
+If the city is Asmara then the country is not Indonesia.,1,Asmara,Indonesia,Eritrea
+If the city is Santiago de Queretaro then the country is not Mexico.,0,Santiago de Queretaro,Mexico,Mexico
+If the city is Santiago de Queretaro then the country is not Ecuador.,1,Santiago de Queretaro,Ecuador,Mexico
+If the city is Perm then the country is not Russia.,0,Perm,Russia,Russia
+If the city is Perm then the country is not China.,1,Perm,China,Russia
+If the city is Jeddah then the country is not Saudi Arabia.,0,Jeddah,Saudi Arabia,Saudi Arabia
+If the city is Jeddah then the country is not Myanmar.,1,Jeddah,Myanmar,Saudi Arabia
+If the city is Konya then the country is not Turkey.,0,Konya,Turkey,Turkey
+If the city is Konya then the country is not Russia.,1,Konya,Russia,Turkey
+If the city is Macapa then the country is not Brazil.,0,Macapa,Brazil,Brazil
+If the city is Macapa then the country is not China.,1,Macapa,China,Brazil
+If the city is Belo Horizonte then the country is not Brazil.,0,Belo Horizonte,Brazil,Brazil
+If the city is Belo Horizonte then the country is not North Korea.,1,Belo Horizonte,North Korea,Brazil
+If the city is Poznan then the country is not Poland.,0,Poznan,Poland,Poland
+If the city is Poznan then the country is not Mexico.,1,Poznan,Mexico,Poland
+If the city is Linyi then the country is not China.,0,Linyi,China,China
+If the city is Linyi then the country is not Iraq.,1,Linyi,Iraq,China
+If the city is Hohhot then the country is not China.,0,Hohhot,China,China
+If the city is Hohhot then the country is not Indonesia.,1,Hohhot,Indonesia,China
+If the city is Malacca then the country is not Malaysia.,0,Malacca,Malaysia,Malaysia
+If the city is Malacca then the country is not China.,1,Malacca,China,Malaysia
+If the city is Busan then the country is not South Korea.,0,Busan,South Korea,South Korea
+If the city is Busan then the country is not Brazil.,1,Busan,Brazil,South Korea
+If the city is Seongnam-si then the country is not South Korea.,0,Seongnam-si,South Korea,South Korea
+If the city is Seongnam-si then the country is not Russia.,1,Seongnam-si,Russia,South Korea
+If the city is Matsuyama then the country is not Japan.,0,Matsuyama,Japan,Japan
+If the city is Matsuyama then the country is not Burkina Faso.,1,Matsuyama,Burkina Faso,Japan
+If the city is Suwon then the country is not South Korea.,0,Suwon,South Korea,South Korea
+If the city is Suwon then the country is not Russia.,1,Suwon,Russia,South Korea
+If the city is Incheon then the country is not South Korea.,0,Incheon,South Korea,South Korea
+If the city is Incheon then the country is not India.,1,Incheon,India,South Korea
+If the city is Hwaseong-si then the country is not South Korea.,0,Hwaseong-si,South Korea,South Korea
+If the city is Hwaseong-si then the country is not Brazil.,1,Hwaseong-si,Brazil,South Korea
+If the city is Changwon then the country is not South Korea.,0,Changwon,South Korea,South Korea
+If the city is Changwon then the country is not Indonesia.,1,Changwon,Indonesia,South Korea
+If the city is Bamako then the country is not Mali.,0,Bamako,Mali,Mali
+If the city is Bamako then the country is not India.,1,Bamako,India,Mali
+If the city is Acapulco de Juarez then the country is not Mexico.,0,Acapulco de Juarez,Mexico,Mexico
+If the city is Acapulco de Juarez then the country is not Morocco.,1,Acapulco de Juarez,Morocco,Mexico
+If the city is Mosul then the country is not Iraq.,0,Mosul,Iraq,Iraq
+If the city is Mosul then the country is not China.,1,Mosul,China,Iraq
+If the city is Basrah then the country is not Iraq.,0,Basrah,Iraq,Iraq
+If the city is Basrah then the country is not China.,1,Basrah,China,Iraq
+If the city is Qom then the country is not Iran.,0,Qom,Iran,Iran
+If the city is Qom then the country is not Vietnam.,1,Qom,Vietnam,Iran
+If the city is Torreon then the country is not Mexico.,0,Torreon,Mexico,Mexico
+If the city is Torreon then the country is not India.,1,Torreon,India,Mexico
+If the city is Beira then the country is not Mozambique.,0,Beira,Mozambique,Mozambique
+If the city is Beira then the country is not India.,1,Beira,India,Mozambique
+If the city is Naucalpan de Juarez then the country is not Mexico.,0,Naucalpan de Juarez,Mexico,Mexico
+If the city is Naucalpan de Juarez then the country is not Honduras.,1,Naucalpan de Juarez,Honduras,Mexico
+If the city is Dehra Dun then the country is not India.,0,Dehra Dun,India,India
+If the city is Dehra Dun then the country is not China.,1,Dehra Dun,China,India
+If the city is Bhubaneswar then the country is not India.,0,Bhubaneswar,India,India
+If the city is Bhubaneswar then the country is not China.,1,Bhubaneswar,China,India
+If the city is Ahvaz then the country is not Iran.,0,Ahvaz,Iran,Iran
+If the city is Ahvaz then the country is not China.,1,Ahvaz,China,Iran
+If the city is Kumasi then the country is not Ghana.,0,Kumasi,Ghana,Ghana
+If the city is Kumasi then the country is not India.,1,Kumasi,India,Ghana
+If the city is Palembang then the country is not Indonesia.,0,Palembang,Indonesia,Indonesia
+If the city is Palembang then the country is not Brazil.,1,Palembang,Brazil,Indonesia
+If the city is Novokuznetsk then the country is not Russia.,0,Novokuznetsk,Russia,Russia
+If the city is Novokuznetsk then the country is not China.,1,Novokuznetsk,China,Russia
+If the city is Izmir then the country is not Turkey.,0,Izmir,Turkey,Turkey
+If the city is Izmir then the country is not Iran.,1,Izmir,Iran,Turkey
+If the city is Lahore then the country is not Pakistan.,0,Lahore,Pakistan,Pakistan
+If the city is Lahore then the country is not China.,1,Lahore,China,Pakistan
+If the city is Zhenjiang then the country is not China.,0,Zhenjiang,China,China
+If the city is Zhenjiang then the country is not Germany.,1,Zhenjiang,Germany,China
+If the city is Zhaotong then the country is not China.,0,Zhaotong,China,China
+If the city is Zhaotong then the country is not Iraq.,1,Zhaotong,Iraq,China
+If the city is Weifang then the country is not China.,0,Weifang,China,China
+If the city is Weifang then the country is not Indonesia.,1,Weifang,Indonesia,China
+If the city is Tianjin then the country is not China.,0,Tianjin,China,China
+If the city is Tianjin then the country is not Bangladesh.,1,Tianjin,Bangladesh,China
+If the city is Shaoxing then the country is not China.,0,Shaoxing,China,China
+If the city is Shaoxing then the country is not the Philippines.,1,Shaoxing,the Philippines,China
+If the city is Hangzhou then the country is not China.,0,Hangzhou,China,China
+If the city is Hangzhou then the country is not Russia.,1,Hangzhou,Russia,China
+If the city is Mudanjiang then the country is not China.,0,Mudanjiang,China,China
+If the city is Mudanjiang then the country is not Turkey.,1,Mudanjiang,Turkey,China
+If the city is Anshan then the country is not China.,0,Anshan,China,China
+If the city is Anshan then the country is not Cameroon.,1,Anshan,Cameroon,China
+If the city is Porto Velho then the country is not Brazil.,0,Porto Velho,Brazil,Brazil
+If the city is Porto Velho then the country is not Algeria.,1,Porto Velho,Algeria,Brazil
+If the city is N'Djamena then the country is not Chad.,0,N'Djamena,Chad,Chad
+If the city is N'Djamena then the country is not China.,1,N'Djamena,China,Chad
+If the city is Kayseri then the country is not Turkey.,0,Kayseri,Turkey,Turkey
+If the city is Kayseri then the country is not Iraq.,1,Kayseri,Iraq,Turkey
+If the city is Marseille then the country is not France.,0,Marseille,France,France
+If the city is Marseille then the country is not Russia.,1,Marseille,Russia,France
+If the city is Lyon then the country is not France.,0,Lyon,France,France
+If the city is Lyon then the country is not Canada.,1,Lyon,Canada,France
+If the city is Suez then the country is not Egypt.,0,Suez,Egypt,Egypt
+If the city is Suez then the country is not Brazil.,1,Suez,Brazil,Egypt
+If the city is Giza then the country is not Egypt.,0,Giza,Egypt,Egypt
+If the city is Giza then the country is not India.,1,Giza,India,Egypt
+If the city is Naberezhnyye Chelny then the country is not Russia.,0,Naberezhnyye Chelny,Russia,Russia
+If the city is Naberezhnyye Chelny then the country is not Brazil.,1,Naberezhnyye Chelny,Brazil,Russia
+If the city is Mukalla then the country is not Yemen.,0,Mukalla,Yemen,Yemen
+If the city is Mukalla then the country is not Iran.,1,Mukalla,Iran,Yemen
+If the city is Harare then the country is not Zimbabwe.,0,Harare,Zimbabwe,Zimbabwe
+If the city is Harare then the country is not Turkey.,1,Harare,Turkey,Zimbabwe
+If the city is Sevastopol then the country is not Ukraine.,0,Sevastopol,Ukraine,Ukraine
+If the city is Sevastopol then the country is not Pakistan.,1,Sevastopol,Pakistan,Ukraine
+If the city is Lipetsk then the country is not Russia.,0,Lipetsk,Russia,Russia
+If the city is Lipetsk then the country is not China.,1,Lipetsk,China,Russia
+If the city is Istanbul then the country is not Turkey.,0,Istanbul,Turkey,Turkey
+If the city is Istanbul then the country is not Ghana.,1,Istanbul,Ghana,Turkey
+If the city is Callao then the country is not Peru.,0,Callao,Peru,Peru
+If the city is Callao then the country is not Myanmar.,1,Callao,Myanmar,Peru
+If the city is Cebu City then the country is not the Philippines.,0,Cebu City,the Philippines,the Philippines
+If the city is Cebu City then the country is not China.,1,Cebu City,China,the Philippines
+If the city is Tashkent then the country is not Uzbekistan.,0,Tashkent,Uzbekistan,Uzbekistan
+If the city is Tashkent then the country is not Mexico.,1,Tashkent,Mexico,Uzbekistan
+If the city is Maturin then the country is not Venezuela.,0,Maturin,Venezuela,Venezuela
+If the city is Maturin then the country is not Saudi Arabia.,1,Maturin,Saudi Arabia,Venezuela
+If the city is Hanoi then the country is not Vietnam.,0,Hanoi,Vietnam,Vietnam
+If the city is Hanoi then the country is not Poland.,1,Hanoi,Poland,Vietnam
+If the city is Xuzhou then the country is not China.,0,Xuzhou,China,China
+If the city is Xuzhou then the country is not Mexico.,1,Xuzhou,Mexico,China
+If the city is Cucuta then the country is not Colombia.,0,Cucuta,Colombia,Colombia
+If the city is Cucuta then the country is not India.,1,Cucuta,India,Colombia
+If the city is Santo Domingo Oeste then the country is not the Dominican Republic.,0,Santo Domingo Oeste,the Dominican Republic,the Dominican Republic
+If the city is Santo Domingo Oeste then the country is not Zambia.,1,Santo Domingo Oeste,Zambia,the Dominican Republic
+If the city is Tangshan then the country is not China.,0,Tangshan,China,China
+If the city is Tangshan then the country is not India.,1,Tangshan,India,China
+If the city is Neijiang then the country is not China.,0,Neijiang,China,China
+If the city is Neijiang then the country is not Ghana.,1,Neijiang,Ghana,China
+If the city is Linfen then the country is not China.,0,Linfen,China,China
+If the city is Linfen then the country is not India.,1,Linfen,India,China
+If the city is Yiwu then the country is not China.,0,Yiwu,China,China
+If the city is Yiwu then the country is not India.,1,Yiwu,India,China
+If the city is Qiqihar then the country is not China.,0,Qiqihar,China,China
+If the city is Qiqihar then the country is not India.,1,Qiqihar,India,China
+If the city is Baotou then the country is not China.,0,Baotou,China,China
+If the city is Baotou then the country is not Japan.,1,Baotou,Japan,China
+If the city is Aparecida de Goiania then the country is not Brazil.,0,Aparecida de Goiania,Brazil,Brazil
+If the city is Aparecida de Goiania then the country is not China.,1,Aparecida de Goiania,China,Brazil
+If the city is Kinshasa then the country is not the Democratic Republic of the Congo.,0,Kinshasa,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Kinshasa then the country is not Brazil.,1,Kinshasa,Brazil,the Democratic Republic of the Congo
+If the city is Ciudad Nezahualcoyotl then the country is not Mexico.,0,Ciudad Nezahualcoyotl,Mexico,Mexico
+If the city is Ciudad Nezahualcoyotl then the country is not Senegal.,1,Ciudad Nezahualcoyotl,Senegal,Mexico
+If the city is Mexicali then the country is not Mexico.,0,Mexicali,Mexico,Mexico
+If the city is Mexicali then the country is not South Africa.,1,Mexicali,South Africa,Mexico
+If the city is Ciudad Juarez then the country is not Mexico.,0,Ciudad Juarez,Mexico,Mexico
+If the city is Ciudad Juarez then the country is not India.,1,Ciudad Juarez,India,Mexico
+If the city is Kampung Baru Subang then the country is not Malaysia.,0,Kampung Baru Subang,Malaysia,Malaysia
+If the city is Kampung Baru Subang then the country is not the Philippines.,1,Kampung Baru Subang,the Philippines,Malaysia
+If the city is Subang Jaya then the country is not Malaysia.,0,Subang Jaya,Malaysia,Malaysia
+If the city is Subang Jaya then the country is not Germany.,1,Subang Jaya,Germany,Malaysia
+If the city is Maputo then the country is not Mozambique.,0,Maputo,Mozambique,Mozambique
+If the city is Maputo then the country is not Japan.,1,Maputo,Japan,Mozambique
+If the city is Kumamoto then the country is not Japan.,0,Kumamoto,Japan,Japan
+If the city is Kumamoto then the country is not China.,1,Kumamoto,China,Japan
+If the city is Daegu then the country is not South Korea.,0,Daegu,South Korea,South Korea
+If the city is Daegu then the country is not the United States.,1,Daegu,the United States,South Korea
+If the city is Vilnius then the country is not Lithuania.,0,Vilnius,Lithuania,Lithuania
+If the city is Vilnius then the country is not China.,1,Vilnius,China,Lithuania
+If the city is Ranchi then the country is not India.,0,Ranchi,India,India
+If the city is Ranchi then the country is not Venezuela.,1,Ranchi,Venezuela,India
+If the city is Jalandhar then the country is not India.,0,Jalandhar,India,India
+If the city is Jalandhar then the country is not Iraq.,1,Jalandhar,Iraq,India
+If the city is Bhayandar then the country is not India.,0,Bhayandar,India,India
+If the city is Bhayandar then the country is not China.,1,Bhayandar,China,India
+If the city is Bareilly then the country is not India.,0,Bareilly,India,India
+If the city is Bareilly then the country is not Mozambique.,1,Bareilly,Mozambique,India
+If the city is Santo Domingo Este then the country is not the Dominican Republic.,0,Santo Domingo Este,the Dominican Republic,the Dominican Republic
+If the city is Santo Domingo Este then the country is not India.,1,Santo Domingo Este,India,the Dominican Republic
+If the city is Al Fayyum then the country is not Egypt.,0,Al Fayyum,Egypt,Egypt
+If the city is Al Fayyum then the country is not Chile.,1,Al Fayyum,Chile,Egypt
+If the city is Rizhao then the country is not China.,0,Rizhao,China,China
+If the city is Rizhao then the country is not Iraq.,1,Rizhao,Iraq,China
+"If the city is Mianzhu, Deyang, Sichuan then the country is not China.",0,"Mianzhu, Deyang, Sichuan",China,China
+"If the city is Mianzhu, Deyang, Sichuan then the country is not India.",1,"Mianzhu, Deyang, Sichuan",India,China
+If the city is Jabalpur then the country is not India.,0,Jabalpur,India,India
+If the city is Jabalpur then the country is not Ukraine.,1,Jabalpur,Ukraine,India
+If the city is Bilimora then the country is not India.,0,Bilimora,India,India
+If the city is Bilimora then the country is not Uzbekistan.,1,Bilimora,Uzbekistan,India
+If the city is Accra then the country is not Ghana.,0,Accra,Ghana,Ghana
+If the city is Accra then the country is not China.,1,Accra,China,Ghana
+If the city is Bogor then the country is not Indonesia.,0,Bogor,Indonesia,Indonesia
+If the city is Bogor then the country is not South Korea.,1,Bogor,South Korea,Indonesia
+If the city is Nyala then the country is not Sudan.,0,Nyala,Sudan,Sudan
+If the city is Nyala then the country is not Mozambique.,1,Nyala,Mozambique,Sudan
+If the city is Eskisehir then the country is not Turkey.,0,Eskisehir,Turkey,Turkey
+If the city is Eskisehir then the country is not China.,1,Eskisehir,China,Turkey
+If the city is Antalya then the country is not Turkey.,0,Antalya,Turkey,Turkey
+If the city is Antalya then the country is not Germany.,1,Antalya,Germany,Turkey
+If the city is Dnipro then the country is not Ukraine.,0,Dnipro,Ukraine,Ukraine
+If the city is Dnipro then the country is not Russia.,1,Dnipro,Russia,Ukraine
+If the city is Khabarovsk then the country is not Russia.,0,Khabarovsk,Russia,Russia
+If the city is Khabarovsk then the country is not Saudi Arabia.,1,Khabarovsk,Saudi Arabia,Russia
+If the city is Irkutsk then the country is not Russia.,0,Irkutsk,Russia,Russia
+If the city is Irkutsk then the country is not Morocco.,1,Irkutsk,Morocco,Russia
+If the city is Libreville then the country is not Gabon.,0,Libreville,Gabon,Gabon
+If the city is Libreville then the country is not the United States.,1,Libreville,the United States,Gabon
+If the city is Santiago de los Caballeros then the country is not the Dominican Republic.,0,Santiago de los Caballeros,the Dominican Republic,the Dominican Republic
+If the city is Santiago de los Caballeros then the country is not India.,1,Santiago de los Caballeros,India,the Dominican Republic
+If the city is Algiers then the country is not Algeria.,0,Algiers,Algeria,Algeria
+If the city is Algiers then the country is not China.,1,Algiers,China,Algeria
+If the city is Nashik then the country is not India.,0,Nashik,India,India
+If the city is Nashik then the country is not China.,1,Nashik,China,India
+If the city is Karol Bagh then the country is not India.,0,Karol Bagh,India,India
+If the city is Karol Bagh then the country is not Syria.,1,Karol Bagh,Syria,India
+If the city is Orumiyeh then the country is not Iran.,0,Orumiyeh,Iran,Iran
+If the city is Orumiyeh then the country is not Saudi Arabia.,1,Orumiyeh,Saudi Arabia,Iran
+If the city is Zahedan then the country is not Iran.,0,Zahedan,Iran,Iran
+If the city is Zahedan then the country is not Nicaragua.,1,Zahedan,Nicaragua,Iran
+If the city is Xuchang then the country is not China.,0,Xuchang,China,China
+If the city is Xuchang then the country is not Japan.,1,Xuchang,Japan,China
+If the city is Changde then the country is not China.,0,Changde,China,China
+If the city is Changde then the country is not Mexico.,1,Changde,Mexico,China
+If the city is Shaoguan then the country is not China.,0,Shaoguan,China,China
+If the city is Shaoguan then the country is not Pakistan.,1,Shaoguan,Pakistan,China
+If the city is Jilin then the country is not China.,0,Jilin,China,China
+If the city is Jilin then the country is not the United States.,1,Jilin,the United States,China
+If the city is Manaus then the country is not Brazil.,0,Manaus,Brazil,Brazil
+If the city is Manaus then the country is not Turkey.,1,Manaus,Turkey,Brazil
+If the city is Jaboatao dos Guararapes then the country is not Brazil.,0,Jaboatao dos Guararapes,Brazil,Brazil
+If the city is Jaboatao dos Guararapes then the country is not Myanmar.,1,Jaboatao dos Guararapes,Myanmar,Brazil
+If the city is Kakamega then the country is not Kenya.,0,Kakamega,Kenya,Kenya
+If the city is Kakamega then the country is not Russia.,1,Kakamega,Russia,Kenya
+If the city is Agadir then the country is not Morocco.,0,Agadir,Morocco,Morocco
+If the city is Agadir then the country is not Bangladesh.,1,Agadir,Bangladesh,Morocco
+If the city is Ulan Bator then the country is not Mongolia.,0,Ulan Bator,Mongolia,Mongolia
+If the city is Ulan Bator then the country is not Ukraine.,1,Ulan Bator,Ukraine,Mongolia
+If the city is Muscat then the country is not Oman.,0,Muscat,Oman,Oman
+If the city is Muscat then the country is not Bangladesh.,1,Muscat,Bangladesh,Oman
+If the city is Paranaque City then the country is not the Philippines.,0,Paranaque City,the Philippines,the Philippines
+If the city is Paranaque City then the country is not India.,1,Paranaque City,India,the Philippines
+If the city is Rahim Yar Khan then the country is not Pakistan.,0,Rahim Yar Khan,Pakistan,Pakistan
+If the city is Rahim Yar Khan then the country is not Lithuania.,1,Rahim Yar Khan,Lithuania,Pakistan
+If the city is Balikpapan then the country is not Indonesia.,0,Balikpapan,Indonesia,Indonesia
+If the city is Balikpapan then the country is not Japan.,1,Balikpapan,Japan,Indonesia
+If the city is Guarulhos then the country is not Brazil.,0,Guarulhos,Brazil,Brazil
+If the city is Guarulhos then the country is not China.,1,Guarulhos,China,Brazil
+If the city is Volgograd then the country is not Russia.,0,Volgograd,Russia,Russia
+If the city is Volgograd then the country is not Nigeria.,1,Volgograd,Nigeria,Russia
+If the city is Ulyanovsk then the country is not Russia.,0,Ulyanovsk,Russia,Russia
+If the city is Ulyanovsk then the country is not Ukraine.,1,Ulyanovsk,Ukraine,Russia
+If the city is Kota Bharu then the country is not Malaysia.,0,Kota Bharu,Malaysia,Malaysia
+If the city is Kota Bharu then the country is not Norway.,1,Kota Bharu,Norway,Malaysia
+If the city is Sarajevo then the country is not Bosnia and Herzegovina.,0,Sarajevo,Bosnia and Herzegovina,Bosnia and Herzegovina
+If the city is Sarajevo then the country is not South Africa.,1,Sarajevo,South Africa,Bosnia and Herzegovina
+If the city is Maceio then the country is not Brazil.,0,Maceio,Brazil,Brazil
+If the city is Maceio then the country is not China.,1,Maceio,China,Brazil
+If the city is Joao Pessoa then the country is not Brazil.,0,Joao Pessoa,Brazil,Brazil
+If the city is Joao Pessoa then the country is not South Africa.,1,Joao Pessoa,South Africa,Brazil
+If the city is Shangqiu then the country is not China.,0,Shangqiu,China,China
+If the city is Shangqiu then the country is not South Korea.,1,Shangqiu,South Korea,China
+If the city is Zhangye then the country is not China.,0,Zhangye,China,China
+If the city is Zhangye then the country is not Venezuela.,1,Zhangye,Venezuela,China
+If the city is Xuanzhou then the country is not China.,0,Xuanzhou,China,China
+If the city is Xuanzhou then the country is not Tanzania.,1,Xuanzhou,Tanzania,China
+If the city is Wuhan then the country is not China.,0,Wuhan,China,China
+If the city is Wuhan then the country is not Egypt.,1,Wuhan,Egypt,China
+If the city is Nanchang then the country is not China.,0,Nanchang,China,China
+If the city is Nanchang then the country is not Malaysia.,1,Nanchang,Malaysia,China
+If the city is Luancheng then the country is not China.,0,Luancheng,China,China
+If the city is Luancheng then the country is not Brazil.,1,Luancheng,Brazil,China
+If the city is Liuzhou then the country is not China.,0,Liuzhou,China,China
+If the city is Liuzhou then the country is not Russia.,1,Liuzhou,Russia,China
+If the city is Guangyuan then the country is not China.,0,Guangyuan,China,China
+If the city is Guangyuan then the country is not Mexico.,1,Guangyuan,Mexico,China
+If the city is Bijie then the country is not China.,0,Bijie,China,China
+If the city is Bijie then the country is not Indonesia.,1,Bijie,Indonesia,China
+If the city is Zhoushan then the country is not China.,0,Zhoushan,China,China
+If the city is Zhoushan then the country is not the Philippines.,1,Zhoushan,the Philippines,China
+If the city is Hegang then the country is not China.,0,Hegang,China,China
+If the city is Hegang then the country is not Russia.,1,Hegang,Russia,China
+If the city is E'zhou then the country is not China.,0,E'zhou,China,China
+If the city is E'zhou then the country is not Malaysia.,1,E'zhou,Malaysia,China
+If the city is Campos dos Goytacazes then the country is not Brazil.,0,Campos dos Goytacazes,Brazil,Brazil
+If the city is Campos dos Goytacazes then the country is not Vietnam.,1,Campos dos Goytacazes,Vietnam,Brazil
+If the city is Bucharest then the country is not Romania.,0,Bucharest,Romania,Romania
+If the city is Bucharest then the country is not Italy.,1,Bucharest,Italy,Romania
+If the city is Ansan-si then the country is not South Korea.,0,Ansan-si,South Korea,South Korea
+If the city is Ansan-si then the country is not Canada.,1,Ansan-si,Canada,South Korea
+If the city is Casablanca then the country is not Morocco.,0,Casablanca,Morocco,Morocco
+If the city is Casablanca then the country is not Russia.,1,Casablanca,Russia,Morocco
+If the city is Coyoacan then the country is not Mexico.,0,Coyoacan,Mexico,Mexico
+If the city is Coyoacan then the country is not Kenya.,1,Coyoacan,Kenya,Mexico
+If the city is Oyo then the country is not Nigeria.,0,Oyo,Nigeria,Nigeria
+If the city is Oyo then the country is not China.,1,Oyo,China,Nigeria
+If the city is Pasig City then the country is not the Philippines.,0,Pasig City,the Philippines,the Philippines
+If the city is Pasig City then the country is not Morocco.,1,Pasig City,Morocco,the Philippines
+If the city is Kano then the country is not Nigeria.,0,Kano,Nigeria,Nigeria
+If the city is Kano then the country is not China.,1,Kano,China,Nigeria
+If the city is Bahawalpur then the country is not Pakistan.,0,Bahawalpur,Pakistan,Pakistan
+If the city is Bahawalpur then the country is not China.,1,Bahawalpur,China,Pakistan
+If the city is New Kingston then the country is not Jamaica.,0,New Kingston,Jamaica,Jamaica
+If the city is New Kingston then the country is not South Africa.,1,New Kingston,South Africa,Jamaica
+If the city is Pyongyang then the country is not North Korea.,0,Pyongyang,North Korea,North Korea
+If the city is Pyongyang then the country is not Argentina.,1,Pyongyang,Argentina,North Korea
+If the city is Shymkent then the country is not Kazakhstan.,0,Shymkent,Kazakhstan,Kazakhstan
+If the city is Shymkent then the country is not China.,1,Shymkent,China,Kazakhstan
+If the city is Tlalpan then the country is not Mexico.,0,Tlalpan,Mexico,Mexico
+If the city is Tlalpan then the country is not Egypt.,1,Tlalpan,Egypt,Mexico
+If the city is Kemerovo then the country is not Russia.,0,Kemerovo,Russia,Russia
+If the city is Kemerovo then the country is not India.,1,Kemerovo,India,Russia
+If the city is Zaporizhzhya then the country is not Ukraine.,0,Zaporizhzhya,Ukraine,Ukraine
+If the city is Zaporizhzhya then the country is not South Korea.,1,Zaporizhzhya,South Korea,Ukraine
+If the city is Iztapalapa then the country is not Mexico.,0,Iztapalapa,Mexico,Mexico
+If the city is Iztapalapa then the country is not Yemen.,1,Iztapalapa,Yemen,Mexico
+If the city is Aguascalientes then the country is not Mexico.,0,Aguascalientes,Mexico,Mexico
+If the city is Aguascalientes then the country is not China.,1,Aguascalientes,China,Mexico
+If the city is Kuala Lumpur then the country is not Malaysia.,0,Kuala Lumpur,Malaysia,Malaysia
+If the city is Kuala Lumpur then the country is not Oman.,1,Kuala Lumpur,Oman,Malaysia
+If the city is Warri then the country is not Nigeria.,0,Warri,Nigeria,Nigeria
+If the city is Warri then the country is not China.,1,Warri,China,Nigeria
+If the city is Peshawar then the country is not Pakistan.,0,Peshawar,Pakistan,Pakistan
+If the city is Peshawar then the country is not Tanzania.,1,Peshawar,Tanzania,Pakistan
+If the city is Kagoshima then the country is not Japan.,0,Kagoshima,Japan,Japan
+If the city is Kagoshima then the country is not India.,1,Kagoshima,India,Japan
+If the city is Hamamatsu then the country is not Japan.,0,Hamamatsu,Japan,Japan
+If the city is Hamamatsu then the country is not Russia.,1,Hamamatsu,Russia,Japan
+If the city is Cheongju-si then the country is not South Korea.,0,Cheongju-si,South Korea,South Korea
+If the city is Cheongju-si then the country is not India.,1,Cheongju-si,India,South Korea
+If the city is Ghaziabad then the country is not India.,0,Ghaziabad,India,India
+If the city is Ghaziabad then the country is not South Korea.,1,Ghaziabad,South Korea,India
+If the city is Cochin then the country is not India.,0,Cochin,India,India
+If the city is Cochin then the country is not China.,1,Cochin,China,India
+If the city is Ahmedabad then the country is not India.,0,Ahmedabad,India,India
+If the city is Ahmedabad then the country is not China.,1,Ahmedabad,China,India
+If the city is Sulaymaniyah then the country is not Iraq.,0,Sulaymaniyah,Iraq,Iraq
+If the city is Sulaymaniyah then the country is not Turkey.,1,Sulaymaniyah,Turkey,Iraq
+If the city is Hamadan then the country is not Iran.,0,Hamadan,Iran,Iran
+If the city is Hamadan then the country is not Pakistan.,1,Hamadan,Pakistan,Iran
+If the city is Omsk then the country is not Russia.,0,Omsk,Russia,Russia
+If the city is Omsk then the country is not China.,1,Omsk,China,Russia
+If the city is Ta'if then the country is not Saudi Arabia.,0,Ta'if,Saudi Arabia,Saudi Arabia
+If the city is Ta'if then the country is not Venezuela.,1,Ta'if,Venezuela,Saudi Arabia
+If the city is Stockholm then the country is not Sweden.,0,Stockholm,Sweden,Sweden
+If the city is Stockholm then the country is not Russia.,1,Stockholm,Russia,Sweden
+If the city is Siliguri then the country is not India.,0,Siliguri,India,India
+If the city is Siliguri then the country is not China.,1,Siliguri,China,India
+If the city is Baghdad then the country is not Iraq.,0,Baghdad,Iraq,Iraq
+If the city is Baghdad then the country is not China.,1,Baghdad,China,Iraq
+If the city is Al Basrah al Qadimah then the country is not Iraq.,0,Al Basrah al Qadimah,Iraq,Iraq
+If the city is Al Basrah al Qadimah then the country is not China.,1,Al Basrah al Qadimah,China,Iraq
+If the city is Krakow then the country is not Poland.,0,Krakow,Poland,Poland
+If the city is Krakow then the country is not South Korea.,1,Krakow,South Korea,Poland
+If the city is Tolyatti then the country is not Russia.,0,Tolyatti,Russia,Russia
+If the city is Tolyatti then the country is not Ghana.,1,Tolyatti,Ghana,Russia
+If the city is Bandar Lampung then the country is not Indonesia.,0,Bandar Lampung,Indonesia,Indonesia
+If the city is Bandar Lampung then the country is not South Africa.,1,Bandar Lampung,South Africa,Indonesia
+If the city is Tucson then the country is not the United States.,0,Tucson,the United States,the United States
+If the city is Tucson then the country is not Canada.,1,Tucson,Canada,the United States
+If the city is Can Tho then the country is not Vietnam.,0,Can Tho,Vietnam,Vietnam
+If the city is Can Tho then the country is not Venezuela.,1,Can Tho,Venezuela,Vietnam
+If the city is Bouake then the country is not Côte d'Ivoire.,0,Bouake,Côte d'Ivoire,Côte d'Ivoire
+If the city is Bouake then the country is not China.,1,Bouake,China,Côte d'Ivoire
+If the city is Abobo then the country is not Côte d'Ivoire.,0,Abobo,Côte d'Ivoire,Côte d'Ivoire
+If the city is Abobo then the country is not India.,1,Abobo,India,Côte d'Ivoire
+If the city is Shihezi then the country is not China.,0,Shihezi,China,China
+If the city is Shihezi then the country is not Russia.,1,Shihezi,Russia,China
+If the city is Yunfu then the country is not China.,0,Yunfu,China,China
+If the city is Yunfu then the country is not Honduras.,1,Yunfu,Honduras,China
+If the city is Xiangtan then the country is not China.,0,Xiangtan,China,China
+If the city is Xiangtan then the country is not Brazil.,1,Xiangtan,Brazil,China
+If the city is Qionghai then the country is not China.,0,Qionghai,China,China
+If the city is Qionghai then the country is not Ecuador.,1,Qionghai,Ecuador,China
+If the city is Chuzhou then the country is not China.,0,Chuzhou,China,China
+If the city is Chuzhou then the country is not India.,1,Chuzhou,India,China
+If the city is Taiz then the country is not Yemen.,0,Taiz,Yemen,Yemen
+If the city is Taiz then the country is not Burkina Faso.,1,Taiz,Burkina Faso,Yemen
+If the city is Tembisa then the country is not South Africa.,0,Tembisa,South Africa,South Africa
+If the city is Tembisa then the country is not the Philippines.,1,Tembisa,the Philippines,South Africa
+If the city is Puente Alto then the country is not Chile.,0,Puente Alto,Chile,Chile
+If the city is Puente Alto then the country is not China.,1,Puente Alto,China,Chile
+If the city is Zhumadian then the country is not China.,0,Zhumadian,China,China
+If the city is Zhumadian then the country is not Brazil.,1,Zhumadian,Brazil,China
+If the city is Zhengzhou then the country is not China.,0,Zhengzhou,China,China
+If the city is Zhengzhou then the country is not Brazil.,1,Zhengzhou,Brazil,China
+If the city is Ya'an then the country is not China.,0,Ya'an,China,China
+If the city is Ya'an then the country is not Morocco.,1,Ya'an,Morocco,China
+If the city is Xianyang then the country is not China.,0,Xianyang,China,China
+If the city is Xianyang then the country is not Russia.,1,Xianyang,Russia,China
+If the city is Weihai then the country is not China.,0,Weihai,China,China
+If the city is Weihai then the country is not Russia.,1,Weihai,Russia,China
+If the city is Pingdingshan then the country is not China.,0,Pingdingshan,China,China
+If the city is Pingdingshan then the country is not South Africa.,1,Pingdingshan,South Africa,China
+If the city is Bengbu then the country is not China.,0,Bengbu,China,China
+If the city is Bengbu then the country is not India.,1,Bengbu,India,China
+If the city is Zhangjiakou then the country is not China.,0,Zhangjiakou,China,China
+If the city is Zhangjiakou then the country is not India.,1,Zhangjiakou,India,China
+If the city is Mississauga then the country is not Canada.,0,Mississauga,Canada,Canada
+If the city is Mississauga then the country is not India.,1,Mississauga,India,Canada
+If the city is Yerevan then the country is not Armenia.,0,Yerevan,Armenia,Armenia
+If the city is Yerevan then the country is not Bangladesh.,1,Yerevan,Bangladesh,Armenia
+If the city is Albuquerque then the country is not the United States.,0,Albuquerque,the United States,the United States
+If the city is Albuquerque then the country is not Egypt.,1,Albuquerque,Egypt,the United States
+If the city is New South Memphis then the country is not the United States.,0,New South Memphis,the United States,the United States
+If the city is New South Memphis then the country is not China.,1,New South Memphis,China,the United States
+If the city is Calgary then the country is not Canada.,0,Calgary,Canada,Canada
+If the city is Calgary then the country is not India.,1,Calgary,India,Canada
+If the city is Kisangani then the country is not the Democratic Republic of the Congo.,0,Kisangani,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Kisangani then the country is not China.,1,Kisangani,China,the Democratic Republic of the Congo
+If the city is Bobo-Dioulasso then the country is not Burkina Faso.,0,Bobo-Dioulasso,Burkina Faso,Burkina Faso
+If the city is Bobo-Dioulasso then the country is not China.,1,Bobo-Dioulasso,China,Burkina Faso
+If the city is Sao Jose dos Campos then the country is not Brazil.,0,Sao Jose dos Campos,Brazil,Brazil
+If the city is Sao Jose dos Campos then the country is not Iran.,1,Sao Jose dos Campos,Iran,Brazil
+If the city is Florianopolis then the country is not Brazil.,0,Florianopolis,Brazil,Brazil
+If the city is Florianopolis then the country is not Ecuador.,1,Florianopolis,Ecuador,Brazil
+If the city is Cuiaba then the country is not Brazil.,0,Cuiaba,Brazil,Brazil
+If the city is Cuiaba then the country is not Latvia.,1,Cuiaba,Latvia,Brazil
+If the city is Chattogram then the country is not Bangladesh.,0,Chattogram,Bangladesh,Bangladesh
+If the city is Chattogram then the country is not China.,1,Chattogram,China,Bangladesh
+If the city is Nanjing then the country is not China.,0,Nanjing,China,China
+If the city is Nanjing then the country is not Germany.,1,Nanjing,Germany,China
+If the city is Kaifeng then the country is not China.,0,Kaifeng,China,China
+If the city is Kaifeng then the country is not Mexico.,1,Kaifeng,Mexico,China
+If the city is Heze then the country is not China.,0,Heze,China,China
+If the city is Heze then the country is not Yemen.,1,Heze,Yemen,China
+If the city is Sendai then the country is not Japan.,0,Sendai,Japan,Japan
+If the city is Sendai then the country is not Brazil.,1,Sendai,Brazil,Japan
+If the city is Jeonju then the country is not South Korea.,0,Jeonju,South Korea,South Korea
+If the city is Jeonju then the country is not the United States.,1,Jeonju,the United States,South Korea
+If the city is Almaty then the country is not Kazakhstan.,0,Almaty,Kazakhstan,Kazakhstan
+If the city is Almaty then the country is not Iraq.,1,Almaty,Iraq,Kazakhstan
+If the city is Pimpri then the country is not India.,0,Pimpri,India,India
+If the city is Pimpri then the country is not China.,1,Pimpri,China,India
+If the city is Navi Mumbai then the country is not India.,0,Navi Mumbai,India,India
+If the city is Navi Mumbai then the country is not China.,1,Navi Mumbai,China,India
+If the city is Novosibirsk then the country is not Russia.,0,Novosibirsk,Russia,Russia
+If the city is Novosibirsk then the country is not the Philippines.,1,Novosibirsk,the Philippines,Russia
+If the city is Goeteborg then the country is not Sweden.,0,Goeteborg,Sweden,Sweden
+If the city is Goeteborg then the country is not South Korea.,1,Goeteborg,South Korea,Sweden
+If the city is Bursa then the country is not Turkey.,0,Bursa,Turkey,Turkey
+If the city is Bursa then the country is not Bosnia and Herzegovina.,1,Bursa,Bosnia and Herzegovina,Turkey
+If the city is Dar es Salaam then the country is not Tanzania.,0,Dar es Salaam,Tanzania,Tanzania
+If the city is Dar es Salaam then the country is not Italy.,1,Dar es Salaam,Italy,Tanzania
+If the city is Mbuji-Mayi then the country is not the Democratic Republic of the Congo.,0,Mbuji-Mayi,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Mbuji-Mayi then the country is not Pakistan.,1,Mbuji-Mayi,Pakistan,the Democratic Republic of the Congo
+If the city is Goiania then the country is not Brazil.,0,Goiania,Brazil,Brazil
+If the city is Goiania then the country is not China.,1,Goiania,China,Brazil
+If the city is Yaroslavl then the country is not Russia.,0,Yaroslavl,Russia,Russia
+If the city is Yaroslavl then the country is not India.,1,Yaroslavl,India,Russia
+If the city is Kigali then the country is not Rwanda.,0,Kigali,Rwanda,Rwanda
+If the city is Kigali then the country is not Indonesia.,1,Kigali,Indonesia,Rwanda
+If the city is Diyarbakir then the country is not Turkey.,0,Diyarbakir,Turkey,Turkey
+If the city is Diyarbakir then the country is not Colombia.,1,Diyarbakir,Colombia,Turkey
+If the city is Tyumen then the country is not Russia.,0,Tyumen,Russia,Russia
+If the city is Tyumen then the country is not Mexico.,1,Tyumen,Mexico,Russia
+If the city is Orenburg then the country is not Russia.,0,Orenburg,Russia,Russia
+If the city is Orenburg then the country is not Malaysia.,1,Orenburg,Malaysia,Russia
+If the city is Osaka then the country is not Japan.,0,Osaka,Japan,Japan
+If the city is Osaka then the country is not India.,1,Osaka,India,Japan
+If the city is Sapporo then the country is not Japan.,0,Sapporo,Japan,Japan
+If the city is Sapporo then the country is not Mexico.,1,Sapporo,Mexico,Japan
+If the city is Kimhae then the country is not South Korea.,0,Kimhae,South Korea,South Korea
+If the city is Kimhae then the country is not Senegal.,1,Kimhae,Senegal,South Korea
+If the city is Cheonan then the country is not South Korea.,0,Cheonan,South Korea,South Korea
+If the city is Cheonan then the country is not Myanmar.,1,Cheonan,Myanmar,South Korea
+If the city is San Luis Potosi then the country is not Mexico.,0,San Luis Potosi,Mexico,Mexico
+If the city is San Luis Potosi then the country is not the Democratic Republic of the Congo.,1,San Luis Potosi,the Democratic Republic of the Congo,Mexico
+If the city is Culiacan then the country is not Mexico.,0,Culiacan,Mexico,Mexico
+If the city is Culiacan then the country is not China.,1,Culiacan,China,Mexico
+If the city is Kaduna then the country is not Nigeria.,0,Kaduna,Nigeria,Nigeria
+If the city is Kaduna then the country is not Turkey.,1,Kaduna,Turkey,Nigeria
+If the city is General Santos then the country is not the Philippines.,0,General Santos,the Philippines,the Philippines
+If the city is General Santos then the country is not China.,1,General Santos,China,the Philippines
+If the city is Ebute Ikorodu then the country is not Nigeria.,0,Ebute Ikorodu,Nigeria,Nigeria
+If the city is Ebute Ikorodu then the country is not China.,1,Ebute Ikorodu,China,Nigeria
+If the city is Benin City then the country is not Nigeria.,0,Benin City,Nigeria,Nigeria
+If the city is Benin City then the country is not China.,1,Benin City,China,Nigeria
+If the city is Kanpur then the country is not India.,0,Kanpur,India,India
+If the city is Kanpur then the country is not Brazil.,1,Kanpur,Brazil,India
+If the city is Indore then the country is not India.,0,Indore,India,India
+If the city is Indore then the country is not Turkey.,1,Indore,Turkey,India
+If the city is Zunyi then the country is not China.,0,Zunyi,China,China
+If the city is Zunyi then the country is not Senegal.,1,Zunyi,Senegal,China
+If the city is Zhanjiang then the country is not China.,0,Zhanjiang,China,China
+If the city is Zhanjiang then the country is not India.,1,Zhanjiang,India,China
+If the city is Wenzhou then the country is not China.,0,Wenzhou,China,China
+If the city is Wenzhou then the country is not Moldova.,1,Wenzhou,Moldova,China
+If the city is Luohe then the country is not China.,0,Luohe,China,China
+If the city is Luohe then the country is not Brazil.,1,Luohe,Brazil,China
+If the city is Kunming then the country is not China.,0,Kunming,China,China
+If the city is Kunming then the country is not Mexico.,1,Kunming,Mexico,China
+If the city is Cixi then the country is not China.,0,Cixi,China,China
+If the city is Cixi then the country is not Indonesia.,1,Cixi,Indonesia,China
+If the city is Hanzhong then the country is not China.,0,Hanzhong,China,China
+If the city is Hanzhong then the country is not Iran.,1,Hanzhong,Iran,China
+If the city is Guangzhou then the country is not China.,0,Guangzhou,China,China
+If the city is Guangzhou then the country is not India.,1,Guangzhou,India,China
+If the city is Munich then the country is not Germany.,0,Munich,Germany,Germany
+If the city is Munich then the country is not China.,1,Munich,China,Germany
+If the city is Pekanbaru then the country is not Indonesia.,0,Pekanbaru,Indonesia,Indonesia
+If the city is Pekanbaru then the country is not India.,1,Pekanbaru,India,Indonesia
+If the city is Malang then the country is not Indonesia.,0,Malang,Indonesia,Indonesia
+If the city is Malang then the country is not Morocco.,1,Malang,Morocco,Indonesia
+If the city is Douala then the country is not Cameroon.,0,Douala,Cameroon,Cameroon
+If the city is Douala then the country is not Russia.,1,Douala,Russia,Cameroon
+If the city is Kashgar then the country is not China.,0,Kashgar,China,China
+If the city is Kashgar then the country is not Turkey.,1,Kashgar,Turkey,China
+If the city is Zibo then the country is not China.,0,Zibo,China,China
+If the city is Zibo then the country is not India.,1,Zibo,India,China
+If the city is Tianshui then the country is not China.,0,Tianshui,China,China
+If the city is Tianshui then the country is not Canada.,1,Tianshui,Canada,China
+If the city is Laibin then the country is not China.,0,Laibin,China,China
+If the city is Laibin then the country is not Ethiopia.,1,Laibin,Ethiopia,China
+If the city is Deyang then the country is not China.,0,Deyang,China,China
+If the city is Deyang then the country is not Japan.,1,Deyang,Japan,China
+If the city is Teresina then the country is not Brazil.,0,Teresina,Brazil,Brazil
+If the city is Teresina then the country is not Vietnam.,1,Teresina,Vietnam,Brazil
+If the city is Leipzig then the country is not Germany.,0,Leipzig,Germany,Germany
+If the city is Leipzig then the country is not Russia.,1,Leipzig,Russia,Germany
+If the city is Duesseldorf then the country is not Germany.,0,Duesseldorf,Germany,Germany
+If the city is Duesseldorf then the country is not Mexico.,1,Duesseldorf,Mexico,Germany
+If the city is Zagreb then the country is not Croatia.,0,Zagreb,Croatia,Croatia
+If the city is Zagreb then the country is not Japan.,1,Zagreb,Japan,Croatia
+If the city is Hannover then the country is not Germany.,0,Hannover,Germany,Germany
+If the city is Hannover then the country is not China.,1,Hannover,China,Germany
+If the city is Penza then the country is not Russia.,0,Penza,Russia,Russia
+If the city is Penza then the country is not China.,1,Penza,China,Russia
+If the city is Matola then the country is not Mozambique.,0,Matola,Mozambique,Mozambique
+If the city is Matola then the country is not India.,1,Matola,India,Mozambique
+If the city is Enugu then the country is not Nigeria.,0,Enugu,Nigeria,Nigeria
+If the city is Enugu then the country is not South Korea.,1,Enugu,South Korea,Nigeria
+If the city is Shizuoka then the country is not Japan.,0,Shizuoka,Japan,Japan
+If the city is Shizuoka then the country is not China.,1,Shizuoka,China,Japan
+If the city is Himeji then the country is not Japan.,0,Himeji,Japan,Japan
+If the city is Himeji then the country is not the Democratic Republic of the Congo.,1,Himeji,the Democratic Republic of the Congo,Japan
+If the city is Hamhung then the country is not North Korea.,0,Hamhung,North Korea,North Korea
+If the city is Hamhung then the country is not China.,1,Hamhung,China,North Korea
+If the city is Seoul then the country is not South Korea.,0,Seoul,South Korea,South Korea
+If the city is Seoul then the country is not Nicaragua.,1,Seoul,Nicaragua,South Korea
+If the city is Meerut then the country is not India.,0,Meerut,India,India
+If the city is Meerut then the country is not Nigeria.,1,Meerut,Nigeria,India
+If the city is Hubli then the country is not India.,0,Hubli,India,India
+If the city is Hubli then the country is not Indonesia.,1,Hubli,Indonesia,India
+If the city is Dubai then the country is not the United Arab Emirates.,0,Dubai,the United Arab Emirates,the United Arab Emirates
+If the city is Dubai then the country is not the United States.,1,Dubai,the United States,the United Arab Emirates
+If the city is Astrakhan then the country is not Russia.,0,Astrakhan,Russia,Russia
+If the city is Astrakhan then the country is not India.,1,Astrakhan,India,Russia
+If the city is Aleppo then the country is not Syria.,0,Aleppo,Syria,Syria
+If the city is Aleppo then the country is not China.,1,Aleppo,China,Syria
+If the city is Ar Raqqah then the country is not Syria.,0,Ar Raqqah,Syria,Syria
+If the city is Ar Raqqah then the country is not Iraq.,1,Ar Raqqah,Iraq,Syria
+If the city is Saint Petersburg then the country is not Russia.,0,Saint Petersburg,Russia,Russia
+If the city is Saint Petersburg then the country is not Canada.,1,Saint Petersburg,Canada,Russia
+If the city is Johannesburg then the country is not South Africa.,0,Johannesburg,South Africa,South Africa
+If the city is Johannesburg then the country is not China.,1,Johannesburg,China,South Africa
+If the city is Wanzhou then the country is not China.,0,Wanzhou,China,China
+If the city is Wanzhou then the country is not India.,1,Wanzhou,India,China
+If the city is Anyang then the country is not China.,0,Anyang,China,China
+If the city is Anyang then the country is not Kuwait.,1,Anyang,Kuwait,China
+If the city is Qinhuangdao then the country is not China.,0,Qinhuangdao,China,China
+If the city is Qinhuangdao then the country is not Eritrea.,1,Qinhuangdao,Eritrea,China
+If the city is Meizhou then the country is not China.,0,Meizhou,China,China
+If the city is Meizhou then the country is not Russia.,1,Meizhou,Russia,China
+If the city is Yangjiang then the country is not China.,0,Yangjiang,China,China
+If the city is Yangjiang then the country is not Indonesia.,1,Yangjiang,Indonesia,China
+If the city is Beijing then the country is not China.,0,Beijing,China,China
+If the city is Beijing then the country is not Ghana.,1,Beijing,Ghana,China
+If the city is Shah Alam then the country is not Malaysia.,0,Shah Alam,Malaysia,Malaysia
+If the city is Shah Alam then the country is not China.,1,Shah Alam,China,Malaysia
+If the city is Vadodara then the country is not India.,0,Vadodara,India,India
+If the city is Vadodara then the country is not Russia.,1,Vadodara,Russia,India
+If the city is Sangli then the country is not India.,0,Sangli,India,India
+If the city is Sangli then the country is not Japan.,1,Sangli,Japan,India
+If the city is Guwahati then the country is not India.,0,Guwahati,India,India
+If the city is Guwahati then the country is not China.,1,Guwahati,China,India
+If the city is Prayagraj then the country is not India.,0,Prayagraj,India,India
+If the city is Prayagraj then the country is not Kenya.,1,Prayagraj,Kenya,India
+If the city is Aligarh then the country is not India.,0,Aligarh,India,India
+If the city is Aligarh then the country is not China.,1,Aligarh,China,India
+If the city is Kermanshah then the country is not Iran.,0,Kermanshah,Iran,Iran
+If the city is Kermanshah then the country is not China.,1,Kermanshah,China,Iran
+If the city is Semarang then the country is not Indonesia.,0,Semarang,Indonesia,Indonesia
+If the city is Semarang then the country is not Saudi Arabia.,1,Semarang,Saudi Arabia,Indonesia
+If the city is Khulna then the country is not Bangladesh.,0,Khulna,Bangladesh,Bangladesh
+If the city is Khulna then the country is not Japan.,1,Khulna,Japan,Bangladesh
+If the city is Korla then the country is not China.,0,Korla,China,China
+If the city is Korla then the country is not Azerbaijan.,1,Korla,Azerbaijan,China
+If the city is Zaozhuang then the country is not China.,0,Zaozhuang,China,China
+If the city is Zaozhuang then the country is not Belarus.,1,Zaozhuang,Belarus,China
+If the city is Xiamen then the country is not China.,0,Xiamen,China,China
+If the city is Xiamen then the country is not Pakistan.,1,Xiamen,Pakistan,China
+If the city is Shenzhen then the country is not China.,0,Shenzhen,China,China
+If the city is Shenzhen then the country is not Mexico.,1,Shenzhen,Mexico,China
+If the city is Maoming then the country is not China.,0,Maoming,China,China
+If the city is Maoming then the country is not Brazil.,1,Maoming,Brazil,China
+If the city is Anshun then the country is not China.,0,Anshun,China,China
+If the city is Anshun then the country is not Brazil.,1,Anshun,Brazil,China
+If the city is Siping then the country is not China.,0,Siping,China,China
+If the city is Siping then the country is not Iraq.,1,Siping,Iraq,China
+If the city is Shuangyashan then the country is not China.,0,Shuangyashan,China,China
+If the city is Shuangyashan then the country is not India.,1,Shuangyashan,India,China
+If the city is Jiamusi then the country is not China.,0,Jiamusi,China,China
+If the city is Jiamusi then the country is not Germany.,1,Jiamusi,Germany,China
+If the city is Minsk then the country is not Belarus.,0,Minsk,Belarus,Belarus
+If the city is Minsk then the country is not South Korea.,1,Minsk,South Korea,Belarus
+If the city is Lubumbashi then the country is not the Democratic Republic of the Congo.,0,Lubumbashi,the Democratic Republic of the Congo,the Democratic Republic of the Congo
+If the city is Lubumbashi then the country is not India.,1,Lubumbashi,India,the Democratic Republic of the Congo
+If the city is San Miguel de Tucuman then the country is not Argentina.,0,San Miguel de Tucuman,Argentina,Argentina
+If the city is San Miguel de Tucuman then the country is not China.,1,San Miguel de Tucuman,China,Argentina
+If the city is Cotonou then the country is not Benin.,0,Cotonou,Benin,Benin
+If the city is Cotonou then the country is not China.,1,Cotonou,China,Benin
+If the city is Comilla then the country is not Bangladesh.,0,Comilla,Bangladesh,Bangladesh
+If the city is Comilla then the country is not China.,1,Comilla,China,Bangladesh
+If the city is Sao Bernardo do Campo then the country is not Brazil.,0,Sao Bernardo do Campo,Brazil,Brazil
+If the city is Sao Bernardo do Campo then the country is not Zambia.,1,Sao Bernardo do Campo,Zambia,Brazil
+If the city is Feira de Santana then the country is not Brazil.,0,Feira de Santana,Brazil,Brazil
+If the city is Feira de Santana then the country is not China.,1,Feira de Santana,China,Brazil
+If the city is Porto Alegre then the country is not Brazil.,0,Porto Alegre,Brazil,Brazil
+If the city is Porto Alegre then the country is not Belarus.,1,Porto Alegre,Belarus,Brazil
+If the city is Juiz de Fora then the country is not Brazil.,0,Juiz de Fora,Brazil,Brazil
+If the city is Juiz de Fora then the country is not India.,1,Juiz de Fora,India,Brazil
+If the city is Nagoya then the country is not Japan.,0,Nagoya,Japan,Japan
+If the city is Nagoya then the country is not China.,1,Nagoya,China,Japan
+If the city is Al Ahmadi then the country is not Kuwait.,0,Al Ahmadi,Kuwait,Kuwait
+If the city is Al Ahmadi then the country is not Japan.,1,Al Ahmadi,Japan,Kuwait
+If the city is Beirut then the country is not Lebanon.,0,Beirut,Lebanon,Lebanon
+If the city is Beirut then the country is not Algeria.,1,Beirut,Algeria,Lebanon
+If the city is Lilongwe then the country is not Malawi.,0,Lilongwe,Malawi,Malawi
+If the city is Lilongwe then the country is not Turkey.,1,Lilongwe,Turkey,Malawi
+If the city is Ecatepec de Morelos then the country is not Mexico.,0,Ecatepec de Morelos,Mexico,Mexico
+If the city is Ecatepec de Morelos then the country is not India.,1,Ecatepec de Morelos,India,Mexico
+If the city is Cancun then the country is not Mexico.,0,Cancun,Mexico,Mexico
+If the city is Cancun then the country is not Myanmar.,1,Cancun,Myanmar,Mexico
+If the city is Isfahan then the country is not Iran.,0,Isfahan,Iran,Iran
+If the city is Isfahan then the country is not China.,1,Isfahan,China,Iran
+If the city is Conakry then the country is not Guinea.,0,Conakry,Guinea,Guinea
+If the city is Conakry then the country is not Belarus.,1,Conakry,Belarus,Guinea
+If the city is Petaling Jaya then the country is not Malaysia.,0,Petaling Jaya,Malaysia,Malaysia
+If the city is Petaling Jaya then the country is not Bosnia and Herzegovina.,1,Petaling Jaya,Bosnia and Herzegovina,Malaysia
+If the city is Zaria then the country is not Nigeria.,0,Zaria,Nigeria,Nigeria
+If the city is Zaria then the country is not India.,1,Zaria,India,Nigeria
+If the city is Cimahi then the country is not Indonesia.,0,Cimahi,Indonesia,Indonesia
+If the city is Cimahi then the country is not Germany.,1,Cimahi,Germany,Indonesia
+If the city is Arequipa then the country is not Peru.,0,Arequipa,Peru,Peru
+If the city is Arequipa then the country is not India.,1,Arequipa,India,Peru
+If the city is Multan then the country is not Pakistan.,0,Multan,Pakistan,Pakistan
+If the city is Multan then the country is not Ecuador.,1,Multan,Ecuador,Pakistan
+If the city is Bahcelievler then the country is not Turkey.,0,Bahcelievler,Turkey,Turkey
+If the city is Bahcelievler then the country is not Germany.,1,Bahcelievler,Germany,Turkey
+If the city is Saratov then the country is not Russia.,0,Saratov,Russia,Russia
+If the city is Saratov then the country is not Indonesia.,1,Saratov,Indonesia,Russia
+If the city is Kharkiv then the country is not Ukraine.,0,Kharkiv,Ukraine,Ukraine
+If the city is Kharkiv then the country is not Moldova.,1,Kharkiv,Moldova,Ukraine
+If the city is Malatya then the country is not Turkey.,0,Malatya,Turkey,Turkey
+If the city is Malatya then the country is not Russia.,1,Malatya,Russia,Turkey
+If the city is Lviv then the country is not Ukraine.,0,Lviv,Ukraine,Ukraine
+If the city is Lviv then the country is not China.,1,Lviv,China,Ukraine
+If the city is Kyiv then the country is not Ukraine.,0,Kyiv,Ukraine,Ukraine
+If the city is Kyiv then the country is not Russia.,1,Kyiv,Russia,Ukraine
+If the city is Kitakyushu then the country is not Japan.,0,Kitakyushu,Japan,Japan
+If the city is Kitakyushu then the country is not Yemen.,1,Kitakyushu,Yemen,Japan
+If the city is Onitsha then the country is not Nigeria.,0,Onitsha,Nigeria,Nigeria
+If the city is Onitsha then the country is not China.,1,Onitsha,China,Nigeria
+If the city is Anyang-si then the country is not South Korea.,0,Anyang-si,South Korea,South Korea
+If the city is Anyang-si then the country is not Iraq.,1,Anyang-si,Iraq,South Korea
+If the city is Kobe then the country is not Japan.,0,Kobe,Japan,Japan
+If the city is Kobe then the country is not China.,1,Kobe,China,Japan
+If the city is Chiclayo then the country is not Peru.,0,Chiclayo,Peru,Peru
+If the city is Chiclayo then the country is not Venezuela.,1,Chiclayo,Venezuela,Peru
+If the city is Phnom Penh then the country is not Cambodia.,0,Phnom Penh,Cambodia,Cambodia
+If the city is Phnom Penh then the country is not Senegal.,1,Phnom Penh,Senegal,Cambodia
+If the city is Nouakchott then the country is not Mauritania.,0,Nouakchott,Mauritania,Mauritania
+If the city is Nouakchott then the country is not China.,1,Nouakchott,China,Mauritania
+If the city is Vijayawada then the country is not India.,0,Vijayawada,India,India
+If the city is Vijayawada then the country is not Nigeria.,1,Vijayawada,Nigeria,India
+If the city is Theni then the country is not India.,0,Theni,India,India
+If the city is Theni then the country is not Nigeria.,1,Theni,Nigeria,India
+If the city is Narela then the country is not India.,0,Narela,India,India
+If the city is Narela then the country is not Turkey.,1,Narela,Turkey,India
+If the city is Quetta then the country is not Pakistan.,0,Quetta,Pakistan,Pakistan
+If the city is Quetta then the country is not Kenya.,1,Quetta,Kenya,Pakistan
+If the city is Chennai then the country is not India.,0,Chennai,India,India
+If the city is Chennai then the country is not China.,1,Chennai,China,India
+If the city is Changshu then the country is not China.,0,Changshu,China,China
+If the city is Changshu then the country is not the Philippines.,1,Changshu,the Philippines,China
+If the city is Tehran then the country is not Iran.,0,Tehran,Iran,Iran
+If the city is Tehran then the country is not Niger.,1,Tehran,Niger,Iran
+If the city is Bayannur then the country is not China.,0,Bayannur,China,China
+If the city is Bayannur then the country is not Russia.,1,Bayannur,Russia,China
+If the city is Barranquilla then the country is not Colombia.,0,Barranquilla,Colombia,Colombia
+If the city is Barranquilla then the country is not Pakistan.,1,Barranquilla,Pakistan,Colombia
+If the city is Budapest then the country is not Hungary.,0,Budapest,Hungary,Hungary
+If the city is Budapest then the country is not Iraq.,1,Budapest,Iraq,Hungary
+If the city is Pontianak then the country is not Indonesia.,0,Pontianak,Indonesia,Indonesia
+If the city is Pontianak then the country is not India.,1,Pontianak,India,Indonesia
+If the city is Recife then the country is not Brazil.,0,Recife,Brazil,Brazil
+If the city is Recife then the country is not North Korea.,1,Recife,North Korea,Brazil
+If the city is Contagem then the country is not Brazil.,0,Contagem,Brazil,Brazil
+If the city is Contagem then the country is not Indonesia.,1,Contagem,Indonesia,Brazil
+If the city is Port Said then the country is not Egypt.,0,Port Said,Egypt,Egypt
+If the city is Port Said then the country is not China.,1,Port Said,China,Egypt
+If the city is Asyut then the country is not Egypt.,0,Asyut,Egypt,Egypt
+If the city is Asyut then the country is not Japan.,1,Asyut,Japan,Egypt
+If the city is Ziyang then the country is not China.,0,Ziyang,China,China
+If the city is Ziyang then the country is not Belgium.,1,Ziyang,Belgium,China
+If the city is Yinchuan then the country is not China.,0,Yinchuan,China,China
+If the city is Yinchuan then the country is not Bangladesh.,1,Yinchuan,Bangladesh,China
+If the city is Zhangjiagang then the country is not China.,0,Zhangjiagang,China,China
+If the city is Zhangjiagang then the country is not Brazil.,1,Zhangjiagang,Brazil,China
+If the city is Shanghai then the country is not China.,0,Shanghai,China,China
+If the city is Shanghai then the country is not Mexico.,1,Shanghai,Mexico,China
+If the city is Jieyang then the country is not China.,0,Jieyang,China,China
+If the city is Jieyang then the country is not the Philippines.,1,Jieyang,the Philippines,China
+If the city is Longyan then the country is not China.,0,Longyan,China,China
+If the city is Longyan then the country is not Benin.,1,Longyan,Benin,China
+If the city is Dandong then the country is not China.,0,Dandong,China,China
+If the city is Dandong then the country is not Niger.,1,Dandong,Niger,China
+If the city is Frankfurt am Main then the country is not Germany.,0,Frankfurt am Main,Germany,Germany
+If the city is Frankfurt am Main then the country is not Vietnam.,1,Frankfurt am Main,Vietnam,Germany
+If the city is Lusaka then the country is not Zambia.,0,Lusaka,Zambia,Zambia
+If the city is Lusaka then the country is not Poland.,1,Lusaka,Poland,Zambia
+If the city is Aden then the country is not Yemen.,0,Aden,Yemen,Yemen
+If the city is Aden then the country is not Japan.,1,Aden,Japan,Yemen
+If the city is Jaboatao then the country is not Brazil.,0,Jaboatao,Brazil,Brazil
+If the city is Jaboatao then the country is not Syria.,1,Jaboatao,Syria,Brazil
+If the city is Aracaju then the country is not Brazil.,0,Aracaju,Brazil,Brazil
+If the city is Aracaju then the country is not Russia.,1,Aracaju,Russia,Brazil
+If the city is Londrina then the country is not Brazil.,0,Londrina,Brazil,Brazil
+If the city is Londrina then the country is not India.,1,Londrina,India,Brazil
+If the city is Zigong then the country is not China.,0,Zigong,China,China
+If the city is Zigong then the country is not Turkey.,1,Zigong,Turkey,China
+If the city is Kunshan then the country is not China.,0,Kunshan,China,China
+If the city is Kunshan then the country is not Russia.,1,Kunshan,Russia,China
+If the city is Yichang then the country is not China.,0,Yichang,China,China
+If the city is Yichang then the country is not Japan.,1,Yichang,Japan,China
+If the city is Sanming then the country is not China.,0,Sanming,China,China
+If the city is Sanming then the country is not Bulgaria.,1,Sanming,Bulgaria,China
+If the city is Guang'an then the country is not China.,0,Guang'an,China,China
+If the city is Guang'an then the country is not Germany.,1,Guang'an,Germany,China
+If the city is Ma'anshan then the country is not China.,0,Ma'anshan,China,China
+If the city is Ma'anshan then the country is not India.,1,Ma'anshan,India,China
+If the city is Dongying then the country is not China.,0,Dongying,China,China
+If the city is Dongying then the country is not India.,1,Dongying,India,China
+If the city is Fushun then the country is not China.,0,Fushun,China,China
+If the city is Fushun then the country is not Mexico.,1,Fushun,Mexico,China
+If the city is Rajshahi then the country is not Bangladesh.,0,Rajshahi,Bangladesh,Bangladesh
+If the city is Rajshahi then the country is not Russia.,1,Rajshahi,Russia,Bangladesh
+If the city is Rangpur then the country is not Bangladesh.,0,Rangpur,Bangladesh,Bangladesh
+If the city is Rangpur then the country is not Russia.,1,Rangpur,Russia,Bangladesh
+If the city is Dortmund then the country is not Germany.,0,Dortmund,Germany,Germany
+If the city is Dortmund then the country is not India.,1,Dortmund,India,Germany
+If the city is Detroit then the country is not the United States.,0,Detroit,the United States,the United States
+If the city is Detroit then the country is not China.,1,Detroit,China,the United States
+If the city is Latakia then the country is not Syria.,0,Latakia,Syria,Syria
+If the city is Latakia then the country is not Somalia.,1,Latakia,Somalia,Syria
+If the city is Ashgabat then the country is not Turkmenistan.,0,Ashgabat,Turkmenistan,Turkmenistan
+If the city is Ashgabat then the country is not Bangladesh.,1,Ashgabat,Bangladesh,Turkmenistan
+If the city is Maracaibo then the country is not Venezuela.,0,Maracaibo,Venezuela,Venezuela
+If the city is Maracaibo then the country is not Russia.,1,Maracaibo,Russia,Venezuela
+If the city is Erode then the country is not India.,0,Erode,India,India
+If the city is Erode then the country is not China.,1,Erode,China,India
+If the city is Mumbai then the country is not India.,0,Mumbai,India,India
+If the city is Mumbai then the country is not China.,1,Mumbai,China,India
+If the city is Nasiriyah then the country is not Iraq.,0,Nasiriyah,Iraq,Iraq
+If the city is Nasiriyah then the country is not Rwanda.,1,Nasiriyah,Rwanda,Iraq
+If the city is Kahriz then the country is not Iran.,0,Kahriz,Iran,Iran
+If the city is Kahriz then the country is not Uzbekistan.,1,Kahriz,Uzbekistan,Iran
+If the city is Surakarta then the country is not Indonesia.,0,Surakarta,Indonesia,Indonesia
+If the city is Surakarta then the country is not India.,1,Surakarta,India,Indonesia
+If the city is Banjarmasin then the country is not Indonesia.,0,Banjarmasin,Indonesia,Indonesia
+If the city is Banjarmasin then the country is not South Korea.,1,Banjarmasin,South Korea,Indonesia
+If the city is Vladivostok then the country is not Russia.,0,Vladivostok,Russia,Russia
+If the city is Vladivostok then the country is not Romania.,1,Vladivostok,Romania,Russia
+If the city is Adana then the country is not Turkey.,0,Adana,Turkey,Turkey
+If the city is Adana then the country is not Togo.,1,Adana,Togo,Turkey
+If the city is Voronezh then the country is not Russia.,0,Voronezh,Russia,Russia
+If the city is Voronezh then the country is not Romania.,1,Voronezh,Romania,Russia
+If the city is Namangan then the country is not Uzbekistan.,0,Namangan,Uzbekistan,Uzbekistan
+If the city is Namangan then the country is not India.,1,Namangan,India,Uzbekistan
+If the city is Ordos then the country is not China.,0,Ordos,China,China
+If the city is Ordos then the country is not Brazil.,1,Ordos,Brazil,China
+If the city is Moradabad then the country is not India.,0,Moradabad,India,India
+If the city is Moradabad then the country is not China.,1,Moradabad,China,India
+If the city is Bengaluru then the country is not India.,0,Bengaluru,India,India
+If the city is Bengaluru then the country is not China.,1,Bengaluru,China,India
+If the city is Shivaji Nagar then the country is not India.,0,Shivaji Nagar,India,India
+If the city is Shivaji Nagar then the country is not China.,1,Shivaji Nagar,China,India
+If the city is Turin then the country is not Italy.,0,Turin,Italy,Italy
+If the city is Turin then the country is not China.,1,Turin,China,Italy
+If the city is Okayama then the country is not Japan.,0,Okayama,Japan,Japan
+If the city is Okayama then the country is not Russia.,1,Okayama,Russia,Japan
+If the city is Daejeon then the country is not South Korea.,0,Daejeon,South Korea,South Korea
+If the city is Daejeon then the country is not India.,1,Daejeon,India,South Korea
+If the city is Battagram then the country is not Pakistan.,0,Battagram,Pakistan,Pakistan
+If the city is Battagram then the country is not Tanzania.,1,Battagram,Tanzania,Pakistan
+If the city is Yaounde then the country is not Cameroon.,0,Yaounde,Cameroon,Cameroon
+If the city is Yaounde then the country is not China.,1,Yaounde,China,Cameroon
+If the city is Zhangzhou then the country is not China.,0,Zhangzhou,China,China
+If the city is Zhangzhou then the country is not Nicaragua.,1,Zhangzhou,Nicaragua,China
+If the city is Yangquan then the country is not China.,0,Yangquan,China,China
+If the city is Yangquan then the country is not Hungary.,1,Yangquan,Hungary,China
+If the city is Sanya then the country is not China.,0,Sanya,China,China
+If the city is Sanya then the country is not India.,1,Sanya,India,China
+If the city is Foshan then the country is not China.,0,Foshan,China,China
+If the city is Foshan then the country is not Mozambique.,1,Foshan,Mozambique,China
+If the city is Sharjah then the country is not the United Arab Emirates.,0,Sharjah,the United Arab Emirates,the United Arab Emirates
+If the city is Sharjah then the country is not China.,1,Sharjah,China,the United Arab Emirates
+If the city is Al Ain City then the country is not the United Arab Emirates.,0,Al Ain City,the United Arab Emirates,the United Arab Emirates
+If the city is Al Ain City then the country is not India.,1,Al Ain City,India,the United Arab Emirates
+If the city is Kalininskiy then the country is not Russia.,0,Kalininskiy,Russia,Russia
+If the city is Kalininskiy then the country is not Japan.,1,Kalininskiy,Japan,Russia
+If the city is Mersin then the country is not Turkey.,0,Mersin,Turkey,Turkey
+If the city is Mersin then the country is not the United States.,1,Mersin,the United States,Turkey
+If the city is Guayaquil then the country is not Ecuador.,0,Guayaquil,Ecuador,Ecuador
+If the city is Guayaquil then the country is not China.,1,Guayaquil,China,Ecuador
+If the city is Tegucigalpa then the country is not Honduras.,0,Tegucigalpa,Honduras,Honduras
+If the city is Tegucigalpa then the country is not China.,1,Tegucigalpa,China,Honduras
+If the city is Koeln then the country is not Germany.,0,Koeln,Germany,Germany
+If the city is Koeln then the country is not Nigeria.,1,Koeln,Nigeria,Germany
+If the city is Nuernberg then the country is not Germany.,0,Nuernberg,Germany,Germany
+If the city is Nuernberg then the country is not China.,1,Nuernberg,China,Germany
+If the city is Zarqa then the country is not Jordan.,0,Zarqa,Jordan,Jordan
+If the city is Zarqa then the country is not India.,1,Zarqa,India,Jordan
+If the city is Riga then the country is not Latvia.,0,Riga,Latvia,Latvia
+If the city is Riga then the country is not Japan.,1,Riga,Japan,Latvia
+If the city is Nanded then the country is not India.,0,Nanded,India,India
+If the city is Nanded then the country is not China.,1,Nanded,China,India
+If the city is Gwalior then the country is not India.,0,Gwalior,India,India
+If the city is Gwalior then the country is not China.,1,Gwalior,China,India
+If the city is Dombivli then the country is not India.,0,Dombivli,India,India
+If the city is Dombivli then the country is not Mali.,1,Dombivli,Mali,India
+If the city is Kallakurichi then the country is not India.,0,Kallakurichi,India,India
+If the city is Kallakurichi then the country is not Iraq.,1,Kallakurichi,Iraq,India
+If the city is Bekasi then the country is not Indonesia.,0,Bekasi,Indonesia,Indonesia
+If the city is Bekasi then the country is not China.,1,Bekasi,China,Indonesia
+If the city is Johor Bahru then the country is not Malaysia.,0,Johor Bahru,Malaysia,Malaysia
+If the city is Johor Bahru then the country is not Cuba.,1,Johor Bahru,Cuba,Malaysia
+If the city is Santa Maria Chimalhuacan then the country is not Mexico.,0,Santa Maria Chimalhuacan,Mexico,Mexico
+If the city is Santa Maria Chimalhuacan then the country is not Saudi Arabia.,1,Santa Maria Chimalhuacan,Saudi Arabia,Mexico
+If the city is Urumqi then the country is not China.,0,Urumqi,China,China
+If the city is Urumqi then the country is not Vietnam.,1,Urumqi,Vietnam,China
+If the city is Qingdao then the country is not China.,0,Qingdao,China,China
+If the city is Qingdao then the country is not India.,1,Qingdao,India,China
+If the city is Sofia then the country is not Bulgaria.,0,Sofia,Bulgaria,Bulgaria
+If the city is Sofia then the country is not South Korea.,1,Sofia,South Korea,Bulgaria
+If the city is Nova Iguacu then the country is not Brazil.,0,Nova Iguacu,Brazil,Brazil
+If the city is Nova Iguacu then the country is not India.,1,Nova Iguacu,India,Brazil
+If the city is Abeokuta then the country is not Nigeria.,0,Abeokuta,Nigeria,Nigeria
+If the city is Abeokuta then the country is not Mozambique.,1,Abeokuta,Mozambique,Nigeria
+If the city is Amman then the country is not Jordan.,0,Amman,Jordan,Jordan
+If the city is Amman then the country is not Malaysia.,1,Amman,Malaysia,Jordan
+If the city is Hachioji then the country is not Japan.,0,Hachioji,Japan,Japan
+If the city is Hachioji then the country is not Mexico.,1,Hachioji,Mexico,Japan
+If the city is Fukuoka then the country is not Japan.,0,Fukuoka,Japan,Japan
+If the city is Fukuoka then the country is not Senegal.,1,Fukuoka,Senegal,Japan
+If the city is Goyang-si then the country is not South Korea.,0,Goyang-si,South Korea,South Korea
+If the city is Goyang-si then the country is not Russia.,1,Goyang-si,Russia,South Korea
+If the city is Meknes then the country is not Morocco.,0,Meknes,Morocco,Morocco
+If the city is Meknes then the country is not China.,1,Meknes,China,Morocco
+If the city is Antananarivo then the country is not Madagascar.,0,Antananarivo,Madagascar,Madagascar
+If the city is Antananarivo then the country is not Germany.,1,Antananarivo,Germany,Madagascar
+If the city is Kalyan then the country is not India.,0,Kalyan,India,India
+If the city is Kalyan then the country is not South Korea.,1,Kalyan,South Korea,India
+If the city is Jaipur then the country is not India.,0,Jaipur,India,India
+If the city is Jaipur then the country is not China.,1,Jaipur,China,India
+If the city is Guntur then the country is not India.,0,Guntur,India,India
+If the city is Guntur then the country is not China.,1,Guntur,China,India
+If the city is Bhilai then the country is not India.,0,Bhilai,India,India
+If the city is Bhilai then the country is not Venezuela.,1,Bhilai,Venezuela,India
+If the city is Bhavnagar then the country is not India.,0,Bhavnagar,India,India
+If the city is Bhavnagar then the country is not Japan.,1,Bhavnagar,Japan,India
+If the city is Amravati then the country is not India.,0,Amravati,India,India
+If the city is Amravati then the country is not China.,1,Amravati,China,India
+If the city is Shiraz then the country is not Iran.,0,Shiraz,Iran,Iran
+If the city is Shiraz then the country is not China.,1,Shiraz,China,Iran
+If the city is Lome then the country is not Togo.,0,Lome,Togo,Togo
+If the city is Lome then the country is not Yemen.,1,Lome,Yemen,Togo
+If the city is Erzurum then the country is not Turkey.,0,Erzurum,Turkey,Turkey
+If the city is Erzurum then the country is not the Democratic Republic of the Congo.,1,Erzurum,the Democratic Republic of the Congo,Turkey
+If the city is Seattle then the country is not the United States.,0,Seattle,the United States,the United States
+If the city is Seattle then the country is not Yemen.,1,Seattle,Yemen,the United States
+If the city is Barquisimeto then the country is not Venezuela.,0,Barquisimeto,Venezuela,Venezuela
+If the city is Barquisimeto then the country is not Poland.,1,Barquisimeto,Poland,Venezuela
+If the city is Kryvyy Rih then the country is not Ukraine.,0,Kryvyy Rih,Ukraine,Ukraine
+If the city is Kryvyy Rih then the country is not China.,1,Kryvyy Rih,China,Ukraine
+If the city is Krasnoyarsk then the country is not Russia.,0,Krasnoyarsk,Russia,Russia
+If the city is Krasnoyarsk then the country is not India.,1,Krasnoyarsk,India,Russia
+If the city is Quzhou then the country is not China.,0,Quzhou,China,China
+If the city is Quzhou then the country is not Vietnam.,1,Quzhou,Vietnam,China
+If the city is Pingliang then the country is not China.,0,Pingliang,China,China
+If the city is Pingliang then the country is not Tanzania.,1,Pingliang,Tanzania,China
+If the city is Puning then the country is not China.,0,Puning,China,China
+If the city is Puning then the country is not India.,1,Puning,India,China
+If the city is Huzhou then the country is not China.,0,Huzhou,China,China
+If the city is Huzhou then the country is not Germany.,1,Huzhou,Germany,China
+If the city is Chizhou then the country is not China.,0,Chizhou,China,China
+If the city is Chizhou then the country is not the Republic of the Congo.,1,Chizhou,the Republic of the Congo,China
+If the city is Chengdu then the country is not China.,0,Chengdu,China,China
+If the city is Chengdu then the country is not South Korea.,1,Chengdu,South Korea,China
+If the city is Cangzhou then the country is not China.,0,Cangzhou,China,China
+If the city is Cangzhou then the country is not Germany.,1,Cangzhou,Germany,China
+If the city is Samarinda then the country is not Indonesia.,0,Samarinda,Indonesia,Indonesia
+If the city is Samarinda then the country is not Iraq.,1,Samarinda,Iraq,Indonesia
+If the city is Helsinki then the country is not Finland.,0,Helsinki,Finland,Finland
+If the city is Helsinki then the country is not Pakistan.,1,Helsinki,Pakistan,Finland
+If the city is Khabarovsk Vtoroy then the country is not Russia.,0,Khabarovsk Vtoroy,Russia,Russia
+If the city is Khabarovsk Vtoroy then the country is not China.,1,Khabarovsk Vtoroy,China,Russia
+If the city is Wroclaw then the country is not Poland.,0,Wroclaw,Poland,Poland
+If the city is Wroclaw then the country is not Mexico.,1,Wroclaw,Mexico,Poland
+If the city is Oslo then the country is not Norway.,0,Oslo,Norway,Norway
+If the city is Oslo then the country is not Venezuela.,1,Oslo,Venezuela,Norway
+If the city is Caloocan City then the country is not the Philippines.,0,Caloocan City,the Philippines,the Philippines
+If the city is Caloocan City then the country is not China.,1,Caloocan City,China,the Philippines
+If the city is Ryazan' then the country is not Russia.,0,Ryazan',Russia,Russia
+If the city is Ryazan' then the country is not South Korea.,1,Ryazan',South Korea,Russia
+If the city is Ciudad Guayana then the country is not Venezuela.,0,Ciudad Guayana,Venezuela,Venezuela
+If the city is Ciudad Guayana then the country is not South Africa.,1,Ciudad Guayana,South Africa,Venezuela
+If the city is Ho Chi Minh City then the country is not Vietnam.,0,Ho Chi Minh City,Vietnam,Vietnam
+If the city is Ho Chi Minh City then the country is not Gabon.,1,Ho Chi Minh City,Gabon,Vietnam
+If the city is Al Hudaydah then the country is not Yemen.,0,Al Hudaydah,Yemen,Yemen
+If the city is Al Hudaydah then the country is not South Korea.,1,Al Hudaydah,South Korea,Yemen
+If the city is Soweto then the country is not South Africa.,0,Soweto,South Africa,South Africa
+If the city is Soweto then the country is not Gabon.,1,Soweto,Gabon,South Africa
+If the city is Benoni then the country is not South Africa.,0,Benoni,South Africa,South Africa
+If the city is Benoni then the country is not the Philippines.,1,Benoni,the Philippines,South Africa
+If the city is Wuzhou then the country is not China.,0,Wuzhou,China,China
+If the city is Wuzhou then the country is not Syria.,1,Wuzhou,Syria,China
+If the city is Wanxian then the country is not China.,0,Wanxian,China,China
+If the city is Wanxian then the country is not Algeria.,1,Wanxian,Algeria,China
+If the city is Qinzhou then the country is not China.,0,Qinzhou,China,China
+If the city is Qinzhou then the country is not India.,1,Qinzhou,India,China
+If the city is Wuwei then the country is not China.,0,Wuwei,China,China
+If the city is Wuwei then the country is not India.,1,Wuwei,India,China
+If the city is Hefei then the country is not China.,0,Hefei,China,China
+If the city is Hefei then the country is not Germany.,1,Hefei,Germany,China
+If the city is Handan then the country is not China.,0,Handan,China,China
+If the city is Handan then the country is not Russia.,1,Handan,Russia,China
+If the city is Jiangyin then the country is not China.,0,Jiangyin,China,China
+If the city is Jiangyin then the country is not Bulgaria.,1,Jiangyin,Bulgaria,China
+If the city is Brazzaville then the country is not the Republic of the Congo.,0,Brazzaville,the Republic of the Congo,the Republic of the Congo
+If the city is Brazzaville then the country is not Nigeria.,1,Brazzaville,Nigeria,the Republic of the Congo
+If the city is Sorocaba then the country is not Brazil.,0,Sorocaba,Brazil,Brazil
+If the city is Sorocaba then the country is not Mexico.,1,Sorocaba,Mexico,Brazil
+If the city is Aktobe then the country is not Kazakhstan.,0,Aktobe,Kazakhstan,Kazakhstan
+If the city is Aktobe then the country is not Afghanistan.,1,Aktobe,Afghanistan,Kazakhstan
+If the city is Chisinau then the country is not Moldova.,0,Chisinau,Moldova,Moldova
+If the city is Chisinau then the country is not Germany.,1,Chisinau,Germany,Moldova
+If the city is Tiruppur then the country is not India.,0,Tiruppur,India,India
+If the city is Tiruppur then the country is not Japan.,1,Tiruppur,Japan,India
+If the city is Kozhikode then the country is not India.,0,Kozhikode,India,India
+If the city is Kozhikode then the country is not the United States.,1,Kozhikode,the United States,India
+If the city is Asansol then the country is not India.,0,Asansol,India,India
+If the city is Asansol then the country is not China.,1,Asansol,China,India
+If the city is Suizhou then the country is not China.,0,Suizhou,China,China
+If the city is Suizhou then the country is not Japan.,1,Suizhou,Japan,China
+If the city is Jingmen then the country is not China.,0,Jingmen,China,China
+If the city is Jingmen then the country is not Japan.,1,Jingmen,Japan,China
+If the city is Huangshi then the country is not China.,0,Huangshi,China,China
+If the city is Huangshi then the country is not India.,1,Huangshi,India,China
+If the city is Huaibei then the country is not China.,0,Huaibei,China,China
+If the city is Huaibei then the country is not Brazil.,1,Huaibei,Brazil,China
+If the city is Hebi then the country is not China.,0,Hebi,China,China
+If the city is Hebi then the country is not Nigeria.,1,Hebi,Nigeria,China
+If the city is Benxi then the country is not China.,0,Benxi,China,China
+If the city is Benxi then the country is not Brazil.,1,Benxi,Brazil,China
+If the city is Fortaleza then the country is not Brazil.,0,Fortaleza,Brazil,Brazil
+If the city is Fortaleza then the country is not Honduras.,1,Fortaleza,Honduras,Brazil
+If the city is Antwerpen then the country is not Belgium.,0,Antwerpen,Belgium,Belgium
+If the city is Antwerpen then the country is not Japan.,1,Antwerpen,Japan,Belgium
+If the city is Pikine then the country is not Senegal.,0,Pikine,Senegal,Senegal
+If the city is Pikine then the country is not Pakistan.,1,Pikine,Pakistan,Senegal
+If the city is Dakar then the country is not Senegal.,0,Dakar,Senegal,Senegal
+If the city is Dakar then the country is not India.,1,Dakar,India,Senegal
+If the city is Faisalabad then the country is not Pakistan.,0,Faisalabad,Pakistan,Pakistan
+If the city is Faisalabad then the country is not India.,1,Faisalabad,India,Pakistan
+If the city is Kyoto then the country is not Japan.,0,Kyoto,Japan,Japan
+If the city is Kyoto then the country is not China.,1,Kyoto,China,Japan
+If the city is Port Harcourt then the country is not Nigeria.,0,Port Harcourt,Nigeria,Nigeria
+If the city is Port Harcourt then the country is not Eritrea.,1,Port Harcourt,Eritrea,Nigeria
+If the city is Makhachkala then the country is not Russia.,0,Makhachkala,Russia,Russia
+If the city is Makhachkala then the country is not Indonesia.,1,Makhachkala,Indonesia,Russia
+If the city is Thiruvananthapuram then the country is not India.,0,Thiruvananthapuram,India,India
+If the city is Thiruvananthapuram then the country is not Japan.,1,Thiruvananthapuram,Japan,India
+If the city is Madurai then the country is not India.,0,Madurai,India,India
+If the city is Madurai then the country is not Burundi.,1,Madurai,Burundi,India
+If the city is Abu Ghurayb then the country is not Iraq.,0,Abu Ghurayb,Iraq,Iraq
+If the city is Abu Ghurayb then the country is not Indonesia.,1,Abu Ghurayb,Indonesia,Iraq
+If the city is Karaj then the country is not Iran.,0,Karaj,Iran,Iran
+If the city is Karaj then the country is not India.,1,Karaj,India,Iran
+If the city is Kampala then the country is not Uganda.,0,Kampala,Uganda,Uganda
+If the city is Kampala then the country is not Turkey.,1,Kampala,Turkey,Uganda
+If the city is Chicago then the country is not the United States.,0,Chicago,the United States,the United States
+If the city is Chicago then the country is not Madagascar.,1,Chicago,Madagascar,the United States
+If the city is Milwaukee then the country is not the United States.,0,Milwaukee,the United States,the United States
+If the city is Milwaukee then the country is not China.,1,Milwaukee,China,the United States
+If the city is Bloemfontein then the country is not South Africa.,0,Bloemfontein,South Africa,South Africa
+If the city is Bloemfontein then the country is not China.,1,Bloemfontein,China,South Africa
+If the city is Uberlandia then the country is not Brazil.,0,Uberlandia,Brazil,Brazil
+If the city is Uberlandia then the country is not India.,1,Uberlandia,India,Brazil
+If the city is Curitiba then the country is not Brazil.,0,Curitiba,Brazil,Brazil
+If the city is Curitiba then the country is not India.,1,Curitiba,India,Brazil
+If the city is Rio de Janeiro then the country is not Brazil.,0,Rio de Janeiro,Brazil,Brazil
+If the city is Rio de Janeiro then the country is not Japan.,1,Rio de Janeiro,Japan,Brazil
+If the city is Ribeirao Preto then the country is not Brazil.,0,Ribeirao Preto,Brazil,Brazil
+If the city is Ribeirao Preto then the country is not China.,1,Ribeirao Preto,China,Brazil
+If the city is The Bronx then the country is not the United States.,0,The Bronx,the United States,the United States
+If the city is The Bronx then the country is not South Korea.,1,The Bronx,South Korea,the United States
+If the city is Samarkand then the country is not Uzbekistan.,0,Samarkand,Uzbekistan,Uzbekistan
+If the city is Samarkand then the country is not China.,1,Samarkand,China,Uzbekistan
+If the city is Da Nang then the country is not Vietnam.,0,Da Nang,Vietnam,Vietnam
+If the city is Da Nang then the country is not China.,1,Da Nang,China,Vietnam
+If the city is Tomsk then the country is not Russia.,0,Tomsk,Russia,Russia
+If the city is Tomsk then the country is not Ghana.,1,Tomsk,Ghana,Russia
+If the city is Najran then the country is not Saudi Arabia.,0,Najran,Saudi Arabia,Saudi Arabia
+If the city is Najran then the country is not India.,1,Najran,India,Saudi Arabia
+If the city is Bangkok then the country is not Thailand.,0,Bangkok,Thailand,Thailand
+If the city is Bangkok then the country is not China.,1,Bangkok,China,Thailand
+If the city is Oklahoma City then the country is not the United States.,0,Oklahoma City,the United States,the United States
+If the city is Oklahoma City then the country is not China.,1,Oklahoma City,China,the United States
+If the city is Izhevsk then the country is not Russia.,0,Izhevsk,Russia,Russia
+If the city is Izhevsk then the country is not Nigeria.,1,Izhevsk,Nigeria,Russia
+If the city is Madinat an Nasr then the country is not Egypt.,0,Madinat an Nasr,Egypt,Egypt
+If the city is Madinat an Nasr then the country is not India.,1,Madinat an Nasr,India,Egypt
+If the city is Yibin then the country is not China.,0,Yibin,China,China
+If the city is Yibin then the country is not Brazil.,1,Yibin,Brazil,China
+If the city is Sanmenxia then the country is not China.,0,Sanmenxia,China,China
+If the city is Sanmenxia then the country is not Brazil.,1,Sanmenxia,Brazil,China
+If the city is Rui'an then the country is not China.,0,Rui'an,China,China
+If the city is Rui'an then the country is not Indonesia.,1,Rui'an,Indonesia,China
+If the city is Ningbo then the country is not China.,0,Ningbo,China,China
+If the city is Ningbo then the country is not South Korea.,1,Ningbo,South Korea,China
+If the city is Jiujiang then the country is not China.,0,Jiujiang,China,China
+If the city is Jiujiang then the country is not Indonesia.,1,Jiujiang,Indonesia,China
+If the city is Jiaozuo then the country is not China.,0,Jiaozuo,China,China
+If the city is Jiaozuo then the country is not Bangladesh.,1,Jiaozuo,Bangladesh,China
+If the city is Jiangmen then the country is not China.,0,Jiangmen,China,China
+If the city is Jiangmen then the country is not South Korea.,1,Jiangmen,South Korea,China
+If the city is Huizhou then the country is not China.,0,Huizhou,China,China
+If the city is Huizhou then the country is not the United States.,1,Huizhou,the United States,China
+If the city is Harbin then the country is not China.,0,Harbin,China,China
+If the city is Harbin then the country is not Russia.,1,Harbin,Russia,China
+If the city is Herat then the country is not Afghanistan.,0,Herat,Afghanistan,Afghanistan
+If the city is Herat then the country is not China.,1,Herat,China,Afghanistan
+If the city is Kleinzschocher then the country is not Germany.,0,Kleinzschocher,Germany,Germany
+If the city is Kleinzschocher then the country is not Brazil.,1,Kleinzschocher,Brazil,Germany
+If the city is Davao then the country is not the Philippines.,0,Davao,the Philippines,the Philippines
+If the city is Davao then the country is not Brazil.,1,Davao,Brazil,the Philippines
+If the city is Sargodha then the country is not Pakistan.,0,Sargodha,Pakistan,Pakistan
+If the city is Sargodha then the country is not India.,1,Sargodha,India,Pakistan
+If the city is Islamabad then the country is not Pakistan.,0,Islamabad,Pakistan,Pakistan
+If the city is Islamabad then the country is not Japan.,1,Islamabad,Japan,Pakistan
+If the city is Zapopan then the country is not Mexico.,0,Zapopan,Mexico,Mexico
+If the city is Zapopan then the country is not China.,1,Zapopan,China,Mexico
+If the city is Visakhapatnam then the country is not India.,0,Visakhapatnam,India,India
+If the city is Visakhapatnam then the country is not Indonesia.,1,Visakhapatnam,Indonesia,India
+If the city is Rourkela then the country is not India.,0,Rourkela,India,India
+If the city is Rourkela then the country is not Brazil.,1,Rourkela,Brazil,India
+If the city is Dhanbad then the country is not India.,0,Dhanbad,India,India
+If the city is Dhanbad then the country is not Kenya.,1,Dhanbad,Kenya,India
+If the city is Bokaro then the country is not India.,0,Bokaro,India,India
+If the city is Bokaro then the country is not China.,1,Bokaro,China,India
+If the city is Tabriz then the country is not Iran.,0,Tabriz,Iran,Iran
+If the city is Tabriz then the country is not India.,1,Tabriz,India,Iran
+If the city is Tlaquepaque then the country is not Mexico.,0,Tlaquepaque,Mexico,Mexico
+If the city is Tlaquepaque then the country is not Japan.,1,Tlaquepaque,Japan,Mexico
+If the city is Victoria de Durango then the country is not Mexico.,0,Victoria de Durango,Mexico,Mexico
+If the city is Victoria de Durango then the country is not Ghana.,1,Victoria de Durango,Ghana,Mexico
+If the city is Kota Kinabalu then the country is not Malaysia.,0,Kota Kinabalu,Malaysia,Malaysia
+If the city is Kota Kinabalu then the country is not the United States.,1,Kota Kinabalu,the United States,Malaysia
+If the city is Nairobi then the country is not Kenya.,0,Nairobi,Kenya,Kenya
+If the city is Nairobi then the country is not Mexico.,1,Nairobi,Mexico,Kenya
+If the city is Taguig then the country is not the Philippines.,0,Taguig,the Philippines,the Philippines
+If the city is Taguig then the country is not India.,1,Taguig,India,the Philippines
+If the city is Rajkot then the country is not India.,0,Rajkot,India,India
+If the city is Rajkot then the country is not Russia.,1,Rajkot,Russia,India
+If the city is Pune then the country is not India.,0,Pune,India,India
+If the city is Pune then the country is not South Korea.,1,Pune,South Korea,India
+If the city is Ludhiana then the country is not India.,0,Ludhiana,India,India
+If the city is Ludhiana then the country is not Togo.,1,Ludhiana,Togo,India
+If the city is Jamshedpur then the country is not India.,0,Jamshedpur,India,India
+If the city is Jamshedpur then the country is not China.,1,Jamshedpur,China,India
+If the city is Bhiwandi then the country is not India.,0,Bhiwandi,India,India
+If the city is Bhiwandi then the country is not China.,1,Bhiwandi,China,India
+If the city is Erbil then the country is not Iraq.,0,Erbil,Iraq,Iraq
+If the city is Erbil then the country is not Cuba.,1,Erbil,Cuba,Iraq
+If the city is Chelyabinsk then the country is not Russia.,0,Chelyabinsk,Russia,Russia
+If the city is Chelyabinsk then the country is not China.,1,Chelyabinsk,China,Russia
+If the city is Uskudar then the country is not Turkey.,0,Uskudar,Turkey,Turkey
+If the city is Uskudar then the country is not Bulgaria.,1,Uskudar,Bulgaria,Turkey
+If the city is Bagcilar then the country is not Turkey.,0,Bagcilar,Turkey,Turkey
+If the city is Bagcilar then the country is not Iran.,1,Bagcilar,Iran,Turkey
+If the city is Quezon City then the country is not the Philippines.,0,Quezon City,the Philippines,the Philippines
+If the city is Quezon City then the country is not China.,1,Quezon City,China,the Philippines
+If the city is Mexico City then the country is not Mexico.,0,Mexico City,Mexico,Mexico
+If the city is Mexico City then the country is not China.,1,Mexico City,China,Mexico
+If the city is Leon de los Aldama then the country is not Mexico.,0,Leon de los Aldama,Mexico,Mexico
+If the city is Leon de los Aldama then the country is not China.,1,Leon de los Aldama,China,Mexico
+If the city is Fes then the country is not Morocco.,0,Fes,Morocco,Morocco
+If the city is Fes then the country is not Mali.,1,Fes,Mali,Morocco
+If the city is Surat then the country is not India.,0,Surat,India,India
+If the city is Surat then the country is not Burkina Faso.,1,Surat,Burkina Faso,India
+If the city is Barnaul then the country is not Russia.,0,Barnaul,Russia,Russia
+If the city is Barnaul then the country is not South Africa.,1,Barnaul,South Africa,Russia
+If the city is Buraydah then the country is not Saudi Arabia.,0,Buraydah,Saudi Arabia,Saudi Arabia
+If the city is Buraydah then the country is not Rwanda.,1,Buraydah,Rwanda,Saudi Arabia
+If the city is Bikaner then the country is not India.,0,Bikaner,India,India
+If the city is Bikaner then the country is not South Korea.,1,Bikaner,South Korea,India
+If the city is Mogadishu then the country is not Somalia.,0,Mogadishu,Somalia,Somalia
+If the city is Mogadishu then the country is not Iran.,1,Mogadishu,Iran,Somalia
+If the city is Homs then the country is not Syria.,0,Homs,Syria,Syria
+If the city is Homs then the country is not Indonesia.,1,Homs,Indonesia,Syria
+If the city is Port-au-Prince then the country is not Haiti.,0,Port-au-Prince,Haiti,Haiti
+If the city is Port-au-Prince then the country is not South Korea.,1,Port-au-Prince,South Korea,Haiti
+If the city is Thuan An then the country is not Vietnam.,0,Thuan An,Vietnam,Vietnam
+If the city is Thuan An then the country is not Mozambique.,1,Thuan An,Mozambique,Vietnam
+If the city is Sanaa then the country is not Yemen.,0,Sanaa,Yemen,Yemen
+If the city is Sanaa then the country is not China.,1,Sanaa,China,Yemen
+If the city is Pretoria then the country is not South Africa.,0,Pretoria,South Africa,South Africa
+If the city is Pretoria then the country is not India.,1,Pretoria,India,South Africa
+If the city is Pietermaritzburg then the country is not South Africa.,0,Pietermaritzburg,South Africa,South Africa
+If the city is Pietermaritzburg then the country is not China.,1,Pietermaritzburg,China,South Africa
+If the city is Abu Dhabi then the country is not the United Arab Emirates.,0,Abu Dhabi,the United Arab Emirates,the United Arab Emirates
+If the city is Abu Dhabi then the country is not Oman.,1,Abu Dhabi,Oman,the United Arab Emirates
+If the city is Sao Paulo then the country is not Brazil.,0,Sao Paulo,Brazil,Brazil
+If the city is Sao Paulo then the country is not China.,1,Sao Paulo,China,Brazil
+If the city is Lianyungang then the country is not China.,0,Lianyungang,China,China
+If the city is Lianyungang then the country is not the Philippines.,1,Lianyungang,the Philippines,China
+If the city is Xiaogan then the country is not China.,0,Xiaogan,China,China
+If the city is Xiaogan then the country is not Ukraine.,1,Xiaogan,Ukraine,China
+If the city is Taicang then the country is not China.,0,Taicang,China,China
+If the city is Taicang then the country is not Madagascar.,1,Taicang,Madagascar,China
+If the city is Guiyang then the country is not China.,0,Guiyang,China,China
+If the city is Guiyang then the country is not South Korea.,1,Guiyang,South Korea,China
+If the city is Ganzhou then the country is not China.,0,Ganzhou,China,China
+If the city is Ganzhou then the country is not South Korea.,1,Ganzhou,South Korea,China
+If the city is Shangyu then the country is not China.,0,Shangyu,China,China
+If the city is Shangyu then the country is not the United Arab Emirates.,1,Shangyu,the United Arab Emirates,China
+If the city is Jambi City then the country is not Indonesia.,0,Jambi City,Indonesia,Indonesia
+If the city is Jambi City then the country is not China.,1,Jambi City,China,Indonesia
+If the city is Indianapolis then the country is not the United States.,0,Indianapolis,the United States,the United States
+If the city is Indianapolis then the country is not Côte d'Ivoire.,1,Indianapolis,Côte d'Ivoire,the United States
+If the city is New York City then the country is not the United States.,0,New York City,the United States,the United States
+If the city is New York City then the country is not India.,1,New York City,India,the United States
+If the city is Bulawayo then the country is not Zimbabwe.,0,Bulawayo,Zimbabwe,Zimbabwe
+If the city is Bulawayo then the country is not China.,1,Bulawayo,China,Zimbabwe
+If the city is Santiago de Cuba then the country is not Cuba.,0,Santiago de Cuba,Cuba,Cuba
+If the city is Santiago de Cuba then the country is not India.,1,Santiago de Cuba,India,Cuba
+If the city is Quito then the country is not Ecuador.,0,Quito,Ecuador,Ecuador
+If the city is Quito then the country is not China.,1,Quito,China,Ecuador
+If the city is Shubra al Khaymah then the country is not Egypt.,0,Shubra al Khaymah,Egypt,Egypt
+If the city is Shubra al Khaymah then the country is not Nigeria.,1,Shubra al Khaymah,Nigeria,Egypt
+If the city is Al Mahallah al Kubra then the country is not Egypt.,0,Al Mahallah al Kubra,Egypt,Egypt
+If the city is Al Mahallah al Kubra then the country is not Afghanistan.,1,Al Mahallah al Kubra,Afghanistan,Egypt
+If the city is Suining then the country is not China.,0,Suining,China,China
+If the city is Suining then the country is not Algeria.,1,Suining,Algeria,China
+If the city is Guankou then the country is not China.,0,Guankou,China,China
+If the city is Guankou then the country is not Pakistan.,1,Guankou,Pakistan,China
+If the city is Langfang then the country is not China.,0,Langfang,China,China
+If the city is Langfang then the country is not India.,1,Langfang,India,China
+If the city is Jinan then the country is not China.,0,Jinan,China,China
+If the city is Jinan then the country is not Rwanda.,1,Jinan,Rwanda,China
+If the city is Guigang then the country is not China.,0,Guigang,China,China
+If the city is Guigang then the country is not Japan.,1,Guigang,Japan,China
+If the city is Dalian then the country is not China.,0,Dalian,China,China
+If the city is Dalian then the country is not Saudi Arabia.,1,Dalian,Saudi Arabia,China
+If the city is Chongqing then the country is not China.,0,Chongqing,China,China
+If the city is Chongqing then the country is not Sweden.,1,Chongqing,Sweden,China
+If the city is Homyel' then the country is not Belarus.,0,Homyel',Belarus,Belarus
+If the city is Homyel' then the country is not Iran.,1,Homyel',Iran,Belarus
+If the city is Winnipeg then the country is not Canada.,0,Winnipeg,Canada,Canada
+If the city is Winnipeg then the country is not Mexico.,1,Winnipeg,Mexico,Canada
+If the city is Klang then the country is not Malaysia.,0,Klang,Malaysia,Malaysia
+If the city is Klang then the country is not China.,1,Klang,China,Malaysia
+If the city is Irbid then the country is not Jordan.,0,Irbid,Jordan,Jordan
+If the city is Irbid then the country is not India.,1,Irbid,India,Jordan
+If the city is Bishkek then the country is not Kyrgyzstan.,0,Bishkek,Kyrgyzstan,Kyrgyzstan
+If the city is Bishkek then the country is not Germany.,1,Bishkek,Germany,Kyrgyzstan
+If the city is Muzaffarabad then the country is not Pakistan.,0,Muzaffarabad,Pakistan,Pakistan
+If the city is Muzaffarabad then the country is not China.,1,Muzaffarabad,China,Pakistan
+If the city is Kotli then the country is not Pakistan.,0,Kotli,Pakistan,Pakistan
+If the city is Kotli then the country is not the United States.,1,Kotli,the United States,Pakistan
+If the city is Nagpur then the country is not India.,0,Nagpur,India,India
+If the city is Nagpur then the country is not Denmark.,1,Nagpur,Denmark,India
+If the city is Kolhapur then the country is not India.,0,Kolhapur,India,India
+If the city is Kolhapur then the country is not Mozambique.,1,Kolhapur,Mozambique,India
+If the city is Cuttack then the country is not India.,0,Cuttack,India,India
+If the city is Cuttack then the country is not Pakistan.,1,Cuttack,Pakistan,India
+If the city is Makassar then the country is not Indonesia.,0,Makassar,Indonesia,Indonesia
+If the city is Makassar then the country is not China.,1,Makassar,China,Indonesia
+If the city is Yekaterinburg then the country is not Russia.,0,Yekaterinburg,Russia,Russia
+If the city is Yekaterinburg then the country is not Lithuania.,1,Yekaterinburg,Lithuania,Russia
+If the city is Dammam then the country is not Saudi Arabia.,0,Dammam,Saudi Arabia,Saudi Arabia
+If the city is Dammam then the country is not Russia.,1,Dammam,Russia,Saudi Arabia
+If the city is Dushanbe then the country is not Tajikistan.,0,Dushanbe,Tajikistan,Tajikistan
+If the city is Dushanbe then the country is not Nigeria.,1,Dushanbe,Nigeria,Tajikistan
+If the city is Gaziantep then the country is not Turkey.,0,Gaziantep,Turkey,Turkey
+If the city is Gaziantep then the country is not Mexico.,1,Gaziantep,Mexico,Turkey
+If the city is Asuncion then the country is not Paraguay.,0,Asuncion,Paraguay,Paraguay
+If the city is Asuncion then the country is not Nigeria.,1,Asuncion,Nigeria,Paraguay
+If the city is Tebessa then the country is not Algeria.,0,Tebessa,Algeria,Algeria
+If the city is Tebessa then the country is not India.,1,Tebessa,India,Algeria
+If the city is Zhuzhou then the country is not China.,0,Zhuzhou,China,China
+If the city is Zhuzhou then the country is not France.,1,Zhuzhou,France,China
+If the city is Xining then the country is not China.,0,Xining,China,China
+If the city is Xining then the country is not the United Arab Emirates.,1,Xining,the United Arab Emirates,China
+If the city is Tanggu then the country is not China.,0,Tanggu,China,China
+If the city is Tanggu then the country is not South Korea.,1,Tanggu,South Korea,China
+If the city is Shantou then the country is not China.,0,Shantou,China,China
+If the city is Shantou then the country is not Pakistan.,1,Shantou,Pakistan,China
+If the city is Shangluo then the country is not China.,0,Shangluo,China,China
+If the city is Shangluo then the country is not Honduras.,1,Shangluo,Honduras,China
+If the city is Putian then the country is not China.,0,Putian,China,China
+If the city is Putian then the country is not Vietnam.,1,Putian,Vietnam,China
+If the city is Luzhou then the country is not China.,0,Luzhou,China,China
+If the city is Luzhou then the country is not Peru.,1,Luzhou,Peru,China
+If the city is Lanzhou then the country is not China.,0,Lanzhou,China,China
+If the city is Lanzhou then the country is not Mexico.,1,Lanzhou,Mexico,China
+If the city is Chenzhou then the country is not China.,0,Chenzhou,China,China
+If the city is Chenzhou then the country is not Brazil.,1,Chenzhou,Brazil,China
+If the city is Baise then the country is not China.,0,Baise,China,China
+If the city is Baise then the country is not Japan.,1,Baise,Japan,China
+If the city is Shenyang then the country is not China.,0,Shenyang,China,China
+If the city is Shenyang then the country is not Somalia.,1,Shenyang,Somalia,China
+If the city is Daqing then the country is not China.,0,Daqing,China,China
+If the city is Daqing then the country is not Brazil.,1,Daqing,Brazil,China
+If the city is Brasilia then the country is not Brazil.,0,Brasilia,Brazil,Brazil
+If the city is Brasilia then the country is not South Korea.,1,Brasilia,South Korea,Brazil
+If the city is Kandahar then the country is not Afghanistan.,0,Kandahar,Afghanistan,Afghanistan
+If the city is Kandahar then the country is not China.,1,Kandahar,China,Afghanistan
+If the city is Gold Coast then the country is not Australia.,0,Gold Coast,Australia,Australia
+If the city is Gold Coast then the country is not China.,1,Gold Coast,China,Australia
+If the city is Ouagadougou then the country is not Burkina Faso.,0,Ouagadougou,Burkina Faso,Burkina Faso
+If the city is Ouagadougou then the country is not China.,1,Ouagadougou,China,Burkina Faso
+If the city is Duque de Caxias then the country is not Brazil.,0,Duque de Caxias,Brazil,Brazil
+If the city is Duque de Caxias then the country is not Côte d'Ivoire.,1,Duque de Caxias,Côte d'Ivoire,Brazil
+If the city is Hiroshima then the country is not Japan.,0,Hiroshima,Japan,Japan
+If the city is Hiroshima then the country is not Malaysia.,1,Hiroshima,Malaysia,Japan
+If the city is Saitama then the country is not Japan.,0,Saitama,Japan,Japan
+If the city is Saitama then the country is not India.,1,Saitama,India,Japan
+If the city is Mandalay then the country is not Myanmar.,0,Mandalay,Myanmar,Myanmar
+If the city is Mandalay then the country is not Algeria.,1,Mandalay,Algeria,Myanmar
+If the city is Nampula then the country is not Mozambique.,0,Nampula,Mozambique,Mozambique
+If the city is Nampula then the country is not India.,1,Nampula,India,Mozambique
+If the city is Mysore then the country is not India.,0,Mysore,India,India
+If the city is Mysore then the country is not Mexico.,1,Mysore,Mexico,India
+If the city is Coimbatore then the country is not India.,0,Coimbatore,India,India
+If the city is Coimbatore then the country is not Malaysia.,1,Coimbatore,Malaysia,India
+If the city is Chandigarh then the country is not India.,0,Chandigarh,India,India
+If the city is Chandigarh then the country is not China.,1,Chandigarh,China,India
+If the city is Amritsar then the country is not India.,0,Amritsar,India,India
+If the city is Amritsar then the country is not Moldova.,1,Amritsar,Moldova,India
+If the city is Arak then the country is not Iran.,0,Arak,Iran,Iran
+If the city is Arak then the country is not India.,1,Arak,India,Iran
+If the city is Ilorin then the country is not Nigeria.,0,Ilorin,Nigeria,Nigeria
+If the city is Ilorin then the country is not Ukraine.,1,Ilorin,Ukraine,Nigeria
+If the city is Omdurman then the country is not Sudan.,0,Omdurman,Sudan,Sudan
+If the city is Omdurman then the country is not South Korea.,1,Omdurman,South Korea,Sudan
+If the city is Khartoum then the country is not Sudan.,0,Khartoum,Sudan,Sudan
+If the city is Khartoum then the country is not China.,1,Khartoum,China,Sudan
+If the city is Gujranwala then the country is not Pakistan.,0,Gujranwala,Pakistan,Pakistan
+If the city is Gujranwala then the country is not China.,1,Gujranwala,China,Pakistan
+If the city is Nizhniy Novgorod then the country is not Russia.,0,Nizhniy Novgorod,Russia,Russia
+If the city is Nizhniy Novgorod then the country is not China.,1,Nizhniy Novgorod,China,Russia
+If the city is Zhaoqing then the country is not China.,0,Zhaoqing,China,China
+If the city is Zhaoqing then the country is not Brazil.,1,Zhaoqing,Brazil,China
+If the city is Xianning then the country is not China.,0,Xianning,China,China
+If the city is Xianning then the country is not Lebanon.,1,Xianning,Lebanon,China
+If the city is Suqian then the country is not China.,0,Suqian,China,China
+If the city is Suqian then the country is not Mexico.,1,Suqian,Mexico,China
+If the city is Tonghua then the country is not China.,0,Tonghua,China,China
+If the city is Tonghua then the country is not Venezuela.,1,Tonghua,Venezuela,China
+If the city is Hezhou then the country is not China.,0,Hezhou,China,China
+If the city is Hezhou then the country is not India.,1,Hezhou,India,China
+If the city is Grosszschocher then the country is not Germany.,0,Grosszschocher,Germany,Germany
+If the city is Grosszschocher then the country is not China.,1,Grosszschocher,China,Germany
+If the city is San Pedro Sula then the country is not Honduras.,0,San Pedro Sula,Honduras,Honduras
+If the city is San Pedro Sula then the country is not India.,1,San Pedro Sula,India,Honduras
+If the city is Queens then the country is not the United States.,0,Queens,the United States,the United States
+If the city is Queens then the country is not India.,1,Queens,India,the United States
+If the city is Caracas then the country is not Venezuela.,0,Caracas,Venezuela,Venezuela
+If the city is Caracas then the country is not Sudan.,1,Caracas,Sudan,Venezuela
+If the city is Bien Hoa then the country is not Vietnam.,0,Bien Hoa,Vietnam,Vietnam
+If the city is Bien Hoa then the country is not South Korea.,1,Bien Hoa,South Korea,Vietnam
+If the city is Durban then the country is not South Africa.,0,Durban,South Africa,South Africa
+If the city is Durban then the country is not Ukraine.,1,Durban,Ukraine,South Africa
+If the city is Kawaguchi then the country is not Japan.,0,Kawaguchi,Japan,Japan
+If the city is Kawaguchi then the country is not Indonesia.,1,Kawaguchi,Indonesia,Japan
+If the city is Bucheon-si then the country is not South Korea.,0,Bucheon-si,South Korea,South Korea
+If the city is Bucheon-si then the country is not Romania.,1,Bucheon-si,Romania,South Korea
+If the city is Tangier then the country is not Morocco.,0,Tangier,Morocco,Morocco
+If the city is Tangier then the country is not Ecuador.,1,Tangier,Ecuador,Morocco
+If the city is Nay Pyi Taw then the country is not Myanmar.,0,Nay Pyi Taw,Myanmar,Myanmar
+If the city is Nay Pyi Taw then the country is not Mozambique.,1,Nay Pyi Taw,Mozambique,Myanmar
+If the city is Ulhasnagar then the country is not India.,0,Ulhasnagar,India,India
+If the city is Ulhasnagar then the country is not Senegal.,1,Ulhasnagar,Senegal,India
+If the city is Faridabad then the country is not India.,0,Faridabad,India,India
+If the city is Faridabad then the country is not the United States.,1,Faridabad,the United States,India
+If the city is Kolkata then the country is not India.,0,Kolkata,India,India
+If the city is Kolkata then the country is not Japan.,1,Kolkata,Japan,India
+If the city is Karbala then the country is not Iraq.,0,Karbala,Iraq,Iraq
+If the city is Karbala then the country is not Turkey.,1,Karbala,Turkey,Iraq
+If the city is Jakarta then the country is not Indonesia.,0,Jakarta,Indonesia,Indonesia
+If the city is Jakarta then the country is not Colombia.,1,Jakarta,Colombia,Indonesia
+If the city is Denpasar then the country is not Indonesia.,0,Denpasar,Indonesia,Indonesia
+If the city is Denpasar then the country is not Brazil.,1,Denpasar,Brazil,Indonesia
+If the city is Batam then the country is not Indonesia.,0,Batam,Indonesia,Indonesia
+If the city is Batam then the country is not Turkey.,1,Batam,Turkey,Indonesia
+If the city is Liupanshui then the country is not China.,0,Liupanshui,China,China
+If the city is Liupanshui then the country is not the Philippines.,1,Liupanshui,the Philippines,China
+If the city is Shangrao then the country is not China.,0,Shangrao,China,China
+If the city is Shangrao then the country is not Russia.,1,Shangrao,Russia,China
+If the city is Xingtai then the country is not China.,0,Xingtai,China,China
+If the city is Xingtai then the country is not Russia.,1,Xingtai,Russia,China
+If the city is Qujing then the country is not China.,0,Qujing,China,China
+If the city is Qujing then the country is not India.,1,Qujing,India,China
+If the city is Nanning then the country is not China.,0,Nanning,China,China
+If the city is Nanning then the country is not Japan.,1,Nanning,Japan,China
+If the city is Huainan then the country is not China.,0,Huainan,China,China
+If the city is Huainan then the country is not Egypt.,1,Huainan,Egypt,China
+If the city is Binzhou then the country is not China.,0,Binzhou,China,China
+If the city is Binzhou then the country is not Brazil.,1,Binzhou,Brazil,China
+If the city is Fuxin then the country is not China.,0,Fuxin,China,China
+If the city is Fuxin then the country is not Pakistan.,1,Fuxin,Pakistan,China
+If the city is Quebec then the country is not Canada.,0,Quebec,Canada,Canada
+If the city is Quebec then the country is not Zimbabwe.,1,Quebec,Zimbabwe,Canada
+If the city is Mazar-e Sharif then the country is not Afghanistan.,0,Mazar-e Sharif,Afghanistan,Afghanistan
+If the city is Mazar-e Sharif then the country is not India.,1,Mazar-e Sharif,India,Afghanistan
+If the city is Mar del Plata then the country is not Argentina.,0,Mar del Plata,Argentina,Argentina
+If the city is Mar del Plata then the country is not Nigeria.,1,Mar del Plata,Nigeria,Argentina
+If the city is Salta then the country is not Argentina.,0,Salta,Argentina,Argentina
+If the city is Salta then the country is not India.,1,Salta,India,Argentina
+If the city is Bujumbura then the country is not Burundi.,0,Bujumbura,Burundi,Burundi
+If the city is Bujumbura then the country is not Nigeria.,1,Bujumbura,Nigeria,Burundi
+If the city is Ankara then the country is not Turkey.,0,Ankara,Turkey,Turkey
+If the city is Ankara then the country is not Japan.,1,Ankara,Japan,Turkey
+If the city is Esenler then the country is not Turkey.,0,Esenler,Turkey,Turkey
+If the city is Esenler then the country is not India.,1,Esenler,India,Turkey
+If the city is Cankaya then the country is not Turkey.,0,Cankaya,Turkey,Turkey
+If the city is Cankaya then the country is not the United States.,1,Cankaya,the United States,Turkey
+If the city is Ufa then the country is not Russia.,0,Ufa,Russia,Russia
+If the city is Ufa then the country is not South Korea.,1,Ufa,South Korea,Russia
+If the city is Rawalpindi then the country is not Pakistan.,0,Rawalpindi,Pakistan,Pakistan
+If the city is Rawalpindi then the country is not Brazil.,1,Rawalpindi,Brazil,Pakistan
+If the city is Karachi then the country is not Pakistan.,0,Karachi,Pakistan,Pakistan
+If the city is Karachi then the country is not India.,1,Karachi,India,Pakistan
+If the city is Tijuana then the country is not Mexico.,0,Tijuana,Mexico,Mexico
+If the city is Tijuana then the country is not the United Arab Emirates.,1,Tijuana,the United Arab Emirates,Mexico
+If the city is Jos then the country is not Nigeria.,0,Jos,Nigeria,Nigeria
+If the city is Jos then the country is not India.,1,Jos,India,Nigeria
+If the city is Ibadan then the country is not Nigeria.,0,Ibadan,Nigeria,Nigeria
+If the city is Ibadan then the country is not Malaysia.,1,Ibadan,Malaysia,Nigeria
+If the city is Managua then the country is not Nicaragua.,0,Managua,Nicaragua,Nicaragua
+If the city is Managua then the country is not Turkey.,1,Managua,Turkey,Nicaragua
+If the city is Ha'il then the country is not Saudi Arabia.,0,Ha'il,Saudi Arabia,Saudi Arabia
+If the city is Ha'il then the country is not China.,1,Ha'il,China,Saudi Arabia
+If the city is Haiphong then the country is not Vietnam.,0,Haiphong,Vietnam,Vietnam
+If the city is Haiphong then the country is not the Dominican Republic.,1,Haiphong,the Dominican Republic,Vietnam
+If the city is Cape Town then the country is not South Africa.,0,Cape Town,South Africa,South Africa
+If the city is Cape Town then the country is not China.,1,Cape Town,China,South Africa
+If the city is Ipoh then the country is not Malaysia.,0,Ipoh,Malaysia,Malaysia
+If the city is Ipoh then the country is not Brazil.,1,Ipoh,Brazil,Malaysia
+If the city is Kuantan then the country is not Malaysia.,0,Kuantan,Malaysia,Malaysia
+If the city is Kuantan then the country is not India.,1,Kuantan,India,Malaysia
+If the city is Maiduguri then the country is not Nigeria.,0,Maiduguri,Nigeria,Nigeria
+If the city is Maiduguri then the country is not China.,1,Maiduguri,China,Nigeria
+If the city is Yangon then the country is not Myanmar.,0,Yangon,Myanmar,Myanmar
+If the city is Yangon then the country is not Kenya.,1,Yangon,Kenya,Myanmar
+If the city is Kathmandu then the country is not Nepal.,0,Kathmandu,Nepal,Nepal
+If the city is Kathmandu then the country is not China.,1,Kathmandu,China,Nepal
+If the city is Las Pinas then the country is not the Philippines.,0,Las Pinas,the Philippines,the Philippines
+If the city is Las Pinas then the country is not Yemen.,1,Las Pinas,Yemen,the Philippines
+If the city is Reynosa then the country is not Mexico.,0,Reynosa,Mexico,Mexico
+If the city is Reynosa then the country is not China.,1,Reynosa,China,Mexico
+If the city is Rostov-na-Donu then the country is not Russia.,0,Rostov-na-Donu,Russia,Russia
+If the city is Rostov-na-Donu then the country is not the United Arab Emirates.,1,Rostov-na-Donu,the United Arab Emirates,Russia
+If the city is Ibague then the country is not Colombia.,0,Ibague,Colombia,Colombia
+If the city is Ibague then the country is not Finland.,1,Ibague,Finland,Colombia
+If the city is Copenhagen then the country is not Denmark.,0,Copenhagen,Denmark,Denmark
+If the city is Copenhagen then the country is not China.,1,Copenhagen,China,Denmark
+If the city is Xinyang then the country is not China.,0,Xinyang,China,China
+If the city is Xinyang then the country is not Japan.,1,Xinyang,Japan,China
+If the city is Weinan then the country is not China.,0,Weinan,China,China
+If the city is Weinan then the country is not Colombia.,1,Weinan,Colombia,China
+If the city is Wanning then the country is not China.,0,Wanning,China,China
+If the city is Wanning then the country is not the United States.,1,Wanning,the United States,China
+If the city is Shijiazhuang then the country is not China.,0,Shijiazhuang,China,China
+If the city is Shijiazhuang then the country is not Uzbekistan.,1,Shijiazhuang,Uzbekistan,China
+If the city is Laiwu then the country is not China.,0,Laiwu,China,China
+If the city is Laiwu then the country is not the United States.,1,Laiwu,the United States,China
+If the city is Hengyang then the country is not China.,0,Hengyang,China,China
+If the city is Hengyang then the country is not Turkey.,1,Hengyang,Turkey,China
+If the city is Changchun then the country is not China.,0,Changchun,China,China
+If the city is Changchun then the country is not Germany.,1,Changchun,Germany,China
+If the city is Varanasi then the country is not India.,0,Varanasi,India,India
+If the city is Varanasi then the country is not Turkey.,1,Varanasi,Turkey,India
+If the city is Puducherry then the country is not India.,0,Puducherry,India,India
+If the city is Puducherry then the country is not Brazil.,1,Puducherry,Brazil,India
+If the city is Bhopal then the country is not India.,0,Bhopal,India,India
+If the city is Bhopal then the country is not Russia.,1,Bhopal,Russia,India
+If the city is Kanayannur then the country is not India.,0,Kanayannur,India,India
+If the city is Kanayannur then the country is not Saudi Arabia.,1,Kanayannur,Saudi Arabia,India
+If the city is Kirkuk then the country is not Iraq.,0,Kirkuk,Iraq,Iraq
+If the city is Kirkuk then the country is not China.,1,Kirkuk,China,Iraq
+If the city is Al Mawsil al Jadidah then the country is not Iraq.,0,Al Mawsil al Jadidah,Iraq,Iraq
+If the city is Al Mawsil al Jadidah then the country is not India.,1,Al Mawsil al Jadidah,India,Iraq
+If the city is Tangerang then the country is not Indonesia.,0,Tangerang,Indonesia,Indonesia
+If the city is Tangerang then the country is not China.,1,Tangerang,China,Indonesia

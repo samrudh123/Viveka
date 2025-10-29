@@ -1,0 +1,355 @@
+statement,label
+"If the word is 'con' in Spanish, then it means 'to speak'.",0
+"If the word is 'uno' in Spanish, then it means 'one'.",1
+"If the word is 'tener' in Spanish, then it means 'to have'.",1
+"If the word is 'caliente' in Spanish, then it means 'hot'.",1
+"If the word is 'palabra' in Spanish, then it means 'word'.",1
+"If the word is 'pero' in Spanish, then it means 'but'.",1
+"If the word is 'o' in Spanish, then it means 'octopus'.",0
+"If the word is 'de' in Spanish, then it means 'now'.",0
+"If the word is 'y' in Spanish, then it means 'and'.",1
+"If the word is 'otro' in Spanish, then it means 'hot'.",0
+"If the word is 'hacer' in Spanish, then it means 'lost'.",0
+"If the word is 'tiempo' in Spanish, then it means 'market'.",0
+"If the word is 'decir' in Spanish, then it means 'order'.",0
+"If the word is 'conjunto' in Spanish, then it means 'son'.",0
+"If the word is 'tres' in Spanish, then it means 'three'.",1
+"If the word is 'querer' in Spanish, then it means 'of'.",0
+"If the word is 'aire' in Spanish, then it means 'silver'.",0
+"If the word is 'jugar' in Spanish, then it means 'to play'.",1
+"If the word is 'poner' in Spanish, then it means 'whale'.",0
+"If the word is 'casa' in Spanish, then it means 'to make'.",0
+"If the word is 'leer' in Spanish, then it means 'to read'.",1
+"If the word is 'mano' in Spanish, then it means 'too'.",0
+"If the word is 'grande' in Spanish, then it means 'large'.",1
+"If the word is 'tierra' in Spanish, then it means 'land'.",1
+"If the word is 'grande' in Spanish, then it means 'to ask'.",0
+"If the word is 'alto' in Spanish, then it means 'space'.",0
+"If the word is 'preguntar' in Spanish, then it means 'to describe'.",0
+"If the word is 'hombre' in Spanish, then it means 'simple'.",0
+"If the word is 'luz' in Spanish, then it means 'week'.",0
+"If the word is 'madre' in Spanish, then it means 'mother'.",1
+"If the word is 'mundo' in Spanish, then it means 'zebra'.",0
+"If the word is 'cerca' in Spanish, then it means 'dog'.",0
+"If the word is 'construir' in Spanish, then it means 'to build'.",1
+"If the word is 'padre' in Spanish, then it means 'special'.",0
+"If the word is 'nuevo' in Spanish, then it means 'always'.",0
+"If the word is 'parte' in Spanish, then it means 'part'.",1
+"If the word is 'lugar' in Spanish, then it means 'place'.",1
+"If the word is 'vivir' in Spanish, then it means 'sheep'.",0
+"If the word is 'espalda' in Spanish, then it means 'back'.",1
+"If the word is 'bueno' in Spanish, then it means 'good'.",1
+"If the word is 'dar' in Spanish, then it means 'before'.",0
+"If the word is 'nombre' in Spanish, then it means 'name'.",1
+"If the word is 'muy' in Spanish, then it means 'temperature'.",0
+"If the word is 'pensar' in Spanish, then it means 'to think'.",1
+"If the word is 'ayudar' in Spanish, then it means 'to help'.",1
+"If the word is 'antes' in Spanish, then it means 'before'.",1
+"If the word is 'derecho' in Spanish, then it means 'summer'.",0
+"If the word is 'viejo' in Spanish, then it means 'old'.",1
+"If the word is 'demasiado' in Spanish, then it means 'too'.",1
+"If the word is 'mismo' in Spanish, then it means 'to write'.",0
+"If the word is 'todo' in Spanish, then it means 'all'.",1
+"If the word is 'usar' in Spanish, then it means 'to fight'.",0
+"If the word is 'entonces' in Spanish, then it means 'corner'.",0
+"If the word is 'escribir' in Spanish, then it means 'to write'.",1
+"If the word is 'largo' in Spanish, then it means 'history'.",0
+"If the word is 'hacer' in Spanish, then it means 'neck'.",0
+"If the word is 'cosa' in Spanish, then it means 'thing'.",1
+"If the word is 'ver' in Spanish, then it means 'to see'.",1
+"If the word is 'dos' in Spanish, then it means 'enemy'.",0
+"If the word is 'venir' in Spanish, then it means 'to know'.",0
+"If the word is 'persona' in Spanish, then it means 'person'.",1
+"If the word is 'saber' in Spanish, then it means 'happy'.",0
+"If the word is 'agua' in Spanish, then it means 'water'.",1
+"If the word is 'primero' in Spanish, then it means 'first'.",1
+"If the word is 'lado' in Spanish, then it means 'equal'.",0
+"If the word is 'ahora' in Spanish, then it means 'now'.",1
+"If the word is 'encontrar' in Spanish, then it means 'person'.",0
+"If the word is 'cabeza' in Spanish, then it means 'head'.",1
+"If the word is 'respuesta' in Spanish, then it means 'bread'.",0
+"If the word is 'escuela' in Spanish, then it means 'school'.",1
+"If the word is 'crecer' in Spanish, then it means 'to grow'.",1
+"If the word is 'aprender' in Spanish, then it means 'light'.",0
+"If the word is 'planta' in Spanish, then it means 'cloud'.",0
+"If the word is 'sol' in Spanish, then it means 'sun'.",1
+"If the word is 'cuatro' in Spanish, then it means 'to imagine'.",0
+"If the word is 'ojo' in Spanish, then it means 'order'.",0
+"If the word is 'nunca' in Spanish, then it means 'to hear'.",0
+"If the word is 'ciudad' in Spanish, then it means 'city'.",1
+"If the word is 'cruzar' in Spanish, then it means 'pig'.",0
+"If the word is 'granja' in Spanish, then it means 'woman'.",0
+"If the word is 'historia' in Spanish, then it means 'office'.",0
+"If the word is 'mar' in Spanish, then it means 'sea'.",1
+"If the word is 'dibujar' in Spanish, then it means 'to draw'.",1
+"If the word is 'izquierda' in Spanish, then it means 'never'.",0
+"If the word is 'tarde' in Spanish, then it means 'hand'.",0
+"If the word is 'mientras' in Spanish, then it means 'while'.",1
+"If the word is 'noche' in Spanish, then it means 'night'.",1
+"If the word is 'vida' in Spanish, then it means 'life'.",1
+"If the word is 'norte' in Spanish, then it means 'north'.",1
+"If the word is 'libro' in Spanish, then it means 'industry'.",0
+"If the word is 'llevar' in Spanish, then it means 'end'.",0
+"If the word is 'ciencia' in Spanish, then it means 'to buy'.",0
+"If the word is 'comer' in Spanish, then it means 'to eat'.",1
+"If the word is 'amigo' in Spanish, then it means 'friend'.",1
+"If the word is 'escuchar' in Spanish, then it means 'market'.",0
+"If the word is 'caballo' in Spanish, then it means 'horse'.",1
+"If the word is 'cara' in Spanish, then it means 'name'.",0
+"If the word is 'madera' in Spanish, then it means 'to have'.",0
+"If the word is 'abierto' in Spanish, then it means 'open'.",1
+"If the word is 'parecer' in Spanish, then it means 'to seem'.",1
+"If the word is 'blanco' in Spanish, then it means 'to think'.",0
+"If the word is 'caminar' in Spanish, then it means 'to walk'.",1
+"If the word is 'ejemplo' in Spanish, then it means 'example'.",1
+"If the word is 'papel' in Spanish, then it means 'paper'.",1
+"If the word is 'grupo' in Spanish, then it means 'group'.",1
+"If the word is 'siempre' in Spanish, then it means 'month'.",0
+"If the word is 'carta' in Spanish, then it means 'nothing'.",0
+"If the word is 'coche' in Spanish, then it means 'car'.",1
+"If the word is 'segundo' in Spanish, then it means 'hello'.",0
+"If the word is 'suficiente' in Spanish, then it means 'enough'.",1
+"If the word is 'llano' in Spanish, then it means 'chair'.",0
+"If the word is 'chica' in Spanish, then it means 'to eat'.",0
+"If the word is 'joven' in Spanish, then it means 'hot'.",0
+"If the word is 'listo' in Spanish, then it means 'ready'.",1
+"If the word is 'rojo' in Spanish, then it means 'red'.",1
+"If the word is 'lista' in Spanish, then it means 'list'.",1
+"If the word is 'sentir' in Spanish, then it means 'to build'.",0
+"If the word is 'pronto' in Spanish, then it means 'to die'.",0
+"If the word is 'cuerpo' in Spanish, then it means 'body'.",1
+"If the word is 'perro' in Spanish, then it means 'dog'.",1
+"If the word is 'familia' in Spanish, then it means 'family'.",1
+"If the word is 'directo' in Spanish, then it means 'to eat'.",0
+"If the word is 'medir' in Spanish, then it means 'to carry'.",0
+"If the word is 'negro' in Spanish, then it means 'black'.",1
+"If the word is 'corto' in Spanish, then it means 'letter'.",0
+"If the word is 'clase' in Spanish, then it means 'class'.",1
+"If the word is 'viento' in Spanish, then it means 'wind'.",1
+"If the word is 'medio' in Spanish, then it means 'large'.",0
+"If the word is 'roca' in Spanish, then it means 'rock'.",1
+"If the word is 'orden' in Spanish, then it means 'old'.",0
+"If the word is 'fuego' in Spanish, then it means 'fire'.",1
+"If the word is 'sur' in Spanish, then it means 'south'.",1
+"If the word is 'problema' in Spanish, then it means 'problem'.",1
+"If the word is 'pieza' in Spanish, then it means 'duck'.",0
+"If the word is 'pasar' in Spanish, then it means 'to pass'.",1
+"If the word is 'rey' in Spanish, then it means 'king'.",1
+"If the word is 'multiplicar' in Spanish, then it means 'to multiply'.",1
+"If the word is 'nada' in Spanish, then it means 'nothing'.",1
+"If the word is 'rueda' in Spanish, then it means 'sister'.",0
+"If the word is 'fuerza' in Spanish, then it means 'force'.",1
+"If the word is 'azul' in Spanish, then it means 'eye'.",0
+"If the word is 'decidir' in Spanish, then it means 'to give'.",0
+"If the word is 'luna' in Spanish, then it means 'letter'.",0
+"If the word is 'isla' in Spanish, then it means 'island'.",1
+"If the word is 'pie' in Spanish, then it means 'lake'.",0
+"If the word is 'sistema' in Spanish, then it means 'nature'.",0
+"If the word is 'ocupado' in Spanish, then it means 'busy'.",1
+"If the word is 'prueba' in Spanish, then it means 'test'.",1
+"If the word is 'barco' in Spanish, then it means 'hello'.",0
+"If the word is 'oro' in Spanish, then it means 'story'.",0
+"If the word is 'seco' in Spanish, then it means 'book'.",0
+"If the word is 'maravilla' in Spanish, then it means 'bell'.",0
+"If the word is 'mil' in Spanish, then it means 'to eat'.",0
+"If the word is 'caliente' in Spanish, then it means 'iron'.",0
+"If the word is 'calor' in Spanish, then it means 'dry'.",0
+"If the word is 'pintar' in Spanish, then it means 'mouth'.",0
+"If the word is 'idioma' in Spanish, then it means 'moment'.",0
+"If the word is 'potencia' in Spanish, then it means 'power'.",1
+"If the word is 'volar' in Spanish, then it means 'to hear'.",0
+"If the word is 'caer' in Spanish, then it means 'to fall'.",1
+"If the word is 'oscuro' in Spanish, then it means 'dark'.",1
+"If the word is 'estrella' in Spanish, then it means 'star'.",1
+"If the word is 'belleza' in Spanish, then it means 'beauty'.",1
+"If the word is 'semana' in Spanish, then it means 'face'.",0
+"If the word is 'desarrollar' in Spanish, then it means 'to develop'.",1
+"If the word is 'libre' in Spanish, then it means 'free'.",1
+"If the word is 'fuerte' in Spanish, then it means 'dress'.",0
+"If the word is 'especial' in Spanish, then it means 'strong'.",0
+"If the word is 'cola' in Spanish, then it means 'name'.",0
+"If the word is 'espacio' in Spanish, then it means 'to measure'.",0
+"If the word is 'cinco' in Spanish, then it means 'five'.",1
+"If the word is 'temprano' in Spanish, then it means 'early'.",1
+"If the word is 'oeste' in Spanish, then it means 'moment'.",0
+"If the word is 'suelo' in Spanish, then it means 'ground'.",1
+"If the word is 'cantar' in Spanish, then it means 'simple'.",0
+"If the word is 'seis' in Spanish, then it means 'to find'.",0
+"If the word is 'diez' in Spanish, then it means 'ten'.",1
+"If the word is 'sencilla' in Spanish, then it means 'simple'.",1
+"If the word is 'guerra' in Spanish, then it means 'example'.",0
+"If the word is 'lento' in Spanish, then it means 'slow'.",1
+"If the word is 'amar' in Spanish, then it means 'teeth'.",0
+"If the word is 'dinero' in Spanish, then it means 'mouth'.",0
+"If the word is 'mapa' in Spanish, then it means 'map'.",1
+"If the word is 'gobernar' in Spanish, then it means 'to eat'.",0
+"If the word is 'voz' in Spanish, then it means 'voice'.",1
+"If the word is 'hermano' in Spanish, then it means 'silver'.",0
+"If the word is 'huevo' in Spanish, then it means 'egg'.",1
+"If the word is 'creer' in Spanish, then it means 'to fly'.",0
+"If the word is 'hablar' in Spanish, then it means 'to speak'.",1
+"If the word is 'hielo' in Spanish, then it means 'ice'.",1
+"If the word is 'ola' in Spanish, then it means 'wave'.",1
+"If the word is 'presente' in Spanish, then it means 'present'.",1
+"If the word is 'brazo' in Spanish, then it means 'arm'.",1
+"If the word is 'bosque' in Spanish, then it means 'forest'.",1
+"If the word is 'ventana' in Spanish, then it means 'half'.",0
+"If the word is 'tienda' in Spanish, then it means 'insect'.",0
+"If the word is 'verano' in Spanish, then it means 'to push'.",0
+"If the word is 'tren' in Spanish, then it means 'train'.",1
+"If the word is 'pierna' in Spanish, then it means 'leg'.",1
+"If the word is 'cielo' in Spanish, then it means 'old'.",0
+"If the word is 'invierno' in Spanish, then it means 'winter'.",1
+"If the word is 'vidrio' in Spanish, then it means 'to hear'.",0
+"If the word is 'vaca' in Spanish, then it means 'cow'.",1
+"If the word is 'suave' in Spanish, then it means 'skin'.",0
+"If the word is 'mes' in Spanish, then it means 'month'.",1
+"If the word is 'feliz' in Spanish, then it means 'second'.",0
+"If the word is 'esperanza' in Spanish, then it means 'hope'.",1
+"If the word is 'flor' in Spanish, then it means 'market'.",0
+"If the word is 'viaje' in Spanish, then it means 'system'.",0
+"If the word is 'oficina' in Spanish, then it means 'direct'.",0
+"If the word is 'recibir' in Spanish, then it means 'time'.",0
+"If the word is 'boca' in Spanish, then it means 'mouth'.",1
+"If the word is 'morir' in Spanish, then it means 'to die'.",1
+"If the word is 'semilla' in Spanish, then it means 'seed'.",1
+"If the word is 'aceite' in Spanish, then it means 'oil'.",1
+"If the word is 'sangre' in Spanish, then it means 'sun'.",0
+"If the word is 'mezclar' in Spanish, then it means 'to mix'.",1
+"If the word is 'perdido' in Spanish, then it means 'test'.",0
+"If the word is 'igual' in Spanish, then it means 'to imagine'.",0
+"If the word is 'elegir' in Spanish, then it means 'to choose'.",1
+"If the word is 'guardar' in Spanish, then it means 'to save'.",1
+"If the word is 'matar' in Spanish, then it means 'bread'.",0
+"If the word is 'hijo' in Spanish, then it means 'son'.",1
+"If the word is 'lago' in Spanish, then it means 'month'.",0
+"If the word is 'momento' in Spanish, then it means 'moment'.",1
+"If the word is 'primavera' in Spanish, then it means 'wave'.",0
+"If the word is 'diccionario' in Spanish, then it means 'dictionary'.",1
+"If the word is 'leche' in Spanish, then it means 'glass'.",0
+"If the word is 'pagar' in Spanish, then it means 'to pay'.",1
+"If the word is 'edad' in Spanish, then it means 'clock'.",0
+"If the word is 'vestido' in Spanish, then it means 'example'.",0
+"If the word is 'nube' in Spanish, then it means 'to write'.",0
+"If the word is 'piedra' in Spanish, then it means 'stone'.",1
+"If the word is 'experimento' in Spanish, then it means 'dark'.",0
+"If the word is 'clave' in Spanish, then it means 'rose'.",0
+"If the word is 'hierro' in Spanish, then it means 'iron'.",1
+"If the word is 'veinte' in Spanish, then it means 'twenty'.",1
+"If the word is 'piel' in Spanish, then it means 'skin'.",1
+"If the word is 'sonrisa' in Spanish, then it means 'smile'.",1
+"If the word is 'ocho' in Spanish, then it means 'too'.",0
+"If the word is 'comprar' in Spanish, then it means 'dry'.",0
+"If the word is 'empujar' in Spanish, then it means 'to govern'.",0
+"If the word is 'siete' in Spanish, then it means 'seven'.",1
+"If the word is 'tercero' in Spanish, then it means 'third'.",1
+"If the word is 'describir' in Spanish, then it means 'to die'.",0
+"If the word is 'cocinero' in Spanish, then it means 'cook'.",1
+"If the word is 'piso' in Spanish, then it means 'set'.",0
+"If the word is 'resultado' in Spanish, then it means 'result'.",1
+"If the word is 'quemar' in Spanish, then it means 'hot'.",0
+"If the word is 'seguro' in Spanish, then it means 'danger'.",0
+"If the word is 'gato' in Spanish, then it means 'cat'.",1
+"If the word is 'siglo' in Spanish, then it means 'large'.",0
+"If the word is 'ley' in Spanish, then it means 'dog'.",0
+"If the word is 'frase' in Spanish, then it means 'paper'.",0
+"If the word is 'arena' in Spanish, then it means 'sand'.",1
+"If the word is 'temperatura' in Spanish, then it means 'hand'.",0
+"If the word is 'dedo' in Spanish, then it means 'finger'.",1
+"If the word is 'industria' in Spanish, then it means 'industry'.",1
+"If the word is 'luchar' in Spanish, then it means 'heat'.",0
+"If the word is 'silla' in Spanish, then it means 'neighbor'.",0
+"If the word is 'peligro' in Spanish, then it means 'danger'.",1
+"If the word is 'fruta' in Spanish, then it means 'goat'.",0
+"If the word is 'soldado' in Spanish, then it means 'soldier'.",1
+"If the word is 'proteger' in Spanish, then it means 'dry'.",0
+"If the word is 'moderno' in Spanish, then it means 'modern'.",1
+"If the word is 'estudiante' in Spanish, then it means 'student'.",1
+"If the word is 'esquina' in Spanish, then it means 'corner'.",1
+"If the word is 'anillo' in Spanish, then it means 'to love'.",0
+"If the word is 'insecto' in Spanish, then it means 'then'.",0
+"If the word is 'historia' in Spanish, then it means 'history'.",1
+"If the word is 'hueso' in Spanish, then it means 'bone'.",1
+"If the word is 'imaginar' in Spanish, then it means 'to imagine'.",1
+"If the word is 'mujer' in Spanish, then it means 'woman'.",1
+"If the word is 'adivinar' in Spanish, then it means 'war'.",0
+"If the word is 'agudo' in Spanish, then it means 'sharp'.",1
+"If the word is 'ala' in Spanish, then it means 'wing'.",1
+"If the word is 'vecino' in Spanish, then it means 'neighbor'.",1
+"If the word is 'poema' in Spanish, then it means 'to win'.",0
+"If the word is 'campana' in Spanish, then it means 'to connect'.",0
+"If the word is 'carne' in Spanish, then it means 'meat'.",1
+"If the word is 'famoso' in Spanish, then it means 'to believe'.",0
+"If the word is 'miedo' in Spanish, then it means 'fear'.",1
+"If the word is 'delgado' in Spanish, then it means 'thin'.",1
+"If the word is 'reloj' in Spanish, then it means 'clock'.",1
+"If the word is 'enviar' in Spanish, then it means 'to send'.",1
+"If the word is 'amarillo' in Spanish, then it means 'land'.",0
+"If the word is 'rosa' in Spanish, then it means 'rose'.",1
+"If the word is 'llegar' in Spanish, then it means 'insect'.",0
+"If the word is 'conectar' in Spanish, then it means 'to connect'.",1
+"If the word is 'grasa' in Spanish, then it means 'new'.",0
+"If the word is 'pan' in Spanish, then it means 'eye'.",0
+"If the word is 'oferta' in Spanish, then it means 'offer'.",1
+"If the word is 'esclavo' in Spanish, then it means 'slave'.",1
+"If the word is 'pato' in Spanish, then it means 'wolf'.",0
+"If the word is 'mercado' in Spanish, then it means 'market'.",1
+"If the word is 'enemigo' in Spanish, then it means 'enemy'.",1
+"If the word is 'bebida' in Spanish, then it means 'train'.",0
+"If the word is 'naturaleza' in Spanish, then it means 'to buy'.",0
+"If the word is 'dientes' in Spanish, then it means 'hope'.",0
+"If the word is 'concha' in Spanish, then it means 'shell'.",1
+"If the word is 'cuello' in Spanish, then it means 'neck'.",1
+"If the word is 'temporada' in Spanish, then it means 'insect'.",0
+"If the word is 'plata' in Spanish, then it means 'silver'.",1
+"If the word is 'rama' in Spanish, then it means 'back'.",0
+"If the word is 'higo' in Spanish, then it means 'fig'.",1
+"If the word is 'hermana' in Spanish, then it means 'sister'.",1
+"If the word is 'guiar' in Spanish, then it means 'age'.",0
+"If the word is 'manzana' in Spanish, then it means 'hand'.",0
+"If the word is 'abrigo' in Spanish, then it means 'coat'.",1
+"If the word is 'tarjeta' in Spanish, then it means 'bear'.",0
+"If the word is 'ganar' in Spanish, then it means 'to use'.",0
+"If the word is 'herramienta' in Spanish, then it means 'tool'.",1
+"If the word is 'olor' in Spanish, then it means 'smell'.",1
+"If the word is 'valle' in Spanish, then it means 'face'.",0
+"If the word is 'continuar' in Spanish, then it means 'coat'.",0
+"If the word is 'vender' in Spanish, then it means 'to sell'.",1
+"If the word is 'nadar' in Spanish, then it means 'to swim'.",1
+"If the word is 'opuesta' in Spanish, then it means 'dress'.",0
+"If the word is 'esposa' in Spanish, then it means 'wife'.",1
+"If the word is 'hombro' in Spanish, then it means 'shoulder'.",1
+"If the word is 'nueve' in Spanish, then it means 'stone'.",0
+"If the word is 'ruido' in Spanish, then it means 'noise'.",1
+"If the word is 'lanzar' in Spanish, then it means 'to throw'.",1
+"If the word is 'gris' in Spanish, then it means 'history'.",0
+"If the word is 'sal' in Spanish, then it means 'horse'.",0
+"If the word is 'nariz' in Spanish, then it means 'giraffe'.",0
+"If the word is 'burro' in Spanish, then it means 'donkey'.",1
+"If the word is 'cabra' in Spanish, then it means 'money'.",0
+"If the word is 'cordero' in Spanish, then it means 'fat'.",0
+"If the word is 'caballo' in Spanish, then it means 'horse'.",1
+"If the word is 'cerdo' in Spanish, then it means 'wave'.",0
+"If the word is 'oveja' in Spanish, then it means 'sheep'.",1
+"If the word is 'pato' in Spanish, then it means 'shoulder'.",0
+"If the word is 'toro' in Spanish, then it means 'bull'.",1
+"If the word is 'vaca' in Spanish, then it means 'cow'.",1
+"If the word is 'conejo' in Spanish, then it means 'rabbit'.",1
+"If the word is 'gato' in Spanish, then it means 'large'.",0
+"If the word is 'perro' in Spanish, then it means 'dog'.",1
+"If the word is 'rana' in Spanish, then it means 'frog'.",1
+"If the word is 'anguila' in Spanish, then it means 'south'.",0
+"If the word is 'ballena' in Spanish, then it means 'whale'.",1
+"If the word is 'calamar' in Spanish, then it means 'squid'.",1
+"If the word is 'pulpo' in Spanish, then it means 'slow'.",0
+"If the word is 'lobo' in Spanish, then it means 'leg'.",0
+"If the word is 'oso' in Spanish, then it means 'bear'.",1
+"If the word is 'zorro' in Spanish, then it means 'shell'.",0
+"If the word is 'mariposa' in Spanish, then it means 'rose'.",0
+"If the word is 'tortuga' in Spanish, then it means 'dry'.",0
+"If the word is 'cebra' in Spanish, then it means 'to imagine'.",0
+"If the word is 'elefante' in Spanish, then it means 'spring'.",0
+"If the word is 'jirafa' in Spanish, then it means 'giraffe'.",1
+"If the word is 'tigre' in Spanish, then it means 'cow'.",0
+"If the word is 'hola' in Spanish, then it means 'hello'.",1
+"If the word is 'nuevo' in Spanish, then it means 'new'.",1

@@ -1,0 +1,5 @@
+import os
+
+# Replace these with your Kaggle username and API key
+os.environ['KAGGLE_USERNAME'] = "arshmathur18"
+os.environ['KAGGLE_KEY'] = "2a39880e5d9ebbbec5866cd53f555e02"

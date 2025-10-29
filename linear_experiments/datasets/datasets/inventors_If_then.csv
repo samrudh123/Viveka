@@ -1,0 +1,407 @@
+statement,label
+"If a person is Edwin Herbert Hall, then they lived in the U.",1
+"If a person is Emile Berliner, then they lived in Russia.",0
+"If a person is Frederick Walton, then they lived in the U.",0
+"If a person is William Congreve, then they lived in Canada.",0
+"If a person is Gustaf Dalén, then they lived in Sweden.",1
+"If a person is Evangelista Torricelli, then they lived in the U.",0
+"If a person is George Pullman, then they lived in the U.",0
+"If a person is Marvin Camras, then they lived in France.",0
+"If a person is William Sturgeon, then they lived in the U.",1
+"If a person is Frederick Walton, then they lived in the U.",1
+"If a person is Clarence Birdseye, then they lived in the U.",1
+"If a person is Gideon Sundback, then they lived in Sweden/the U.",1
+"If a person is John Shepherd-Barron, then they lived in Scotland.",1
+"If a person is Edwin Link, then they lived in the U.",0
+"If a person is Chester Carlson, then they lived in the U.",0
+"If a person is Whitcomb Judson, then they lived in the U.",1
+"If a person is Joseph Glidden, then they lived in the U.",1
+"If a person is Rudolf Diesel, then they lived in the U.",0
+"If a person is Charles Wheatstone, then they lived in France.",0
+"If a person is John Callcott Horsley, then they lived in Germany.",0
+"If a person is Charles Goodyear, then they lived in the U.",1
+"If a person is Lloyd Groff Copeman, then they lived in the U.",1
+"If a person is Herbert Akroyd Stuart, then they lived in England.",1
+"If a person is Herbert Saffir, then they lived in the U.",0
+"If a person is August Horch, then they lived in Russia.",0
+"If a person is Joseph Marie Jacquard, then they lived in the Netherlands.",0
+"If a person is David Edward Hughes, then they lived in the U.",1
+"If a person is Yoshua Bengio, then they lived in Canada.",1
+"If a person is Ferdinand Carré, then they lived in the U.",0
+"If a person is Rudolf Kálmán, then they lived in Hungary.",1
+"If a person is Charles Fritts, then they lived in the U.",1
+"If a person is Narinder Singh Kapany, then they lived in India.",1
+"If a person is Archimedes, then they lived in Ancient Greece.",1
+"If a person is Gottlieb Daimler, then they lived in France.",0
+"If a person is Fritz Pfleumer, then they lived in Germany.",1
+"If a person is Arthur Fry, then they lived in the U.",1
+"If a person is Fridtjof Nansen, then they lived in the U.",0
+"If a person is Semyon Kirlian, then they lived in Russia.",1
+"If a person is Ignazio Porro, then they lived in Italy.",1
+"If a person is Paul Gottlieb Nipkow, then they lived in Denmark.",0
+"If a person is Edwin H. Land, then they lived in Sweden.",0
+"If a person is Lester Wire, then they lived in the U.",1
+"If a person is László Bíró, then they lived in Hungary.",1
+"If a person is George Eastman, then they lived in the U.",0
+"If a person is Galileo Galilei, then they lived in Italy.",1
+"If a person is John Atanasoff, then they lived in the U.",1
+"If a person is Benjamin Franklin, then they lived in the U.",1
+"If a person is Sir Sandford Fleming, then they lived in Canada.",1
+"If a person is Robert Moog, then they lived in the U.",1
+"If a person is George Washington Carver, then they lived in the U.",1
+"If a person is James Clerk Maxwell, then they lived in the U.",0
+"If a person is Hans Lippershey, then they lived in the U.",0
+"If a person is Fridtjof Nansen, then they lived in Norway.",1
+"If a person is Sir Sandford Fleming, then they lived in the U.",0
+"If a person is Willis Carrier, then they lived in the U.",1
+"If a person is Joseph-Armand Bombardier, then they lived in Canada.",1
+"If a person is Earle Dickson, then they lived in the U.",1
+"If a person is Luther George Simjian, then they lived in Turkey/the U.",1
+"If a person is Herbert Saffir, then they lived in the U.",1
+"If a person is Ignazio Porro, then they lived in the U.",0
+"If a person is Wallace Carothers, then they lived in the U.",1
+"If a person is John Wesley Hyatt, then they lived in the U.",1
+"If a person is James Dyson, then they lived in the U.",1
+"If a person is Candace Pert, then they lived in the U.",1
+"If a person is David Schwarz, then they lived in France.",0
+"If a person is Walter Hunt, then they lived in the U.",1
+"If a person is Samuel Morse, then they lived in Germany.",0
+"If a person is Yvonne Brill, then they lived in Canada.",1
+"If a person is Guglielmo Marconi, then they lived in the U.",0
+"If a person is Shinya Yamanaka, then they lived in Germany.",0
+"If a person is Carl Sontheimer, then they lived in Switzerland.",0
+"If a person is Sergey Brin and Larry Page, then they lived in the U.",0
+"If a person is Percy Spencer, then they lived in the U.",1
+"If a person is Henry Bessemer, then they lived in the U.",1
+"If a person is Ruth Handler, then they lived in the Netherlands.",0
+"If a person is Richard Leach Maddox, then they lived in the U.",1
+"If a person is Alfred Nobel, then they lived in the U.",0
+"If a person is Thomas Wedgwood, then they lived in the U.",1
+"If a person is Frank Bunker Gilbreth, then they lived in the U.",1
+"If a person is Benjamin Holt, then they lived in the U.",1
+"If a person is Josephine Cochrane, then they lived in Germany.",0
+"If a person is Godfrey Hounsfield, then they lived in Denmark.",0
+"If a person is Antoine Lavoisier, then they lived in France.",1
+"If a person is Carlos Glidden, then they lived in Scotland.",0
+"If a person is Maria Telkes, then they lived in Hungary/the U.",1
+"If a person is Robert Adler, then they lived in Austria/the U.",1
+"If a person is James Watt, then they lived in the U.",0
+"If a person is Edwin Link, then they lived in the U.",1
+"If a person is Igor Sikorsky, then they lived in the U.",0
+"If a person is Sir Humphry Davy, then they lived in the U.",1
+"If a person is Nikolai Basov, then they lived in the U.",0
+"If a person is Edwin H. Land, then they lived in the U.",1
+"If a person is Cai Lun, then they lived in Italy.",0
+"If a person is Mary Walton, then they lived in France.",0
+"If a person is Joseph Aspdin, then they lived in Switzerland.",0
+"If a person is James Watt, then they lived in Scotland.",1
+"If a person is Ernest Swinton, then they lived in the U.",1
+"If a person is Jean-Bernard-Léon Foucault, then they lived in France.",1
+"If a person is Gordon Gould, then they lived in the U.",1
+"If a person is Leonardo da Vinci, then they lived in Poland/France.",0
+"If a person is Ernesto Blanco, then they lived in the U.",1
+"If a person is George Cayley, then they lived in Canada.",0
+"If a person is John von Neumann, then they lived in Hungary/the U.",1
+"If a person is Gideon Sundback, then they lived in the U.",0
+"If a person is Ruth Benerito, then they lived in the U.",1
+"If a person is Robert Moog, then they lived in Austria/the U.",0
+"If a person is Luther George Simjian, then they lived in Norway.",0
+"If a person is Ralph H. Baer, then they lived in the U.",1
+"If a person is John Gorrie, then they lived in Italy.",0
+"If a person is Michael Faraday, then they lived in the U.",1
+"If a person is Lloyd Groff Copeman, then they lived in Germany.",0
+"If a person is Philo Farnsworth, then they lived in Germany.",0
+"If a person is Alan Turing, then they lived in the U.",1
+"If a person is Elisha Gray, then they lived in the U.",1
+"If a person is Édouard-Léon Scott de Martinville, then they lived in France.",1
+"If a person is Zhores Alferov, then they lived in the U.",0
+"If a person is Leon Theremin, then they lived in Russia.",1
+"If a person is Rudolf Diesel, then they lived in Germany.",1
+"If a person is Elisha Otis, then they lived in the U.",1
+"If a person is László Bíró, then they lived in the U.",0
+"If a person is Valdemar Poulsen, then they lived in Denmark.",1
+"If a person is James Murray Spangler, then they lived in the U.",0
+"If a person is Joseph Aspdin, then they lived in the U.",1
+"If a person is Hans Berger, then they lived in the U.",0
+"If a person is Philo Farnsworth, then they lived in the U.",1
+"If a person is Ralph Benjamin, then they lived in Italy.",0
+"If a person is Florence Parpart, then they lived in the U.",0
+"If a person is Marvin Camras, then they lived in the U.",1
+"If a person is Charles Babbage, then they lived in the U.",1
+"If a person is Charles Francis Richter, then they lived in France.",0
+"If a person is Ami Argand, then they lived in Switzerland.",1
+"If a person is Kwolek, then they lived in the U.",0
+"If a person is Richard Gatling, then they lived in the U.",0
+"If a person is Luther Simjian, then they lived in Turkey/the U.",1
+"If a person is Joseph Bramah, then they lived in the U.",1
+"If a person is Hans Geiger, then they lived in Austria/the U.",0
+"If a person is Alexander Graham Bell, then they lived in Scotland/Canada/the U.",1
+"If a person is Blaise Pascal, then they lived in Poland/France.",0
+"If a person is Charles Macintosh, then they lived in the U.",1
+"If a person is Narinder Singh Kapany, then they lived in the U.",0
+"If a person is Bette Nesmith Graham, then they lived in the U.",1
+"If a person is Édouard-Léon Scott de Martinville, then they lived in the U.",0
+"If a person is Orville and Wilbur Wright, then they lived in the U.",1
+"If a person is Richard Leach Maddox, then they lived in Austria.",0
+"If a person is Hans Oersted, then they lived in the U.",0
+"If a person is Charles Cros, then they lived in the U.",0
+"If a person is R. Buckminster Fuller, then they lived in Scotland.",0
+"If a person is Willis Carrier, then they lived in Italy.",0
+"If a person is Charles Cros, then they lived in France.",1
+"If a person is Thomas Savery, then they lived in the U.",1
+"If a person is Bartolomeo Cristofori, then they lived in Italy.",1
+"If a person is Louis Pasteur, then they lived in France.",1
+"If a person is Frederick G. Creed, then they lived in Sweden.",0
+"If a person is Alexander Fleming, then they lived in France.",0
+"If a person is Florence Parpart, then they lived in the U.",1
+"If a person is Henri Giffard, then they lived in the U.",0
+"If a person is Paul Gottlieb Nipkow, then they lived in Germany.",1
+"If a person is Hippolyte Mège-Mouriès, then they lived in the U.",0
+"If a person is Josephine Cochrane, then they lived in the U.",1
+"If a person is Mary Anderson, then they lived in the U.",1
+"If a person is Otis Boykin, then they lived in France.",0
+"If a person is John Callcott Horsley, then they lived in the U.",1
+"If a person is Jack Kilby, then they lived in the U.",1
+"If a person is Samuel Fox, then they lived in the U.",1
+"If a person is Hans Berger, then they lived in Germany.",1
+"If a person is Ernest Swinton, then they lived in the U.",0
+"If a person is André-Jacques Garnerin, then they lived in France.",1
+"If a person is Alexander Fleming, then they lived in the U.",1
+"If a person is Hans Goldschmidt, then they lived in the Netherlands.",0
+"If a person is Willem Einthoven, then they lived in France.",0
+"If a person is Garrett Morgan, then they lived in the U.",1
+"If a person is Richard Trevithick, then they lived in the U.",0
+"If a person is Georges Claude, then they lived in Italy.",0
+"If a person is Sir Isaac Newton, then they lived in the U.",1
+"If a person is William Kelly, then they lived in the U.",1
+"If a person is Thomas Wedgwood, then they lived in Finland.",0
+"If a person is Nils Bohlin, then they lived in Germany.",0
+"If a person is Albert Ghiorso, then they lived in the U.",1
+"If a person is George de Mestral, then they lived in Switzerland.",1
+"If a person is Carlos Glidden, then they lived in the U.",1
+"If a person is William Congreve, then they lived in the U.",1
+"If a person is John Logie Baird, then they lived in Japan.",0
+"If a person is Edouard Benedictus, then they lived in the U.",0
+"If a person is Alec Jeffreys, then they lived in France.",0
+"If a person is Arthur Pitney, then they lived in the U.",1
+"If a person is Giovanni Caselli, then they lived in the U.",0
+"If a person is John Gorrie, then they lived in the U.",1
+"If a person is Robert Chesebrough, then they lived in the U.",1
+"If a person is Johannes Gutenberg, then they lived in the U.",0
+"If a person is Maria Telkes, then they lived in Hungary.",0
+"If a person is Yoshiro Nakamatsu, then they lived in the U.",0
+"If a person is Chester Carlson, then they lived in the U.",1
+"If a person is George Pullman, then they lived in the U.",1
+"If a person is George Cayley, then they lived in the U.",1
+"If a person is John Bardeen, then they lived in the U.",1
+"If a person is Orville and Wilbur Wright, then they lived in France.",0
+"If a person is Archimedes, then they lived in the U.",0
+"If a person is Johannes Gutenberg, then they lived in Germany.",1
+"If a person is George Eastman, then they lived in the U.",1
+"If a person is Hans Lippershey, then they lived in the Netherlands.",1
+"If a person is Carl Elsener, then they lived in the U.",0
+"If a person is John Boyd Dunlop, then they lived in France.",0
+"If a person is Heinrich Hertz, then they lived in Germany.",1
+"If a person is Leonardo da Vinci, then they lived in Italy.",1
+"If a person is Nikolai Basov, then they lived in the Soviet Union.",1
+"If a person is Wilhelm Conrad Röntgen, then they lived in the U.",0
+"If a person is Guglielmo Marconi, then they lived in Italy.",1
+"If a person is Christian Huygens, then they lived in the Netherlands.",1
+"If a person is Robert Adler, then they lived in the U.",0
+"If a person is John Walker, then they lived in the U.",0
+"If a person is Grace Hopper, then they lived in the U.",0
+"If a person is James West, then they lived in the U.",1
+"If a person is Charles Townes, then they lived in Russia.",0
+"If a person is Sir Frank Whittle, then they lived in the U.",1
+"If a person is John Ambrose Fleming, then they lived in the U.",1
+"If a person is Gottlieb Daimler, then they lived in Germany.",1
+"If a person is Frederick McKinley Jones, then they lived in Japan.",0
+"If a person is William Sturgeon, then they lived in Germany.",0
+"If a person is Igor Tamm, then they lived in the U.",0
+"If a person is Frank Julian Sprague, then they lived in the U.",1
+"If a person is George Antheil, then they lived in the U.",1
+"If a person is William Kelly, then they lived in France.",0
+"If a person is Alva J. Fisher, then they lived in the U.",1
+"If a person is Louis Pasteur, then they lived in the U.",0
+"If a person is Thomas Edison, then they lived in the U.",1
+"If a person is Joseph Glidden, then they lived in Germany.",0
+"If a person is Tim Berners-Lee, then they lived in Germany.",0
+"If a person is Carl Wilhelm Siemens, then they lived in Germany.",1
+"If a person is Ralph Benjamin, then they lived in the U.",1
+"If a person is George Devol, then they lived in the U.",1
+"If a person is Igor Tamm, then they lived in Russia.",1
+"If a person is Philipp Reis, then they lived in Germany.",1
+"If a person is Edmund Cartwright, then they lived in the U.",1
+"If a person is Heinrich Göbel, then they lived in the U.",0
+"If a person is Yoshua Bengio, then they lived in the U.",0
+"If a person is John Kay, then they lived in the U.",0
+"If a person is Marie Curie, then they lived in Poland/France.",1
+"If a person is Mary Phelps Jacob, then they lived in the U.",1
+"If a person is Valdemar Poulsen, then they lived in Scotland.",0
+"If a person is John Harrison, then they lived in the U.",1
+"If a person is John Ericsson, then they lived in the U.",0
+"If a person is James Starley, then they lived in Sweden/the U.",0
+"If a person is Charles Tellier, then they lived in the U.",0
+"If a person is Fritz Pfleumer, then they lived in Canada/the U.",0
+"If a person is Clyde Tombaugh, then they lived in the U.",1
+"If a person is Nicolas Appert, then they lived in Russia.",0
+"If a person is Felix Hoffmann, then they lived in the U.",0
+"If a person is Joseph Henry, then they lived in the U.",1
+"If a person is Alexander Graham Bell, then they lived in Germany.",0
+"If a person is Robert Noyce, then they lived in the U.",1
+"If a person is Charles Francis Richter, then they lived in the U.",1
+"If a person is Hans Oersted, then they lived in Denmark.",1
+"If a person is Nils Bohlin, then they lived in Sweden.",1
+"If a person is Alec Jeffreys, then they lived in the U.",1
+"If a person is John T. Parsons, then they lived in the U.",1
+"If a person is Otis Boykin, then they lived in the U.",1
+"If a person is Charles Strite, then they lived in the U.",1
+"If a person is Alessandro Volta, then they lived in Italy.",1
+"If a person is Ruth Handler, then they lived in the U.",1
+"If a person is Georges Claude, then they lived in France.",1
+"If a person is Hedy Lamarr, then they lived in the U.",0
+"If a person is Alfred Nobel, then they lived in Sweden.",1
+"If a person is John Ambrose Fleming, then they lived in the U.",0
+"If a person is Charles Strite, then they lived in Italy.",0
+"If a person is John Ericsson, then they lived in Sweden.",1
+"If a person is Elisha Otis, then they lived in the U.",0
+"If a person is Gordon Gould, then they lived in Canada.",0
+"If a person is Christopher Cockerell, then they lived in the U.",1
+"If a person is Sir Charles Parsons, then they lived in the U.",1
+"If a person is Henry Ford, then they lived in the U.",1
+"If a person is Rudolf Kálmán, then they lived in the U.",0
+"If a person is Joseph Swan, then they lived in the U.",1
+"If a person is Richard Gatling, then they lived in the U.",1
+"If a person is Ferdinand von Zeppelin, then they lived in Germany.",1
+"If a person is Karl Benz, then they lived in Germany.",1
+"If a person is James Starley, then they lived in the U.",1
+"If a person is August Horch, then they lived in Germany.",1
+"If a person is Charles Macintosh, then they lived in the U.",0
+"If a person is Heinrich Göbel, then they lived in Germany.",1
+"If a person is Marie Curie, then they lived in Hungary.",0
+"If a person is Igor Sikorsky, then they lived in Ukraine/the U.",1
+"If a person is Gustaf Dalén, then they lived in Germany.",0
+"If a person is Eli Whitney, then they lived in the U.",1
+"If a person is Hippolyte Mège-Mouriès, then they lived in France.",1
+"If a person is Ada Lovelace, then they lived in the U.",0
+"If a person is Spencer Silver, then they lived in the U.",1
+"If a person is Leon Theremin, then they lived in Germany.",0
+"If a person is Emile Berliner, then they lived in Germany/the U.",1
+"If a person is Charles Wheatstone, then they lived in the U.",1
+"If a person is Biruté Galdikas, then they lived in France.",0
+"If a person is Samuel Fox, then they lived in France.",0
+"If a person is Grace Hopper, then they lived in the U.",1
+"If a person is Biruté Galdikas, then they lived in Canada.",1
+"If a person is Daisuke Inoue, then they lived in Japan.",1
+"If a person is Albert Ghiorso, then they lived in the U.",0
+"If a person is Karl Landsteiner, then they lived in Austria.",1
+"If a person is Joseph Henry, then they lived in the U.",0
+"If a person is Galileo Galilei, then they lived in the U.",0
+"If a person is Linus Torvalds, then they lived in Finland.",1
+"If a person is Ami Argand, then they lived in the U.",0
+"If a person is André-Jacques Garnerin, then they lived in the Netherlands.",0
+"If a person is Levi Strauss, then they lived in the U.",1
+"If a person is Alessandro Volta, then they lived in the U.",0
+"If a person is Edouard Benedictus, then they lived in France.",1
+"If a person is Arthur Fry, then they lived in France.",0
+"If a person is Charles Townes, then they lived in the U.",1
+"If a person is Ralph H. Baer, then they lived in France.",0
+"If a person is Reginald Fessenden, then they lived in Canada/the U.",1
+"If a person is Antoine Lavoisier, then they lived in Austria.",0
+"If a person is Joseph Engelberger, then they lived in the U.",1
+"If a person is Karl Landsteiner, then they lived in the U.",0
+"If a person is Reginald Fessenden, then they lived in the U.",0
+"If a person is John Shepherd-Barron, then they lived in the U.",0
+"If a person is Frank Bunker Gilbreth, then they lived in Russia.",0
+"If a person is Daisuke Inoue, then they lived in the U.",0
+"If a person is John Kay, then they lived in the U.",1
+"If a person is Tim Berners-Lee, then they lived in the U.",1
+"If a person is Charles Francis Jenkins, then they lived in the U.",1
+"If a person is Jean-Bernard-Léon Foucault, then they lived in the U.",0
+"If a person is Wilhelm Conrad Röntgen, then they lived in Germany.",1
+"If a person is Christian Huygens, then they lived in Scotland.",0
+"If a person is Ada Lovelace, then they lived in the U.",1
+"If a person is Philo Taylor Farnsworth, then they lived in the U.",1
+"If a person is Sergey Brin and Larry Page, then they lived in the U.",1
+"If a person is Hans Geiger, then they lived in Germany.",1
+"If a person is Evangelista Torricelli, then they lived in Italy.",1
+"If a person is Herbert Akroyd Stuart, then they lived in Russia.",0
+"If a person is Daniel Fahrenheit, then they lived in the U.",0
+"If a person is Shinya Yamanaka, then they lived in Japan.",1
+"If a person is Giovanni Caselli, then they lived in Italy.",1
+"If a person is Charles Francis Jenkins, then they lived in Germany.",0
+"If a person is Hedy Lamarr, then they lived in Austria/the U.",1
+"If a person is Frederick McKinley Jones, then they lived in the U.",1
+"If a person is James Hargreaves, then they lived in the U.",1
+"If a person is David Schwarz, then they lived in Croatia.",1
+"If a person is Konrad Zuse, then they lived in Germany.",1
+"If a person is Jacob Perkins, then they lived in the U.",1
+"If a person is Arthur Pitney, then they lived in the U.",0
+"If a person is John Boyd Dunlop, then they lived in Scotland.",1
+"If a person is Charles Babbage, then they lived in Hungary/the U.",0
+"If a person is Hans von Ohain, then they lived in Germany.",1
+"If a person is John von Neumann, then they lived in the U.",0
+"If a person is Christopher Cockerell, then they lived in France.",0
+"If a person is R. Buckminster Fuller, then they lived in the U.",1
+"If a person is Thomas Tompion, then they lived in the U.",1
+"If a person is Vint Cerf, then they lived in Italy.",0
+"If a person is Nicolas Appert, then they lived in France.",1
+"If a person is Wallace Carothers, then they lived in Denmark.",0
+"If a person is Carl Sontheimer, then they lived in the U.",1
+"If a person is Karl Benz, then they lived in the U.",0
+"If a person is Konrad Zuse, then they lived in Poland/France.",0
+"If a person is James Clerk Maxwell, then they lived in the U.",1
+"If a person is Nikola Tesla, then they lived in Germany.",0
+"If a person is James Murray Spangler, then they lived in the U.",1
+"If a person is John Wesley Hyatt, then they lived in the U.",0
+"If a person is Hans Goldschmidt, then they lived in Germany.",1
+"If a person is Carl Elsener, then they lived in Switzerland.",1
+"If a person is Vint Cerf, then they lived in the U.",1
+"If a person is Charles Tellier, then they lived in France.",1
+"If a person is Elisha Gray, then they lived in Austria/the U.",0
+"If a person is George de Mestral, then they lived in Canada.",0
+"If a person is Sir Charles Parsons, then they lived in the U.",0
+"If a person is Henry Bessemer, then they lived in the U.",0
+"If a person is James Dyson, then they lived in Canada.",0
+"If a person is Jack Kilby, then they lived in the U.",0
+"If a person is Joseph Marie Jacquard, then they lived in France.",1
+"If a person is Carl Wilhelm Siemens, then they lived in the U.",0
+"If a person is Sir Humphry Davy, then they lived in the U.",0
+"If a person is Philipp Reis, then they lived in Finland.",0
+"If a person is Samuel Colt, then they lived in the U.",1
+"If a person is Bartolomeo Cristofori, then they lived in the U.",0
+"If a person is Mary Walton, then they lived in the U.",1
+"If a person is Felix Hoffmann, then they lived in Germany.",1
+"If a person is Lester Wire, then they lived in the U.",0
+"If a person is Frederick G. Creed, then they lived in Canada.",1
+"If a person is Hans von Ohain, then they lived in Canada.",0
+"If a person is Elihu Thomson, then they lived in the U.",1
+"If a person is Yvonne Brill, then they lived in the U.",0
+"If a person is Pierre Curie, then they lived in France.",1
+"If a person is James Hargreaves, then they lived in Sweden.",0
+"If a person is Nikolay Slavyanov, then they lived in Russia.",1
+"If a person is Dr. Robert Gallo, then they lived in the U.",1
+"If a person is Charles Goodyear, then they lived in the U.",0
+"If a person is Samuel Morse, then they lived in the U.",1
+"If a person is Daniel Fahrenheit, then they lived in Poland/Germany.",1
+"If a person is John Logie Baird, then they lived in Scotland.",1
+"If a person is Henri Giffard, then they lived in France.",1
+"If a person is Eugene Polley, then they lived in the U.",1
+"If a person is Zhores Alferov, then they lived in Russia.",1
+"If a person is Ferdinand Carré, then they lived in France.",1
+"If a person is Richard Trevithick, then they lived in the U.",1
+"If a person is Edmund Cartwright, then they lived in the U.",0
+"If a person is John Walker, then they lived in the U.",1
+"If a person is Semyon Kirlian, then they lived in the U.",0
+"If a person is Blaise Pascal, then they lived in France.",1
+"If a person is Mary Phelps Jacob, then they lived in Ukraine/the U.",0
+"If a person is Luther Simjian, then they lived in the U.",0
+"If a person is Benjamin Rubin, then they lived in the U.",1
+"If a person is Willem Einthoven, then they lived in the Netherlands.",1
+"If a person is Godfrey Hounsfield, then they lived in the U.",1
+"If a person is Yoshiro Nakamatsu, then they lived in Japan.",1
+"If a person is Sir Isaac Newton, then they lived in the U.",0
+"If a person is Ferdinand von Zeppelin, then they lived in France.",0
+"If a person is Auguste and Louis Lumière, then they lived in France.",1
+"If a person is Thomas Edison, then they lived in the U.",0
+"If a person is Cai Lun, then they lived in China.",1
