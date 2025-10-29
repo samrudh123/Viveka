@@ -113,7 +113,6 @@ def generate_and_label_answers(
     print(f"\nGeneration and labeling complete for this slice. Cache updated at '{generations_cache_path}'.")
 
 
-
 # def get_truth_probe_activations(
 #     statements,
 #     tokenizer,
