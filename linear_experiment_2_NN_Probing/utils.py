@@ -123,11 +123,11 @@ def create_prompts(statements, model_name):
     """Applies the correct prompt format based on the model type."""
     model_name = model_name.lower()
     if 'gemma' in model_name:
-        return [f"<start_of_turn>user\nQ: {s}<end_of_turn>\n<start_of_turn>model\nA:" for s in statements]
+        return [f"<start_of_turn>user\n{s}<end_of_turn>\n<start_of_turn>model\n" for s in statements]
     elif 'llama' in model_name:
-        return [f"<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n Q: {s}<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\n A:" for s in statements]
+        return [f"<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{s}<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\n" for s in statements]
     elif 'qwen' in model_name:
-        return [f"<|im_start|>user \n Q: {s} <|im_end|>\n<|im_start|>assistant\n A:" for s in statements]
+        return [f"<|im_start|>user\n{s} <|im_end|>\n<|im_start|>assistant\n" for s in statements]
     else:
         return statements
 
