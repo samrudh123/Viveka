@@ -1,3 +1,5 @@
 .vscode/
-./linear_experiment_2_NN_Probing/__pycache__/
-./linear_experiment_2_NN_Probing/datasets/
+linear_experiment_2_NN_Probing/__pycache__/
+linear_experiment_2_NN_Probing/datasets/meta_llama _3b/
+linear_experiment_2_NN_Probing/datasets/qwen_2.5/
+linear_experiment_2_NN_Probing/datasets/
